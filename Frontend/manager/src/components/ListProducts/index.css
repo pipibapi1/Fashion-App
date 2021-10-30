@@ -55,6 +55,9 @@ input, select, textarea .listProducts-heading-search{
     border-radius: 50%;
     margin-left: 8px;
 }
+.listProducts-heading-add-product .fa-plus{
+  margin-right: 4px;
+}
 
 
 /* table */
@@ -108,4 +111,27 @@ input, select, textarea .listProducts-heading-search{
 tr:nth-child(even) {
   background-color: #dddddd;
 }
-/*  */
+/*  page*/
+.listProducts-page{
+  text-align: center;
+  font-size: 24px;
+  margin:0 24px;
+}
+
+.fa-step-backward ,.fa-step-forward{
+  font-size: 24px;
+  cursor: pointer;
+  margin:0 8px;
+}
+
+/* content input  */
+.addProduct-content{
+
+}
+.addProduct-content-text{
+  
+}
+
+.addProduct-content-size{
+  
+}

@@ -8,6 +8,7 @@ import TabAccount from "./TabAccount";
 import SearchAccount from "./SearchAccount";
 import { Container, Row, Col } from 'react-grid-system';
 import ListProducts from "./ListProducts";
+import AddProduct from "./AddProduct";
 
 
 export default function TabVertical() {
@@ -38,7 +39,7 @@ export default function TabVertical() {
             </TabPanel>
             <TabPanel>
                 <div className="panel-content">
-                    <h2>Any content 2</h2>
+                    <AddProduct/>
                 </div>
             </TabPanel>
             <TabPanel>

@@ -12,7 +12,8 @@ const ListProducts = () => {
           placeholder="Tìm kiếm sản phẩm và thương hiệu"
         />
         <button className="listProducts-heading-add-product">
-          Thêm sản phẩm
+        <i class="fas fa-plus"></i>
+              Thêm sản phẩm
         </button>
         <div className="listProducts-heading-info">
           <h4 className="listProducts-heading-info-name">Nguyễn Trần Hoàng</h4>
@@ -60,6 +61,11 @@ const ListProducts = () => {
 
           
         </table>
+        <div className="listProducts-page">
+        <i class="fas fa-step-backward"></i>
+            1/10
+        <i class="fas fa-step-forward"></i>
+            </div>
       </div>
     </>
   );
