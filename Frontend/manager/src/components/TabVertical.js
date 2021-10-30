@@ -7,6 +7,7 @@ import { BsCardText } from "react-icons/bs";
 import TabAccount from "./TabAccount";
 import SearchAccount from "./SearchAccount";
 import { Container, Row, Col } from 'react-grid-system';
+import ListProducts from "./ListProducts";
 
 
 export default function TabVertical() {
@@ -32,7 +33,7 @@ export default function TabVertical() {
 
             <TabPanel>
                 <div className="panel-content">
-                    <h2>Any content 1</h2>
+                    <ListProducts/>
                 </div>
             </TabPanel>
             <TabPanel>

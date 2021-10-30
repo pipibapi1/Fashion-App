@@ -1,0 +1,106 @@
+.listProducts-heading {
+  display: flex;
+  justify-content: space-between;
+  height: 52px;
+  overflow: hidden;
+  padding: 12px;
+  box-sizing: border-box;
+  align-items: center;
+  font-size: 16px;
+}
+.listProducts-heading-title {
+  color: #505eb1;
+  font-size: 22px;
+}
+.listProducts-heading-search {
+  min-width: 310px;
+  background-color: #996666;
+  border-radius: 8px;
+  padding: 8px 10px;
+  border: #3a3131;
+  font-size: 16px;
+}
+::placeholder {
+  color: #fff;
+}
+input, select, textarea .listProducts-heading-search{
+    color: #fff;
+}
+.listProducts-heading-add-product {
+  padding: 0 4px;
+  background-color: #996666;
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: #3a3131;
+  cursor: pointer;
+  font-size: 16px;
+}
+.listProducts-heading-add-product:hover {
+  color: #62e01a;
+  background-color: rgb(180, 180, 180);
+}
+.listProducts-heading-info {
+    display: flex;
+  align-items: center;
+
+}
+.listProducts-heading-info-name {
+}
+.listProducts-heading-info-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 8px;
+}
+
+.listProducts-table{
+
+}
+.listProducts-table-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size:14px;
+    background-color: #00ff38;
+    border-radius: 4px;
+    max-height: 40px;
+
+}
+.listProducts-table-heading-checkbox{
+    margin-left: 14px;
+}
+input[type=checkbox],.listProducts-table-heading-checkbox {
+    transform: scale(1.5);
+}
+.listProducts-table-heading-stt{
+    color: #fff;
+    margin: 0px -96px;
+
+}
+.listProducts-table-heading-name{
+    display:flex;
+    color:#fff;
+
+}
+.listProducts-table-heading-name-title{
+
+}
+.listProducts-table-heading-name-sort{
+}
+.listProducts-table-heading-delete{
+    margin-left: 34px;
+    background-color: rgb(255, 60, 60);
+    border-radius: 4px;
+    color: #fff;
+    border: #3a3131;
+    margin-right: 12px;
+    padding: 4px 8px;
+    cursor: pointer;
+
+}
+.listProducts-table-heading-delete:hover{
+    color:rgb(255, 60, 60);
+    background-color: #fff;
+}
