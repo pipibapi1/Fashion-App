@@ -37,14 +37,15 @@ input, select, textarea .listProducts-heading-search{
   font-size: 16px;
 }
 .listProducts-heading-add-product:hover {
-  color: #62e01a;
+  /* color: #62e01a; */
   background-color: rgb(180, 180, 180);
 }
 .listProducts-heading-info {
     display: flex;
   align-items: center;
-
+  cursor: pointer;
 }
+
 .listProducts-heading-info-name {
 }
 .listProducts-heading-info-img {
@@ -55,52 +56,56 @@ input, select, textarea .listProducts-heading-search{
     margin-left: 8px;
 }
 
-.listProducts-table{
+
+/* table */
+.listProducts-content-table{
+  width:100%;
+  margin: 0;
+  border-collapse: collapse;
+  text-align: center;
 
 }
-.listProducts-table-heading{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size:14px;
-    background-color: #00ff38;
-    border-radius: 4px;
-    max-height: 40px;
+.listProducts-content-row{
 
 }
-.listProducts-table-heading-checkbox{
-    margin-left: 14px;
+.listProducts-content-row-heading-table{
+  background-color: #00ff38;
+  border-spacing: 0;
+  color: #fff;
+  /* font-size: 16px; */
+  height: 42px;
+  /* border-radius: 53px; */
+  /* overflow: hidden; */
 }
-input[type=checkbox],.listProducts-table-heading-checkbox {
-    transform: scale(1.5);
-}
-.listProducts-table-heading-stt{
-    color: #fff;
-    margin: 0px -96px;
 
+.listProducts-content-row-remove{
+  border-radius: 4px;
+  color: #fff;
+  background-color: #ff0808;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  padding: 4px 8px;
 }
-.listProducts-table-heading-name{
-    display:flex;
-    color:#fff;
-
+.listProducts-content-row-remove:hover{
+  /* color:#ff0808; */
+  background-color: rgb(36, 28, 136);
 }
-.listProducts-table-heading-name-title{
-
+.listProducts-content-row-edit{
+  border-radius: 4px;
+  margin-right: -14px;
+  color: #fff;
+  background-color: #d38f21;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  padding: 4px 8px;
 }
-.listProducts-table-heading-name-sort{
+.listProducts-content-row-edit:hover{
+  background-color: rgb(71, 199, 211);
 }
-.listProducts-table-heading-delete{
-    margin-left: 34px;
-    background-color: rgb(255, 60, 60);
-    border-radius: 4px;
-    color: #fff;
-    border: #3a3131;
-    margin-right: 12px;
-    padding: 4px 8px;
-    cursor: pointer;
-
+.listProducts-content-row-checkbox{
+  zoom: 1.5;
 }
-.listProducts-table-heading-delete:hover{
-    color:rgb(255, 60, 60);
-    background-color: #fff;
+tr:nth-child(even) {
+  background-color: #dddddd;
 }
+/*  */
