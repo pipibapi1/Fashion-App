@@ -930,7 +930,129 @@ section {
 .footer .credit span {
   color: #eb4d4b;
 }
+.header .login-form {
+  position: absolute;
+  top: 115%;
+  right: -105%;
+  background: #1a1a1a;
+  border-radius: 1rem;
+  width: 35rem;
+  padding: 2rem;
+}
+.header .login-form.active {
+  right: 2rem;
+  transition: 0.4s linear;
+}
+.header .login-form h3 {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 0.7rem;
+  font-weight: bold;
+}
+.header .login-form .box {
+  margin: 0.7rem 0;
+  border: #161616;
+  padding: 1rem 1.2rem;
+  font-size: 1.5rem;
+  color: #2a2a2a;
+  text-transform: none;
+  width: 100%;
+  opacity: 95%;
+}
+.header .login-form .remember {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.7rem 0;
+  margin-bottom: 1.6rem;
+}
+.header .login-form .remember label {
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+.header .login-form .btn--rounded {
+  margin-top: 1rem 0;
+  text-align: center;
+  width: 100%;
+}
+.header .login-form p {
+  color: #fff;
+  padding-top: 0.7rem;
+  font-size: 1.4rem;
+}
+.header .login-form p a {
+  margin-left: 0.7rem;
+  color: #ffc87a;
+}
+.header .login-form p a:hover {
+  text-decoration: underline;
+}
 
+.header .shopping-card .box {
+  display: flex;
+  align-items: center;
+  gap: 1.5;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.header .shopping-card .box .fa-times {
+  opacity: 80%;
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+.header .shopping-card .box .fa-times:hover {
+  color: #ffc87a;
+}
+.header .shopping-card .box img {
+  height: 10rem;
+  width: 10rem;
+  border-radius: 0.5rem;
+}
+.header .shopping-card .box .content {
+  margin-left: 2rem;
+}
+.header .shopping-card .box .content h3 {
+  font-size: 1.7rem;
+  padding-bottom: 0.5rem;
+  color: #ffc87a;
+  font-weight: bold;
+}
+.header .shopping-card .box .content span {
+  opacity: 75%;
+  font-size: 1.4rem;
+  color: #fff;
+}
+.header .shopping-card .box .content span.multiply {
+  margin: 0 0.5rem;
+}
+.Popup{
+  border-radius: 25px;
+  position: fixed;
+  top: 10%;
+  left: 80%;
+  width: 40rem;
+  height: 20rem;
+  background-color:white;
+  font-size: 1.5rem;
+}
+.buttom{
+  padding: 7.92px 10px;
+  font-size: 1.5rem;
+}
+.buttombox{
+  width: 100%;
+  height: 20px;
+  font-size: 1.5rem;
+  background-color:white;
+}
 @media (max-width: 991px) {
   html {
     font-size: 55%;
