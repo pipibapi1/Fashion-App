@@ -17,7 +17,7 @@ function FeaturedProducts() {
         setActive(current);
     }
     const b=()=>{
-        if(current==0) {current=6;}
+        if(current==0) {current=index+1;}
         current--;
         setActive(current);
     }
