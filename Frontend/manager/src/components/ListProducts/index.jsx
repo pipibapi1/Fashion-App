@@ -58,6 +58,9 @@ const ListProducts = () => {
           <Product/>
           <Product/>
           <Product/>
+          <Product/>
+          <Product/>
+          <Product/>
 
           
         </table>

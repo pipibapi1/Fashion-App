@@ -55,3 +55,137 @@
       border-radius: 50%;
       margin-left: 8px;
   }
+
+/* Content */
+input, select, textarea{
+  color: #0a0606;
+}
+/* Input text */
+
+.addProduct-content{
+  display: flex;
+  color:#0E8B8B;
+  font-size:16px;
+  box-sizing: border-box;
+}
+.addProduct-content-input-text{
+  flex:1;
+}
+.addProduct-content-text-name{
+  display:flex;
+  justify-content: space-around;
+}
+.addProduct-content-text-name-label{
+
+}
+.addProduct-content-text-name-input{
+  border-radius: 4px;
+  border: solid 1px #3b7458;
+  margin-left: -16px;
+  padding: 4px 4px;
+}
+
+
+
+.addProduct-content-text-des{
+  display: flex;
+margin: 10px;
+justify-content: space-between;
+align-items: center;
+}
+.addProduct-content-text-des-label{
+}
+.addProduct-content-text-des-input{
+    /* flex: 1 1; */
+    min-width: 549px;
+    margin-left: 9px;
+    min-height: 550px;
+    padding: 4px;
+    border-radius: 4px;
+  border: solid 1px #3b7458;
+  resize: none;
+
+}
+.addProduct-content-text-bot{
+  margin-top:30px;
+  display:flex;
+  justify-content: space-around;
+}
+
+.addProduct-content-text-bot-input{
+  border-radius: 4px;
+  border: solid 1px #3b7458;
+  margin-left: -16px;
+  padding: 4px 4px;
+
+}
+
+
+/* Input size */
+.addProduct-content-size{
+flex:1;
+}
+
+.addProduct-content-size-heading{
+  border-radius: 4px;
+}
+
+/* table */
+.addProduct-content-size-table{
+
+  border-collapse: collapse;
+  width:100%;
+  overflow: hidden;
+  border-radius: 4px;
+  max-height: 340px;
+  text-align: center;
+  /* max-height: 400px; */
+}
+.addProduct-content-size-row-heading-table{
+  background-color: #00ff38;
+  height: 36px;
+}
+.addProduct-content-size-row-add{
+  border-radius: 4px;
+  border: solid #ccc 1px;
+  padding: 2px 9px;
+  /* color: #000; */
+  cursor: pointer;
+  background-color: #FFA9A9;
+}
+.addProduct-content-size-row-add:hover{
+  opacity: 0.9;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/* IMG */
+
+.addProduct-content-size-display{
+  margin-top: 14px;
+  text-align: center;
+}
+.addProduct-content-size-display-img{
+  width:100px;
+  height: auto;
+  object-fit: cover;
+}
+.addProduct-submit .fas{
+margin-right: 4px;
+}
+.addProduct-submit{
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 8px 14px;
+  font-size: 22px;
+  border-radius: 10px;
+  border: solid 1px #ccc;
+  background-color: #42FF00;
+  cursor: pointer;
+}
+.addProduct-submit:hover{
+ background-color: #fff;
+ color:#42FF00;
+}

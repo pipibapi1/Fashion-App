@@ -9,9 +9,15 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px; */
-  
+    /* hoangkui ms sua */
+  height: 100vh; 
 }
-
+#root{
+  /* hoangkui ms sua */
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+}
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
     font-family: 'Open Sans', sans-serif;
@@ -39,7 +45,8 @@ code {
 .react-tabs {
   display: flex;
   width: 99.8%;
-  height: 640px;
+  /* hoangkui sua height */
+  height: 100%; 
   border: 1px solid #3c3e43;
   color: black;
 }
