@@ -14,10 +14,15 @@ import AddProduct from "./AddProduct";
 export default function TabVertical() {
     return (
         <div className="TabMain">
-            <h1 className="Head-tab">Điều hướng</h1>
+{/* luc day dieu huong o day */}
+
 
         <Tabs>
             <TabList>
+                <div>
+
+            <h1 className="Head-tab">Điều hướng</h1>
+                    </div>
                 <Tab>
                     <p><BsCardText size={20} className="tabIcon" />Danh sách sản phẩm</p>
                 </Tab>
