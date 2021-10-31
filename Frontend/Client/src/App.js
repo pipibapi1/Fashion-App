@@ -1,59 +1,18 @@
 import React from 'react';
-import Banner from './components/Banner';
-import Home from './components/Home';
-import Header from './components/Header';
-import Product from './components/Product';
-import Deal from './components/Deal';
-import Feature from './components/Feature';
-import Review from './components/Review';
-import ContactUs from './components/ContactUs';
-import Blog from './components/Blog';
-import Footer from './components/Footer';
+import Mainpage from './Mainpage.js'
+import SearchPage from './SearchPage.js'
+import PaymentPage from './PaymentPage.js'
+import { BrowserRouter as Router ,Route } from 'react-router-dom';
 
-
-class App extends React.Component{
-    render() {
+const App = () =>{
     return (
-        <div className="App">
-
-    {/*Thanh header cua web */}
-
-    <Header/>
-
-    {/*Home */}
-    <Home/>
-
-    {/*2 tam banner*/}
-    <Banner/>
-
-    {/*Phan san pham */}
-    <Product/>
-
-
-
-    {/*Phan Deal*/}
-    <Deal/>
-
-
-    {/*Phan Feature */}
-    <Feature/>
-
-
-    {/*Phan review cua khach hang */}
-    <Review/>
-
-    {/*Phan Contac us*/}
-    <ContactUs/>
-
-    {/* Phan Blogs*/}
-    <Blog/>
-
-    {/* Phan Footer*/}
-    <Footer/>
-
-    </div>
+    <Router>
+        <Route exact path="/" component={Mainpage}/>
+        <Route exact path="/searchResult" component={SearchPage}/>
+        <Route exact path="/payment" component={PaymentPage}/>
+    </Router>
      );
-    }
+     
 }
 
 export default App;
