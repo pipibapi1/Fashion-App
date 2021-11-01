@@ -9,6 +9,10 @@ const AddProduct = () => {
           <div className="listProducts-heading">
         <h3 className="listProducts-heading-title">Chi tiết sản phẩm</h3>
         <div className="listProducts-heading-info">
+        <button className="button-hoangkui">
+        <i className="fas fa-edit"></i>
+          Sửa sản phẩm này
+        </button>
           <h4 className="listProducts-heading-info-name">Nguyễn Trần Hoàng</h4>
           <img
             src="https://scontent.fdad2-1.fna.fbcdn.net/v/t1.6435-9/148352211_1315852945481787_1410223456476714730_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=UTvzr_H01LEAX9fT_8T&_nc_ht=scontent.fdad2-1.fna&oh=ad71bf3dd4b49191be326bd411384505&oe=61A30021"
@@ -125,7 +129,11 @@ const AddProduct = () => {
           <img src="https://product.hstatic.net/1000035031/product/vay-dam-cong-so-thoi-trang-eden-dang-chu-a-co-tim-tay-phong-d405__6__9a4811529e834206b25da08ec496995f_master.jpg" alt="Chưa thêm size" className="addProduct-content-size-display-img-size" />
         </div>
 
-        
+        <div className="listProducts-page">
+          <i className="fas fa-step-backward"></i>
+          1/10
+          <i className="fas fa-step-forward"></i>
+        </div>
           </div>
 
       </div>

@@ -22,7 +22,9 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
     font-family: 'Open Sans', sans-serif;
 }
-
+button{
+  transition: all 0.2 linear;
+}
 /* **************************************Tab********************************************************************** */
 .Head-tab {
   color: 	white;

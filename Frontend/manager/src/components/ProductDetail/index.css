@@ -192,3 +192,21 @@ margin-right: 4px;
   height: auto;
   object-fit: cover;
 }
+/* button gan avatar */
+.button-hoangkui{
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: solid 1px rgb(68, 39, 39);
+  color: #6dfbfa;
+  background-color: #c06e6e;
+  transition: all 0.2 linear;
+  cursor: pointer;
+  margin: 0 8px;
+}
+.button-hoangkui:hover{
+background-color: #2cccff;
+color: white;
+}
+.button-hoangkui .fas{
+  margin-right: 6px;
+}
