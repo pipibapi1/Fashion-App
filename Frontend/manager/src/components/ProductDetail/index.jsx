@@ -25,27 +25,65 @@ const AddProduct = () => {
                 <label htmlFor="nameProduct" className="addProduct-content-text-name-label">
                     Tên sản phẩm
                 </label>
-                    <input type="text" className="addProduct-content-text-name-input" id="nameProduct"/>
+                    <input type="text" className="addProduct-content-text-name-input" 
+                    value="Váy đầm"
+                    disabled
+                    id="nameProduct"/>
                 <label htmlFor="brandProduct" className="addProduct-content-text-name-label">
                     Tên thương hiệu
                 </label>
-                    <input type="text" className="addProduct-content-text-name-input"  id="brandProduct"/>
+                    <input type="text" className="addProduct-content-text-name-input"  
+                    value="Lunvuituoi"
+                    disabled
+                    id="brandProduct"/>
             </div>
             <div className="addProduct-content-text-des">
             <label htmlFor="desProduct" className="addProduct-content-text-des-label">
                     Mô tả
             </label>
-                    <textarea className="addProduct-content-text-des-input" id="desProduct" />
+                    <textarea 
+                    value="Đầm voan hoa dáng tầng chất liệu lụa voan Hàn, form rộng, dáng dài nhẹ nhàng xinh vô cùng
+                    ✔️ Dài : 110cm, Ngực dưới 102cm
+                    ✔️Chất liệu : Voan lụa có lót
+                    ✔️ Freesize, Phom oversize -  bầu bí mặc thoái mái luôn ạ
+                    
+                    🛑  HƯỚNG DẪN MUA HÀNG
+                    ✔️ Các bạn đặt đúng màu, mẫu mình thích, không đặt hàng qua GHI CHÚ. Nếu lưu ý đặc biệt hãy inbox cho shop, chúng mình luôn sẵn sàng hỗ trợ bạn. 
+                    ✔️ Hãy sử dụng mã miễn phí vận chuyển nếu có phần thanh toán nhé.
+                    ✔️ Thời gian giao cho đơn vị vận chuyển trung bình là 1 ngày. 
+                    ✔️ Vận chuyển là của shopee nên nếu có vấn đề bạn hãy liên lạc hotline của đơn vị vận chuyển tương ứng nhé 
+                    ✔️ Khách sỉ, vui lòng inbox cho shop.
+                    
+                    HOTLINE : 0987 888 578
+                    Địa Chỉ: 111 Ô Chợ Dừa, Đống Đa , Hà Nội."
+                    disabled
+                    className="addProduct-content-text-des-input" id="desProduct" />
             </div>
             <div className="addProduct-content-text-bot">
                 <label htmlFor="manuProduct" className="addProduct-content-text-bot-where-label">
                     Nơi sản xuất
                 </label>
-                    <input type="text" className="addProduct-content-text-bot-input" id="manuProduct"/>
+                    <input type="text" className="addProduct-content-text-bot-input" 
+                    value="Trung quốc"
+                    disabled
+                    id="manuProduct"/>
                 <label htmlFor="numberProduct" className="addProduct-content-text-bot-number-label">
                     Giá
                 </label>
-                    <input type="number" className="addProduct-content-text-bot-input" id="numberProduct" />
+                    <input type="number" className="addProduct-content-text-bot-input"
+                    value="14000"
+                    disabled
+                    id="numberProduct" />
+            </div>
+            <div className="addProduct-content-text-bot-view">
+                <label htmlFor="manuProduct" className="addProduct-content-text-bot-where-label-view">
+                    Lượt truy cập
+                </label>
+                    <input type="text" className="addProduct-content-text-bot-input" 
+                    value="2500"
+                    disabled
+                    id="manuProduct"/>
+                
             </div>
           </div>
 
@@ -78,10 +116,7 @@ const AddProduct = () => {
           <img src="" alt="Chưa thêm size" className="addProduct-content-size-display-img" />
         </div>
 
-        <button className="addProduct-submit">
-        <i className="fas fa-plus-circle"></i>
-          Thêm
-        </button>
+        
           </div>
 
       </div>
