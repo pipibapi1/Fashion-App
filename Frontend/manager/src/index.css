@@ -29,6 +29,7 @@ code {
   font-size: 26px;
   padding-left: 30px;
   padding-top: 15px;
+  padding-bottom: 15px;
   height: 20px;
   border: none;
   margin-top: 0;
@@ -47,7 +48,7 @@ code {
   width: 99.8%;
   /* hoangkui sua height */
   height: 100%; 
-  border: 1px solid #3c3e43;
+  /* border: 1px solid #3c3e43; */
   color: black;
 }
 

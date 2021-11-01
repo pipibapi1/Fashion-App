@@ -9,7 +9,13 @@ import SearchAccount from "./SearchAccount";
 import { Container, Row, Col } from 'react-grid-system';
 import ListProducts from "./ListProducts";
 import AddProduct from "./AddProduct";
-
+import ProductDetail from "./ProductDetail"
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
 export default function TabVertical() {
     return (
@@ -39,7 +45,17 @@ export default function TabVertical() {
 
             <TabPanel>
                 <div className="panel-content">
+                    <Router>
+                        {/* <Link to="/product/id">:D</Link> */}
+                    <Switch>
+                        <Router path="/product/id">
+                            <ProductDetail/>
+                        </Router>
+                        <Router path="/">
                     <ListProducts/>
+                        </Router>
+                    </Switch>
+                    </Router>
                 </div>
             </TabPanel>
             <TabPanel>

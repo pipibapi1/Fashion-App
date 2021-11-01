@@ -5,7 +5,7 @@ const AddProduct = () => {
         <>
         {/* Heading  */}
           <div className="listProducts-heading">
-        <h3 className="listProducts-heading-title">Thêm sản phẩm</h3>
+        <h3 className="listProducts-heading-title">Chi tiết sản phẩm</h3>
         <div className="listProducts-heading-info">
           <h4 className="listProducts-heading-info-name">Nguyễn Trần Hoàng</h4>
           <img

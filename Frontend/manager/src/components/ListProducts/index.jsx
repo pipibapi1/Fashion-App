@@ -1,7 +1,17 @@
-import React from "react";
+import React,{useCallback} from "react";
 import Product from "./Product";
 import "./index.css";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 const ListProducts = () => {
+  const history = useHistory();
+  const handleOnClick = useCallback(() => history.push('/product/id'), [history]);
+ 
   return (
     <>
       <div className="listProducts-heading">
@@ -12,7 +22,7 @@ const ListProducts = () => {
           placeholder="Tìm kiếm sản phẩm và thương hiệu"
         />
         <button className="listProducts-heading-add-product">
-        <i class="fas fa-plus"></i>
+        <i className="fas fa-plus"></i>
               Thêm sản phẩm
         </button>
         <div className="listProducts-heading-info">
@@ -26,6 +36,9 @@ const ListProducts = () => {
       </div>
       <div className="listProducts-content">
         <table className="listProducts-content-table">
+          <tbody>
+
+          
           <tr className="listProducts-content-row-heading-table listProducts-content-row">
             <th className="listProducts-content-row-heading">
               <input
@@ -46,7 +59,11 @@ const ListProducts = () => {
               <button className="listProducts-content-row-remove">Xóa</button>
             </th>
           </tr>
-          <Product/>
+          {/* <Router>
+
+          <Link to="/product/id">:D</Link>
+          </Router> */}
+          <Product onClick={handleOnClick}/>
           <Product/>
           <Product/>
           <Product/>
@@ -62,12 +79,12 @@ const ListProducts = () => {
           <Product/>
           <Product/>
 
-          
+          </tbody>
         </table>
         <div className="listProducts-page">
-        <i class="fas fa-step-backward"></i>
+        <i className="fas fa-step-backward"></i>
             1/10
-        <i class="fas fa-step-forward"></i>
+        <i className="fas fa-step-forward"></i>
             </div>
       </div>
     </>
