@@ -1,19 +1,35 @@
-import React from 'react'
-const products = [
-    {1: "product name",2: "image/product_img1.jpg", 3: "$20.00", 4: "$25.00", 5: "20% off", 6: "(50)"},
-    {1: "product name",2: "image/product_img2.jpg", 3: "$20.00", 4: "$25.00", 5: "20% off", 6: "(50)"},
-    {1: "product name",2: "image/product_img3.jpg", 3: "$20.00", 4: "$25.00", 5: "20% off", 6: "(50)"},
-    {1: "product name",2: "image/product_img4.jpg", 3: "$20.00", 4: "$25.00", 5: "20% off", 6: "(50)"},
-    {1: "product name",2: "image/product_img5.jpg", 3: "$20.00", 4: "$25.00", 5: "20% off", 6: "(50)"},
-    {1: "product name",2: "image/product_img6.jpg", 3: "$20.00", 4: "$25.00", 5: "20% off", 6: "(50)"},
-    {1: "product name",2: "image/product_img7.jpg", 3: "$20.00", 4: "$25.00", 5: "20% off", 6: "(50)"},
-    {1: "product name",2: "image/product_img8.jpg", 3: "$20.00", 4: "$25.00", 5: "20% off", 6: "(50)"},
-    {1: "product name",2: "image/product_img9.jpg", 3: "$20.00", 4: "$25.00", 5: "20% off", 6: "(50)"},
-    {1: "product name",2: "image/product_img10.jpg", 3: "$20.00", 4: "$25.00", 5: "20% off", 6: "(50)"},
-    {1: "product name",2: "image/product_img11.jpg", 3: "$20.00", 4: "$25.00", 5: "20% off", 6: "(50)"},
-    {1: "product name",2: "image/product_img12.jpg", 3: "$20.00", 4: "$25.00", 5: "20% off", 6: "(50)"}
-];
+import React,{useState} from 'react'
+import {products} from './Data.js'
 
+const Popup =(props,index) => {
+    return(
+        <section class="product-details">
+        <div class="image-slider" style={{backgroundImage: `url(${props[2]})`}}></div>
+        <div class="details">
+          <h2 class="product-brand">{props[1]}</h2>
+          <p class="product-short-des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores illo voluptate praesentium recusandae architecto culpa excepturi omnis rem eligendi ex natus amet eaque molestias suscipit perspiciatis.</p>
+          <span class="product-price">{props[3]}</span>
+          <span class="product-actual-price">{props[4]}</span>
+          <span class="product-discount">( {props[5]})</span>
+
+          <div class="choose-size">
+            <p class="product_sub_heading">select size</p>
+        
+            <input type="radio" name="size" value="S" checked hidden id="s_size"/>
+            <label for="s_size" class="size_radio_btn">S</label>
+            <input type="radio" name="size" value="M" hidden id="m_size"/>
+            <label for="m_size" class="size_radio_btn">M</label>
+            <input type="radio" name="size" value="XL" hidden id="xl_size"/>
+            <label for="xl_size" class="size_radio_btn">XL</label>
+            <input type="radio" name="size" value="XXL" hidden id="xxl_size"/>
+            <label for="xxl_size" class="size_radio_btn">XXL</label>
+          </div>
+
+          <button class="btn cart-btn">add to cart</button>
+        </div>
+    </section>
+    )
+}
 
 function ProductItems() {
     return (
