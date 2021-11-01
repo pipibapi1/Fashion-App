@@ -10,6 +10,7 @@ import { Container, Row, Col } from 'react-grid-system';
 import ListProducts from "./ListProducts";
 import AddProduct from "./AddProduct";
 import ProductDetail from "./ProductDetail"
+import ProductEdit from "./ProductEdit"
 import {
     BrowserRouter as Router,
     Switch,
@@ -48,6 +49,9 @@ export default function TabVertical() {
                     <Router>
                         {/* <Link to="/product/id">:D</Link> */}
                     <Switch>
+                    <Router path="/product/id/edit">
+                            <ProductEdit/>
+                        </Router>
                         <Router path="/product/id">
                             <ProductDetail/>
                         </Router>
