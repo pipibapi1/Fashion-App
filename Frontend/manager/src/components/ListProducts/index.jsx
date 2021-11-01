@@ -1,17 +1,15 @@
-import React,{useCallback} from "react";
+import React, { useCallback } from "react";
 import Product from "./Product";
 import "./index.css";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 const ListProducts = () => {
   const history = useHistory();
-  const handleOnClick = useCallback(() => history.push('/product/id'), [history]);
- 
+  const handleOnClick = useCallback(
+    () => history.push("/product/id"),
+    [history]
+  );
+
   return (
     <>
       <div className="listProducts-heading">
@@ -22,8 +20,8 @@ const ListProducts = () => {
           placeholder="Tìm kiếm sản phẩm và thương hiệu"
         />
         <button className="listProducts-heading-add-product">
-        <i className="fas fa-plus"></i>
-              Thêm sản phẩm
+          <i className="fas fa-plus"></i>
+          Thêm sản phẩm
         </button>
         <div className="listProducts-heading-info">
           <h4 className="listProducts-heading-info-name">Nguyễn Trần Hoàng</h4>
@@ -37,55 +35,54 @@ const ListProducts = () => {
       <div className="listProducts-content">
         <table className="listProducts-content-table">
           <tbody>
-
-          
-          <tr className="listProducts-content-row-heading-table listProducts-content-row">
-            <th className="listProducts-content-row-heading">
-              <input
-                type="checkbox"
-                className="listProducts-content-row-checkbox"
-              />
-            </th>
-            <th className="listProducts-content-row-heading">STT</th>
-            <th className="listProducts-content-row-heading">Tên sản phẩm</th>
-            <th className="listProducts-content-row-heading">Tên thương hiệu</th>
-            <th className="listProducts-content-row-heading">Số lượng còn</th>
-            <th className="listProducts-content-row-heading">
-              Số lượng đã bán
-            </th>
-            <th className="listProducts-content-row-heading">Giá</th>
-            <th className="listProducts-content-row-heading"> </th>
-            <th className="listProducts-content-row-heading">
-              <button className="listProducts-content-row-remove">Xóa</button>
-            </th>
-          </tr>
-          {/* <Router>
+            <tr className="listProducts-content-row-heading-table listProducts-content-row">
+              <th className="listProducts-content-row-heading">
+                <input
+                  type="checkbox"
+                  className="listProducts-content-row-checkbox"
+                />
+              </th>
+              <th className="listProducts-content-row-heading">STT</th>
+              <th className="listProducts-content-row-heading">Tên sản phẩm</th>
+              <th className="listProducts-content-row-heading">
+                Tên thương hiệu
+              </th>
+              <th className="listProducts-content-row-heading">Số lượng còn</th>
+              <th className="listProducts-content-row-heading">
+                Số lượng đã bán
+              </th>
+              <th className="listProducts-content-row-heading">Giá</th>
+              <th className="listProducts-content-row-heading"> </th>
+              <th className="listProducts-content-row-heading">
+                <button className="listProducts-content-row-remove">Xóa</button>
+              </th>
+            </tr>
+            {/* <Router>
 
           <Link to="/product/id">:D</Link>
           </Router> */}
-          <Product onClick={handleOnClick}/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-          <Product/>
-
+            <Product/>
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
+            <Product />
           </tbody>
         </table>
         <div className="listProducts-page">
-        <i className="fas fa-step-backward"></i>
-            1/10
-        <i className="fas fa-step-forward"></i>
-            </div>
+          <i className="fas fa-step-backward"></i>
+          1/10
+          <i className="fas fa-step-forward"></i>
+        </div>
       </div>
     </>
   );

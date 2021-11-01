@@ -37,7 +37,6 @@
     font-size: 16px;
   }
   .listProducts-heading-add-product:hover {
-    /* color: #62e01a; */
     background-color: rgb(180, 180, 180);
   }
   .listProducts-heading-info {
@@ -150,7 +149,6 @@ flex:1;
   border-radius: 4px;
   border: solid #ccc 1px;
   padding: 2px 9px;
-  /* color: #000; */
   cursor: pointer;
   background-color: #FFA9A9;
 }
@@ -167,11 +165,7 @@ tr:nth-child(even) {
   margin-top: 14px;
   text-align: center;
 }
-.addProduct-content-size-display-img{
-  width:100px;
-  height: auto;
-  object-fit: cover;
-}
+
 .addProduct-submit .fas{
 margin-right: 4px;
 }
@@ -192,4 +186,9 @@ margin-right: 4px;
 }
 .addProduct-content-text-bot-where-label-view{
   margin-right: 22px;
+}
+.addProduct-content-size-display-img-size{
+  width:150px;
+  height: auto;
+  object-fit: cover;
 }
