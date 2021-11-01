@@ -11,7 +11,7 @@ function Product() {
 
     <FilterButtons/>
 
-   <ProductItems/>
+    <ProductItems/>
 
 </section>
     )
