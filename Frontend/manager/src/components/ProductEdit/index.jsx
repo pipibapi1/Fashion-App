@@ -1,9 +1,31 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import SizeProduct from "./SizeProduct";
 // import "./index.css";
 // import "..//AddProduct/index.css"
-const AddProduct = () => {
-  
+const ProductEdit = () => {
+  const [img, setImg] = useState("");
+    const closeModal=()=>{
+        document.querySelector(".modal-hoangkui-add").style.display="none";
+    }
+  const openModal = () => {
+    var modal = document.querySelector(".modal-hoangkui-add");
+    modal.style.display = "block";
+    window.onclick = function (e) {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    };
+  };
+  useEffect(() => {
+    return () => {
+      URL.revokeObjectURL(img);
+    };
+  }, [img]);
+  const handlePreview = (e) => {
+    const file = e.target.files[0];
+    file.preview = URL.createObjectURL(file);
+    setImg(file.preview);
+  };
 
   return (
     <>
@@ -139,7 +161,9 @@ const AddProduct = () => {
               </th>
               {/* <th className="addProduct-content-size-row-heading"> </th> */}
               <th className="addProduct-content-size-row-heading">
-                <button className="button-hoangkui add-button-edit">
+                <button
+                onClick={openModal}
+                className="button-hoangkui add-button-edit">
                   <i className="fas fa-plus"></i>
                   Thêm
                   </button>
@@ -176,10 +200,79 @@ const AddProduct = () => {
         </button>
       </div>
 {/* modal */}
+<div className="modal-hoangkui-add modal-hoangkui">
+        <div className="modal-content-hoangkui">
+          <h3 className="modal-heading">Chế độ thêm size và màu sắc</h3>
+          <div className="modal-input">
+            <div className="modal-input-container">
+              <label className="modal-input-label" htmlFor="size">
+                Size
+              </label>
+              <select
+                className="modal-input-label-select"
+                name="size"
+                id="size"
+              >
+                <option value="XXS">XXS</option>
+                <option value="XS">XS </option>
+                <option value="S">S</option>
+                <option selected value="M">
+                  M
+                </option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+              </select>
+            </div>
+            <div className="modal-input-container">
+              <label className="modal-input-label" htmlFor="size">
+                Màu sắc
+              </label>
+              <select
+                className="modal-input-label-select"
+                name="size"
+                id="size"
+              >
+                <option value="green">Xanh</option>
+                <option value="red">Đỏ </option>
+                <option value="blue">Lam</option>
+                <option selected value="pink">
+                  Hồng
+                </option>
+                <option value="orange">Cam</option>
+                <option value="indigo">Chàm</option>
+                <option value="violet">Tím</option>
+                <option value="black">Đen</option>
+              </select>
+            </div>
+            <div className="modal-input-container">
+              <label className="modal-input-label" htmlFor="size">
+                Số lượng còn
+              </label>
+              <input
+                type="number"
+                className="modal-input-label-select"
+              />
+            </div>
+            <div className="modal-input-container center-hoangkui center-center-hoangkui">
+              <label className="modal-input-label" htmlFor="size">
+                Hình ảnh
+              </label>
+              <img src={img} alt="" className="modal-input-display-img" />
+              <input type="file" onChange={handlePreview} />
+            </div>
+          </div>
+          <button className="modal-button-save">Lưu</button>
+    {/* close button */}
+      <button 
+      onClick={closeModal}
+      className="modal-button-close"><i class="fas fa-times"></i>Tắt</button>
 
+        </div>
+      </div>
 
     </>
   );
 };
 
-export default AddProduct;
+export default ProductEdit;

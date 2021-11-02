@@ -15,11 +15,14 @@ const ListProducts = () => {
     <>
       <div className="listProducts-heading">
         <h3 className="listProducts-heading-title">Danh sách sản phẩm</h3>
+        <div className="listProducts-heading-wrap-search">
         <input
           type="text"
           className="listProducts-heading-search"
           placeholder="Tìm kiếm sản phẩm và thương hiệu"
         />
+        <i class="fas fa-search"></i>
+        </div>
         <button className="listProducts-heading-add-product">
           <i className="fas fa-plus"></i>
           Thêm sản phẩm
@@ -55,7 +58,7 @@ const ListProducts = () => {
               <th className="listProducts-content-row-heading">Giá</th>
               <th className="listProducts-content-row-heading"> </th>
               <th className="listProducts-content-row-heading">
-                <button className="listProducts-content-row-remove">Xóa</button>
+                <button className="listProducts-content-row-remove"><i class="fas fa-trash"></i> Xóa</button>
               </th>
             </tr>
             {/* <Router>

@@ -5,10 +5,10 @@ const SizeProduct = () => {
     "https://product.hstatic.net/1000035031/product/vay-dam-cong-so-thoi-trang-eden-dang-chu-a-co-tim-tay-phong-d405__6__9a4811529e834206b25da08ec496995f_master.jpg"
   );
     const closeModal=()=>{
-        document.querySelector(".modal-hoangkui").style.display="none";
+        document.querySelector(".modal-hoangkui-edit").style.display="none";
     }
   const openModal = () => {
-    var modal = document.querySelector(".modal-hoangkui");
+    var modal = document.querySelector(".modal-hoangkui-edit");
     modal.style.display = "block";
     window.onclick = function (e) {
       if (e.target === modal) {
@@ -29,6 +29,7 @@ const SizeProduct = () => {
   return (
     <>
       <tr className="listProducts-content-row-size">
+        
         <td>1</td>
         <td>L</td>
         <td>Đỏ</td>
@@ -46,8 +47,9 @@ const SizeProduct = () => {
           </button>
         </td>
         {/* <td><button className=" button-hoangkui button-hoangkui-s"><i class="fas fa-trash"></i>Xóa</button></td> */}
-      </tr>
-      <div className="modal-hoangkui">
+
+        {/* modal edit */}
+        <div className="modal-hoangkui-edit modal-hoangkui">
         <div className="modal-content-hoangkui">
           <h3 className="modal-heading">Chế độ chỉnh sửa và màu sắc</h3>
           <div className="modal-input">
@@ -118,6 +120,9 @@ const SizeProduct = () => {
 
         </div>
       </div>
+      {/* modal add size color */}
+      </tr>
+      
 
     </>
   );
