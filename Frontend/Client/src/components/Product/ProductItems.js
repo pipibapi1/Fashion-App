@@ -1,47 +1,20 @@
 import React,{useState} from 'react'
 import {products} from './Data.js'
-
-const Popup =(props,index) => {
-    return(
-        <section class="product-details">
-        <div class="image-slider" style={{backgroundImage: `url(${props[2]})`}}></div>
-        <div class="details">
-          <h2 class="product-brand">{props[1]}</h2>
-          <p class="product-short-des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores illo voluptate praesentium recusandae architecto culpa excepturi omnis rem eligendi ex natus amet eaque molestias suscipit perspiciatis.</p>
-          <span class="product-price">{props[3]}</span>
-          <span class="product-actual-price">{props[4]}</span>
-          <span class="product-discount">( {props[5]})</span>
-
-          <div class="choose-size">
-            <p class="product_sub_heading">select size</p>
-        
-            <input type="radio" name="size" value="S" checked hidden id="s_size"/>
-            <label for="s_size" class="size_radio_btn">S</label>
-            <input type="radio" name="size" value="M" hidden id="m_size"/>
-            <label for="m_size" class="size_radio_btn">M</label>
-            <input type="radio" name="size" value="XL" hidden id="xl_size"/>
-            <label for="xl_size" class="size_radio_btn">XL</label>
-            <input type="radio" name="size" value="XXL" hidden id="xxl_size"/>
-            <label for="xxl_size" class="size_radio_btn">XXL</label>
-          </div>
-
-          <button class="btn cart-btn">add to cart</button>
-        </div>
-    </section>
-    )
-}
+import Popup from './Popup.js'
 
 function ProductItems() {
+    var index = Array.from(Array({products}.length).keys())
+    const [Popple,setPopple] = useState(-1);
     return (
         <div className="box-container">
-            {products.map(function(props){
+            {products.map(function(props,index){
                 return(
                     <div className="box" data-item="featured">
                         <div className="icons">
                             <a href="#" className="fas fa-shopping-cart"></a>
                             <a href="#" className="fas fa-heart"></a>
                             <a href="#" className="fas fa-search"></a>
-                            <a href="#" className="fas fa-eye"></a>
+                            <a href="#" className="fas fa-eye" onClick={()=>setPopple(index)}></a>
                         </div>
                         <div className="image">
                             <img src={props[2]} alt=""/>
@@ -62,6 +35,7 @@ function ProductItems() {
                                 <span>{props[6]}</span>
                             </div>
                         </div>
+                        {Popup(props,Popple,index,setPopple)}
                     </div>
                 )
             })}

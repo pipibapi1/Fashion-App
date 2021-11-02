@@ -1332,12 +1332,19 @@ section {
 }
 
 .product-details {
+  font-size: 1.2rem;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
   border: 1px solid #383838;
   border-radius: 20px;
   display: block;
-  margin: 2rem auto;
+  margin: 5% 20%;
   max-width: 1600px;
-  width: 100%;
+  width: 60%;
+  height: 80%;
   padding: 6rem 6vw;
   display: flex;
   justify-content: space-between;
@@ -1346,15 +1353,14 @@ section {
   width: 500px;
   height: 500px;
   position: relative;
-  background-image: url(https://images.pexels.com/photos/6209966/pexels-photo-6209966.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
-  background-size: cover;
+  margin-right:3rem;
 }
 .product-details .details {
   width: 50%;
 }
 .product-details .details .product-brand {
   text-transform: capitalize;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 .product-details .details .product-short-des {
@@ -1365,22 +1371,28 @@ section {
   color: #4a4a4a;
 }
 .product-details .details .product-price {
-  font-weight: 700;
-  font-size: 3rem;
+   height:30px;
+  line-height: 30px;
+  font-size: 2rem;
 }
 .product-details .details .product-actual-price {
-  font-size: 3rem;
+  height:30px;
+  line-height: 30px;
+  font-size: 2rem;
   opacity: 0.5;
   text-decoration: line-through;
   margin: 0 20px;
   font-weight: 300;
 }
 .product-details .details .product-discount {
+  height:30px;
+  line-height: 30px;
   color: #ff7d7d;
-  font-size: 20px;
 }
 .product-details .details .product_sub_heading {
-  font-size: 3rem;
+  height:30px;
+  line-height: 30px;
+  font-size: 2rem;
   text-transform: uppercase;
   margin: 40px 0 10px;
   font-weight: 300;
