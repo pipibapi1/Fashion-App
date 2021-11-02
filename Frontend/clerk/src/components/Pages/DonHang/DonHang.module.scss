@@ -1,0 +1,42 @@
+.DonHang{
+    position :absolute;
+    top:0;
+    right:0;
+    bottom :0;
+    width:87vw;
+}
+.label{
+    position: absolute;
+height: 44px;
+left: 50px;
+right: 33px;
+top: 30px;
+
+
+font-family: Mulish;
+font-style: normal;
+font-weight: bold;
+font-size: 30px;
+line-height: 38px;
+/* identical to box height */
+
+letter-spacing: 0.3px;
+
+color: #54B6E0;
+}
+
+.name{
+    position: absolute;
+height: 44px;
+left: 1125px;
+right: 33px;
+top: 30px;
+}
+.ava{
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    top: 20px;
+    left: 1250px;
+
+}

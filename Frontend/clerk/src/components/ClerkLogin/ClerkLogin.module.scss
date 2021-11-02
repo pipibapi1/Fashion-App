@@ -1,0 +1,176 @@
+.Logo{
+    position: absolute;
+width: 48px;
+height: 48px;
+left: calc(50% - 48px/2);
+top: 40px;
+}
+.NhanVien{
+    position: absolute;
+height: 24px;
+left: 32px;
+right: 32px;
+top: 100px;
+
+/* Bold 19 (0.4 px) */
+
+font-family: Mulish;
+font-style: normal;
+font-weight: bold;
+font-size: 19px;
+line-height: 24px;
+/* identical to box height */
+
+text-align: center;
+letter-spacing: 0.4px;
+
+/* sidebar / gray */
+
+color: #A4A6B3;
+
+opacity: 0.7;
+}
+
+.DangNhap{
+    position: absolute;
+height: 30px;
+left: 32px;
+right: 32px;
+top: 156px;
+
+/* Bold 24 (0.3 px) */
+
+font-family: Mulish;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 30px;
+text-align: center;
+letter-spacing: 0.3px;
+
+/* grayscale / black */
+
+color: #252733;
+}
+
+.HuongDan{
+    position: absolute;
+height: 20px;
+left: 32px;
+right: 32px;
+top: 198px;
+
+/* Reg 14 (0.3 px) */
+
+font-family: Mulish;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 20px;
+/* identical to box height, or 143% */
+
+text-align: center;
+letter-spacing: 0.3px;
+
+/* grayscale / gray */
+
+color: #9FA2B4;
+
+}
+
+.username{
+    
+position: absolute;
+height: 64px;
+left: 32px;
+right: 32px;
+top: 266px;
+    
+  
+}
+
+.usernamelabel{
+   
+    
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    
+    /* grayscale / gray */
+    
+    color: #9FA2B4;
+}
+
+.usernametext{
+    background: #FCFDFE;
+    /* grayscale / gray lightest */
+    
+    border: 1px solid #F0F1F7;
+    box-sizing: border-box;
+    border-radius: 8px;
+    width: 95vw;
+    height: 2.5vw;
+    color: #4B506D;
+}
+
+
+.password{
+    position: absolute;
+height: 64px;
+left: 32px;
+right: 32px;
+top: 354px;
+
+    
+    /* Bold 12 (0.3 px, CAPS) */
+    
+    
+}
+.passwordlabel{
+   
+font-family: Mulish;
+font-style: normal;
+font-weight: bold;
+font-size: 12px;
+line-height: 15px;
+letter-spacing: 0.3px;
+text-transform: uppercase;
+
+/* grayscale / gray */
+
+color: #9FA2B4;
+}
+
+.passwordtext{
+
+    background: #FCFDFE;
+    /* grayscale / gray lightest */
+    
+    border: 1px solid #F0F1F7;
+    box-sizing: border-box;
+    border-radius: 8px;
+    width: 95vw;
+    height: 2.5vw;
+    color: #4B506D;
+}
+
+.LoginButton{
+    position: absolute;
+height: 48px;
+left: 32px;
+right: 32px;
+top: 442px;
+width: 95vw;
+color: white;
+background-color: #3751FF;
+}
+
+.unhideButton{
+    position: absolute;
+    right: 32px;
+    top: 27px;
+}
