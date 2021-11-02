@@ -1,52 +1,40 @@
-import React, { useState, useEffect } from "react";
-// import "./index.css"
-const SizeProduct = () => {
-  const [img, setImg] = useState(
-    "https://product.hstatic.net/1000035031/product/vay-dam-cong-so-thoi-trang-eden-dang-chu-a-co-tim-tay-phong-d405__6__9a4811529e834206b25da08ec496995f_master.jpg"
-  );
-    const closeModal=()=>{
-        document.querySelector(".modal-hoangkui").style.display="none";
-    }
-  const openModal = () => {
-    var modal = document.querySelector(".modal-hoangkui");
-    modal.style.display = "block";
-    window.onclick = function (e) {
-      if (e.target === modal) {
-        modal.style.display = "none";
-      }
-    };
-  };
-  useEffect(() => {
-    return () => {
-      URL.revokeObjectURL(img);
-    };
-  }, [img]);
-  const handlePreview = (e) => {
-    const file = e.target.files[0];
-    file.preview = URL.createObjectURL(file);
-    setImg(file.preview);
-  };
-  return (
-    <>
-      <tr className="listProducts-content-row-size">
-        <td>1</td>
-        <td>L</td>
-        <td>Đỏ</td>
-        <td>10</td>
-        <td>15</td>
-        <td>
-          <button
-            onClick={openModal}
-            className=" button-hoangkui button-hoangkui-s size-edit"
-          >
-            <i class="far fa-edit"></i>Sửa
-          </button>{" "}
-          <button className=" button-hoangkui button-hoangkui-s size-delete">
-            <i class="fas fa-trash"></i>Xóa
-          </button>
-        </td>
-        {/* <td><button className=" button-hoangkui button-hoangkui-s"><i class="fas fa-trash"></i>Xóa</button></td> */}
-      </tr>
+import React,{useState,useEffect} from 'react'
+
+const ModalEdit = ({onShow,setShow}) => {
+    console.log(onShow);
+    // const [showModal, setShowModal] = useState(show)
+    const [img, setImg] = useState(
+        "https://product.hstatic.net/1000035031/product/vay-dam-cong-so-thoi-trang-eden-dang-chu-a-co-tim-tay-phong-d405__6__9a4811529e834206b25da08ec496995f_master.jpg"
+        );
+        const closeModal=()=>{
+            // document.querySelector(".modal-hoangkui").style.display="none";
+            setShow(false)
+        }
+        // const openModal = () => {
+        //     var modal = document.querySelector(".modal-hoangkui");
+        //     modal.style.display = "block";
+        //     window.onclick = function (e) {
+        //         if (e.target === modal) {
+        //             // modal.style.display = "none";
+        //             setShow(false)
+        //         }
+        //     };
+        // };
+        
+        
+      useEffect(() => {
+        return () => {
+          URL.revokeObjectURL(img);
+        };
+      }, [img]);
+      const handlePreview = (e) => {
+        const file = e.target.files[0];
+        file.preview = URL.createObjectURL(file);
+        setImg(file.preview);
+      };
+    return (
+        <>
+            
       <div className="modal-hoangkui">
         <div className="modal-content-hoangkui">
           <h3 className="modal-heading">Chế độ chỉnh sửa và màu sắc</h3>
@@ -118,9 +106,8 @@ const SizeProduct = () => {
 
         </div>
       </div>
+        </>
+    )
+}
 
-    </>
-  );
-};
-
-export default SizeProduct;
+export default ModalEdit

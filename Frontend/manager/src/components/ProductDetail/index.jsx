@@ -1,6 +1,6 @@
 import React from 'react'
 import SizeProduct from './SizeProduct'
-import "./index.css"
+// import "./index.css"
 // import "..//AddProduct/index.css"  
 const AddProduct = () => {
     return (

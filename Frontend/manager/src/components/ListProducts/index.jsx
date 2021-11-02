@@ -1,6 +1,7 @@
 import React, { useCallback } from "react";
 import Product from "./Product";
-import "./index.css";
+// import "./index.css";
+import "../index-hoangkui.css"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 const ListProducts = () => {
@@ -35,7 +36,7 @@ const ListProducts = () => {
       <div className="listProducts-content">
         <table className="listProducts-content-table">
           <tbody>
-            <tr className="listProducts-content-row-heading-table listProducts-content-row">
+            <tr className="listProducts-content-row-heading-table">
               <th className="listProducts-content-row-heading">
                 <input
                   type="checkbox"

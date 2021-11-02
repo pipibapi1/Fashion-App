@@ -1,18 +1,20 @@
 import React from "react";
 import SizeProduct from "./SizeProduct";
-import "./index.css";
+// import "./index.css";
 // import "..//AddProduct/index.css"
 const AddProduct = () => {
+  
+
   return (
     <>
       {/* Heading  */}
       <div className="listProducts-heading">
-        <h3 className="listProducts-heading-title">Chi tiết sản phẩm</h3>
+        <h3 className="listProducts-heading-title">Sửa sản phẩm</h3>
         <div className="listProducts-heading-info">
-          <button className="button-hoangkui">
+          {/* <button className="button-hoangkui">
             <i className="fas fa-edit"></i>
             Sửa sản phẩm này
-          </button>
+          </button> */}
           <h4 className="listProducts-heading-info-name">Nguyễn Trần Hoàng</h4>
           <img
             src="https://scontent.fdad2-1.fna.fbcdn.net/v/t1.6435-9/148352211_1315852945481787_1410223456476714730_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=UTvzr_H01LEAX9fT_8T&_nc_ht=scontent.fdad2-1.fna&oh=ad71bf3dd4b49191be326bd411384505&oe=61A30021"
@@ -38,7 +40,7 @@ const AddProduct = () => {
               className="addProduct-content-text-name-input"
               value="Váy đầm"
               id="nameProduct"
-              name="nameProduct"
+              // name="nameProduct"
 
             />
             <label
@@ -135,9 +137,15 @@ const AddProduct = () => {
               <th className="addProduct-content-size-row-heading">
                 Số lượng còn
               </th>
-              <th className="addProduct-content-size-row-heading"> </th>
+              {/* <th className="addProduct-content-size-row-heading"> </th> */}
+              <th className="addProduct-content-size-row-heading">
+                <button className="button-hoangkui add-button-edit">
+                  <i className="fas fa-plus"></i>
+                  Thêm
+                  </button>
+              </th>
             </tr>
-            <SizeProduct />
+            <SizeProduct  />
             <SizeProduct />
             <SizeProduct />
             <SizeProduct />
@@ -163,7 +171,13 @@ const AddProduct = () => {
             <i className="fas fa-step-forward"></i>
           </div>
         </div>
+        <button className="addProduct-submit">
+            Lưu
+        </button>
       </div>
+{/* modal */}
+
+
     </>
   );
 };
