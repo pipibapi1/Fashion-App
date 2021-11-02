@@ -1,27 +1,55 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import Product from "./Product";
 // import "./index.css";
-import "../index-hoangkui.css"
+import "../index-hoangkui.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 const ListProducts = () => {
-  const history = useHistory();
-  const handleOnClick = useCallback(
-    () => history.push("/product/id"),
-    [history]
-  );
+  const maxPage = 10;
+  const [page, setPage] = useState(1);
+
+  // handle tang giam page
+  useEffect(() => {
+    if (page === 1) {
+      document.querySelector("#backPage").classList.add("button-disable");
+    }
+    if (page === 10) {
+      document.querySelector("#nextPage").classList.add("button-disable");
+    }
+    return () => {
+      if (page === 1) {
+        document.querySelector("#backPage").classList.remove("button-disable");
+      }
+      if (page === 10) {
+        document.querySelector("#nextPage").classList.remove("button-disable");
+      }
+    };
+  }, [page]);
+  const handlePage = (key) => {
+    if (key === "+") {
+      if (page === maxPage) {
+        return;
+      }
+      setPage(page + 1);
+    } else {
+      if (page === 1) {
+        return;
+      }
+      setPage(page - 1);
+    }
+  };
 
   return (
     <>
       <div className="listProducts-heading">
         <h3 className="listProducts-heading-title">Danh sách sản phẩm</h3>
         <div className="listProducts-heading-wrap-search">
-        <input
-          type="text"
-          className="listProducts-heading-search"
-          placeholder="Tìm kiếm sản phẩm và thương hiệu"
-        />
-        <i class="fas fa-search"></i>
+          <input
+            type="text"
+            className="listProducts-heading-search"
+            placeholder="Tìm kiếm sản phẩm và thương hiệu"
+          />
+          <i className="fas fa-search"></i>
         </div>
         <button className="listProducts-heading-add-product">
           <i className="fas fa-plus"></i>
@@ -58,14 +86,16 @@ const ListProducts = () => {
               <th className="listProducts-content-row-heading">Giá</th>
               <th className="listProducts-content-row-heading"> </th>
               <th className="listProducts-content-row-heading">
-                <button className="listProducts-content-row-remove"><i class="fas fa-trash"></i> Xóa</button>
+                <button className="listProducts-content-row-remove">
+                  <i className="fas fa-trash"></i> Xóa
+                </button>
               </th>
             </tr>
             {/* <Router>
 
           <Link to="/product/id">:D</Link>
           </Router> */}
-            <Product/>
+            <Product />
             <Product />
             <Product />
             <Product />
@@ -83,9 +113,21 @@ const ListProducts = () => {
           </tbody>
         </table>
         <div className="listProducts-page">
-          <i className="fas fa-step-backward"></i>
-          1/10
-          <i className="fas fa-step-forward"></i>
+          <button className="page-button">
+            <i
+              id="backPage"
+              className="fas fa-step-backward"
+              onClick={() => handlePage("-")}
+            ></i>
+          </button>
+          {page}/{maxPage}
+          <button className="page-button">
+            <i
+              id="nextPage"
+              onClick={() => handlePage("+")}
+              className="fas fa-step-forward"
+            ></i>
+          </button>
         </div>
       </div>
     </>

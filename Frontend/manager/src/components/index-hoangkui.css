@@ -542,3 +542,16 @@ margin:16px 40px 16px 0px;
 .admin-button:hover{
   opacity: 0.9;
 }
+.button-disable{
+  cursor: default;
+  opacity: 0.8;
+  color:#ccc;
+}
+.button-disable:hover{
+  color: #ccc !important;;
+}
+.page-button{
+  outline: none;
+  border: none;
+  background-color: #fff;
+}

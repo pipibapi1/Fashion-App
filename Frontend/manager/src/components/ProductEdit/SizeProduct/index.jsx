@@ -40,10 +40,10 @@ const SizeProduct = () => {
             onClick={openModal}
             className=" button-hoangkui button-hoangkui-s size-edit"
           >
-            <i class="far fa-edit"></i>Sửa
+            <i className="far fa-edit"></i>Sửa
           </button>{" "}
           <button className=" button-hoangkui button-hoangkui-s size-delete">
-            <i class="fas fa-trash"></i>Xóa
+            <i className="fas fa-trash"></i>Xóa
           </button>
         </td>
         {/* <td><button className=" button-hoangkui button-hoangkui-s"><i class="fas fa-trash"></i>Xóa</button></td> */}
@@ -116,7 +116,7 @@ const SizeProduct = () => {
     {/* close button */}
       <button 
       onClick={closeModal}
-      className="modal-button-close"><i class="fas fa-times"></i>Tắt</button>
+      className="modal-button-close"><i className="fas fa-times"></i>Tắt</button>
 
         </div>
       </div>

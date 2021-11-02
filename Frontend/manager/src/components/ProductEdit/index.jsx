@@ -262,11 +262,11 @@ const ProductEdit = () => {
               <input type="file" onChange={handlePreview} />
             </div>
           </div>
-          <button className="modal-button-save">Lưu</button>
+          <button className="modal-button-save">Thêm</button>
     {/* close button */}
       <button 
       onClick={closeModal}
-      className="modal-button-close"><i class="fas fa-times"></i>Tắt</button>
+      className="modal-button-close"><i className="fas fa-times"></i>Tắt</button>
 
         </div>
       </div>

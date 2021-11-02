@@ -17,10 +17,10 @@ const Product = () => {
         <td className="listProducts-content-row-item">15</td>
         <td className="listProducts-content-row-item">1000</td>
         <td className="listProducts-content-row-item">
-          <button className="listProducts-content-row-edit"><i class="far fa-edit"></i>Sửa</button>
+          <button className="listProducts-content-row-edit"><i className="far fa-edit"></i>Sửa</button>
         </td>
         <td className="listProducts-content-row-item">
-          <button className="listProducts-content-row-remove"> <i class="fas fa-trash"></i>Xóa</button>
+          <button className="listProducts-content-row-remove"> <i className="fas fa-trash"></i>Xóa</button>
         </td>
       
       </tr>
