@@ -47,7 +47,7 @@ button{
 
 .react-tabs {
   display: flex;
-  width: 99.8%;
+  width: 100%;
   /* hoangkui sua height */
   height: 100%; 
   /* border: 1px solid #3c3e43; */

@@ -1,8 +1,10 @@
 import React from 'react'
 import SizeProduct from './SizeProduct'
+import Products from "../../Products"
 // import "./index.css"
 // import "..//AddProduct/index.css"  
 const AddProduct = () => {
+  // const {name,brand,remain,sale,price,where,}
     return (
         <>
         {/* Heading  */}
@@ -32,14 +34,14 @@ const AddProduct = () => {
                     Tên sản phẩm
                 </label>
                     <input type="text" className="addProduct-content-text-name-input" 
-                    value="Váy đầm"
+                    value={Products[0].name}
                     disabled
                     id="nameProduct"/>
                 <label htmlFor="brandProduct" className="addProduct-content-text-name-label">
                     Tên thương hiệu
                 </label>
                     <input type="text" className="addProduct-content-text-name-input"  
-                    value="Lunvuituoi"
+                    value={Products[0].brand}
                     disabled
                     id="brandProduct"/>
             </div>
@@ -48,20 +50,7 @@ const AddProduct = () => {
                     Mô tả
             </label>
                     <textarea 
-                    value="Đầm voan hoa dáng tầng chất liệu lụa voan Hàn, form rộng, dáng dài nhẹ nhàng xinh vô cùng
-                    ✔️ Dài : 110cm, Ngực dưới 102cm
-                    ✔️Chất liệu : Voan lụa có lót
-                    ✔️ Freesize, Phom oversize -  bầu bí mặc thoái mái luôn ạ
-                    
-                    🛑  HƯỚNG DẪN MUA HÀNG
-                    ✔️ Các bạn đặt đúng màu, mẫu mình thích, không đặt hàng qua GHI CHÚ. Nếu lưu ý đặc biệt hãy inbox cho shop, chúng mình luôn sẵn sàng hỗ trợ bạn. 
-                    ✔️ Hãy sử dụng mã miễn phí vận chuyển nếu có phần thanh toán nhé.
-                    ✔️ Thời gian giao cho đơn vị vận chuyển trung bình là 1 ngày. 
-                    ✔️ Vận chuyển là của shopee nên nếu có vấn đề bạn hãy liên lạc hotline của đơn vị vận chuyển tương ứng nhé 
-                    ✔️ Khách sỉ, vui lòng inbox cho shop.
-                    
-                    HOTLINE : 0987 888 578
-                    Địa Chỉ: 111 Ô Chợ Dừa, Đống Đa , Hà Nội."
+                    value={Products[0].description}
                     disabled
                     className="addProduct-content-text-des-input" id="desProduct" />
             </div>
@@ -70,14 +59,14 @@ const AddProduct = () => {
                     Nơi sản xuất
                 </label>
                     <input type="text" className="addProduct-content-text-bot-input" 
-                    value="Trung quốc"
+                    value={Products[0].where}
                     disabled
                     id="manuProduct"/>
                 <label htmlFor="numberProduct" className="addProduct-content-text-bot-number-label">
                     Giá
                 </label>
                     <input type="number" className="addProduct-content-text-bot-input"
-                    value="14000"
+                    value={Products[0].price}
                     disabled
                     id="numberProduct" />
             </div>
@@ -86,7 +75,7 @@ const AddProduct = () => {
                     Lượt truy cập
                 </label>
                     <input type="text" className="addProduct-content-text-bot-input" 
-                    value="2500"
+                    value={Products[0].view}
                     disabled
                     id="manuProduct"/>
                 
@@ -95,8 +84,23 @@ const AddProduct = () => {
 
           {/* Input size */}
           <div className="addProduct-content-size">
+            
+
+
+          <div className="table-heading">
+            <p className="table-heading-stt">STT</p>
+            <p className="table-heading-size">Size</p>
+            <p className="table-heading-color">Màu sắc</p>
+            <p className="table-heading-sale">Số lượng đã bán</p>
+            <p className="table-heading-remain">Số lượng còn</p>
+          </div>
+          <div className="wrraper-table">
+
           <table className="addProduct-content-size-table">
-          <tr className="addProduct-content-size-row-heading-table">
+
+            <tbody>
+
+          {/* <tr className="addProduct-content-size-row-heading-table">
             <th className="addProduct-content-size-row-heading">STT</th>
             <th className="addProduct-content-size-row-heading">Size</th>
             <th className="addProduct-content-size-row-heading">Màu sắc</th>
@@ -106,21 +110,28 @@ const AddProduct = () => {
             </th>
             <th className="addProduct-content-size-row-heading"> </th>
             
-          </tr>
-          <SizeProduct/>
-          <SizeProduct/>
-          <SizeProduct/>
-          <SizeProduct/>
-          <SizeProduct/>
-          <SizeProduct/>
-          <SizeProduct/>
-          <SizeProduct/>
-          <SizeProduct/>
-          <SizeProduct/>
+          </tr> */}
+        
+          {Products[0].sizes.map((size,index)=>{
+            return <SizeProduct  key={index} index={index} size={size}/>
+          })}
+            </tbody>
+          
           
 
           
         </table>
+          </div>
+
+
+
+
+        
+        <div className="total-detail">
+        <h4 className="total-detail-name">Tổng</h4>
+        <p className="total-detail-sale">{Products[0].sale}</p>
+        <p className="total-detail-remain">{Products[0].remain}</p>
+        </div>
         <div className="addProduct-content-size-display">
           <p className="addProduct-content-size-display-text">
 

@@ -1,9 +1,9 @@
 import React, { useCallback, useState, useEffect } from "react";
 import Product from "./Product";
-// import "./index.css";
+import Products from "../../Products"
 import "../index-hoangkui.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 const ListProducts = () => {
   const maxPage = 10;
   const [page, setPage] = useState(1);
@@ -18,10 +18,11 @@ const ListProducts = () => {
     }
     return () => {
       if (page === 1) {
-        document.querySelector("#backPage").classList.remove("button-disable");
+        // console.log(document.querySelector("#backPage"));
+        document.querySelector("#backPage") && document.querySelector("#backPage").classList.remove("button-disable");
       }
       if (page === 10) {
-        document.querySelector("#nextPage").classList.remove("button-disable");
+        document.querySelector("#nextPage") && document.querySelector("#nextPage").classList.remove("button-disable");
       }
     };
   }, [page]);
@@ -95,6 +96,11 @@ const ListProducts = () => {
 
           <Link to="/product/id">:D</Link>
           </Router> */}
+
+          {Products.map((product,index)=>{
+            return <Product index={index+1} product={product}/>
+})}
+            {/* <Product />
             <Product />
             <Product />
             <Product />
@@ -108,8 +114,7 @@ const ListProducts = () => {
             <Product />
             <Product />
             <Product />
-            <Product />
-            <Product />
+            <Product /> */}
           </tbody>
         </table>
         <div className="listProducts-page">

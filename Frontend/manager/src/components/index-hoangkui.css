@@ -69,7 +69,12 @@ textarea {
 .addProduct-content-size {
   flex: 1;
 }
+.wrraper-table{
+  overflow: auto;
+  max-height: 500px;
+  /* width: 100%; */
 
+}
 .addProduct-content-size-heading {
   border-radius: 4px;
 }
@@ -78,16 +83,26 @@ textarea {
 .addProduct-content-size-table {
   border-collapse: collapse;
   width: 100%;
-  overflow: hidden;
   border-radius: 4px;
   max-height: 340px;
   text-align: center;
-  /* max-height: 400px; */
+  /* display: inline-block; */
+  overflow: auto;
+  margin-top:  20px;
+  max-height: 400px;
 }
+
 .addProduct-content-size-row-heading-table {
   background-color: #00ff38;
   height: 36px;
 }
+/* moi them */
+/* .addProduct-content-size-row-heading div{
+  margin-top: -20px; 
+  position: absolute;
+} */
+
+/*  */
 .addProduct-content-size-row-add {
   border-radius: 4px;
   border: solid #ccc 1px;
@@ -285,8 +300,9 @@ tr:nth-child(even) {
 
 /* product detail */
 .listProducts-content-row-size {
-  /* cursor: pointer; */
+  cursor: pointer;
   height: 40px;
+  margin-right: -2px;
 }
 
 .addProduct-content-text-bot-view {
@@ -555,3 +571,55 @@ margin:16px 40px 16px 0px;
   border: none;
   background-color: #fff;
 }
+.total-detail{
+  /* margin-top: 16px; */
+  /* width: 100%; */
+  background-color: rgb(108, 164, 209);
+  line-height: 0;
+  box-sizing: border-box;
+  padding: 0 30px 0 11px; 
+  border-radius: 6px;
+  margin-right: 2px;
+  color:white;
+  margin-top: 1px;
+}
+.total-detail-name{
+  font-size: 20px;
+  display: inline-block;
+}
+.total-detail-sale{
+  font-size: 20px;
+  margin-left: 271px;
+  display: inline-block;
+}
+.total-detail-remain{
+  font-size: 20px;
+  display: inline-block;
+  margin-left: 182px;
+}
+/* tuy co ung bien */
+.table-heading{
+  background-color: #00ff38;
+}
+.table-heading p{
+  display: inline-block;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 0;
+}
+.table-heading-stt{
+  margin-left: 11px;
+}
+.table-heading-size{
+  margin-left: 18px;
+}
+.table-heading-color{
+  margin-left: 18px;
+}
+.table-heading-sale{
+  margin-left: 72px;
+}
+.table-heading-remain{
+  margin-left: 80px;
+}
+

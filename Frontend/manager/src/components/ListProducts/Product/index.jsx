@@ -1,6 +1,7 @@
 import React from "react";
 // import "./index.css";
-const Product = () => {
+const Product = ({index,product}) => {
+  const {name,brand,remain,sale,price}=product
   return (
     <>
       <tr className="listProducts-content-row">
@@ -10,12 +11,12 @@ const Product = () => {
             className="listProducts-content-row-checkbox"
           />
         </td>
-        <td className="listProducts-content-row-item">1</td>
-        <td className="listProducts-content-row-item">Váy đầm</td>
-        <td className="listProducts-content-row-item">Lunvuituoi</td>
-        <td className="listProducts-content-row-item">10</td>
-        <td className="listProducts-content-row-item">15</td>
-        <td className="listProducts-content-row-item">1000</td>
+        <td className="listProducts-content-row-item">{index}</td>
+        <td className="listProducts-content-row-item">{name}</td>
+        <td className="listProducts-content-row-item">{brand}</td>
+        <td className="listProducts-content-row-item">{remain}</td>
+        <td className="listProducts-content-row-item">{sale}</td>
+        <td className="listProducts-content-row-item">{price}</td>
         <td className="listProducts-content-row-item">
           <button className="listProducts-content-row-edit"><i className="far fa-edit"></i>Sửa</button>
         </td>
