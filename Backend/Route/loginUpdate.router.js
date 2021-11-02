@@ -9,7 +9,7 @@ let login = require('../Models/login.model');
 
 loginUpdateRoutes.post("/", async(req, res) => {
     try {
-        const {email, address, phoneNumber, cccd, birthday, id} = req.body;
+        const {email, address, phoneNumber, cccd, birthday, id, avatar} = req.body;
         
         const query = {id:id};
         if(req.files === null)
@@ -38,15 +38,9 @@ loginUpdateRoutes.post("/", async(req, res) => {
         }
         else
         {
-            const file = req.files.file;
-            file.mv(`${__dirname}/avatarUpload${file.name}`, err => {
-                if(err){
-                    console.error(err);
-                    return res.status(500).send(err);
-                }
-            });
-
-            const newClerk = await login.findOneAndUpdate(query, {email : email, address : address, phoneNumber : phoneNumber, cccd : cccd, dateOfBirth : birthday, avatar : `${__dirname}/avatarUpload${file.name}`} , {
+            
+            
+            const newClerk = await login.findOneAndUpdate(query, {email : email, address : address, phoneNumber : phoneNumber, cccd : cccd, dateOfBirth : birthday, avatar:avatar} , {
                 new: true
               } );
               const token = jwt.sign({ id: newClerk._id }, config.JWT_SECRET, { expiresIn: '1h' });
