@@ -1371,7 +1371,7 @@ section {
   color: #4a4a4a;
 }
 .product-details .details .product-price {
-   height:30px;
+  height:30px;
   line-height: 30px;
   font-size: 2rem;
 }
@@ -1411,6 +1411,13 @@ section {
   text-transform: uppercase;
   color: #383838;
   cursor: pointer;
+}
+
+.closeIcon{
+  color: #383838;
+  margin-right: 2rem;
+  font-size: large;
+  text-align: right;
 }
 .product-details .details .size_radio_btn:hover {
   background: #383838;

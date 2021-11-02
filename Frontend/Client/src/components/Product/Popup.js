@@ -1,6 +1,9 @@
 export default function Popup(props,num,trigger,setTrigger){
     return( (trigger === num )?
         <section class="product-details">
+        <span class="closeIcon" id="closeIcon" onClick={()=>setTrigger(-1)}>
+            <i class="fas fa-times"></i>
+        </span>
         <img class="image-slider" src={props[2]}></img>
         <div class="details">
           <h2 class="product-brand">{props[1]}</h2>
@@ -21,7 +24,6 @@ export default function Popup(props,num,trigger,setTrigger){
             <input type="radio" name="size" value="XXL" hidden id="xxl_size"/>
             <label for="xxl_size" class="size_radio_btn">XXL</label>
           </div>
-          <p onClick={()=>setTrigger(-1)}> exit</p>
           <button class="btn cart-btn">add to cart</button>
         </div>
     </section>:""

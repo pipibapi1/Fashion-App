@@ -27,7 +27,7 @@ function Icons() {
           </div>
             )})}
           <h3 className="total"> TOTAL : <span>180.000VNĐ</span></h3>
-          <a href="#" style={styleObj} className="header__menu-link btn btn--border btn--rounded buttom"> Checkout Card</a>
+          <a href="/payment" style={styleObj} className="header__menu-link btn btn--border btn--rounded buttom"> Checkout Card</a>
         </div>
         <form action="" class="login-form">
           <h3>Login Form</h3>

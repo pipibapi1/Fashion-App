@@ -14,7 +14,7 @@ function ProductItems() {
                             <a href="#" className="fas fa-shopping-cart"></a>
                             <a href="#" className="fas fa-heart"></a>
                             <a href="#" className="fas fa-search"></a>
-                            <a href="#" className="fas fa-eye" onClick={()=>setPopple(index)}></a>
+                            <a href="#products" className="fas fa-eye" onClick={()=>setPopple(index)}></a>
                         </div>
                         <div className="image">
                             <img src={props[2]} alt=""/>
