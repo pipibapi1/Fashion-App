@@ -30,79 +30,6 @@ const Products=[
     "img":"https://product.hstatic.net/1000035031/product/vay-dam-cong-so-thoi-trang-eden-dang-chu-a-co-tim-tay-phong-d405__6__9a4811529e834206b25da08ec496995f_master.jpg"
 },
 {
-    "size":"L",
-    "color":"Đỏ",
-    "remain":4,
-    "sale":3,
-    "img":"https://product.hstatic.net/1000035031/product/vay-dam-cong-so-thoi-trang-eden-dang-chu-a-co-tim-tay-phong-d405__6__9a4811529e834206b25da08ec496995f_master.jpg"
-},{
-    "size":"L",
-    "color":"Đỏ",
-    "remain":4,
-    "sale":3,
-    "img":"https://product.hstatic.net/1000035031/product/vay-dam-cong-so-thoi-trang-eden-dang-chu-a-co-tim-tay-phong-d405__6__9a4811529e834206b25da08ec496995f_master.jpg"
-},{
-    "size":"L",
-    "color":"Đỏ",
-    "remain":4,
-    "sale":3,
-    "img":"https://product.hstatic.net/1000035031/product/vay-dam-cong-so-thoi-trang-eden-dang-chu-a-co-tim-tay-phong-d405__6__9a4811529e834206b25da08ec496995f_master.jpg"
-},{
-    "size":"L",
-    "color":"Đỏ",
-    "remain":4,
-    "sale":3,
-    "img":"https://product.hstatic.net/1000035031/product/vay-dam-cong-so-thoi-trang-eden-dang-chu-a-co-tim-tay-phong-d405__6__9a4811529e834206b25da08ec496995f_master.jpg"
-},{
-    "size":"L",
-    "color":"Đỏ",
-    "remain":4,
-    "sale":3,
-    "img":"https://product.hstatic.net/1000035031/product/vay-dam-cong-so-thoi-trang-eden-dang-chu-a-co-tim-tay-phong-d405__6__9a4811529e834206b25da08ec496995f_master.jpg"
-},{
-    "size":"L",
-    "color":"Đỏ",
-    "remain":4,
-    "sale":3,
-    "img":"https://product.hstatic.net/1000035031/product/vay-dam-cong-so-thoi-trang-eden-dang-chu-a-co-tim-tay-phong-d405__6__9a4811529e834206b25da08ec496995f_master.jpg"
-},{
-    "size":"L",
-    "color":"Đỏ",
-    "remain":4,
-    "sale":3,
-    "img":"https://product.hstatic.net/1000035031/product/vay-dam-cong-so-thoi-trang-eden-dang-chu-a-co-tim-tay-phong-d405__6__9a4811529e834206b25da08ec496995f_master.jpg"
-},{
-    "size":"L",
-    "color":"Đỏ",
-    "remain":4,
-    "sale":3,
-    "img":"https://product.hstatic.net/1000035031/product/vay-dam-cong-so-thoi-trang-eden-dang-chu-a-co-tim-tay-phong-d405__6__9a4811529e834206b25da08ec496995f_master.jpg"
-},{
-    "size":"L",
-    "color":"Đỏ",
-    "remain":4,
-    "sale":3,
-    "img":"https://product.hstatic.net/1000035031/product/vay-dam-cong-so-thoi-trang-eden-dang-chu-a-co-tim-tay-phong-d405__6__9a4811529e834206b25da08ec496995f_master.jpg"
-},{
-    "size":"L",
-    "color":"Đỏ",
-    "remain":4,
-    "sale":3,
-    "img":"https://product.hstatic.net/1000035031/product/vay-dam-cong-so-thoi-trang-eden-dang-chu-a-co-tim-tay-phong-d405__6__9a4811529e834206b25da08ec496995f_master.jpg"
-},{
-    "size":"L",
-    "color":"Đỏ",
-    "remain":4,
-    "sale":3,
-    "img":"https://product.hstatic.net/1000035031/product/vay-dam-cong-so-thoi-trang-eden-dang-chu-a-co-tim-tay-phong-d405__6__9a4811529e834206b25da08ec496995f_master.jpg"
-},{
-    "size":"L",
-    "color":"Đỏ",
-    "remain":4,
-    "sale":3,
-    "img":"https://product.hstatic.net/1000035031/product/vay-dam-cong-so-thoi-trang-eden-dang-chu-a-co-tim-tay-phong-d405__6__9a4811529e834206b25da08ec496995f_master.jpg"
-},
-{
     "size":"S",
     "color":"Cam",
     "remain":5,
@@ -120,6 +47,48 @@ const Products=[
     "remain":7,
     "sale":9,
     "img":"https://cf.shopee.vn/file/32031dc80956743d43736ba8b58307ef"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://agin.com.vn/images/upload/dam%20dang%20A/dam-dang-a.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://agin.com.vn/images/upload/dam%20dang%20A/dam-dang-a.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://agin.com.vn/images/upload/dam%20dang%20A/dam-dang-a.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://agin.com.vn/images/upload/dam%20dang%20A/dam-dang-a.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://agin.com.vn/images/upload/dam%20dang%20A/dam-dang-a.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://agin.com.vn/images/upload/dam%20dang%20A/dam-dang-a.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://agin.com.vn/images/upload/dam%20dang%20A/dam-dang-a.jpg"
 },{
     "size":"L",
     "color":"Đỏ",

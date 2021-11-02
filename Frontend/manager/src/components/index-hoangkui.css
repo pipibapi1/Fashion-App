@@ -71,7 +71,7 @@ textarea {
 }
 .wrraper-table{
   overflow: auto;
-  max-height: 500px;
+  max-height: 420px;
   /* width: 100%; */
 
 }
@@ -87,9 +87,9 @@ textarea {
   max-height: 340px;
   text-align: center;
   /* display: inline-block; */
-  overflow: auto;
-  margin-top:  20px;
-  max-height: 400px;
+  /* overflow: auto; */
+  /* margin-top:  20px; */
+  max-height: 350px;
 }
 
 .addProduct-content-size-row-heading-table {
@@ -123,9 +123,10 @@ tr:nth-child(even) {
 .addProduct-content-size-display {
   margin-top: 14px;
   text-align: center;
+  height: 80%;
 }
 .addProduct-content-size-display-img {
-  width: 100px;
+  width: auto;
   height: auto;
   object-fit: cover;
 }
@@ -330,8 +331,8 @@ tr:nth-child(even) {
   margin-right: 22px;
 }
 .addProduct-content-size-display-img-size {
-  width: 150px;
-  height: auto;
+  width: auto;
+  height: 180px;
   object-fit: cover;
 }
 /* button gan avatar */

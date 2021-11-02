@@ -138,13 +138,14 @@ const AddProduct = () => {
           Hình ảnh: 
           </p>
           <img src="https://product.hstatic.net/1000035031/product/vay-dam-cong-so-thoi-trang-eden-dang-chu-a-co-tim-tay-phong-d405__6__9a4811529e834206b25da08ec496995f_master.jpg" alt="Chưa thêm size" className="addProduct-content-size-display-img-size" />
+
         </div>
 
-        <div className="listProducts-page">
+        {/* <div className="listProducts-page">
           <i className="fas fa-step-backward"></i>
           1/10
           <i className="fas fa-step-forward"></i>
-        </div>
+        </div> */}
           </div>
 
       </div>
