@@ -28,15 +28,16 @@ color: #54B6E0;
 .name{
     position: absolute;
 height: 44px;
-left: 1125px;
-right: 33px;
+right: 90px;
 top: 30px;
 }
 .ava{
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
     position: absolute;
     top: 20px;
-    left: 1250px;
+    left: 1260px;
+    border-radius: 50%;
+  overflow: hidden;
 
 }

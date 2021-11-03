@@ -6,11 +6,12 @@ import swal from 'sweetalert';
 import DatePicker from  'react-datepicker';
 
 
+
     const name = localStorage.getItem('name');
     const role = localStorage.getItem('role');
     const ID = localStorage.getItem('id');
 
-
+    
 
     export default class TTCN extends Component {
     
@@ -22,6 +23,7 @@ import DatePicker from  'react-datepicker';
             this.onChangeCccd = this.onChangeCccd.bind(this);
             this.onChangeBirthDay = this.onChangeBirthDay.bind(this);
             this.onChangeAva = this.onChangeAva.bind(this);
+    
             this.onSubmit = this.onSubmit.bind(this);
             this.state = {
                 email: localStorage.getItem('email'),
@@ -59,16 +61,32 @@ import DatePicker from  'react-datepicker';
                 birthday: date
             });
         }
+       
         onChangeAva(e)
         {
             this.setState({
                 file : e.target.files[0]
             })
+            if(e.target.files[0]){
+                    const fileReader = new FileReader();
+                    fileReader.readAsDataURL(e.target.files[0]);
+    
+                    fileReader.onload = () => {
+                        this.setState({
+                            avatar : fileReader.result
+                        })
+                    };
+                    fileReader.onerror = (error) => {
+                        console.log(error);
+                    }    
+            }
         }
+        
+
         //handle update
         onSubmit = (e) => {
             e.preventDefault();
-
+            
             {/*const update = {
                 email: this.state.email,
                 address: this.state.address,
@@ -78,7 +96,8 @@ import DatePicker from  'react-datepicker';
                 
                 id: ID
             }*/}
-
+          
+            
             const update = new FormData();
             update.append('email', this.state.email);
             update.append('address', this.state.address);
@@ -87,6 +106,7 @@ import DatePicker from  'react-datepicker';
             update.append('birthday',  this.state.birthday);
             update.append('id', ID);
             update.append('file', this.state.file);
+            update.append('avatar', this.state.avatar);
             
             const response = axios.post('http://localhost:3000/update-router', update).then(
                 (res) => {
@@ -184,12 +204,11 @@ import DatePicker from  'react-datepicker';
             <div className={styles.hardfInfo2}>{ID}</div>
 
             <form onSubmit={this.onSubmit}>
-                <div  className={styles.ava}>
-                    <img  src={this.state.avatar} alt="Ava" />
-                    
+                <div >
+                    <img  className={styles.ava} src={this.state.avatar}alt="Ava" />
                 </div>
-                <div className={styles.BigAva}>
-                    <img  src={this.state.avatar} alt="Ava" />
+                <div>
+                    <img className={styles.BigAva}  src={this.state.avatar} alt="Ava" />
                     
                 </div>
                 <div className={styles.submitAva}>

@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+// import TodoList from "./components/TodoList";
+// import Textfield from "@atlaskit/textfield";
+// import Button from "@atlaskit/button";
+
+import TabVertical from "./components/TabVertical";
+import { BrowserRouter as Router, Switch, Route, Link,useParams } from "react-router-dom";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Router>
+            {/* <TodoList />
+            <h3>Danh sach can lam</h3>
+            <Textfield name='add-todo' placeholder="Them viec can lam... " elemAfterInput={
+                <Button>Them</Button>
+            }></Textfield> */}
+
+            <TabVertical />
+            {/* <TabAccount /> */}
+        </Router>
+    );
 }
 
 export default App;
+
+
+
