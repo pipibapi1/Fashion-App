@@ -24,7 +24,9 @@
 .header .icons a:hover, .header .search-form label:hover, .products .box-container .box .icons a:hover, .featured .featured-slider .slide .icons a:hover, .contact .icons-container .icons i:hover {
   -webkit-text-stroke: 0.1rem #eb4d4b;
 }
-
+.products .box-container .box .icons .heart:hover,.products .box-container .box .icons a.active{
+  color:Red;
+}
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -1450,7 +1452,6 @@ section {
     padding: 2rem;
   }
 }
-
 @media (max-width: 768px) {
   #menu-btn {
     display: inline-block;

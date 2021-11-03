@@ -10,6 +10,7 @@ const App = () =>{
         <Route exact path="/" component={Mainpage}/>
         <Route exact path="/searchResult" component={SearchPage}/>
         <Route exact path="/payment" component={PaymentPage}/>
+        <Route exact path="/myorder" component={PaymentPage}/>
     </Router>
      );
      

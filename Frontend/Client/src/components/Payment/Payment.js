@@ -29,9 +29,9 @@ function Payment() {
                 <div class="cart_items_details-bottom">
                     <span class="cart_items_details-price">${props[4]}</span>
                     <div class="controls">
-                        <span class="minusIcon">-</span>
+                        <button class="minusIcon" type="button">-</button>
                         <span class="count" id="count">{props[6]}</span>
-                        <span class="plusIcon">+</span>
+                        <button class="plusIcon"  type="button">+</button>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@ function Payment() {
             <form>
             <input type="text" id="fname" name="fname"  placeholder="Promo code"/>
             </form>
-            <span class="cta">Apply</span>
+            <button class="cta" type="button">Apply</button>
         </div>
     </div>
     <div class="cart_right">
