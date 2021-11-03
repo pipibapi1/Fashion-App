@@ -1,7 +1,9 @@
 import React from "react";
+// import {Link,Route} from "react-router-dom"
 // import "./index.css";
 const Product = ({index,product}) => {
   const {name,brand,remain,sale,price}=product
+  // const ulr="./product/id"
   return (
     <>
       <tr className="listProducts-content-row">
@@ -18,10 +20,12 @@ const Product = ({index,product}) => {
         <td className="listProducts-content-row-item">{sale}</td>
         <td className="listProducts-content-row-item">{price}</td>
         <td className="listProducts-content-row-item">
-          <button className="listProducts-content-row-edit"><i className="far fa-edit"></i>Sửa</button>
+          {/* <button className="listProducts-content-row-edit"><i className="far fa-edit"></i></button> */}
         </td>
         <td className="listProducts-content-row-item">
-          <button className="listProducts-content-row-remove"> <i className="fas fa-trash"></i>Xóa</button>
+        <button className="listProducts-content-row-edit"><i className="far fa-edit">
+          </i></button>
+          <button className="listProducts-content-row-remove"> <i className="fas fa-trash"></i></button>
         </td>
       
       </tr>

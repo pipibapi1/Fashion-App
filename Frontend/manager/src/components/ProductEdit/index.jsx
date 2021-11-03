@@ -1,12 +1,14 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import SizeProduct from "./SizeProduct";
+import Products from "../../Products";
+
 // import "./index.css";
 // import "..//AddProduct/index.css"
 const ProductEdit = () => {
   const [img, setImg] = useState("");
-    const closeModal=()=>{
-        document.querySelector(".modal-hoangkui-add").style.display="none";
-    }
+  const closeModal = () => {
+    document.querySelector(".modal-hoangkui-add").style.display = "none";
+  };
   const openModal = () => {
     var modal = document.querySelector(".modal-hoangkui-add");
     modal.style.display = "block";
@@ -25,6 +27,14 @@ const ProductEdit = () => {
     const file = e.target.files[0];
     file.preview = URL.createObjectURL(file);
     setImg(file.preview);
+  };
+
+  //
+  const [imgSize, setImgSize] = useState(Products[0].sizes[0].img);
+
+  const handleClickSizeProduct = (index) => {
+    console.log(index);
+    setImgSize(Products[0].sizes[index].img);
   };
 
   return (
@@ -60,10 +70,9 @@ const ProductEdit = () => {
             <input
               type="text"
               className="addProduct-content-text-name-input"
-              value="Váy đầm"
+              value={Products[0].name}
               id="nameProduct"
               // name="nameProduct"
-
             />
             <label
               htmlFor="brandProduct"
@@ -74,7 +83,7 @@ const ProductEdit = () => {
             <input
               type="text"
               className="addProduct-content-text-name-input"
-              value="Lunvuituoi"
+              value={Products[0].brand}
               id="brandProduct"
             />
           </div>
@@ -86,20 +95,7 @@ const ProductEdit = () => {
               Mô tả
             </label>
             <textarea
-              value="Đầm voan hoa dáng tầng chất liệu lụa voan Hàn, form rộng, dáng dài nhẹ nhàng xinh vô cùng
-                    ✔️ Dài : 110cm, Ngực dưới 102cm
-                    ✔️Chất liệu : Voan lụa có lót
-                    ✔️ Freesize, Phom oversize -  bầu bí mặc thoái mái luôn ạ
-                    
-                    🛑  HƯỚNG DẪN MUA HÀNG
-                    ✔️ Các bạn đặt đúng màu, mẫu mình thích, không đặt hàng qua GHI CHÚ. Nếu lưu ý đặc biệt hãy inbox cho shop, chúng mình luôn sẵn sàng hỗ trợ bạn. 
-                    ✔️ Hãy sử dụng mã miễn phí vận chuyển nếu có phần thanh toán nhé.
-                    ✔️ Thời gian giao cho đơn vị vận chuyển trung bình là 1 ngày. 
-                    ✔️ Vận chuyển là của shopee nên nếu có vấn đề bạn hãy liên lạc hotline của đơn vị vận chuyển tương ứng nhé 
-                    ✔️ Khách sỉ, vui lòng inbox cho shop.
-                    
-                    HOTLINE : 0987 888 578
-                    Địa Chỉ: 111 Ô Chợ Dừa, Đống Đa , Hà Nội."
+              value={Products[0].description}
               className="addProduct-content-text-des-input"
               id="desProduct"
             />
@@ -114,7 +110,7 @@ const ProductEdit = () => {
             <input
               type="text"
               className="addProduct-content-text-bot-input"
-              value="Trung quốc"
+              value={Products[0].where}
               id="manuProduct"
             />
             <label
@@ -126,7 +122,7 @@ const ProductEdit = () => {
             <input
               type="number"
               className="addProduct-content-text-bot-input"
-              value="14000"
+              value={Products[0].price}
               id="numberProduct"
             />
           </div>
@@ -140,7 +136,7 @@ const ProductEdit = () => {
             <input
               type="text"
               className="addProduct-content-text-bot-input"
-              value="2500"
+              value={Products[0].view}
               id="manuProduct"
             />
           </div>
@@ -148,59 +144,55 @@ const ProductEdit = () => {
 
         {/* Input size */}
         <div className="addProduct-content-size">
-          <table className="addProduct-content-size-table">
-            <tr className="addProduct-content-size-row-heading-table">
-              <th className="addProduct-content-size-row-heading">STT</th>
-              <th className="addProduct-content-size-row-heading">Size</th>
-              <th className="addProduct-content-size-row-heading">Màu sắc</th>
-              <th className="addProduct-content-size-row-heading">
-                Số lượng đã bán
-              </th>
-              <th className="addProduct-content-size-row-heading">
-                Số lượng còn
-              </th>
-              {/* <th className="addProduct-content-size-row-heading"> </th> */}
-              <th className="addProduct-content-size-row-heading">
-                <button
-                onClick={openModal}
-                className="button-hoangkui add-button-edit">
-                  <i className="fas fa-plus"></i>
-                  Thêm
-                  </button>
-              </th>
-            </tr>
-            <SizeProduct  />
-            <SizeProduct />
-            <SizeProduct />
-            <SizeProduct />
-            <SizeProduct />
-            <SizeProduct />
-            <SizeProduct />
-            <SizeProduct />
-            <SizeProduct />
-            <SizeProduct />
-          </table>
+          <div className="table-heading">
+            <p className="table-heading-stt">STT</p>
+            <p className="table-heading-size">Size</p>
+            <p className="table-heading-color table-heading-color-edit">Màu sắc</p>
+            <p className="table-heading-sale">Đã bán</p>
+            <p className="table-heading-remain table-heading-remain-edit">Còn</p>
+            <button
+              onClick={openModal}
+              className="button-hoangkui add-button-edit"
+            >
+              <i className="fas fa-plus"></i>
+              Thêm
+            </button>
+          </div>
+          <div className="wrraper-table">
+            <table className="addProduct-content-size-table">
+              <tbody>
+                {Products[0].sizes.map((size, index) => {
+                  return (
+                    <SizeProduct
+                      onClickSizeProduct={handleClickSizeProduct}
+                      key={index}
+                      index={index}
+                      size={size}
+                    />
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+          <div className="total-detail">
+            <h4 className="total-detail-name">Tổng</h4>
+            <p className="total-detail-sale">{Products[0].sale}</p>
+            <p className="total-detail-remain">{Products[0].remain}</p>
+          </div>
+
           <div className="addProduct-content-size-display">
             <p className="addProduct-content-size-display-text">Hình ảnh:</p>
             <img
-              src="https://product.hstatic.net/1000035031/product/vay-dam-cong-so-thoi-trang-eden-dang-chu-a-co-tim-tay-phong-d405__6__9a4811529e834206b25da08ec496995f_master.jpg"
-              alt="Chưa thêm size"
+              src={imgSize}
+              alt="Lỗi ảnh"
               className="addProduct-content-size-display-img-size"
             />
           </div>
-
-          <div className="listProducts-page">
-            <i className="fas fa-step-backward"></i>
-            1/10
-            <i className="fas fa-step-forward"></i>
-          </div>
         </div>
-        <button className="addProduct-submit">
-            Lưu
-        </button>
+        <button className="addProduct-submit">Lưu</button>
       </div>
-{/* modal */}
-<div className="modal-hoangkui-add modal-hoangkui">
+      {/* modal */}
+      <div className="modal-hoangkui-add modal-hoangkui">
         <div className="modal-content-hoangkui">
           <h3 className="modal-heading">Chế độ thêm size và màu sắc</h3>
           <div className="modal-input">
@@ -249,10 +241,7 @@ const ProductEdit = () => {
               <label className="modal-input-label" htmlFor="size">
                 Số lượng còn
               </label>
-              <input
-                type="number"
-                className="modal-input-label-select"
-              />
+              <input type="number" className="modal-input-label-select" />
             </div>
             <div className="modal-input-container center-hoangkui center-center-hoangkui">
               <label className="modal-input-label" htmlFor="size">
@@ -263,14 +252,12 @@ const ProductEdit = () => {
             </div>
           </div>
           <button className="modal-button-save">Thêm</button>
-    {/* close button */}
-      <button 
-      onClick={closeModal}
-      className="modal-button-close"><i className="fas fa-times"></i>Tắt</button>
-
+          {/* close button */}
+          <button onClick={closeModal} className="modal-button-close">
+            <i className="fas fa-times"></i>Tắt
+          </button>
         </div>
       </div>
-
     </>
   );
 };

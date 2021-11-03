@@ -93,7 +93,8 @@ textarea {
 }
 
 .addProduct-content-size-row-heading-table {
-  background-color: #00ff38;
+  background-color: #6c7ae0;
+  color:white;
   height: 36px;
 }
 /* moi them */
@@ -235,11 +236,11 @@ tr:nth-child(even) {
   height: 40px;
 }
 .listProducts-content-row-heading-table {
-  background-color: #00ff38;
+  background-color: #6c7ae0;
   border-spacing: 0;
   color: #fff;
   /* font-size: 16px; */
-  height: 42px;
+  height: 44px;
   /* border-radius: 53px; */
   /* overflow: hidden; */
 }
@@ -247,7 +248,7 @@ tr:nth-child(even) {
 .listProducts-content-row-remove {
   border-radius: 4px;
   color: #fff;
-  background-color: #ff0808;
+  background-color: #dc3545;
   border: 1px solid #ccc;
   cursor: pointer;
   padding: 4px 8px;
@@ -257,13 +258,13 @@ tr:nth-child(even) {
   background-color: rgb(36, 28, 136);
 }
 .listProducts-content-row-remove i {
-  margin-right: 4px;
+  /* margin-right: 4px; */
 }
 .listProducts-content-row-edit {
   border-radius: 4px;
-  margin-right: -14px;
+  margin-right: 6px;
   color: #fff;
-  background-color: #d38f21;
+  background-color: #28a745;
   border: 1px solid #ccc;
   cursor: pointer;
   padding: 4px 8px;
@@ -272,7 +273,7 @@ tr:nth-child(even) {
   background-color: rgb(71, 199, 211);
 }
 .listProducts-content-row-edit i {
-  margin-right: 4px;
+  /* margin-right: 4px; */
 }
 .listProducts-content-row-checkbox {
   zoom: 1.5;
@@ -303,7 +304,10 @@ tr:nth-child(even) {
 .listProducts-content-row-size {
   cursor: pointer;
   height: 40px;
-  margin-right: -2px;
+  /* margin-right: -2px; */
+}
+.listProducts-content-row-size:hover{
+  background-color: rgb(48, 207, 207);
 }
 
 .addProduct-content-text-bot-view {
@@ -351,22 +355,23 @@ tr:nth-child(even) {
   color: white;
 }
 .button-hoangkui .fas {
-  margin-right: 6px;
+  /* margin-right: 6px; */
 }
 .button-hoangkui .far {
-  margin-right: 6px;
+  /* margin-right: 6px; */
 }
 /* product edit */
 .add-button-edit {
   padding: 4px 8px;
-  background-color: #0074d9;
+  background-color: #8595a3;
+  margin-left: 80px;
 }
 .button-hoangkui-s {
   padding: 4px 8px;
 }
 .size-edit {
   color: white;
-  background-color: #17a2b8;
+  background-color: #28a745;
 }
 .size-edit:hover {
   color: #17a2b8;
@@ -600,7 +605,8 @@ margin:16px 40px 16px 0px;
 }
 /* tuy co ung bien */
 .table-heading{
-  background-color: #00ff38;
+  background-color: #6c7ae0;
+  color:white;
 }
 .table-heading p{
   display: inline-block;
@@ -622,5 +628,11 @@ margin:16px 40px 16px 0px;
 }
 .table-heading-remain{
   margin-left: 80px;
+}
+.table-heading-remain-edit{
+  margin-left: 100px;
+}
+.table-heading-color-edit{
+  margin-left: 22px;
 }
 

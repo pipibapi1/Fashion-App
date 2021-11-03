@@ -5,15 +5,24 @@ import "../index-hoangkui.css";
 // import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 // import { useHistory } from "react-router-dom";
 const ListProducts = () => {
-  const maxPage = 10;
+  const maxItem=15;
+  const [products,setProducts]=useState(Products)
+  const maxPage = Math.ceil(Products.length/maxItem);
   const [page, setPage] = useState(1);
 
   // handle tang giam page
+
+
   useEffect(() => {
+    const newProducts=Products.filter((product,index)=>{
+      return index>=(page-1)*maxItem && index<(page)*maxItem
+    })
+    setProducts(newProducts)
+
     if (page === 1) {
       document.querySelector("#backPage").classList.add("button-disable");
     }
-    if (page === 10) {
+    if (page === maxPage) {
       document.querySelector("#nextPage").classList.add("button-disable");
     }
     return () => {
@@ -21,7 +30,7 @@ const ListProducts = () => {
         // console.log(document.querySelector("#backPage"));
         document.querySelector("#backPage") && document.querySelector("#backPage").classList.remove("button-disable");
       }
-      if (page === 10) {
+      if (page === maxPage) {
         document.querySelector("#nextPage") && document.querySelector("#nextPage").classList.remove("button-disable");
       }
     };
@@ -88,7 +97,7 @@ const ListProducts = () => {
               <th className="listProducts-content-row-heading"> </th>
               <th className="listProducts-content-row-heading">
                 <button className="listProducts-content-row-remove">
-                  <i className="fas fa-trash"></i> Xóa
+                  <i className="fas fa-trash"></i>
                 </button>
               </th>
             </tr>
@@ -97,8 +106,8 @@ const ListProducts = () => {
           <Link to="/product/id">:D</Link>
           </Router> */}
 
-          {Products.map((product,index)=>{
-            return <Product index={index+1} product={product}/>
+          {products.map((product,index)=>{
+            return <Product key={index} index={maxItem*(page-1)+index+1} product={product}/>
 })}
             {/* <Product />
             <Product />

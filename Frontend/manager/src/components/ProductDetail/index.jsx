@@ -1,10 +1,15 @@
-import React from 'react'
+import React ,{useState}from 'react'
 import SizeProduct from './SizeProduct'
 import Products from "../../Products"
 // import "./index.css"
 // import "..//AddProduct/index.css"  
 const AddProduct = () => {
   // const {name,brand,remain,sale,price,where,}
+  const [img,setImg]=useState(Products[0].sizes[0].img)
+  const handleClickSizeProduct=(index)=>{
+    console.log(index);
+    setImg(Products[0].sizes[index].img)
+  }
     return (
         <>
         {/* Heading  */}
@@ -113,7 +118,10 @@ const AddProduct = () => {
           </tr> */}
         
           {Products[0].sizes.map((size,index)=>{
-            return <SizeProduct  key={index} index={index} size={size}/>
+            return <SizeProduct
+            onClickSizeProduct={handleClickSizeProduct}
+            
+            key={index} index={index} size={size}/>
           })}
             </tbody>
           
@@ -137,7 +145,7 @@ const AddProduct = () => {
 
           Hình ảnh: 
           </p>
-          <img src="https://product.hstatic.net/1000035031/product/vay-dam-cong-so-thoi-trang-eden-dang-chu-a-co-tim-tay-phong-d405__6__9a4811529e834206b25da08ec496995f_master.jpg" alt="Chưa thêm size" className="addProduct-content-size-display-img-size" />
+          <img src={img} alt="Chưa thêm size" className="addProduct-content-size-display-img-size" />
 
         </div>
 

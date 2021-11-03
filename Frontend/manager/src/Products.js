@@ -34,7 +34,7 @@ const Products=[
     "color":"Cam",
     "remain":5,
     "sale":8,
-    "img":"https://lh3.googleusercontent.com/proxy/bCS3-ySS5RoM6y_X7AVWVy9ljgUdgQ4bvQKBZv0zUR9oIrmXPHdvO1vqo0w9jYh7o_kJmvLWmmEi5WtoDRnQbsvteua5GO9OH8mcVta41COl6nZ3dVAEHuPArqAviCpVmmSS9ynh"
+    "img":"https://thamdangstore.vn/Content/Images/FileUpload/userfiles/images/shop-ban-dam-ngan-dep.jpg"
 },{
     "size":"M",
     "color":"Đen",
@@ -95,6 +95,1548 @@ const Products=[
     "remain":5,
     "sale":6,
     "img":"https://agin.com.vn/images/upload/dam%20dang%20A/dam-dang-a.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},
+    ]
+},
+{
+    "name":"Quần lửng",
+    "brand":"Lunbuontuoi",
+    "remain":88,
+    "sale":48,
+    "price":3000,
+    "where":"Hàng quốc",
+    "description":`THÔNG TIN SẢN PHẨM:
+    - Tên sản phẩm: Quần Short Nam Nữ, Quần Đùi Unisex ST00
+   - Chất liệu thun Cotton Không xù lông.
+   - Không ra màu, không bai nhão, không chảy xệ.
+   - Không xù lông làm xấu xí bề mặt vải
+   - Vải mát, mịn, đem lại cảm giác mang mát mẻ, thoải mái.
+   - Bo cổ là vải bo dệt.
+   
+   - Size M: 
+   + Rộng: 53cm - Dài: 45cm - Ống quần: 50cm (Dưới 1m60 - 50kg)
+   - Size L:
+   + Rộng: 60cm - Dài: 50cm - Ống quần: 58cm (Dưới 1m75 - 70kg)`,
+   "view":4999,
+    "sizes":[
+{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":8,
+    "sale":7,
+    "img":"https://img.alicdn.com/imgextra/i3/1744656251/TB2jQpSnYplpuFjSspiXXcdfFXa_!!1744656251.jpg_400x400.jpg"
+},
+{
+    "size":"S",
+    "color":"Cam",
+    "remain":3,
+    "sale":6,
+    "img":"https://thoitrangteenthienphuc.vn/upload/hinhthem/kakingo-4-6427.jpg"
+},{
+    "size":"M",
+    "color":"Đen",
+    "remain":7,
+    "sale":9,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
+},{
+    "size":"XL",
+    "color":"Xanh",
+    "remain":7,
+    "sale":9,
+    "img":"https://product.hstatic.net/1000085266/product/p8012-180k__1__b5fd65de1c2a403e988fd48aa5f32ec0_master.jpg"
+},{
+    "size":"L",
+    "color":"Đỏ",
+    "remain":5,
+    "sale":6,
+    "img":"https://armystore.vn/upload/store/2019-10-16/quan-short-lung-nam-tui-hop-xanh-linh-arm-914.jpg"
 },
     ]
 },
