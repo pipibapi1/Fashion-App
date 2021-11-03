@@ -2,7 +2,7 @@ import React, { useCallback, useState, useEffect } from "react";
 import Product from "./Product";
 import Products from "../../Products"
 import "../index-hoangkui.css";
-// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link,useParams } from "react-router-dom";
 // import { useHistory } from "react-router-dom";
 const ListProducts = () => {
   const maxItem=15;
@@ -101,9 +101,9 @@ const ListProducts = () => {
                 </button>
               </th>
             </tr>
+            {/* <Link to="/admin">:D</Link> */}
             {/* <Router>
 
-          <Link to="/product/id">:D</Link>
           </Router> */}
 
           {products.map((product,index)=>{

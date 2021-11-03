@@ -1,14 +1,18 @@
 import React ,{useState}from 'react'
 import SizeProduct from './SizeProduct'
 import Products from "../../Products"
+import LinkButton from '../LinkButton';
+import { BrowserRouter as Router, Switch, Route, Link,useParams } from "react-router-dom";
 // import "./index.css"
 // import "..//AddProduct/index.css"  
-const AddProduct = () => {
+const ProductDetail = () => {
+  let {id}=useParams();
+  console.log(id);
   // const {name,brand,remain,sale,price,where,}
-  const [img,setImg]=useState(Products[0].sizes[0].img)
+  const [img,setImg]=useState(Products[id].sizes[0].img)
   const handleClickSizeProduct=(index)=>{
     console.log(index);
-    setImg(Products[0].sizes[index].img)
+    setImg(Products[id].sizes[index].img)
   }
     return (
         <>
@@ -16,10 +20,12 @@ const AddProduct = () => {
           <div className="listProducts-heading">
         <h3 className="listProducts-heading-title">Chi tiết sản phẩm</h3>
         <div className="listProducts-heading-info">
-        <button className="button-hoangkui">
+        <LinkButton to={`/products/edit/${id}`} className="button-hoangkui"><i className="fas fa-edit"></i>Sửa sản phẩm này</LinkButton>
+
+        {/* <button className="button-hoangkui">
         <i className="fas fa-edit"></i>
           Sửa sản phẩm này
-        </button>
+        </button> */}
           <h4 className="listProducts-heading-info-name">Nguyễn Trần Hoàng</h4>
           <img
             src="https://scontent.fdad2-1.fna.fbcdn.net/v/t1.6435-9/148352211_1315852945481787_1410223456476714730_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=UTvzr_H01LEAX9fT_8T&_nc_ht=scontent.fdad2-1.fna&oh=ad71bf3dd4b49191be326bd411384505&oe=61A30021"
@@ -39,14 +45,14 @@ const AddProduct = () => {
                     Tên sản phẩm
                 </label>
                     <input type="text" className="addProduct-content-text-name-input" 
-                    value={Products[0].name}
+                    value={Products[id].name}
                     disabled
                     id="nameProduct"/>
                 <label htmlFor="brandProduct" className="addProduct-content-text-name-label">
                     Tên thương hiệu
                 </label>
                     <input type="text" className="addProduct-content-text-name-input"  
-                    value={Products[0].brand}
+                    value={Products[id].brand}
                     disabled
                     id="brandProduct"/>
             </div>
@@ -55,7 +61,7 @@ const AddProduct = () => {
                     Mô tả
             </label>
                     <textarea 
-                    value={Products[0].description}
+                    value={Products[id].description}
                     disabled
                     className="addProduct-content-text-des-input" id="desProduct" />
             </div>
@@ -64,14 +70,14 @@ const AddProduct = () => {
                     Nơi sản xuất
                 </label>
                     <input type="text" className="addProduct-content-text-bot-input" 
-                    value={Products[0].where}
+                    value={Products[id].where}
                     disabled
                     id="manuProduct"/>
                 <label htmlFor="numberProduct" className="addProduct-content-text-bot-number-label">
                     Giá
                 </label>
                     <input type="number" className="addProduct-content-text-bot-input"
-                    value={Products[0].price}
+                    value={Products[id].price}
                     disabled
                     id="numberProduct" />
             </div>
@@ -80,7 +86,7 @@ const AddProduct = () => {
                     Lượt truy cập
                 </label>
                     <input type="text" className="addProduct-content-text-bot-input" 
-                    value={Products[0].view}
+                    value={Products[id].view}
                     disabled
                     id="manuProduct"/>
                 
@@ -117,7 +123,7 @@ const AddProduct = () => {
             
           </tr> */}
         
-          {Products[0].sizes.map((size,index)=>{
+          {Products[id].sizes.map((size,index)=>{
             return <SizeProduct
             onClickSizeProduct={handleClickSizeProduct}
             
@@ -137,8 +143,8 @@ const AddProduct = () => {
         
         <div className="total-detail">
         <h4 className="total-detail-name">Tổng</h4>
-        <p className="total-detail-sale">{Products[0].sale}</p>
-        <p className="total-detail-remain">{Products[0].remain}</p>
+        <p className="total-detail-sale">{Products[id].sale}</p>
+        <p className="total-detail-remain">{Products[id].remain}</p>
         </div>
         <div className="addProduct-content-size-display">
           <p className="addProduct-content-size-display-text">
@@ -161,4 +167,4 @@ const AddProduct = () => {
     )
 }
 
-export default AddProduct
+export default ProductDetail

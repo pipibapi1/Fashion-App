@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import SizeProduct from "./SizeProduct";
 import Products from "../../Products";
-
+import { BrowserRouter as Router, Switch, Route, Link,useParams } from "react-router-dom";
 // import "./index.css";
 // import "..//AddProduct/index.css"
 const ProductEdit = () => {
+  let {id}=useParams();
+  console.log(id);
   const [img, setImg] = useState("");
   const closeModal = () => {
     document.querySelector(".modal-hoangkui-add").style.display = "none";
@@ -30,11 +32,11 @@ const ProductEdit = () => {
   };
 
   //
-  const [imgSize, setImgSize] = useState(Products[0].sizes[0].img);
+  const [imgSize, setImgSize] = useState(Products[id].sizes[0].img);
 
   const handleClickSizeProduct = (index) => {
     console.log(index);
-    setImgSize(Products[0].sizes[index].img);
+    setImgSize(Products[id].sizes[index].img);
   };
 
   return (
@@ -70,7 +72,7 @@ const ProductEdit = () => {
             <input
               type="text"
               className="addProduct-content-text-name-input"
-              value={Products[0].name}
+              value={Products[id].name}
               id="nameProduct"
               // name="nameProduct"
             />
@@ -83,7 +85,7 @@ const ProductEdit = () => {
             <input
               type="text"
               className="addProduct-content-text-name-input"
-              value={Products[0].brand}
+              value={Products[id].brand}
               id="brandProduct"
             />
           </div>
@@ -95,7 +97,7 @@ const ProductEdit = () => {
               Mô tả
             </label>
             <textarea
-              value={Products[0].description}
+              value={Products[id].description}
               className="addProduct-content-text-des-input"
               id="desProduct"
             />
@@ -110,7 +112,7 @@ const ProductEdit = () => {
             <input
               type="text"
               className="addProduct-content-text-bot-input"
-              value={Products[0].where}
+              value={Products[id].where}
               id="manuProduct"
             />
             <label
@@ -122,7 +124,7 @@ const ProductEdit = () => {
             <input
               type="number"
               className="addProduct-content-text-bot-input"
-              value={Products[0].price}
+              value={Products[id].price}
               id="numberProduct"
             />
           </div>
@@ -136,7 +138,7 @@ const ProductEdit = () => {
             <input
               type="text"
               className="addProduct-content-text-bot-input"
-              value={Products[0].view}
+              value={Products[id].view}
               id="manuProduct"
             />
           </div>
@@ -161,7 +163,7 @@ const ProductEdit = () => {
           <div className="wrraper-table">
             <table className="addProduct-content-size-table">
               <tbody>
-                {Products[0].sizes.map((size, index) => {
+                {Products[id].sizes.map((size, index) => {
                   return (
                     <SizeProduct
                       onClickSizeProduct={handleClickSizeProduct}
@@ -176,8 +178,8 @@ const ProductEdit = () => {
           </div>
           <div className="total-detail">
             <h4 className="total-detail-name">Tổng</h4>
-            <p className="total-detail-sale">{Products[0].sale}</p>
-            <p className="total-detail-remain">{Products[0].remain}</p>
+            <p className="total-detail-sale">{Products[id].sale}</p>
+            <p className="total-detail-remain">{Products[id].remain}</p>
           </div>
 
           <div className="addProduct-content-size-display">

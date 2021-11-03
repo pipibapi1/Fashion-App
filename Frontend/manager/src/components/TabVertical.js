@@ -11,6 +11,7 @@ import ListProducts from "./ListProducts";
 import AddProduct from "./AddProduct";
 import ProductDetail from "./ProductDetail";
 import ProductEdit from "./ProductEdit";
+// import TestProduct from "./TestProduct";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import LoginAdmin from "./LoginAdmin";
 
@@ -27,7 +28,7 @@ export default function TabVertical() {
           <Tab>
             <p>
               <BsCardText size={20} className="tabIcon" />
-              Danh sách sản phẩm
+              Danh sách sản phẩm 
             </p>
           </Tab>
           <Tab>
@@ -50,25 +51,83 @@ export default function TabVertical() {
           </Tab>
         </TabList>
 
+{/* 
+        <Switch>
+
+          <Router exact path="/products/:id">
+            <TabPanel>
+              <div className="panel-content">
+                <ProductDetail />
+              </div>
+            </TabPanel>
+          </Router>
+          <Route path="/addproduct">
+            <TabPanel>
+              <div className="panel-content">
+                <AddProduct />
+              </div>
+            </TabPanel>
+          </Route>
+          <Route path="/account">
+            <TabPanel>
+              <div className="panel-content">
+                <Container className="grid">
+                  <Row>
+                    <Col lg={9}>
+                      {" "}
+                      <h2>Quản lí tài khoản</h2>
+                    </Col>
+                    <Col lg={3}>
+                      {" "}
+                      <SearchAccount />
+                    </Col>
+                  </Row>
+                </Container>
+                <TabAccount />
+              </div>
+            </TabPanel>
+          </Route>
+
+          <Route path="sales">
+            <TabPanel>
+              <div className="panel-content">
+                <h2>Any content 4</h2>
+              </div>
+            </TabPanel>
+          </Route>
+          <Route path="/" component={LoginAdmin} />
+          <Router path="/products">
+            <TabPanel>
+              <div className="panel-content">
+                <Route path="/admin" component={LoginAdmin}></Route>
+                  <Route path="/product/edit/:id">
+                  <ProductEdit />
+                  </Route>
+                  <Route path="/" component={ListProducts}/>
+                <Route path="/:id" component={ProductDetail}/>
+                <ListProducts />
+              </div>
+            </TabPanel>
+          </Router>
+        </Switch> */}
+
         <TabPanel>
           <div className="panel-content">
-            <Router>
-              {/* <Link to="/product/id">:D</Link> */}
-              <Switch>
-              <Router path="/admin">
-                  <LoginAdmin />
-                </Router>
-                <Router path="/product/id/edit">
+          
+          
+          <Switch>
+          <Route path="/admin" component={LoginAdmin}>
+          </Route>
+          <Route path="/products/edit/:id">
                   <ProductEdit />
-                </Router>
-                <Router path="/product/id">
+                </Route>
+                <Route path="/products/:id">
                   <ProductDetail />
-                </Router>
-                <Router path="/">
+                </Route>
+                <Route path="/">
                   <ListProducts />
-                </Router>
+                </Route>
               </Switch>
-            </Router>
           </div>
         </TabPanel>
         <TabPanel>
