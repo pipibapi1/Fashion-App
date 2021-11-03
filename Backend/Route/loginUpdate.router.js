@@ -39,7 +39,6 @@ loginUpdateRoutes.post("/", async(req, res) => {
         else
         {
             
-            
             const newClerk = await login.findOneAndUpdate(query, {email : email, address : address, phoneNumber : phoneNumber, cccd : cccd, dateOfBirth : birthday, avatar:avatar} , {
                 new: true
               } );

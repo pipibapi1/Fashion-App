@@ -67,28 +67,26 @@ import DatePicker from  'react-datepicker';
             this.setState({
                 file : e.target.files[0]
             })
-        
-        }
-        getBase64 = (file) => {
-            if(file){
-                return new Promise((resolve, reject) => {
+            if(e.target.files[0]){
                     const fileReader = new FileReader();
-                    fileReader.readAsDataURL(file);
+                    fileReader.readAsDataURL(e.target.files[0]);
     
                     fileReader.onload = () => {
-                        resolve(fileReader.result);
+                        this.setState({
+                            avatar : fileReader.result
+                        })
                     };
                     fileReader.onerror = (error) => {
-                        reject(error)
-                    }
-                })
+                        console.log(error);
+                    }    
             }
         }
+        
 
         //handle update
         onSubmit = (e) => {
             e.preventDefault();
-
+            
             {/*const update = {
                 email: this.state.email,
                 address: this.state.address,
