@@ -6,6 +6,9 @@
     "@atlaskit/button": "^16.1.2",
     "@atlaskit/icon": "^21.9.0",
     "@atlaskit/textfield": "^5.1.2",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
     "@material-ui/core": "^4.12.3",
     "@opuscapita/react-responsive-navbar": "^3.4.0",
     "@testing-library/jest-dom": "^5.11.4",
@@ -18,7 +21,7 @@
     "react-icons": "^4.3.1",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
-    "react-tabs": "^3.2.2",
+    "react-tabs": "^3.2.3",
     "react-tabs-navigation": "^0.4.4",
     "web-vitals": "^1.0.1"
   },
@@ -45,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-loader": "^8.2.3"
   }
 }
