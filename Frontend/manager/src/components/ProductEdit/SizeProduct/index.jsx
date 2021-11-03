@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 // import "./index.css"
-const SizeProduct = ({ index, size, onClickSizeProduct }) => {
+const SizeProduct = ({ index, size, onClickSizeProduct,style }) => {
   const [img, setImg] = useState(
     "https://product.hstatic.net/1000035031/product/vay-dam-cong-so-thoi-trang-eden-dang-chu-a-co-tim-tay-phong-d405__6__9a4811529e834206b25da08ec496995f_master.jpg"
   );
@@ -29,6 +29,7 @@ const SizeProduct = ({ index, size, onClickSizeProduct }) => {
   return (
     <>
       <tr
+      style={style}
         onClick={() => onClickSizeProduct(index)}
         className="listProducts-content-row-size"
       >

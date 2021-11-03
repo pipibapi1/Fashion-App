@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Link,useParams } from "react-ro
 // import "./index.css"
 // import "..//AddProduct/index.css"  
 const ProductDetail = () => {
+  const [sizeSelected,setSizeSelected]=useState(0)
   let {id}=useParams();
   console.log(id);
   // const {name,brand,remain,sale,price,where,}
@@ -13,6 +14,7 @@ const ProductDetail = () => {
   const handleClickSizeProduct=(index)=>{
     console.log(index);
     setImg(Products[id].sizes[index].img)
+    setSizeSelected(index)
   }
     return (
         <>
@@ -125,6 +127,8 @@ const ProductDetail = () => {
         
           {Products[id].sizes.map((size,index)=>{
             return <SizeProduct
+
+            style={sizeSelected===index? {backgroundColor:"#a3c8f2",color:"#302e31"}:{}}
             onClickSizeProduct={handleClickSizeProduct}
             
             key={index} index={index} size={size}/>

@@ -307,7 +307,7 @@ tr:nth-child(even) {
   /* margin-right: -2px; */
 }
 .listProducts-content-row-size:hover{
-  background-color: rgb(48, 207, 207);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .addProduct-content-text-bot-view {

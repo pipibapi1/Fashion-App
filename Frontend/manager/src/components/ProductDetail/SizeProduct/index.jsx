@@ -1,10 +1,11 @@
 import React from 'react'
 // import "./index.css"
-const SizeProduct = ({index,size,onClickSizeProduct}) => {
+const SizeProduct = ({index,size,onClickSizeProduct,style}) => {
+    console.log(style);
     return (
         <>
             <tr
-            
+            style={style}
             onClick={()=>onClickSizeProduct(index)}
             className="listProducts-content-row-size">
             <td style={{width:"8%"}}>{index+1}</td>
