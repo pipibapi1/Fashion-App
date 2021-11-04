@@ -2,7 +2,13 @@ import React,{useState} from 'react'
 import {products} from './Data.js'
 import Popup from './Popup.js'
 function toggleFlag(index){
-    document.getElementById(`flag-${index}`).classList.toggle('active');
+    let x = document.querySelectorAll(`.flag-${index}`)
+    let a = 0;
+    x.forEach(item=> {
+        a ++;
+        item.classList.toggle('active');
+    }
+    )
 }
 function ProductItems() {
     const [Popple,setPopple] = useState(-1);
@@ -13,9 +19,8 @@ function ProductItems() {
                     <div className="box" data-item={props[7]}>
                         <div className="icons">
                             <a className="fas fa-shopping-cart"></a>
-                            <a className="fas fa-heart heart" id = {`flag-${index}`} onClick={ ()=> toggleFlag(index) }></a>
-                            <a color="red" className="fas fa-search"></a>
-                            <a href="#products" className="fas fa-eye" onClick={()=>setPopple(index)}></a>
+                            <a className = {`flag-${index} fas fa-heart heart`} onClick={ ()=> toggleFlag(index) }></a>
+                            <a className="fas fa-eye" onClick={()=>setPopple(index)}></a>
                         </div>
                         <div className="image">
                             <img src={props[2]} alt=""/>
