@@ -1,5 +1,13 @@
 import React,{useState} from 'react'
-
+function toggleFlag(index){
+    let x = document.querySelectorAll(`.flag-${index}`)
+    let a = 0;
+    x.forEach(item=> {
+        a ++;
+        item.classList.toggle('active');
+    }
+    )
+}
 const ImageSlider = ({props}) => {
     return(
         <div className="swiper-wrapper">
@@ -9,8 +17,7 @@ const ImageSlider = ({props}) => {
             <div >
                 <div className="icons">
                     <a className="fas fa-shopping-cart"></a>
-                    <a className="fas fa-heart active"></a>
-                    <a className="fas fa-search"></a>
+                    <a className = {`flag-${index} fas fa-heart heart`} onClick={ ()=> toggleFlag(index) }></a>
                     <a href="#products" className="fas fa-eye"></a>
                 </div>
                 <div className="image">

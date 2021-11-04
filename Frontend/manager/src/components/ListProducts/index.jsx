@@ -3,6 +3,7 @@ import Product from "./Product";
 import Products from "../../Products"
 import "../index-hoangkui.css";
 import { BrowserRouter as Router, Switch, Route, Link,useParams } from "react-router-dom";
+import Avartar from "../Avatar";
 // import { useHistory } from "react-router-dom";
 const ListProducts = () => {
   const maxItem=15;
@@ -65,18 +66,11 @@ const ListProducts = () => {
           <i className="fas fa-plus"></i>
           Thêm sản phẩm
         </button>
-        <div className="listProducts-heading-info">
-          <h4 className="listProducts-heading-info-name">Nguyễn Trần Hoàng</h4>
-          <img
-            src="https://scontent.fdad2-1.fna.fbcdn.net/v/t1.6435-9/148352211_1315852945481787_1410223456476714730_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=UTvzr_H01LEAX9fT_8T&_nc_ht=scontent.fdad2-1.fna&oh=ad71bf3dd4b49191be326bd411384505&oe=61A30021"
-            alt=""
-            className="listProducts-heading-info-img"
-          />
-        </div>
+       <Avartar/>
       </div>
       <div className="listProducts-content">
         <table className="listProducts-content-table">
-          <tbody>
+          <tbody className="tbody-nth">
             <tr className="listProducts-content-row-heading-table">
               <th className="listProducts-content-row-heading">
                 <input
@@ -101,29 +95,9 @@ const ListProducts = () => {
                 </button>
               </th>
             </tr>
-            {/* <Link to="/admin">:D</Link> */}
-            {/* <Router>
-
-          </Router> */}
-
           {products.map((product,index)=>{
             return <Product key={index} index={maxItem*(page-1)+index+1} product={product}/>
 })}
-            {/* <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product /> */}
           </tbody>
         </table>
         <div className="listProducts-page">
