@@ -8,14 +8,22 @@ import {
   Route,
   Link,
   useParams,
+  useHistory 
 } from "react-router-dom";
 import LinkButton from "../../LinkButton";
 const Product = ({ index, product }) => {
   const { name, brand, remain, sale, price } = product;
+  let history = useHistory();
+  const handleClickProduct=()=>{
+    history.push(`/products/${index-1}`);
+    console.log(":");
+  }
   // const ulr="./product/id"
   return (
     <>
-      <tr className="listProducts-content-row">
+      <tr 
+      onClick={handleClickProduct}
+      className="listProducts-content-row">
         <td className="listProducts-content-row-item">
           <input
             type="checkbox"

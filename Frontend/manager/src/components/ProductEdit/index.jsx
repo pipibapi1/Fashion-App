@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from "react";
 import SizeProduct from "./SizeProduct";
 import Products from "../../Products";
-import { BrowserRouter as Router, Switch, Route, Link,useParams } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams,
+} from "react-router-dom";
+import TotalSize from "../ProductDetail/TotalSize";
+import Avartar from "../Avatar";
 // import "./index.css";
 // import "..//AddProduct/index.css"
 const ProductEdit = () => {
-  const [sizeSelected,setSizeSelected]=useState(0)
+  const [sizeSelected, setSizeSelected] = useState(0);
 
-  let {id}=useParams();
+  let { id } = useParams();
   console.log(id);
   const [img, setImg] = useState("");
   const closeModal = () => {
@@ -39,7 +47,7 @@ const ProductEdit = () => {
   const handleClickSizeProduct = (index) => {
     console.log(index);
     setImgSize(Products[id].sizes[index].img);
-    setSizeSelected(index)
+    setSizeSelected(index);
   };
 
   return (
@@ -47,18 +55,7 @@ const ProductEdit = () => {
       {/* Heading  */}
       <div className="listProducts-heading">
         <h3 className="listProducts-heading-title">Sửa sản phẩm</h3>
-        <div className="listProducts-heading-info">
-          {/* <button className="button-hoangkui">
-            <i className="fas fa-edit"></i>
-            Sửa sản phẩm này
-          </button> */}
-          <h4 className="listProducts-heading-info-name">Nguyễn Trần Hoàng</h4>
-          <img
-            src="https://scontent.fdad2-1.fna.fbcdn.net/v/t1.6435-9/148352211_1315852945481787_1410223456476714730_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=UTvzr_H01LEAX9fT_8T&_nc_ht=scontent.fdad2-1.fna&oh=ad71bf3dd4b49191be326bd411384505&oe=61A30021"
-            alt=""
-            className="listProducts-heading-info-img"
-          />
-        </div>
+        <Avartar />
       </div>
 
       {/* Content */}
@@ -77,7 +74,6 @@ const ProductEdit = () => {
               className="addProduct-content-text-name-input"
               value={Products[id].name}
               id="nameProduct"
-              // name="nameProduct"
             />
             <label
               htmlFor="brandProduct"
@@ -152,9 +148,13 @@ const ProductEdit = () => {
           <div className="table-heading">
             <p className="table-heading-stt">STT</p>
             <p className="table-heading-size">Size</p>
-            <p className="table-heading-color table-heading-color-edit">Màu sắc</p>
+            <p className="table-heading-color table-heading-color-edit">
+              Màu sắc
+            </p>
             <p className="table-heading-sale">Đã bán</p>
-            <p className="table-heading-remain table-heading-remain-edit">Còn</p>
+            <p className="table-heading-remain table-heading-remain-edit">
+              Còn
+            </p>
             <button
               onClick={openModal}
               className="button-hoangkui add-button-edit"
@@ -169,7 +169,11 @@ const ProductEdit = () => {
                 {Products[id].sizes.map((size, index) => {
                   return (
                     <SizeProduct
-                    style={sizeSelected===index? {backgroundColor:"#a3c8f2",color:"#302e31"}:{}}
+                      style={
+                        sizeSelected === index
+                          ? { backgroundColor: "#a3c8f2", color: "#302e31" }
+                          : {}
+                      }
                       onClickSizeProduct={handleClickSizeProduct}
                       key={index}
                       index={index}
@@ -180,12 +184,7 @@ const ProductEdit = () => {
               </tbody>
             </table>
           </div>
-          <div className="total-detail">
-            <h4 className="total-detail-name">Tổng</h4>
-            <p className="total-detail-sale">{Products[id].sale}</p>
-            <p className="total-detail-remain">{Products[id].remain}</p>
-          </div>
-
+          <TotalSize sale={Products[id].sale} remain={Products[id].remain} />
           <div className="addProduct-content-size-display">
             <p className="addProduct-content-size-display-text">Hình ảnh:</p>
             <img
