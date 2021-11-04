@@ -10,7 +10,7 @@ export default class DonHang extends Component {
         this.state = {
             
             avatar : localStorage.getItem('avatar'),
-            
+            name : localStorage.getItem('name')
         }
     }
 
@@ -20,7 +20,7 @@ export default class DonHang extends Component {
         
         <div className={styles.DonHang}>
             <div className={styles.label}>Đơn Hàng</div>
-            <div className={styles.name}>Nguyen Van A</div>
+            <div className={styles.name}>{this.state.name}</div>
             <div >
                 <img className={styles.ava} src={this.state.avatar} alt="Ava" />
             </div>
