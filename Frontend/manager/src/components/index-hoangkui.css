@@ -115,9 +115,7 @@ textarea {
 .addProduct-content-size-row-add:hover {
   opacity: 0.9;
 }
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
+
 
 /* IMG */
 
@@ -305,6 +303,7 @@ tr:nth-child(even) {
   cursor: pointer;
   height: 40px;
   /* margin-right: -2px; */
+  border:1px solid #ccc;
 }
 .listProducts-content-row-size:hover{
   background-color: rgba(0, 0, 0, 0.05);
@@ -325,7 +324,7 @@ tr:nth-child(even) {
   background-color: #ffa9a9;
 }
 
-tr:nth-child(even) {
+.tbody-nth tr:nth-child(even) {
   background-color: #dddddd;
 }
 
