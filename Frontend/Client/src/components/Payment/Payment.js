@@ -17,7 +17,7 @@ function Payment() {
         {Data.map((props)=>{
             return (
         <div class="cart_items">
-            <img src={props[3]} className="Payimage" alt=""/>
+            <img src={props[3]} alt=""/>
             <div class="cart_items_details">
                 <div class="cart_items_details-top">
                     <span class="items_name">{props[1]}</span>

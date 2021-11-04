@@ -1139,11 +1139,6 @@ section {
 .Box{
   margin:2rem;
 }
-.Payimage{
-  width:180px;
-  height:200px;
-  float:left;
-}
 .payment .blank{
   clear:both;
 }
@@ -1450,6 +1445,12 @@ section {
   }
   section {
     padding: 2rem;
+  }
+}
+@media (max-width: 650px) {
+  .cart .cart_items img {
+    visibility: hidden;
+    width: 0px;
   }
 }
 @media (max-width: 768px) {
