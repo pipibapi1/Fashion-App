@@ -22,8 +22,13 @@
     background-color: #EEEEEE;
     border-radius: 10px;
     margin-right: 80px;
+    transition: all 0.3s;
 }
-  
+.tab-list-item:hover {
+    background-color: #DDDDDD;
+}
+
+
 .tab-list-active {
     background-color: white;
     border: solid #6eb800;

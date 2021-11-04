@@ -7,6 +7,7 @@ import { BsCardText } from "react-icons/bs";
 import TabAccount from "./TabAccount";
 import SearchAccount from "./SearchAccount";
 import { Container, Row, Col } from "react-grid-system";
+import Revenue from "./Revenue";
 import ListProducts from "./ListProducts";
 import AddProduct from "./AddProduct";
 import ProductDetail from "./ProductDetail";
@@ -153,9 +154,15 @@ export default function TabVertical() {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="panel-content">
-            <h2>Any content 4</h2>
-          </div>
+        <div className="panel-content">
+                <Container className="grid">
+                    <Row>
+                        <Col lg={9}> <h2>Quản lí doanh thu</h2></Col>
+                        <Col lg={3}> <SearchAccount /></Col>
+                    </Row>
+                    </Container>
+                    <Revenue />
+                </div>
         </TabPanel>
       </Tabs>
     </div>
