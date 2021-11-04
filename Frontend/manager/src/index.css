@@ -167,6 +167,7 @@ object-fit: cover;
 max-height: 60vh;
 overflow: auto;
 transition: all 0.3s;
+cursor: pointer;
 }
 .contentlist :hover {
 background-color: #CCCCCC;
@@ -203,6 +204,8 @@ height: 60%;
 .contentlist_Revenue {
 max-height: 68vh;
 overflow: auto;
+transition: all 0.3s;
+cursor: pointer;
 }
 
 /* *******************************POP-UP**************************************************** */
@@ -280,3 +283,27 @@ color: red;
 font-weight: 200px;
 }
 /* *******************************POP-UP**************************************************** */
+
+/* **********************************Order***************************************************** */
+.imageOrder {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.nameOrder {
+  font-size: 40px;
+  color: #00B2BF;
+}
+.contentOrder {
+  line-height: 60px;
+}
+.quantityOrder {
+  color: #79378B;
+}
+.OrderPopUp{
+  max-height: 65vh;
+  overflow: auto;
+}
+/* **********************************Order***************************************************** */

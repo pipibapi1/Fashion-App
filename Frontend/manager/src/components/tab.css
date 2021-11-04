@@ -23,6 +23,7 @@
     border-radius: 10px;
     margin-right: 80px;
     transition: all 0.3s;
+    cursor: pointer;
 }
 .tab-list-item:hover {
     background-color: #DDDDDD;

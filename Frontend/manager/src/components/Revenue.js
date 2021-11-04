@@ -5,7 +5,7 @@ import { Container, Row, Col } from 'react-grid-system';
 import Customers from "./Customers";
 import DetailRevenue from "./DetailRevenue";
 
-export default function TabAccount() {
+export default function Revenue() {
   
     return (
         <div className="tabaccount">

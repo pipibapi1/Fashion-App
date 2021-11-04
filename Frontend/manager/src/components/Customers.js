@@ -12,7 +12,11 @@ const Customers = [
         "email": "QuiOngBiAn@gmail.com",
         "dateWork": "01/02/2021",
         "address": "Quận 9, Tp Hồ Chí Minh",
-        "oder": 200
+        "oder": 200,
+        "jean": 200,
+        "hat": 100,
+        "hat_image": "https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140",
+        "jean_image": "https://storage.googleapis.com/cdn.nhanh.vn/store/7136/ps/20210202/216202141650_IMG_1712.jpg"
     },
     {
         "id": 1,
@@ -27,7 +31,11 @@ const Customers = [
         "email": "QuiOngBiAn@gmail.com",
         "dateWork": "01/02/2021",
         "address": "Quận 9, Tp Hồ Chí Minh",
-        "oder": 200
+        "oder": 200,
+        "jean": 200,
+        "hat": 100,
+        "hat_image": "https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140",
+        "jean_image": "https://storage.googleapis.com/cdn.nhanh.vn/store/7136/ps/20210202/216202141650_IMG_1712.jpg"
     },
     {
         "id": 1,
@@ -42,7 +50,11 @@ const Customers = [
         "email": "QuiOngBiAn@gmail.com",
         "dateWork": "01/02/2021",
         "address": "Quận 9, Tp Hồ Chí Minh",
-        "oder": 200
+        "oder": 200,
+        "jean": 200,
+        "hat": 100,
+        "hat_image": "https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140",
+        "jean_image": "https://storage.googleapis.com/cdn.nhanh.vn/store/7136/ps/20210202/216202141650_IMG_1712.jpg"
     },
     {
         "id": 1,
@@ -57,7 +69,11 @@ const Customers = [
         "email": "QuiOngBiAn@gmail.com",
         "dateWork": "01/02/2021",
         "address": "Quận 9, Tp Hồ Chí Minh",
-        "oder": 200
+        "oder": 200,
+        "jean": 200,
+        "hat": 100,
+        "hat_image": "https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140",
+        "jean_image": "https://storage.googleapis.com/cdn.nhanh.vn/store/7136/ps/20210202/216202141650_IMG_1712.jpg"
     },
     {
         "id": 1,
@@ -72,7 +88,11 @@ const Customers = [
         "email": "QuiOngBiAn@gmail.com",
         "dateWork": "01/02/2021",
         "address": "Quận 9, Tp Hồ Chí Minh",
-        "oder": 200
+        "oder": 200,
+        "jean": 200,
+        "hat": 100,
+        "hat_image": "https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140",
+        "jean_image": "https://storage.googleapis.com/cdn.nhanh.vn/store/7136/ps/20210202/216202141650_IMG_1712.jpg"
     },
     {
         "id": 1,
@@ -87,7 +107,11 @@ const Customers = [
         "email": "QuiOngBiAn@gmail.com",
         "dateWork": "01/02/2021",
         "address": "Quận 9, Tp Hồ Chí Minh",
-        "oder": 200
+        "oder": 200,
+        "jean": 200,
+        "hat": 100,
+        "hat_image": "https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140",
+        "jean_image": "https://storage.googleapis.com/cdn.nhanh.vn/store/7136/ps/20210202/216202141650_IMG_1712.jpg"
     },
     {
         "id": 1,
@@ -102,7 +126,11 @@ const Customers = [
         "email": "QuiOngBiAn@gmail.com",
         "dateWork": "01/02/2021",
         "address": "Quận 9, Tp Hồ Chí Minh",
-        "oder": 200
+        "oder": 200,
+        "jean": 200,
+        "hat": 100,
+        "hat_image": "https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140",
+        "jean_image": "https://storage.googleapis.com/cdn.nhanh.vn/store/7136/ps/20210202/216202141650_IMG_1712.jpg"
     },
     {
         "id": 1,
@@ -117,7 +145,11 @@ const Customers = [
         "email": "QuiOngBiAn@gmail.com",
         "dateWork": "01/02/2021",
         "address": "Quận 9, Tp Hồ Chí Minh",
-        "oder": 200
+        "oder": 200,
+        "jean": 200,
+        "hat": 100,
+        "hat_image": "https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140",
+        "jean_image": "https://storage.googleapis.com/cdn.nhanh.vn/store/7136/ps/20210202/216202141650_IMG_1712.jpg"
     },
     {
         "id": 1,
@@ -132,7 +164,11 @@ const Customers = [
         "email": "QuiOngBiAn@gmail.com",
         "dateWork": "01/02/2021",
         "address": "Quận 9, Tp Hồ Chí Minh",
-        "oder": 200
+        "oder": 200,
+        "jean": 200,
+        "hat": 100,
+        "hat_image": "https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140",
+        "jean_image": "https://storage.googleapis.com/cdn.nhanh.vn/store/7136/ps/20210202/216202141650_IMG_1712.jpg"
     },
     {
         "id": 1,
@@ -147,7 +183,11 @@ const Customers = [
         "email": "QuiOngBiAn@gmail.com",
         "dateWork": "01/02/2021",
         "address": "Quận 9, Tp Hồ Chí Minh",
-        "oder": 200
+        "oder": 200,
+        "jean": 200,
+        "hat": 100,
+        "hat_image": "https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140",
+        "jean_image": "https://storage.googleapis.com/cdn.nhanh.vn/store/7136/ps/20210202/216202141650_IMG_1712.jpg"
     },
     {
         "id": 1,
@@ -162,7 +202,11 @@ const Customers = [
         "email": "QuiOngBiAn@gmail.com",
         "dateWork": "01/02/2021",
         "address": "Quận 9, Tp Hồ Chí Minh",
-        "oder": 200
+        "oder": 200,
+        "jean": 200,
+        "hat": 100,
+        "hat_image": "https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140",
+        "jean_image": "https://storage.googleapis.com/cdn.nhanh.vn/store/7136/ps/20210202/216202141650_IMG_1712.jpg"
     },
     {
         "id": 1,
@@ -177,7 +221,11 @@ const Customers = [
         "email": "QuiOngBiAn@gmail.com",
         "dateWork": "01/02/2021",
         "address": "Quận 9, Tp Hồ Chí Minh",
-        "oder": 200
+        "oder": 200,
+        "jean": 200,
+        "hat": 100,
+        "hat_image": "https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140",
+        "jean_image": "https://storage.googleapis.com/cdn.nhanh.vn/store/7136/ps/20210202/216202141650_IMG_1712.jpg"
     },
     {
         "id": 1,
@@ -192,7 +240,11 @@ const Customers = [
         "email": "QuiOngBiAn@gmail.com",
         "dateWork": "01/02/2021",
         "address": "Quận 9, Tp Hồ Chí Minh",
-        "oder": 200
+        "oder": 200,
+        "jean": 200,
+        "hat": 100,
+        "hat_image": "https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140",
+        "jean_image": "https://storage.googleapis.com/cdn.nhanh.vn/store/7136/ps/20210202/216202141650_IMG_1712.jpg"
     },
     {
         "id": 1,
@@ -207,7 +259,11 @@ const Customers = [
         "email": "QuiOngBiAn@gmail.com",
         "dateWork": "01/02/2021",
         "address": "Quận 9, Tp Hồ Chí Minh",
-        "oder": 200
+        "oder": 200,
+        "jean": 200,
+        "hat": 100,
+        "hat_image": "https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140",
+        "jean_image": "https://storage.googleapis.com/cdn.nhanh.vn/store/7136/ps/20210202/216202141650_IMG_1712.jpg"
     },
     {
         "id": 1,
@@ -222,7 +278,11 @@ const Customers = [
         "email": "QuiOngBiAn@gmail.com",
         "dateWork": "01/02/2021",
         "address": "Quận 9, Tp Hồ Chí Minh",
-        "oder": 200
+        "oder": 200,
+        "jean": 200,
+        "hat": 100,
+        "hat_image": "https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140",
+        "jean_image": "https://storage.googleapis.com/cdn.nhanh.vn/store/7136/ps/20210202/216202141650_IMG_1712.jpg"
     },
     {
         "id": 1,
@@ -237,7 +297,11 @@ const Customers = [
         "email": "QuiOngBiAn@gmail.com",
         "dateWork": "01/02/2021",
         "address": "Quận 9, Tp Hồ Chí Minh",
-        "oder": 200
+        "oder": 200,
+        "jean": 200,
+        "hat": 100,
+        "hat_image": "https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140",
+        "jean_image": "https://storage.googleapis.com/cdn.nhanh.vn/store/7136/ps/20210202/216202141650_IMG_1712.jpg"
     },
     {
         "id": 1,
@@ -252,7 +316,11 @@ const Customers = [
         "email": "QuiOngBiAn@gmail.com",
         "dateWork": "01/02/2021",
         "address": "Quận 9, Tp Hồ Chí Minh",
-        "oder": 200
+        "oder": 200,
+        "jean": 200,
+        "hat": 100,
+        "hat_image": "https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140",
+        "jean_image": "https://storage.googleapis.com/cdn.nhanh.vn/store/7136/ps/20210202/216202141650_IMG_1712.jpg"
     },
     {
         "id": 1,
@@ -267,7 +335,11 @@ const Customers = [
         "email": "QuiOngBiAn@gmail.com",
         "dateWork": "01/02/2021",
         "address": "Quận 9, Tp Hồ Chí Minh",
-        "oder": 200
+        "oder": 200,
+        "jean": 200,
+        "hat": 100,
+        "hat_image": "https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140",
+        "jean_image": "https://storage.googleapis.com/cdn.nhanh.vn/store/7136/ps/20210202/216202141650_IMG_1712.jpg"
     },
     {
         "id": 1,
@@ -282,7 +354,11 @@ const Customers = [
         "email": "QuiOngBiAn@gmail.com",
         "dateWork": "01/02/2021",
         "address": "Quận 9, Tp Hồ Chí Minh",
-        "oder": 200
+        "oder": 200,
+        "jean": 200,
+        "hat": 100,
+        "hat_image": "https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140",
+        "jean_image": "https://storage.googleapis.com/cdn.nhanh.vn/store/7136/ps/20210202/216202141650_IMG_1712.jpg"
     },
     {
         "id": 1,
@@ -297,7 +373,11 @@ const Customers = [
         "email": "QuiOngBiAn@gmail.com",
         "dateWork": "01/02/2021",
         "address": "Quận 9, Tp Hồ Chí Minh",
-        "oder": 200
+        "oder": 200,
+        "jean": 200,
+        "hat": 100,
+        "hat_image": "https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140",
+        "jean_image": "https://storage.googleapis.com/cdn.nhanh.vn/store/7136/ps/20210202/216202141650_IMG_1712.jpg"
     },
 ]
 export default Customers
