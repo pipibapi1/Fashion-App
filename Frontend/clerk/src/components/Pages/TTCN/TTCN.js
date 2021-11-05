@@ -180,9 +180,6 @@ import DatePicker from  'react-datepicker';
                     dangerMode: true,
                 })
             });
-
-            
-            
         }
     
     render (){

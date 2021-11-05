@@ -4,6 +4,14 @@
     right:0;
     bottom :0;
     width:87vw;
+    .outerBox{
+        position: absolute;
+        width: 1300px;
+    height: 675px;
+    top: 70px;
+    left: 20px;
+    background: #EBEAEA;
+    }
 }
 .label{
     position: absolute;
@@ -25,19 +33,19 @@ letter-spacing: 0.3px;
 color: grey;
 }
 
+.ava{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    border-radius: 50%;
+    //overflow: hidden;
+
+}
 .name{
     position: absolute;
 height: 44px;
 right: 90px;
 top: 30px;
-}
-.ava{
-    width: 40px;
-        height: 40px;
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        border-radius: 50%;
-        //overflow: hidden;
-
 }
