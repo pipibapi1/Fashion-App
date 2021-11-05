@@ -13,10 +13,23 @@ import AddProduct from "./AddProduct";
 import ProductDetail from "./ProductDetail";
 import ProductEdit from "./ProductEdit";
 // import TestProduct from "./TestProduct";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useHistory,
+} from "react-router-dom";
 import LoginAdmin from "./LoginAdmin";
 
 export default function TabVertical() {
+  const history = useHistory();
+  const handleTab = (id) => {
+    if (id === 0) history.push("/products");
+    else if (id === 1) history.push("/addproduct");
+    else if (id === 2) history.push("/account");
+    else if (id === 3) history.push("/sales");
+  };
   return (
     <div className="TabMain">
       {/* luc day dieu huong o day */}
@@ -26,25 +39,25 @@ export default function TabVertical() {
           <div>
             <h1 className="Head-tab">Điều hướng</h1>
           </div>
-          <Tab>
+          <Tab onClick={() => handleTab(0)}>
             <p>
               <BsCardText size={20} className="tabIcon" />
-              Danh sách sản phẩm 
+              Danh sách sản phẩm
             </p>
           </Tab>
-          <Tab>
+          <Tab onClick={() => handleTab(1)}>
             <p>
               <BiAddToQueue size={20} className="tabIcon" />
               Thêm sản phẩm
             </p>
           </Tab>
-          <Tab>
+          <Tab onClick={() => handleTab(2)}>
             <p>
               <IoMdPeople size={20} className="tabIcon" />
               Quản lí tài khoản
             </p>
           </Tab>
-          <Tab>
+          <Tab onClick={() => handleTab(3)}>
             <p>
               <MdOutlineAttachMoney size={20} className="tabIcon" />
               Quản lí doanh thu
@@ -52,7 +65,7 @@ export default function TabVertical() {
           </Tab>
         </TabList>
 
-{/* 
+        {/* 
         <Switch>
 
           <Router exact path="/products/:id">
@@ -132,10 +145,63 @@ export default function TabVertical() {
           </div>
         </TabPanel>
         <TabPanel>
+            <div className="panel-content">
+              <AddProduct />
+            </div>
+          </TabPanel>
+        {/* <Route path="/products">
+          <TabPanel>
+            <div className="panel-content">
+              <ListProducts />
+            </div>
+          </TabPanel>
+        </Route>
+        <Route path="/addproduct">
+          <TabPanel>
+            <div className="panel-content">
+              <AddProduct />
+            </div>
+          </TabPanel>
+        </Route>
+        <Route path="/account">
+        <TabPanel>
           <div className="panel-content">
-            <AddProduct />
+            <Container className="grid">
+              <Row>
+                <Col lg={9}>
+                  {" "}
+                  <h2>Quản lí tài khoản</h2>
+                </Col>
+                <Col lg={3}>
+                  {" "}
+                  <SearchAccount />
+                </Col>
+              </Row>
+            </Container>
+            <TabAccount />
           </div>
         </TabPanel>
+        </Route>
+        <Route path="/sales">
+        <TabPanel>
+          <div className="panel-content">
+            <Container className="grid">
+              <Row>
+                <Col lg={9}>
+                  {" "}
+                  <h2>Quản lí doanh thu</h2>
+                </Col>
+                <Col lg={3}>
+                  {" "}
+                  <SearchAccount />
+                </Col>
+              </Row>
+            </Container>
+            <Revenue />
+          </div>
+        </TabPanel>
+        </Route> */}
+
         <TabPanel>
           <div className="panel-content">
             <Container className="grid">
@@ -154,16 +220,24 @@ export default function TabVertical() {
           </div>
         </TabPanel>
         <TabPanel>
-        <div className="panel-content">
-                <Container className="grid">
-                    <Row>
-                        <Col lg={9}> <h2>Quản lí doanh thu</h2></Col>
-                        <Col lg={3}> <SearchAccount /></Col>
-                    </Row>
-                    </Container>
-                    <Revenue />
-                </div>
+          <div className="panel-content">
+            <Container className="grid">
+              <Row>
+                <Col lg={9}>
+                  {" "}
+                  <h2>Quản lí doanh thu</h2>
+                </Col>
+                <Col lg={3}>
+                  {" "}
+                  <SearchAccount />
+                </Col>
+              </Row>
+            </Container>
+            <Revenue />
+          </div>
         </TabPanel>
+
+
       </Tabs>
     </div>
   );

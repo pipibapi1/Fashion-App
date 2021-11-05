@@ -1,4 +1,4 @@
-export const products = [
+export var products = [
     {1: "product name",2: 'image/product_img1.jpg', 3: "$20.00", 4: "$25.00", 5: "20% off", 6: "(50)",7:"featured female seller"},
     {1: "product name",2: 'image/product_img2.jpg', 3: "$20.00", 4: "$25.00", 5: "20% off", 6: "(50)",7:"featured Men"},
     {1: "product name",2: 'image/product_img3.jpg', 3: "$20.00", 4: "$25.00", 5: "20% off", 6: "(50)",7:"featured arrivals female seller"},

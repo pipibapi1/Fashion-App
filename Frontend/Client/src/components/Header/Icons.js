@@ -38,7 +38,6 @@ function Icons() {
             <label for="remember-me">remember me</label>
           </div>
           <input type="submit" value="login now" class="header__menu-link btn btn--border btn--rounded"></input>
-          <p>forget password?<a>click here</a></p>
           <p>don't have an account?<a>create one?</a></p>
         </form>
     </div>

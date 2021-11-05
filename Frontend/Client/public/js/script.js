@@ -43,7 +43,7 @@ filterBtn.forEach(button =>{
     button.classList.add('active');
 
     let dataFilter = button.getAttribute('data-filter');
-
+    
     filterItem.forEach(item =>{
 
       item.classList.remove('active');

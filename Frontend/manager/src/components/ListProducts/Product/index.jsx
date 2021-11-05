@@ -1,6 +1,5 @@
 import React from "react";
-// import {Link,Route} from "react-router-dom"
-// import "./index.css";
+
 import ProductDetail from "../../ProductDetail";
 import {
   BrowserRouter as Router,
@@ -37,15 +36,9 @@ const Product = ({ index, product }) => {
         <td className="listProducts-content-row-item">{sale}</td>
         <td className="listProducts-content-row-item">{price}</td>
         <td className="listProducts-content-row-item">
-          {/* <button className="listProducts-content-row-edit"><i className="far fa-edit"></i></button> */}
+
         </td>
         <td className="listProducts-content-row-item">
-        <LinkButton
-            to={`/products/${index - 1}`}
-            className="listProducts-content-row-edit"
-          >
-            <i className="far fa-edit"></i>
-          </LinkButton>
           <LinkButton
             to={`/products/edit/${index - 1}`}
             className="listProducts-content-row-edit"
