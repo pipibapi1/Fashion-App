@@ -7,354 +7,344 @@
     right:0;
     bottom :0;
     width:87vw;
-}
-.label{
-    position: absolute;
-height: 44px;
-left: 50px;
-right: 33px;
-top: 30px;
-
-
-font-family: Mulish;
-font-style: normal;
-font-weight: bold;
-font-size: 30px;
-line-height: 38px;
-/* identical to box height */
-
-letter-spacing: 0.3px;
-
-color: #54B6E0;
-}
-
-.name{
-    position: absolute;
-height: 44px;
-right: 90px;
-top: 30px;
-}
-.bigName{
-    position: absolute;
-height: 44px;
-left: 480px;
-top: 120px;
-font-family: Lato;
-font-style: normal;
-font-weight: bold;
-font-size: 32px;
-line-height: 32px;
-/* identical to box height, or 89% */
-
-
-color: #1A1C1D;
-}
-
-.ava{
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 20px;
-    left: 1260px;
-    border-radius: 50%;
-    overflow: hidden;
-
-}
-
-.BigAva{
-    position: absolute;
-    top: 120px;
-    left: 260px;
-    width: 120px;
-    height : 120px; 
-    border-radius: 50%;
-    overflow: hidden;
+    .label{
+        position: absolute;
+    height: 44px;
+    left: 50px;
+    right: 33px;
+    top: 30px;
     
-}
-
-.outerBox{
-    position: absolute;
-    width: 1000px;
-height: 675px;
-top: 70px;
-left: 160px;
-background: #EBEAEA;
-}
-
-.innerBox{
-    position: absolute;
-    width: 920px;
-height: 630px;
-top: 95px;
-left: 200px;
-background: #FFFFFF;
-}
-
-.hardIfoBar1{
-
-    position: absolute;
+    
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 38px;
+    /* identical to box height */
+    
+    letter-spacing: 0.3px;
+    
+    color: grey;
+    }
+    .ava{
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        border-radius: 50%;
+        //overflow: hidden;
+    
+    }
+    .name{
+        position: absolute;
     height: 44px;
-    left: 480px;
-    top: 180px;
+    right: 90px;
+    top: 30px;
+    }
 
+    .outerBox{
+        position: absolute;
+        width: 1000px;
+    height: 675px;
+    top: 70px;
+    left: 160px;
+    background: #EBEAEA;
+    .innerBox{
+        border-radius: 300px;
+        position: absolute;
+        width: 920px;
+    height: 630px;
+    margin-top: 25px;
+    margin-left: 40px;
+    background: #FFFFFF;
+
+  
+    
+    .bigName{
     font-family: Lato;
-font-style: normal;
-font-weight: 800;
-font-size: 24px;
-line-height: 21px;
-/* or 87% */
-
-text-align: right;
-
-color: #1A1C1D;
-}
-
-.hardfInfo1{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 32px;
+    /* identical to box height, or 89% */
     position: absolute;
-    height: 44px;
-    left: 600px;
-    top: 185px;
-
-}
-.hardIfoBar2{
-
+    top : 45px;
+    left: 300px;
+    
+    color: #1A1C1D;
+    }
+    .submitAva{
+        position: absolute;
+        top: 180px;
+        left: 100px;
+    }
+ 
+    
+    .BigAva{
+        position: absolute;
+        top: 45px;
+        left: 100px;
+        width: 120px;
+        height : 120px; 
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .hardIfoBar1{
+      
+        font-family: Lato;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 21px;
     position: absolute;
-    height: 44px;
-    left: 480px;
-    top: 220px;
-
+    top : 100px;
+    left: 300px;
+    
+    color: #1A1C1D;
+    }
+    
+    .hardfInfo1{
+        
+        position: absolute;
+        top : 105px;
+        left: 420px;
+    }
+    .hardIfoBar2{
+    
+        font-family: Lato;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 21px;
+    position: absolute;
+    top : 130px;
+    left: 300px;
+    
+    color: #1A1C1D;
+    }
+    
+    .hardfInfo2{
+        position: absolute;
+        top : 135px;
+        left: 420px;
+    }
+   
+    
+    .birthdayBar{
+        position: absolute;
+    height: 21px;
+    left: 100px;
+        top: 250px;
+    
+    
     font-family: Lato;
-font-style: normal;
-font-weight: 800;
-font-size: 24px;
-line-height: 21px;
-/* or 87% */
-
-text-align: right;
-
-color: #1A1C1D;
-}
-
-.hardfInfo2{
-    position: absolute;
-    height: 44px;
-    left: 600px;
-    top: 225px;
-
-}
-
-.birthdayBar{
-    position: absolute;
-height: 21px;
-left: 250px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 21px;
+    /* identical to box height, or 87% */
+    
+    text-align: right;
+    
+    color: #8083A3;
+    }
+    
+    .emailBar{
+        position: absolute;
+    height: 21px;
+    left: 100px;
+        top: 300px;
+    
+    
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 21px;
+    /* identical to box height, or 87% */
+    
+    text-align: right;
+    
+    color: #8083A3;
+    }
+    .addressBar{
+        position: absolute;
+    height: 21px;
+    left: 100px;
+        top: 350px;
+    
+    
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 21px;
+    /* identical to box height, or 87% */
+    
+    text-align: right;
+    
+    color: #8083A3;
+    }
+    .phoneNumberBar{
+        position: absolute;
+    height: 21px;
+    left: 100px;
+        top: 400px;
+    
+    
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 21px;
+    /* identical to box height, or 87% */
+    
+    text-align: right;
+    
+    color: #8083A3;
+    }
+    .cccdBar{
+        position: absolute;
+    height: 21px;
+    left: 100px;
+        top: 450px;
+    
+    
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 21px;
+    /* identical to box height, or 87% */
+    
+    text-align: right;
+    
+    color: #8083A3;
+    }
+    .birthdayPicker{
+        position: absolute;
+    height: 21px;
+    left: 375px;
+        top: 250px;
+    }
+    .emailText{
+        position: absolute;
+    
+    left: 375px;
+    top: 300px;
+        background: #FCFDFE;
+        /* grayscale / gray lightest */
+        
+        border: 1px solid #F0F1F7;
+        box-sizing: border-box;
+        border-radius: 8px;
+        width: 30vw;
+        height: 2.5vw;
+        font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    /* identical to box height, or 87% */
+    
+    
+    color: #1A1C1D;
+    }
+    
+    .addressText{
+        position: absolute;
+    
+    left: 375px;
     top: 350px;
-
-
-font-family: Lato;
-font-style: normal;
-font-weight: normal;
-font-size: 24px;
-line-height: 21px;
-/* identical to box height, or 87% */
-
-text-align: right;
-
-color: #8083A3;
-}
-
-.emailBar{
-    position: absolute;
-height: 21px;
-left: 250px;
+        background: #FCFDFE;
+        /* grayscale / gray lightest */
+        
+        border: 1px solid #F0F1F7;
+        box-sizing: border-box;
+        border-radius: 8px;
+        width: 30vw;
+        height: 2.5vw;
+        font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    /* identical to box height, or 87% */
+    
+    
+    color: #1A1C1D;
+    }
+    
+    .phoneNumberText{
+        position: absolute;
+    
+    left: 375px;
     top: 400px;
-
-
-font-family: Lato;
-font-style: normal;
-font-weight: normal;
-font-size: 24px;
-line-height: 21px;
-/* identical to box height, or 87% */
-
-text-align: right;
-
-color: #8083A3;
-}
-.addressBar{
-    position: absolute;
-height: 21px;
-left: 250px;
+        background: #FCFDFE;
+        /* grayscale / gray lightest */
+        
+        border: 1px solid #F0F1F7;
+        box-sizing: border-box;
+        border-radius: 8px;
+        width: 30vw;
+        height: 2.5vw;
+        font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    /* identical to box height, or 87% */
+    
+    
+    color: #1A1C1D;
+    }
+    
+    .cccdText{
+        position: absolute;
+    
+    left: 375px;
     top: 450px;
-
-
-font-family: Lato;
-font-style: normal;
-font-weight: normal;
-font-size: 24px;
-line-height: 21px;
-/* identical to box height, or 87% */
-
-text-align: right;
-
-color: #8083A3;
-}
-.phoneNumberBar{
-    position: absolute;
-height: 21px;
-left: 250px;
-    top: 500px;
-
-
-font-family: Lato;
-font-style: normal;
-font-weight: normal;
-font-size: 24px;
-line-height: 21px;
-/* identical to box height, or 87% */
-
-text-align: right;
-
-color: #8083A3;
-}
-.cccdBar{
-    position: absolute;
-height: 21px;
-left: 250px;
-    top: 550px;
-
-
-font-family: Lato;
-font-style: normal;
-font-weight: normal;
-font-size: 24px;
-line-height: 21px;
-/* identical to box height, or 87% */
-
-text-align: right;
-
-color: #8083A3;
-}
-.updateButton{
-    position: absolute;
-width: 180px;
-height: 70px;
-left: 850px;
-top: 600px;
-
-font-family: Mulish;
-font-style: normal;
-font-weight: normal;
-font-size: 24px;
-line-height: 30px;
-letter-spacing: 0.2px;
-color: white;
-background: #54B6E0;
-}
-.emailText{
-    position: absolute;
-
-left: 550px;
-top: 395px;
-    background: #FCFDFE;
-    /* grayscale / gray lightest */
+        background: #FCFDFE;
+        /* grayscale / gray lightest */
+        
+        border: 1px solid #F0F1F7;
+        box-sizing: border-box;
+        border-radius: 8px;
+        width: 30vw;
+        height: 2.5vw;
+        font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    /* identical to box height, or 87% */
     
-    border: 1px solid #F0F1F7;
-    box-sizing: border-box;
-    border-radius: 8px;
-    width: 30vw;
-    height: 2.5vw;
-    font-family: Lato;
-font-style: normal;
-font-weight: normal;
-font-size: 18px;
-line-height: 21px;
-/* identical to box height, or 87% */
-
-
-color: #1A1C1D;
-}
-
-.addressText{
-    position: absolute;
-
-left: 550px;
-top: 445px;
-    background: #FCFDFE;
-    /* grayscale / gray lightest */
     
-    border: 1px solid #F0F1F7;
-    box-sizing: border-box;
-    border-radius: 8px;
-    width: 30vw;
-    height: 2.5vw;
-    font-family: Lato;
-font-style: normal;
-font-weight: normal;
-font-size: 18px;
-line-height: 21px;
-/* identical to box height, or 87% */
-
-
-color: #1A1C1D;
-}
-
-.phoneNumberText{
-    position: absolute;
-
-left: 550px;
-top: 495px;
-    background: #FCFDFE;
-    /* grayscale / gray lightest */
+    color: #1A1C1D;
+    }
     
-    border: 1px solid #F0F1F7;
-    box-sizing: border-box;
-    border-radius: 8px;
-    width: 30vw;
-    height: 2.5vw;
-    font-family: Lato;
-font-style: normal;
-font-weight: normal;
-font-size: 18px;
-line-height: 21px;
-/* identical to box height, or 87% */
-
-
-color: #1A1C1D;
-}
-
-.cccdText{
-    position: absolute;
-
-left: 550px;
-top: 545px;
-    background: #FCFDFE;
-    /* grayscale / gray lightest */
+   
     
-    border: 1px solid #F0F1F7;
-    box-sizing: border-box;
-    border-radius: 8px;
-    width: 30vw;
-    height: 2.5vw;
-    font-family: Lato;
-font-style: normal;
-font-weight: normal;
-font-size: 18px;
-line-height: 21px;
-/* identical to box height, or 87% */
+    
 
-
-color: #1A1C1D;
-}
-
-.birthdayPicker{
-    position: absolute;
-height: 21px;
-left: 550px;
-    top: 350px;
-}
-
-.submitAva{
-    position: absolute;
-    top: 280px;
-    left: 240px;
+    }
+    }
+    .updateButton{
+        position: absolute;
+    width: 180px;
+    height: 70px;
+    left: 690px;
+    top: 520px;
+    
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: 0.2px;
+    color: white;
+    background: #54B6E0;
+    }
+    
 }

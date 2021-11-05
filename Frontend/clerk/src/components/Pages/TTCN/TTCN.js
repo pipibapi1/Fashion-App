@@ -190,23 +190,23 @@ import DatePicker from  'react-datepicker';
         <div className={styles.ThongTinCaNhan}>
             <div className={styles.label}>Thông Tin Cá Nhân</div>
             <div className={styles.name}>{name}</div>
-            
-            <div id="rectangle" className={styles.outerBox}></div>
-            
-            <div id="rectangle" className={styles.innerBox}></div>
-
-            
-            <div className={styles.bigName}>{name}</div>
-
-            <div className={styles.hardIfoBar1}>Chức Vụ</div>
-            <div className={styles.hardfInfo1}>{role}</div>
-            <div className={styles.hardIfoBar2}>ID</div>
-            <div className={styles.hardfInfo2}>{ID}</div>
-
-            <form onSubmit={this.onSubmit}>
-                <div >
+            <div >
                     <img  className={styles.ava} src={this.state.avatar}alt="Ava" />
                 </div>
+            <div id="rectangle" className={styles.outerBox}>
+            
+            <div id="rectangle" className={styles.innerBox}>
+
+            
+                <div className={styles.bigName}>{name}</div>
+
+                <div className={styles.hardIfoBar1}>Chức Vụ</div>
+                 <div className={styles.hardfInfo1}>{role}</div>
+                <div className={styles.hardIfoBar2}>ID</div>
+                <div className={styles.hardfInfo2}>{ID}</div>
+            
+            <form onSubmit={this.onSubmit}>
+                
                 <div>
                     <img className={styles.BigAva}  src={this.state.avatar} alt="Ava" />
                     
@@ -237,6 +237,11 @@ import DatePicker from  'react-datepicker';
                 <button className={styles.updateButton} type="submit">Cập nhật</button>
 
             </form>
+
+
+                </div>
+
+            </div>
         </div>
         )
     }
