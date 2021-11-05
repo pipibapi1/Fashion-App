@@ -11,74 +11,76 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.SidebarContent{
-    height: 100%;
-    //display: flex;
-   // flex-direction: column;
-   // justify-content : space-between;
-}
-
-.Brand{
-    margin-top: 2rem;
-    margin-left: -1rem;
-}
-
-
-.BrandName{
-    position: absolute;
-width: 131px;
-height: 24px;
-left: 65px;
-top: 39px;
-}
-
-.SideBarNav{
-   // margin-top: -8rem;
-   // margin-bottom: 3rem;
-    display: flex;
-   flex-direction: column;
-   justify-content : flex-start;
-}
-
-.SideBarNavItem{
-    margin : 2rem 0;
-}
-
-.SidebarNavLink{
-    text-decoration: none;
-    outline: none;
-    color : #A4A6B3;
-    opacity: 0.5;
-    font-size: 13px;
-    font-weight: 400;
-
-    &Active{
-        @extend .SidebarNavLink;
-        opacity: 1;
+    .SidebarContent{
+        height: 100%;
+        //display: flex;
+       // flex-direction: column;
+       // justify-content : space-between;
     }
-}
-
-.DonHangImage{
-    position: absolute;
-
-    left: 5px;
-    top: 95px;
-}
-
-.TTCNImage{
-    position: absolute;
-
-    left: 5px;
-    top: 145px;
-}
-
-.Logout{
-    position: absolute;
-
-    left: 60px;
-    top: 700px;
     
-  
+    .Brand{
+        margin-top: 2rem;
+        margin-left: -1rem;
+    }
+    
+    
+    .BrandName{
+        position: absolute;
+    width: 131px;
+    height: 24px;
+    right: 0px;
+    
+    top: 39px;
+    }
+    
+    .SideBarNav{
+       // margin-top: -8rem;
+       // margin-bottom: 3rem;
+        display: flex;
+       flex-direction: column;
+       justify-content : flex-start;
+    }
+    
+    .SideBarNavItem{
+        margin : 2rem 0;
+    }
+    
+    .SidebarNavLink{
+        text-decoration: none;
+        outline: none;
+        color : #A4A6B3;
+        opacity: 0.5;
+        font-size: 13px;
+        font-weight: 400;
+    
+        &Active{
+            @extend .SidebarNavLink;
+            opacity: 1;
+        }
+    }
+    
+    .DonHangImage{
+        position: absolute;
+    
+        left: 5px;
+        top: 95px;
+    }
+    
+    .TTCNImage{
+        position: absolute;
+    
+        left: 5px;
+        top: 145px;
+    }
+    
+    .Logout{
+        position: absolute;
+    
+        left: 60px;
+        top: 700px;
+        
+      
+    }
+    
 }
+

@@ -22,7 +22,7 @@ line-height: 38px;
 
 letter-spacing: 0.3px;
 
-color: #54B6E0;
+color: grey;
 }
 
 .name{
@@ -33,11 +33,11 @@ top: 30px;
 }
 .ava{
     width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 20px;
-    left: 1260px;
-    border-radius: 50%;
-  overflow: hidden;
+        height: 40px;
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        border-radius: 50%;
+        //overflow: hidden;
 
 }
