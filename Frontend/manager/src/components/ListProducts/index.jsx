@@ -2,15 +2,19 @@ import React, { useCallback, useState, useEffect } from "react";
 import Product from "./Product";
 import Products from "../../Products"
 import "../index-hoangkui.css";
-import { BrowserRouter as Router, Switch, Route, Link,useParams } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link,useParams,useHistory } from "react-router-dom";
 import Avartar from "../Avatar";
+import LinkButton from "../LinkButton";
 // import { useHistory } from "react-router-dom";
 const ListProducts = () => {
   const maxItem=15;
   const [products,setProducts]=useState(Products)
   const maxPage = Math.ceil(Products.length/maxItem);
   const [page, setPage] = useState(1);
-
+  const history=useHistory()
+  const LinkAddProduct=()=>{
+    history.push("/addproduct")
+  }
   // handle tang giam page
 
 
@@ -62,7 +66,7 @@ const ListProducts = () => {
           />
           <i className="fas fa-search"></i>
         </div>
-        <button className="listProducts-heading-add-product">
+        <button onClick={LinkAddProduct} className="listProducts-heading-add-product">
           <i className="fas fa-plus"></i>
           Thêm sản phẩm
         </button>

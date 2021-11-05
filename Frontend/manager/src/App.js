@@ -4,6 +4,7 @@
 
 import TabVertical from "./components/TabVertical";
 import { BrowserRouter as Router, Switch, Route, Link,useParams } from "react-router-dom";
+import LoginAdmin from "./components/LoginAdmin";
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
             <Textfield name='add-todo' placeholder="Them viec can lam... " elemAfterInput={
                 <Button>Them</Button>
             }></Textfield> */}
-
+            <LoginAdmin/>
             <TabVertical />
             {/* <TabAccount /> */}
         </Router>
