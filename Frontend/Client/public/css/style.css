@@ -1417,7 +1417,7 @@ section {
   font-size: large;
   text-align: right;
 }
-.product-details .details .size_radio_btn:hover {
+.product-details .details .size_radio_btn:hover,.product-details .details .size_radio_btn.active {
   background: #383838;
   color: #fff;
 }
