@@ -9,7 +9,7 @@ function Banner() {
             <div className="content">
                 <span>special offer</span>
                 <h3>upto 50% off</h3>
-                <a href="#" className="btn">shop now</a>
+                <a href="/#products" data-filter="special" className="filterLink btn">shop now</a>
             </div>
         </div>
         
@@ -18,7 +18,7 @@ function Banner() {
             <div className="content">
                 <span>special offer</span>
                 <h3>upto 50% off</h3>
-                <a href="#" className="btn">shop now</a>
+                <a href="/#products" data-filter="special" className="filterLink btn">shop now</a>
             </div>
         </div>
         

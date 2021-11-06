@@ -30,6 +30,9 @@
 .featured .featured-slider .slide .icons .heart:hover,.featured .featured-slider .slide .icons a.active{
   color:Red;
 }
+.shopping-card a:hover{
+  -webkit-text-stroke: 0.1rem black;
+}
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -1029,7 +1032,7 @@ section {
 .header .shopping-card .box .content h3 {
   font-size: 1.7rem;
   padding-bottom: 0.5rem;
-  color: #ffc87a;
+  color: white;
   font-weight: bold;
 }
 .header .shopping-card .box .content span {
@@ -1101,12 +1104,7 @@ section {
 .header .shopping-card .box .content {
   margin-left: 2rem;
 }
-.header .shopping-card .box .content h3 {
-  font-size: 1.7rem;
-  padding-bottom: 0.5rem;
-  color: #ffc87a;
-  font-weight: bold;
-}
+
 .header .shopping-card .box .content span {
   font-size: 1.4rem;
   color: #fff;
@@ -1439,6 +1437,259 @@ section {
   background: #383838;
   color: #fff;
 }
+
+.Page  {
+  font-size: 62.5%;
+}
+
+.Page a {
+  text-decoration: none;
+}
+
+.Page img {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.Page {
+  font-family: "Poppins", sans-serif;
+  background-color: #161616;
+  color: #fff;
+  line-height: 1.2;
+  font-weight: 300;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Page > .loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 100px;
+  display: none;
+  z-index: 999;
+}
+.Page span{
+  font-size:1.5rem;
+}
+.Page > .logo_signup {
+  font-size: 12rem;
+  font-weight: 600;
+  color: #fff;
+  justify-items: center;
+  display: block;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.Page > .logo_signup span {
+  color: #ffc87a;
+}
+
+.Page .input-signup {
+  display: block;
+}
+
+.Page  body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.Page  h2 {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+.Page  .signup {
+  width: 700px;
+  background-color: #f5f5f5;
+  display: flex;
+  margin: 25px auto 0;
+  position: relative;
+}
+
+.signup > div {
+  width: 50%;
+}
+
+.Page  .left {
+  padding: 45px;
+  background-color: white;
+}
+
+.Page  .form-inner {
+  border: 1px solid #eee;
+}
+
+.Page  .form-group {
+  padding: 15px;
+}
+
+.Page  .form-group:not(:last-of-type) {
+  border-bottom: 1px solid #eee;
+}
+
+.Page  .form-group label {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.Page  .form-group input {
+  display: block;
+  width: 100%;
+  border: 0;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+}
+
+.Page  .form-group input::-webkit-input-placeholder {
+  color: #ccc;
+}
+
+.Page  .remember {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+.Page  .remember span {
+  color: #2a2a2a;
+  font-size: 1.6rem;
+  font-weight: 400;
+  padding: 1rem;
+}
+
+.Page  button {
+  display: block;
+  padding: 20px;
+  color: white;
+  width: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 16px;
+  text-align: center;
+  outline: none;
+  border: 0;
+  border-radius: 2px;
+  background-color: #f87253;
+  cursor: pointer;
+}
+
+.Page  .right {
+  padding: 45px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Page  .right li a {
+  display: flex;
+  align-items: center;
+  color: white;
+  border-radius: 2px;
+  width: 90%;
+  padding: 15px 25px;
+}
+
+.Page  .right li.facebook a {
+  background-color: #476ca9;
+}
+
+.Page  .right li.twitter a {
+  background-color: #27b6e7;
+}
+
+.Page  .right li.google a {
+  background-color: #d7482f;
+}
+
+.Page  .right li a i {
+  font-size: 25px;
+  margin-right: 30px;
+}
+
+.Page  .right li a span {
+  font-size: 20px;
+  text-decoration: blink;
+}
+
+.Page  .right li:nth-of-type(2) {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.Page  .or {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  background-color: #ddd;
+  color: #999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Page  .member {
+  font-size: 14px;
+  color: black;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.Page  .member a {
+  color: #185ADB;
+  text-decoration: blink;
+}
+
+.Page  .alert-box {
+  width: 300px;
+  min-height: 150px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 100px rgba(0, 0, 0, 0.05);
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 1s;
+  z-index: 999;
+}
+.Page  .alert-box .alert-img {
+  display: block;
+  margin: 10px auto 20px;
+  height: 60px;
+}
+.Page  .alert-box .alert-msg {
+  color: #e24c4b;
+  font-size: 2rem;
+  text-transform: capitalize;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.Page .show {
+  opacity: 1;
+  pointer-events: all;
+  top: 50%;
+}
+
+
 @media (max-width: 1200px) {
   .product-details{
     top:15%;
