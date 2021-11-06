@@ -3,9 +3,14 @@ import React,{useState} from 'react'
 const LoginAdmin = () => {
     const [user,setUser]=useState("")
     const [password,setPassWord]=useState("")
+    // if (localStorage.getItem("modal-login")=="none"){
+    //     document.querySelector(".modal-admin-login").style.display="none";
+
+    // }
     const handleLogin=()=>{
-        if(user==="admin" && password==="1234"){
+        if(localStorage.getItem("modal-login")==="none"||(user==="admin" && password==="1234")){
             document.querySelector(".modal-admin-login").style.display="none";
+            localStorage.setItem("modal-login","none")
         }
         else{
             alert("Liên hệ hoàng để lấy tài khoản, mật khẩu")
