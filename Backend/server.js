@@ -29,6 +29,7 @@ mongoose
 
   const loginRoute    = require('./Route/login.router');
   const loginUpdate  = require('./Route/loginUpdate.router');
+  const testRoute = require('./Route/test.router');
 
   app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -39,6 +40,7 @@ app.use(fileupload({
 
 app.use('/', loginRoute);
 app.use('/update-router', loginUpdate);
+app.use('/test', testRoute);
 
 
 

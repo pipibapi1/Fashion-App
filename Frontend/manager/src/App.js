@@ -15,7 +15,7 @@ function App() {
             <Textfield name='add-todo' placeholder="Them viec can lam... " elemAfterInput={
                 <Button>Them</Button>
             }></Textfield> */}
-            <LoginAdmin/>
+            {localStorage.getItem("modal-login")!=="none" && <LoginAdmin/>}
             <TabVertical />
             {/* <TabAccount /> */}
         </Router>
