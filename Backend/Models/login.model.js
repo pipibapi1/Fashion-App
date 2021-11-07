@@ -4,13 +4,15 @@ const Schema = mongoose.Schema;
 // Define collection and schema for login
 let loging = new Schema({
     id: {
-        type: String
+        type: String,
+        unique: true
     },
     name: {
         type: String
     },
     username: {
-        type: String
+        type: String,
+        unique: true
     },
     password: {
         type: String
@@ -34,7 +36,8 @@ let loging = new Schema({
     }
     ,
     cccd: {
-        type:String
+        type:String,
+        unique: true
     },
     avatar: {
         type:String
