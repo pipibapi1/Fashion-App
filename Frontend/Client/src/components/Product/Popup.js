@@ -1,4 +1,6 @@
+import { useState } from "react"
 export default function Popup(props,num,trigger,setTrigger){
+  const [a,setA] = useState(1);
     return( (trigger === num )?
         <section class="product-details">
         <span class="closeIcon" id="closeIcon" onClick={()=>setTrigger(-1)}>
@@ -16,13 +18,13 @@ export default function Popup(props,num,trigger,setTrigger){
             <p class="product_sub_heading">select size</p>
         
             <input type="radio" name="size" value="S" checked hidden id="s_size"/>
-            <label for="s_size" class="size_radio_btn">S</label>
+            <label for="s_size" class={a===1?"size_radio_btn active":"size_radio_btn"} onClick={()=>setA(1)}>S</label>
             <input type="radio" name="size" value="M" hidden id="m_size"/>
-            <label for="m_size" class="size_radio_btn">M</label>
+            <label for="m_size" class={a===2?"size_radio_btn active":"size_radio_btn"} onClick={()=>setA(2)}>M</label>
             <input type="radio" name="size" value="XL" hidden id="xl_size"/>
-            <label for="xl_size" class="size_radio_btn">XL</label>
+            <label for="xl_size" class={a===3?"size_radio_btn active":"size_radio_btn"} onClick={()=>setA(3)}>XL</label>
             <input type="radio" name="size" value="XXL" hidden id="xxl_size"/>
-            <label for="xxl_size" class="size_radio_btn">XXL</label>
+            <label for="xxl_size" class={a===4?"size_radio_btn active":"size_radio_btn"} onClick={()=>setA(4)}>XXL</label>
           </div>
           <button class="btn cart-btn">add to cart</button>
         </div>

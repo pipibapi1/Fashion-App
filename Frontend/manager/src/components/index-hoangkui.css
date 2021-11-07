@@ -71,7 +71,7 @@ textarea {
 }
 .wrraper-table{
   overflow: auto;
-  max-height: 420px;
+  max-height: 400px;
   /* width: 100%; */
 
 }
@@ -84,7 +84,7 @@ textarea {
   border-collapse: collapse;
   width: 100%;
   border-radius: 4px;
-  max-height: 340px;
+  /* max-height: 220px; */
   text-align: center;
   /* display: inline-block; */
   /* overflow: auto; */
@@ -253,7 +253,8 @@ textarea {
 }
 .listProducts-content-row-remove:hover {
   /* color:#ff0808; */
-  background-color: rgb(36, 28, 136);
+  background-color: #FEF5ED;
+  color:#dc3545;
 }
 .listProducts-content-row-remove i {
   /* margin-right: 4px; */
@@ -268,7 +269,7 @@ textarea {
   padding: 4px 8px;
 }
 .listProducts-content-row-edit:hover {
-  background-color: rgb(71, 199, 211);
+  background-color: #F6D7A7;
 }
 .listProducts-content-row-edit i {
   /* margin-right: 4px; */
@@ -343,15 +344,15 @@ textarea {
   padding: 8px 16px;
   border-radius: 8px;
   border: solid 1px rgb(68, 39, 39);
-  color: #6dfbfa;
-  background-color: #c06e6e;
+  color: #B91646;
+  background-color: #88E0EF;
   transition: all 0.2 linear;
   cursor: pointer;
   margin: 0 8px;
 }
 .button-hoangkui:hover {
-  background-color: #2cccff;
-  color: white;
+  background-color: #B91646;
+  color: #88E0EF;
 }
 .button-hoangkui .fas {
   /* margin-right: 6px; */

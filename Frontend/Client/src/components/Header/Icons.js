@@ -11,7 +11,7 @@ function Icons() {
         <div id="menu-btn" className="fas fa-bars"></div>
         <div id="search-btn" className="fas fa-search"></div>
         <div id="cart-btn" className="fas fa-shopping-cart"></div>
-        <div id="login-btn" className="fas fa-user"></div>
+        <a id="login-btn" href="/login" className="fas fa-user"></a>
         <div className="shopping-card">
             {Data.map((props)=>{
                 return (
@@ -29,17 +29,6 @@ function Icons() {
           <h3 className="total"> TOTAL : <span>180.000VNĐ</span></h3>
           <a href="/payment" style={styleObj} className="header__menu-link btn btn--border btn--rounded buttom"> Checkout Card</a>
         </div>
-        <form action="" class="login-form">
-          <h3>Login Form</h3>
-          <input type="email" placeholder="enter your email" class="box"></input>
-          <input type="password" placeholder="enter your password" class="box"></input>
-          <div class="remember">
-            <input type="checkbox" name="" id="remember-me"></input>
-            <label for="remember-me">remember me</label>
-          </div>
-          <input type="submit" value="login now" class="header__menu-link btn btn--border btn--rounded"></input>
-          <p>don't have an account?<a>create one?</a></p>
-        </form>
     </div>
 
     </div>
