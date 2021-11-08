@@ -1,10 +1,8 @@
 
 import styles from "./ClerkLogin.module.scss"
 import Logo from './assets/image/logo.png'
-import React, {useState, Component} from 'react';
-import { useHistory } from "react-router-dom";
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import PropTypes from 'prop-types';
+import React, {Component} from 'react';
+import {BrowserRouter as Router} from 'react-router-dom';
 import axios from 'axios';
 import swal from 'sweetalert';
 
@@ -53,7 +51,7 @@ export default class ClerkLogin extends Component {
             password: this.state.password,
         }
     
-        const response = axios.post('http://localhost:3000', clerk).then(
+        const response = axios.post('http://localhost:3000/clerk', clerk).then(
             (res) => {
                 const token = res.data.token;
                 const warning = res.data.msg;

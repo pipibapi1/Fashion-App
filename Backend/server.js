@@ -27,8 +27,8 @@ mongoose
     }
   );
 
-  const loginRoute    = require('./Route/login.router');
-  const loginUpdate  = require('./Route/loginUpdate.router');
+  const ClerkRoute    = require('./Route/Clerk.router');
+
   const testRoute = require('./Route/test.router');
 
   app.use(cors());
@@ -38,8 +38,7 @@ app.use(fileupload({
    useTempFiles:true
 }));
 
-app.use('/', loginRoute);
-app.use('/update-router', loginUpdate);
+app.use('/clerk', ClerkRoute);
 app.use('/test', testRoute);
 
 

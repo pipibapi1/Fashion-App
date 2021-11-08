@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // Define collection and schema for login
-let loging = new Schema({
+let Clerk = new Schema({
     id: {
         type: String,
         unique: true
@@ -45,4 +45,4 @@ let loging = new Schema({
 }
 );
 
-module.exports = mongoose.model('loging', loging, "login");
+module.exports = mongoose.model('Clerk', Clerk, "Clerk");
