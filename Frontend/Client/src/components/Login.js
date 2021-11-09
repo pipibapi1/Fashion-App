@@ -27,7 +27,7 @@ export default function Login(){
                     </div>
                     <p className="remember"><input type="checkbox" /> <span>Remember me</span></p>
                     <p className="member"> New user? <a onClick={()=>setLogin(1)}>Create an account</a></p>
-                    <button className="submit-btn">Log in</button>
+                    <button className="submit-btn1">Log in</button>
                 </form>:""
                 }
                 {loginState===1?
