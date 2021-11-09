@@ -1,11 +1,10 @@
 import React from 'react'
 import styles from './Sidebar.module.scss'
 import Logo from './assets/image/logo.png'
-import logout from './assets/image/logout.PNG'
 import DonHang from './assets/image/DonHang.PNG'
 import TTCN from './assets/image/TTCN.PNG'
 import { Link, useLocation } from 'react-router-dom';
-import { useHistory } from "react-router-dom";
+
 
 
 const SidebarNavLinks = ["Đơn Hàng", "Thông Tin Cá Nhân"]
@@ -13,13 +12,6 @@ const SidebarNavLinks = ["Đơn Hàng", "Thông Tin Cá Nhân"]
 function Sidebar() {
     const location = useLocation();
 
-    let history = useHistory();
-
-    const justLogout = () => {
-        alert("GOOD BYE");
-        localStorage.clear();
-        history.push("/");
-    }
   
     return (
         <aside className={styles.Sidebar}>

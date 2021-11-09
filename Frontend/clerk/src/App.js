@@ -3,7 +3,7 @@ import './App.css';
 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import ClerkLogin from './components/ClerkLogin/ClerkLogin';
-import React, {Redirect} from 'react';
+import React from 'react';
 import DashBoard from './components/DashBoard';
 import createHistory from 'history/createBrowserHistory';
 import Sidebar from './components/Sidebar/Sidebar';
