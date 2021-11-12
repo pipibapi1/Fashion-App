@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // Define collection and schema for login
-let Clerk = new Schema({
+let Customer = new Schema({
     id: {
         type: String,
         unique: true
@@ -17,9 +17,6 @@ let Clerk = new Schema({
     password: {
         type: String
     },
-    role: {
-        type:String
-    },
     dateOfBirth: {
         type:Date
     },
@@ -33,19 +30,17 @@ let Clerk = new Schema({
     ,
     phoneNumber: {
         type:String
-    }
-    ,
-    cccd: {
-        type:String,
-        unique: true
     },
     avatar: {
         type:String
     },
-    dateWork: {
+    dateCreate: {
         type: Date
+    },
+    listOrderID : {
+        type: Array
     }
 }
 );
 
-module.exports = mongoose.model('Clerk', Clerk, "Clerk");
+module.exports = mongoose.model('Customer', Customer, "Customer");
