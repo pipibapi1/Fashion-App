@@ -8,7 +8,7 @@ const LoginAdmin = () => {
 
     // }
     const handleLogin=()=>{
-        if(localStorage.getItem("modal-login")==="none"||(user==="admin" && password==="1234")){
+        if((user==="admin" && password==="1234")){
             document.querySelector(".modal-admin-login").style.display="none";
             localStorage.setItem("modal-login","none")
         }

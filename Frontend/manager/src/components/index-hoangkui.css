@@ -21,16 +21,28 @@ textarea {
 }
 .addProduct-content-text-name {
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
+  margin-bottom: 10px;
 }
 .addProduct-content-text-name-label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  /* justify-content: flex-end; */
+}
+.addProduct-content-text-name-title {
+  margin-left: 6px;
+  line-height: 0;
+  min-width: 124px;
 }
 .addProduct-content-text-name-input {
+  flex: 1;
   border-radius: 4px;
   border: solid 1px #3b7458;
-  margin-left: -16px;
-  padding: 4px 4px;
+  margin-left: 6px;
+  padding: 6px 4px;
   color: #6bb7b8;
+  margin-right: 6px;
 }
 
 .addProduct-content-text-des {
@@ -39,13 +51,17 @@ textarea {
   justify-content: space-between;
   align-items: center;
 }
-.addProduct-content-text-des-label {
+.addProduct-content-text-des-label p {
+  /* color: red; */
+  min-width: 14px;
 }
+
 .addProduct-content-text-des-input {
   /* flex: 1 1; */
   min-width: 549px;
   margin-left: 9px;
-  min-height: 550px;
+  min-height: 590px;
+
   padding: 4px;
   border-radius: 4px;
   border: solid 1px #3b7458;
@@ -69,11 +85,10 @@ textarea {
 .addProduct-content-size {
   flex: 1;
 }
-.wrraper-table{
+.wrraper-table {
   overflow: auto;
   max-height: 400px;
   /* width: 100%; */
-
 }
 .addProduct-content-size-heading {
   border-radius: 4px;
@@ -94,7 +109,7 @@ textarea {
 
 .addProduct-content-size-row-heading-table {
   background-color: #6c7ae0;
-  color:white;
+  color: white;
   height: 36px;
 }
 /* moi them */
@@ -115,7 +130,6 @@ textarea {
 .addProduct-content-size-row-add:hover {
   opacity: 0.9;
 }
-
 
 /* IMG */
 
@@ -163,11 +177,11 @@ textarea {
   color: #505eb1;
   font-size: 22px;
 }
-.listProducts-heading-wrap-search{
+.listProducts-heading-wrap-search {
   border-radius: 10px;
   background-color: #a0c5b3;
 }
-.listProducts-heading-wrap-search i{
+.listProducts-heading-wrap-search i {
   font-size: 26px;
   vertical-align: middle;
   border-radius: 50%;
@@ -253,8 +267,8 @@ textarea {
 }
 .listProducts-content-row-remove:hover {
   /* color:#ff0808; */
-  background-color: #FEF5ED;
-  color:#dc3545;
+  background-color: #fef5ed;
+  color: #dc3545;
 }
 .listProducts-content-row-remove i {
   /* margin-right: 4px; */
@@ -269,7 +283,7 @@ textarea {
   padding: 4px 8px;
 }
 .listProducts-content-row-edit:hover {
-  background-color: #F6D7A7;
+  background-color: #f6d7a7;
 }
 .listProducts-content-row-edit i {
   /* margin-right: 4px; */
@@ -297,16 +311,14 @@ textarea {
 
 /* content input  */
 
-
-
 /* product detail */
 .listProducts-content-row-size {
   cursor: pointer;
   height: 40px;
   /* margin-right: -2px; */
-  border:1px solid #ccc;
+  border: 1px solid #ccc;
 }
-.listProducts-content-row-size:hover{
+.listProducts-content-row-size:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
@@ -344,15 +356,15 @@ textarea {
   padding: 8px 16px;
   border-radius: 8px;
   border: solid 1px rgb(68, 39, 39);
-  color: #B91646;
-  background-color: #88E0EF;
+  color: #b91646;
+  background-color: #88e0ef;
   transition: all 0.2 linear;
   cursor: pointer;
   margin: 0 8px;
 }
 .button-hoangkui:hover {
-  background-color: #B91646;
-  color: #88E0EF;
+  background-color: #b91646;
+  color: #88e0ef;
 }
 .button-hoangkui .fas {
   /* margin-right: 6px; */
@@ -508,131 +520,130 @@ textarea {
   background-color: rgb(180, 151, 151);
 }
 /* login admin */
-.modal-admin-login{
+.modal-admin-login {
   display: block;
   background-color: #363740;
   opacity: 1;
 }
-.modal-content-admin{
-  padding:30px 0 100px 0;
+.modal-content-admin {
+  padding: 30px 0 100px 0;
   margin-top: -20px;
   color: #ff851b;
 }
-.modal-content-admin i{
+.modal-content-admin i {
   font-size: 70px;
   color: #ff851b;
 }
-.content-admin-heading{
+.content-admin-heading {
   font-weight: 600;
   font-size: 22px;
 }
-.content-admin-des{
+.content-admin-des {
   font-weight: 300;
-  color: #9FA2B4;
+  color: #9fa2b4;
 }
-.admin-container{
-text-align: left;
-padding-left: 30px;
-margin:16px 40px 16px 0px;
+.admin-container {
+  text-align: left;
+  padding-left: 30px;
+  margin: 16px 40px 16px 0px;
 }
-.admin-container-label{
+.admin-container-label {
   display: block;
   font-weight: 500;
-  color:#9FA2B4;
+  color: #9fa2b4;
   margin-bottom: 6px;
 }
-.admin-container-input{
+.admin-container-input {
   width: 100%;
   outline: none;
-  padding:12px 6px;
+  padding: 12px 6px;
   border-radius: 8px;
   border: 1px solid #ccc;
 }
-.admin-container ::placeholder{
-  color:#9FA2B4;
+.admin-container ::placeholder {
+  color: #9fa2b4;
 }
-.admin-button{
-  color:white;
+.admin-button {
+  color: white;
   background-color: #3751ff;
   width: 90%;
-  padding:10px;
+  padding: 10px;
   /* margin: 0 20px; */
   cursor: pointer;
   border-radius: 10px;
   border: 1px solid #ccc;
 }
-.admin-button:hover{
+.admin-button:hover {
   opacity: 0.9;
 }
-.button-disable{
+.button-disable {
   cursor: default;
   opacity: 0.8;
-  color:#ccc;
+  color: #ccc;
 }
-.button-disable:hover{
-  color: #ccc !important;;
+.button-disable:hover {
+  color: #ccc !important;
 }
-.page-button{
+.page-button {
   outline: none;
   border: none;
   background-color: #fff;
 }
-.total-detail{
+.total-detail {
   /* margin-top: 16px; */
   /* width: 100%; */
   background-color: rgb(108, 164, 209);
   line-height: 0;
   box-sizing: border-box;
-  padding: 0 30px 0 11px; 
+  padding: 0 30px 0 11px;
   border-radius: 6px;
   margin-right: 2px;
-  color:white;
+  color: white;
   margin-top: 1px;
 }
-.total-detail-name{
+.total-detail-name {
   font-size: 20px;
   display: inline-block;
 }
-.total-detail-sale{
+.total-detail-sale {
   font-size: 20px;
   margin-left: 271px;
   display: inline-block;
 }
-.total-detail-remain{
+.total-detail-remain {
   font-size: 20px;
   display: inline-block;
   margin-left: 182px;
 }
 /* tuy co ung bien */
-.table-heading{
+.table-heading {
   background-color: #6c7ae0;
-  color:white;
+  color: white;
 }
-.table-heading p{
+.table-heading p {
   display: inline-block;
   font-size: 19px;
   font-weight: 500;
   line-height: 0;
 }
-.table-heading-stt{
+.table-heading-stt {
   margin-left: 11px;
 }
-.table-heading-size{
+.table-heading-size {
   margin-left: 18px;
 }
-.table-heading-color{
+.table-heading-color {
   margin-left: 18px;
 }
-.table-heading-sale{
+.table-heading-sale {
   margin-left: 72px;
 }
-.table-heading-remain{
+.table-heading-remain {
   margin-left: 80px;
 }
-.table-heading-remain-edit{
+.table-heading-remain-edit {
   margin-left: 100px;
 }
-.table-heading-color-edit{
+.table-heading-color-edit {
   margin-left: 22px;
 }
-

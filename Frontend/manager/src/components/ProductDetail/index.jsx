@@ -45,87 +45,105 @@ const ProductDetail = () => {
               htmlFor="nameProduct"
               className="addProduct-content-text-name-label"
             >
-              Tên sản phẩm
+              <p className="addProduct-content-text-name-title">Tên sản phẩm</p>
+              <input
+                type="text"
+                className="addProduct-content-text-name-input"
+                value={Products[id].where}
+                disabled
+                id="nameProduct"
+              />
             </label>
-            <input
-              type="text"
-              className="addProduct-content-text-name-input"
-              value={Products[id].name}
-              disabled
-              id="nameProduct"
-            />
             <label
               htmlFor="brandProduct"
               className="addProduct-content-text-name-label"
             >
-              Tên thương hiệu
+              <p className="addProduct-content-text-name-title">ID sản phẩm</p>
+              <input
+                type="text"
+                className="addProduct-content-text-name-input"
+                value={Products[id].brand}
+                disabled
+                id="brandProduct"
+              />
             </label>
-            <input
-              type="text"
-              className="addProduct-content-text-name-input"
-              value={Products[id].brand}
-              disabled
-              id="brandProduct"
-            />
           </div>
-          <div className="addProduct-content-text-des">
+
+          <div className="addProduct-content-text-name">
+            <label
+              htmlFor="nameProduct"
+              className="addProduct-content-text-name-label"
+            >
+              <p className="addProduct-content-text-name-title">Nơi sản xuất</p>
+              <input
+                type="text"
+                className="addProduct-content-text-name-input"
+                value={Products[id].where}
+                disabled
+                id="nameProduct"
+              />
+            </label>
+            <label
+              htmlFor="brandProduct"
+              className="addProduct-content-text-name-label"
+            >
+              <p className="addProduct-content-text-name-title">
+                Tên thương hiệu
+              </p>
+              <input
+                type="text"
+                className="addProduct-content-text-name-input"
+                value={Products[id].brand}
+                disabled
+                id="brandProduct"
+              />
+            </label>
+          </div>
+
+          <div className="addProduct-content-text-name">
+            <label
+              htmlFor="nameProduct"
+              className="addProduct-content-text-name-label"
+            >
+              <p className="addProduct-content-text-name-title">Giá</p>
+              <input
+                type="text"
+                className="addProduct-content-text-name-input"
+                value={Products[id].price}
+                disabled
+                id="nameProduct"
+              />
+            </label>
+            <label
+              htmlFor="brandProduct"
+              className="addProduct-content-text-name-label"
+            >
+              <p className="addProduct-content-text-name-title">Catelory</p>
+              <input
+                type="text"
+                className="addProduct-content-text-name-input"
+                value={Products[id].brand}
+                disabled
+                id="brandProduct"
+              />
+            </label>
+          </div>
+          <div className="addProduct-content-text-name">
             <label
               htmlFor="desProduct"
-              className="addProduct-content-text-des-label"
+              className="addProduct-content-text-name-label addProduct-content-text-des-label"
             >
-              Mô tả
+              <p className="addProduct-content-text-name-title">Mô tả</p>
+              <textarea
+                value={Products[id].description}
+                disabled
+                className="addProduct-content-text-name-input addProduct-content-text-des-input"
+                id="desProduct"
+              />
             </label>
-            <textarea
-              value={Products[id].description}
-              disabled
-              className="addProduct-content-text-des-input"
-              id="desProduct"
-            />
-          </div>
-          <div className="addProduct-content-text-bot">
-            <label
-              htmlFor="manuProduct"
-              className="addProduct-content-text-bot-where-label"
-            >
-              Nơi sản xuất
-            </label>
-            <input
-              type="text"
-              className="addProduct-content-text-bot-input"
-              value={Products[id].where}
-              disabled
-              id="manuProduct"
-            />
-            <label
-              htmlFor="numberProduct"
-              className="addProduct-content-text-bot-number-label"
-            >
-              Giá
-            </label>
-            <input
-              type="number"
-              className="addProduct-content-text-bot-input"
-              value={Products[id].price}
-              disabled
-              id="numberProduct"
-            />
-          </div>
-          <div className="addProduct-content-text-bot-view">
-            <label
-              htmlFor="manuProduct"
-              className="addProduct-content-text-bot-where-label-view"
-            >
-              Lượt truy cập
-            </label>
-            <input
-              type="text"
-              className="addProduct-content-text-bot-input"
-              value={Products[id].view}
-              disabled
-              id="manuProduct"
-            />
           </div>
         </div>
+
         <div className="addProduct-content-size">
           <SizeHeader />
           <div className="wrraper-table">
