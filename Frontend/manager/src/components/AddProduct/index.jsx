@@ -1,7 +1,40 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import Avartar from "../Avatar";
+import swal from "sweetalert";
+import { productContext } from "../ProductContext/ProductContext";
 // import "./index.css"
 const AddProduct = () => {
+  const { createdProduct } = useContext(productContext);
+  const [newProduct, setNewproduct] = useState({
+    name: "",
+    brand: "",
+    madeIn: "",
+    price: null,
+    description: "",
+    img: "",
+    feature: "",
+  });
+  const { name, brand, madeIn, price, description, img, feature } = newProduct;
+  const onChangeField = (e) => {
+    setNewproduct({
+      ...newProduct,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const handleSubmit = () => {
+    console.log(newProduct);
+    const data = new FormData();
+    data.append("name", name);
+    data.append("brand", brand);
+    data.append("madeIn", madeIn);
+    data.append("price", price);
+    data.append("description", description);
+    data.append("img", img);
+    data.append("feature", feature);
+
+    createdProduct(data);
+    swal("Product is created", "", "success");
+  };
   return (
     <>
       {/* Heading  */}
@@ -12,68 +45,125 @@ const AddProduct = () => {
       {/* Content */}
       <div className="addProduct-content">
         {/* Input text */}
+
         <div className="addProduct-content-input-text">
           <div className="addProduct-content-text-name">
             <label
               htmlFor="nameProduct"
               className="addProduct-content-text-name-label"
             >
-              Tên sản phẩm
+              <p className="addProduct-content-text-name-title">Tên sản phẩm</p>
+              <input
+                type="text"
+                name="name"
+                value={name}
+                onChange={onChangeField}
+                className="addProduct-content-text-name-input"
+                id="nameProduct"
+              />
             </label>
-            <input
-              type="text"
-              className="addProduct-content-text-name-input"
-              id="nameProduct"
-            />
             <label
               htmlFor="brandProduct"
               className="addProduct-content-text-name-label"
             >
-              Tên thương hiệu
+              <p className="addProduct-content-text-name-title">Giá</p>
+              <input
+                name="price"
+                value={price}
+                onChange={onChangeField}
+                type="number"
+                className="addProduct-content-text-name-input"
+                id="brandProduct"
+              />
             </label>
-            <input
-              type="text"
-              className="addProduct-content-text-name-input"
-              id="brandProduct"
-            />
           </div>
-          <div className="addProduct-content-text-des">
+
+          <div className="addProduct-content-text-name">
+            <label
+              htmlFor="nameProduct"
+              className="addProduct-content-text-name-label"
+            >
+              <p className="addProduct-content-text-name-title">Nơi sản xuất</p>
+              <input
+                name="madeIn"
+                value={madeIn}
+                onChange={onChangeField}
+                type="text"
+                className="addProduct-content-text-name-input"
+                id="nameProduct"
+              />
+            </label>
+            <label
+              htmlFor="brandProduct"
+              className="addProduct-content-text-name-label"
+            >
+              <p className="addProduct-content-text-name-title">
+                Tên thương hiệu
+              </p>
+              <input
+                name="brand"
+                value={brand}
+                onChange={onChangeField}
+                type="text"
+                className="addProduct-content-text-name-input"
+                id="brandProduct"
+              />
+            </label>
+          </div>
+
+          <div className="addProduct-content-text-name">
+            <label
+              htmlFor="brandProduct"
+              className="addProduct-content-text-name-label"
+            >
+              <p className="addProduct-content-text-name-title">Catelory</p>{" "}
+              <div className="addProduct-content-catelory">
+                <input type="checkbox" name="female" />
+                female
+              </div>
+              <div className="addProduct-content-catelory">
+                <input type="checkbox" name="featured" />
+                featured
+              </div>
+              <div className="addProduct-content-catelory">
+                <input type="checkbox" name="seller" />
+                seller
+              </div>
+              <div className="addProduct-content-catelory">
+                <input type="checkbox" name="seller" />
+                arrivals
+              </div>
+              <div className="addProduct-content-catelory">
+                <input type="checkbox" name="seller" />
+                Men
+              </div>
+              <div className="addProduct-content-catelory">
+                <input type="checkbox" name="seller" />
+                special
+              </div>
+              <div className="addProduct-content-catelory">
+                <input type="checkbox" name="seller" />
+                mens
+              </div>
+            </label>
+          </div>
+          <div className="addProduct-content-text-name">
             <label
               htmlFor="desProduct"
-              className="addProduct-content-text-des-label"
+              className="addProduct-content-text-name-label addProduct-content-text-des-label"
             >
-              Mô tả
+              <p className="addProduct-content-text-name-title">Mô tả</p>
+              <textarea
+                name="description"
+                value={description}
+                onChange={onChangeField}
+                className="addProduct-content-text-name-input addProduct-content-text-des-input"
+                id="desProduct"
+              />
             </label>
-            <textarea
-              className="addProduct-content-text-des-input"
-              id="desProduct"
-            />
-          </div>
-          <div className="addProduct-content-text-bot">
-            <label
-              htmlFor="manuProduct"
-              className="addProduct-content-text-bot-where-label"
-            >
-              Nơi sản xuất
-            </label>
-            <input
-              type="text"
-              className="addProduct-content-text-bot-input"
-              id="manuProduct"
-            />
-            <label
-              htmlFor="numberProduct"
-              className="addProduct-content-text-bot-number-label"
-            >
-              Giá
-            </label>
-            <input
-              type="number"
-              className="addProduct-content-text-bot-input"
-              id="numberProduct"
-            />
           </div>
         </div>
+
         {/* Input size */}
         <div className="addProduct-content-size">
           <table className="addProduct-content-size-table">
@@ -104,7 +194,7 @@ const AddProduct = () => {
             />
           </div>
 
-          <button className="addProduct-submit">
+          <button onClick={handleSubmit} className="addProduct-submit">
             <i className="fas fa-plus-circle"></i>
             Thêm
           </button>

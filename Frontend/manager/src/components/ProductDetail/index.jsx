@@ -39,6 +39,7 @@ const ProductDetail = () => {
       {/* Content */}
       <div className="addProduct-content">
         {/* Input text */}
+
         <div className="addProduct-content-input-text">
           <div className="addProduct-content-text-name">
             <label
