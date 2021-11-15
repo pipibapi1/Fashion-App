@@ -39,6 +39,7 @@ app.use(fileupload({
 
 
 app.use('/clerk', ClerkRoute);
+app.use('/Customer', ClerkRoute);
 app.use('/test', testRoute);
 
 
