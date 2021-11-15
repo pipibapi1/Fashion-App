@@ -25,12 +25,21 @@ mongoose
     }
   );
 
+<<<<<<< Updated upstream
 const ClerkRoute = require("./Route/Clerk.router");
 const testRoute = require("./Route/test.router");
 const ProductRoute = require("./Route/Product.router");
 const ProductItem = require("./Route/ProductItem.router");
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
+=======
+  const ClerkRoute    = require('./Route/Clerk.router');
+  const testRoute = require('./Route/test.router');
+  const CustomerRoute = require('./Route/Customer.router')
+
+  app.use(cors());
+app.use(bodyParser.urlencoded({extended: true}));
+>>>>>>> Stashed changes
 app.use(bodyParser.json());
 <<<<<<< HEAD
 app.use(fileupload({
@@ -39,7 +48,7 @@ app.use(fileupload({
 
 
 app.use('/clerk', ClerkRoute);
-app.use('/Customer', ClerkRoute);
+app.use('/Customer', CustomerRoute);
 app.use('/test', testRoute);
 
 

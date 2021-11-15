@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import axios from 'axios';
+import {Redirect} from "react-router-dom";
 export default function Login(){
     const [loginState,setLogin]=useState(0)
     const [loginEmail, setEmail] = useState("");
@@ -8,7 +9,7 @@ export default function Login(){
     function handleSubmit(event) {
       event.preventDefault();
       const client = {
-        username:loginEmail,
+        username: loginEmail,
         password: loginPW,
       }
       const response = axios.post('http://localhost:3000/Customer', client).then(
@@ -19,7 +20,6 @@ export default function Login(){
                 alert(warning);
             } else if (token) {
                 console.log("Signed in token Success block :", token);
-                alert("Succesful");
             
                 const id = res.data.Customer.id;
                 const name = res.data.Customer.name;
@@ -31,7 +31,7 @@ export default function Login(){
                 localStorage.setItem('name', name);
                 localStorage.setItem('username', username);
                 localStorage.setItem('password', password);
-                alert('Successfuly Loged In')
+                window.location = "/";
             }
         }
     ).catch((err) => {
@@ -104,7 +104,7 @@ export default function Login(){
             <div className="right">
               <ul>
                 <li className="facebook">
-                  <a href="#">
+                  <a href="#" onClick={()=>alert(loginEmail)}>
                   <i className="fas fa-user" aria-hidden="true"></i>
                     <span>Connect with facebook</span>
                   </a>

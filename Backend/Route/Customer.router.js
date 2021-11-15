@@ -3,14 +3,13 @@ const CustomerRoutes = express.Router();
 const config = require('../configure.js');
 const jwt = require('jsonwebtoken');
 
-let Customer = require('../Models/Customer.model.js');
+let Customer = require('../Models/Customer.model');
 
 // Customer user validation
 
 CustomerRoutes.post("/", async (req, res) => {
 
     try {
-
         const { username, password } = req.body;
         const customer = await Customer.findOne({ username: username });
 
@@ -18,16 +17,10 @@ CustomerRoutes.post("/", async (req, res) => {
             return res.json({ status:403,msg: "Username or Password fields are empty" });
 
         if (!customer)
-            return res.json({ status:403,msg: "Invalid Username" });
+            return res.json({ status:403,msg: "Invalid Username"});
 
-        if (username == "" || password == "")
-            return res.json({ status:403,msg: "Username or Password fields are empty" });
-
-       // const validate = await bcrypt.compare(password, Customer.password);
-
-        if (password !== Customer.password)
+        if (password !== customer.password)
             return res.json({ status:403,msg: "Password is Invalid!" });
-
 
         //jwt secret
         const token = jwt.sign({ id: customer._id }, config.JWT_SECRET, { expiresIn: '1h' });
