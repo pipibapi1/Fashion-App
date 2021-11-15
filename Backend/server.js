@@ -25,31 +25,17 @@ mongoose
     }
   );
 
-<<<<<<< Updated upstream
 const ClerkRoute = require("./Route/Clerk.router");
 const testRoute = require("./Route/test.router");
 const ProductRoute = require("./Route/Product.router");
 const ProductItem = require("./Route/ProductItem.router");
+const CustomerRoute = require('./Route/Customer.router')
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
-=======
-  const ClerkRoute    = require('./Route/Clerk.router');
-  const testRoute = require('./Route/test.router');
-  const CustomerRoute = require('./Route/Customer.router')
-
-  app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
->>>>>>> Stashed changes
 app.use(bodyParser.json());
-<<<<<<< HEAD
 app.use(fileupload({
    useTempFiles:true
 }));
-
-
-app.use('/clerk', ClerkRoute);
-app.use('/Customer', CustomerRoute);
-app.use('/test', testRoute);
 
 
 
@@ -58,7 +44,6 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
-=======
 app.use(
   fileupload({
     useTempFiles: true,
@@ -69,7 +54,7 @@ app.use("/clerk", ClerkRoute);
 app.use("/test", testRoute);
 app.use("/product/", ProductRoute);
 app.use("/productitem/", ProductItem);
-
+app.use('/Customer', CustomerRoute);
 app.use(
   session({
     secret: "kjcxlchiy48236",
@@ -77,7 +62,6 @@ app.use(
     saveUninitialized: false,
   })
 );
->>>>>>> 7d7f017aef9fc1616d52afbe5077968c703018bd
 
 app.listen(PORT, function () {
   console.log("Server is running on Port:", PORT);
