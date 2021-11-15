@@ -6,10 +6,9 @@ const upload = require("../middleware/handleimg");
 // POST "http://3000/localhost/product"
 // @desc create product
 ProductRoute.post("", async (req, res) => {
-  const { id, name, brand, madeIn, price, description, img, feature } =
-    req.body;
+  const { name, brand, madeIn, price, description, img, feature } = req.body;
   const newProduct = new ProductModel({
-    id,
+    id: "PR999999",
     name,
     brand,
     madeIn,

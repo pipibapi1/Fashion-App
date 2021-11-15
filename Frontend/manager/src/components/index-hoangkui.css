@@ -44,6 +44,9 @@ textarea {
   color: #6bb7b8;
   margin-right: 6px;
 }
+.addProduct-content-catelory {
+  margin: 0 8px;
+}
 
 .addProduct-content-text-des {
   display: flex;
