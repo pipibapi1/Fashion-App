@@ -135,15 +135,27 @@ textarea {
 }
 
 /* IMG */
-
+.addProduct-content-size-display-wrapper {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
 .addProduct-content-size-display {
-  margin-top: 14px;
+  /* margin-top: 14px;
   text-align: center;
-  height: 80%;
+  height: 80%; */
+  display: flex;
+  align-items: center;
+}
+.addProduct-content-size-display-text {
+  line-height: 0;
 }
 .addProduct-content-size-display-img {
+  margin: 0;
+}
+.addProduct-content-size-display-img-size {
   width: auto;
-  height: auto;
+  height: 180px;
   object-fit: cover;
 }
 .addProduct-submit .fas {
@@ -349,11 +361,7 @@ textarea {
 .addProduct-content-text-bot-where-label-view {
   margin-right: 22px;
 }
-.addProduct-content-size-display-img-size {
-  width: auto;
-  height: 180px;
-  object-fit: cover;
-}
+
 /* button gan avatar */
 .button-hoangkui {
   padding: 8px 16px;

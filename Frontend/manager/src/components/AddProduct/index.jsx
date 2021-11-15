@@ -2,8 +2,10 @@ import React, { useState, useContext } from "react";
 import Avartar from "../Avatar";
 import swal from "sweetalert";
 import { productContext } from "../ProductContext/ProductContext";
+import Catelory from "./Catelory";
 // import "./index.css"
 const AddProduct = () => {
+  // const [submit,setSubmit]=useState(false)
   const { createdProduct } = useContext(productContext);
   const [newProduct, setNewproduct] = useState({
     name: "",
@@ -21,6 +23,12 @@ const AddProduct = () => {
       [e.target.name]: e.target.value,
     });
   };
+  const getValueCatelory = (data) => {
+    setNewproduct({
+      ...newProduct,
+      feature: data,
+    });
+  };
   const handleSubmit = () => {
     console.log(newProduct);
     const data = new FormData();
@@ -33,7 +41,22 @@ const AddProduct = () => {
     data.append("feature", feature);
 
     createdProduct(data);
+    setNewproduct({
+      name: "",
+      brand: "",
+      madeIn: "",
+      price: null,
+      description: "",
+      img: "",
+      feature: "",
+    });
     swal("Product is created", "", "success");
+  };
+  const handleChangImg = (e) => {
+    setNewproduct({
+      ...newProduct,
+      img: e.target.files[0],
+    });
   };
   return (
     <>
@@ -110,43 +133,7 @@ const AddProduct = () => {
               />
             </label>
           </div>
-
-          <div className="addProduct-content-text-name">
-            <label
-              htmlFor="brandProduct"
-              className="addProduct-content-text-name-label"
-            >
-              <p className="addProduct-content-text-name-title">Catelory</p>{" "}
-              <div className="addProduct-content-catelory">
-                <input type="checkbox" name="female" />
-                female
-              </div>
-              <div className="addProduct-content-catelory">
-                <input type="checkbox" name="featured" />
-                featured
-              </div>
-              <div className="addProduct-content-catelory">
-                <input type="checkbox" name="seller" />
-                seller
-              </div>
-              <div className="addProduct-content-catelory">
-                <input type="checkbox" name="seller" />
-                arrivals
-              </div>
-              <div className="addProduct-content-catelory">
-                <input type="checkbox" name="seller" />
-                Men
-              </div>
-              <div className="addProduct-content-catelory">
-                <input type="checkbox" name="seller" />
-                special
-              </div>
-              <div className="addProduct-content-catelory">
-                <input type="checkbox" name="seller" />
-                mens
-              </div>
-            </label>
-          </div>
+          <Catelory getValueCatelory={getValueCatelory} />
           <div className="addProduct-content-text-name">
             <label
               htmlFor="desProduct"
@@ -170,7 +157,6 @@ const AddProduct = () => {
             <tr className="addProduct-content-size-row-heading-table">
               <th className="addProduct-content-size-row-heading">STT</th>
               <th className="addProduct-content-size-row-heading">Size</th>
-              <th className="addProduct-content-size-row-heading">Màu sắc</th>
               <th className="addProduct-content-size-row-heading">
                 Số lượng đã bán
               </th>
@@ -185,13 +171,31 @@ const AddProduct = () => {
               </th>
             </tr>
           </table>
-          <div className="addProduct-content-size-display">
-            <p className="addProduct-content-size-display-text">Hình ảnh:</p>
-            <img
-              src=""
-              alt="Chưa thêm size"
-              className="addProduct-content-size-display-img"
-            />
+
+          <div className="addProduct-content-size-display-wrapper">
+            <div className="addProduct-content-size-display">
+              <button
+                style={{ display: "block", width: 140, height: 30 }}
+                onClick={() => document.getElementById("getFile").click()}
+              >
+                Chọn ảnh đại diện
+              </button>
+              <input
+                type="file"
+                id="getFile"
+                name="imgProduct"
+                onChange={handleChangImg}
+                style={{ display: "none" }}
+              ></input>
+            </div>
+            <div className="addProduct-content-size-display">
+              <p className="addProduct-content-size-display-text">Hình ảnh:</p>
+              <img
+                src=""
+                alt="Chưa thêm size"
+                className="addProduct-content-size-display-img"
+              />
+            </div>
           </div>
 
           <button onClick={handleSubmit} className="addProduct-submit">
