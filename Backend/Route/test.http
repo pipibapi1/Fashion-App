@@ -1,0 +1,75 @@
+POST http://localhost:3000/product/
+Content-Type: application/json
+
+{
+    "id":"PR0000002",
+    "name":"test",
+    "brand":"test",
+    "madeIn":"test",
+    "price":"25",
+    "description":"test",
+    "img":"test",
+    "feature":"test"
+}
+###
+
+GET http://localhost:3000/product/
+
+###
+
+GET http://localhost:3000/product/PR000000
+
+###
+
+DELETE http://localhost:3000/product/PR0000002
+
+###
+
+PUT http://localhost:3000/product/PR0000001
+Content-Type: application/json
+
+{
+    "name":"test2",
+    "brand":"test",
+    "madeIn":"test",
+    "price":"25",
+    "description":"test",
+    "img":"test",
+    "feature":"test"
+}
+
+#########################################################################
+
+POST http://localhost:3000/productitem/PR0000001
+Content-Type: application/json
+
+{
+    "id":"PI100003",
+    "size":"X",
+    "img":"a",
+    "sold":25,
+    "remaining":25
+}
+
+
+
+###
+GET http://localhost:3000/productitem/PR0000001
+
+
+
+###
+PUT http://localhost:3000/productitem/PR0000001/PI100003
+Content-Type: application/json
+
+{
+    "size":"X",
+    "img":"a",
+    "sold":25,
+    "remaining":30
+}
+
+###
+DELETE http://localhost:3000/productitem/PR0000001/PI100003
+
+
