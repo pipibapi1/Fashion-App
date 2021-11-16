@@ -5,20 +5,34 @@ const upload = require("../middleware/handleimg");
 
 // POST "http://3000/localhost/product"
 // @desc create product
-ProductRoute.post("", async (req, res) => {
-  console.log(req.files.imgProduct);
-  const { name, brand, madeIn, price, description, feature } = req.body;
-  const newProduct = new ProductModel({
-    id: "PR000003",
-    name,
-    brand,
-    madeIn,
-    price,
-    description,
-    img: req.file.path,
-    feature,
-  });
+
+//  convert 222 to PR000222
+const handleIndex = (index) => {
+  let count = 6 - index.toString().length;
+  let res = "";
+  while (count--) {
+    res += "0";
+  }
+  res += index.toString();
+  return `PR${res}`;
+};
+
+ProductRoute.post("/", upload.single("img"), async (req, res) => {
   try {
+    const lastProduct = await ProductModel.findOne({}).sort({ id: -1 });
+    const idHandled = handleIndex(Number(lastProduct.id.slice(2)) + 1);
+
+    const { name, brand, madeIn, price, description, feature } = req.body;
+    const newProduct = new ProductModel({
+      id: idHandled,
+      name,
+      brand,
+      madeIn,
+      price,
+      description,
+      img: `http://localhost:3000/${req.file.path}`,
+      feature,
+    });
     await newProduct.save();
     res.send({ success: true, product: newProduct });
   } catch (error) {

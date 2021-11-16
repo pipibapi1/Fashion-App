@@ -1,22 +1,33 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Avartar from "../Avatar";
 import swal from "sweetalert";
 import { productContext } from "../ProductContext/ProductContext";
 import Catelory from "./Catelory";
+import ModalSize from "./ModalSize";
 // import "./index.css"
 const AddProduct = () => {
   // const [submit,setSubmit]=useState(false)
-  const { createdProduct } = useContext(productContext);
+
+  const [productItems, setProductItems] = useState([]);
+  const { createdProduct, getProducts, products, getIdProductCurrent } =
+    useContext(productContext);
+  const [imgPreview, setImgPreview] = useState();
+  useEffect(() => getProducts(), []);
+  useEffect(() => {
+    return () => {
+      imgPreview && URL.revokeObjectURL(imgPreview.preview);
+    };
+  }, [imgPreview]);
   const [newProduct, setNewproduct] = useState({
     name: "",
     brand: "",
     madeIn: "",
-    price: null,
+    price: 0,
     description: "",
     img: "",
     feature: "",
   });
-  const { name, brand, madeIn, price, description, img, feature } = newProduct;
+  const { name, brand, madeIn, price, description } = newProduct;
   const onChangeField = (e) => {
     setNewproduct({
       ...newProduct,
@@ -30,26 +41,27 @@ const AddProduct = () => {
     });
   };
   const handleSubmit = () => {
-    console.log(newProduct);
-    const data = new FormData();
-    data.append("name", name);
-    data.append("brand", brand);
-    data.append("madeIn", madeIn);
-    data.append("price", price);
-    data.append("description", description);
-    data.append("img", img);
-    data.append("feature", feature);
+    const formData = new FormData();
+    formData.append("name", newProduct.name);
+    formData.append("brand", newProduct.brand);
+    formData.append("madeIn", newProduct.madeIn);
+    formData.append("price", newProduct.price);
+    formData.append("description", newProduct.description);
+    formData.append("img", newProduct.img);
+    formData.append("feature", newProduct.feature);
 
-    createdProduct(data);
+    console.log(formData);
+    createdProduct(formData);
     setNewproduct({
       name: "",
       brand: "",
       madeIn: "",
-      price: null,
+      price: 0,
       description: "",
       img: "",
       feature: "",
     });
+    setImgPreview(null);
     swal("Product is created", "", "success");
   };
   const handleChangImg = (e) => {
@@ -57,6 +69,9 @@ const AddProduct = () => {
       ...newProduct,
       img: e.target.files[0],
     });
+    const file = e.target.files[0];
+    file.preview = URL.createObjectURL(file);
+    setImgPreview(file);
   };
   return (
     <>
@@ -155,25 +170,38 @@ const AddProduct = () => {
         <div className="addProduct-content-size">
           <table className="addProduct-content-size-table">
             <tr className="addProduct-content-size-row-heading-table">
-              <th className="addProduct-content-size-row-heading">STT</th>
-              <th className="addProduct-content-size-row-heading">Size</th>
-              <th className="addProduct-content-size-row-heading">
+              <th className="addProduct-content-size-row-heading-stt">STT</th>
+              <th className="addProduct-content-size-row-heading-add">Size</th>
+              <th className="addProduct-content-size-row-heading-add">
                 Số lượng đã bán
               </th>
-              <th className="addProduct-content-size-row-heading">
+              <th className="addProduct-content-size-row-heading-add">
                 Số lượng còn
               </th>
-              <th className="addProduct-content-size-row-heading"> </th>
-              <th className="addProduct-content-size-row-heading">
-                <button className="addProduct-content-size-row-add">
-                  Thêm
-                </button>
+              <th className="addProduct-content-size-row-heading-add"> </th>
+              <th className="addProduct-content-size-row-heading-add">
+                {/* <button className="addProduct-content-size-row-add"> */}
+                <ModalSize
+                  productItems={productItems}
+                  setProductItems={setProductItems}
+                />
+                {/* Thêm */}
+                {/* </button> */}
               </th>
             </tr>
+
+            {productItems.map((productItem, index) => (
+              <tr key={index}>
+                <th>{index}</th>
+                <th>{productItem.size}</th>
+                <th>{productItem.remaining}</th>
+                <th>{productItem.size}</th>
+              </tr>
+            ))}
           </table>
 
           <div className="addProduct-content-size-display-wrapper">
-            <div className="addProduct-content-size-display">
+            <div className="addProduct-content-size-display addProduct-img-preview-div">
               <button
                 style={{ display: "block", width: 140, height: 30 }}
                 onClick={() => document.getElementById("getFile").click()}
@@ -183,10 +211,18 @@ const AddProduct = () => {
               <input
                 type="file"
                 id="getFile"
-                name="imgProduct"
+                name="img"
                 onChange={handleChangImg}
                 style={{ display: "none" }}
               ></input>
+
+              {imgPreview && (
+                <img
+                  src={imgPreview.preview}
+                  alt="imgpreview"
+                  className="addProduct-img-preview"
+                />
+              )}
             </div>
             <div className="addProduct-content-size-display">
               <p className="addProduct-content-size-display-text">Hình ảnh:</p>

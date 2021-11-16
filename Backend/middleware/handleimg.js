@@ -16,10 +16,11 @@ const storage = multer.diskStorage({
     cb(null, new Date().toISOString().replace(/:/g, "-") + file.originalname);
   },
 });
-module.exports = multer({
+const upload = multer({
   storage: storage,
   limts: {
     fileSize: 1024 * 1024 * 5,
   },
   fileFilter: fileFilter,
 });
+module.exports = upload;
