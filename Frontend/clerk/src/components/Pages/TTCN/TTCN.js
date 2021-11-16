@@ -7,10 +7,6 @@ import DatePicker from  'react-datepicker';
 
 
 
-    const name = localStorage.getItem('name');
-    const role = localStorage.getItem('role');
-    const ID = localStorage.getItem('id');
-
     
 
     export default class TTCN extends Component {
@@ -26,6 +22,9 @@ import DatePicker from  'react-datepicker';
     
             this.onSubmit = this.onSubmit.bind(this);
             this.state = {
+                name : localStorage.getItem('name'),
+                role : localStorage.getItem('role'),
+                id : localStorage.getItem('id'),
                 email: localStorage.getItem('email'),
                 address: localStorage.getItem('address'),
                 phoneNumber:localStorage.getItem('phoneNumber'),
@@ -104,7 +103,7 @@ import DatePicker from  'react-datepicker';
             update.append('phoneNumber', this.state.phoneNumber);
             update.append('cccd', this.state.cccd);
             update.append('birthday',  this.state.birthday);
-            update.append('id', ID);
+            update.append('id', this.state.id);
             update.append('file', this.state.file);
             update.append('avatar', this.state.avatar);
             
@@ -186,7 +185,7 @@ import DatePicker from  'react-datepicker';
         return(
         <div className={styles.ThongTinCaNhan}>
             <div className={styles.label}>Thông Tin Cá Nhân</div>
-            <div className={styles.name}>{name}</div>
+            <div className={styles.name}>{this.state.name}</div>
             <div >
                     <img  className={styles.ava} src={this.state.avatar}alt="Ava" />
                 </div>
@@ -195,12 +194,12 @@ import DatePicker from  'react-datepicker';
             <div id="rectangle" className={styles.innerBox}>
 
             
-                <div className={styles.bigName}>{name}</div>
+                <div className={styles.bigName}>{this.state.name}</div>
 
                 <div className={styles.hardIfoBar1}>Chức Vụ</div>
-                 <div className={styles.hardfInfo1}>{role}</div>
+                 <div className={styles.hardfInfo1}>{this.state.role}</div>
                 <div className={styles.hardIfoBar2}>ID</div>
-                <div className={styles.hardfInfo2}>{ID}</div>
+                <div className={styles.hardfInfo2}>{this.state.id}</div>
             
             <form onSubmit={this.onSubmit}>
                 
