@@ -25,9 +25,11 @@ mongoose
     }
   );
 
+
 const ClerkRoute = require("./Route/Clerk.router");
 const testRoute = require("./Route/test.router");
 const ProductRoute = require("./Route/Product.router");
+<<<<<<< HEAD
 const ProductItemRoute = require("./Route/ProductItem.router");
 const CustomerRoute = require("./Route/Customer.router");
 app.use(cors());
@@ -39,6 +41,25 @@ app.use(
     useTempFiles: true,
   })
 );
+=======
+const ProductItem = require("./Route/ProductItem.router");
+const CustomerRoute = require('./Route/Customer.router')
+const OrderRoute = require('./Route/Order.router')
+app.use(cors());
+
+
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+app.use(fileupload({
+   useTempFiles:true
+})); 
+
+
+app.use('/clerk', ClerkRoute);
+app.use('/test', testRoute);
+app.use('/order', OrderRoute);
+
+>>>>>>> 427cb3e0bd52d1dd417833c5e82c38fc811d9588
 
 app.use(
   session({
