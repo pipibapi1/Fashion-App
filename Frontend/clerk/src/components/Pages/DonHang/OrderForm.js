@@ -169,6 +169,7 @@ function OrderForm(props) {
     }
     let button1;
     let button2;
+    
     if(orderStatus === "Chờ Xác Nhận")
     {
         button1 = <button className={styles.decline} onClick={(e) => huyChoXacNhan(e)}>Hủy Đơn</button>;
@@ -184,6 +185,52 @@ function OrderForm(props) {
     {
         button1 = <div></div>
         button2 = <div></div>
+    }
+    let itemList;
+    if(orderStatus === "Chờ Xác Nhận"){
+        itemList = <Table className={styles.table}>
+        <tr className={styles.head}>
+            <td>Hình ảnh </td>
+            <td>Vật phẩm</td>
+            <td>Giá </td>
+            <td>Số lượng</td>
+            <td>Trong kho</td>
+        </tr>
+        {
+            items.map((item) => 
+                <tr>
+                    <td> <img className={styles.itemImg} src={item.img}/></td>
+                    <td>{item.name} ({item.size})</td>
+                    <td>{item.price.toLocaleString()} VND</td>
+                    <td>x{item.quantity}</td>
+                    <td className={(item.remaining >= item.quantity ? styles.du : styles.kodu)}>{item.remaining}</td>
+                </tr>
+            )
+        }
+    </Table>
+    }
+    else
+    {
+        itemList = <Table className={styles.table}>
+        <tr className={styles.head}>
+            <td>Hình ảnh </td>
+            <td>Vật phẩm</td>
+            <td>Giá </td>
+            <td>Số lượng</td>
+           
+        </tr>
+        {
+            items.map((item) => 
+                <tr>
+                    <td> <img className={styles.itemImg} src={item.img}/></td>
+                    <td>{item.name} ({item.size})</td>
+                    <td>{item.price.toLocaleString()} VND</td>
+                    <td>x{item.quantity}</td>
+                    
+                </tr>
+            )
+        }
+    </Table>
     }
     return (
         <div className={styles.orderDetail}>
@@ -212,27 +259,7 @@ function OrderForm(props) {
                 </div>
                 
                 <div className={styles.listItem}>
-                    <Table className={styles.table}>
-                        <tr className={styles.head}>
-                            <td>Hình ảnh </td>
-                            <td>Vật phẩm</td>
-                            <td>Giá </td>
-                            <td>Số lượng</td>
-                            <td>Trong kho</td>
-                        </tr>
-                        {
-                            items.map((item) => 
-                                <tr>
-                                    <td> <img className={styles.itemImg} src={item.img}/></td>
-                                    <td>{item.name} ({item.size})</td>
-                                    <td>{item.price.toLocaleString()} VND</td>
-                                    <td>x{item.quantity}</td>
-                                    <td className={(item.remaining >= item.quantity ? styles.du : styles.kodu)}>{item.remaining}</td>
-                                </tr>
-                            )
-                        }
-                    </Table>
-                
+                    {itemList}
                 </div>
                 
                 

@@ -49,7 +49,16 @@ export default class DonHang extends Component {
         }
         axios.post('http://localhost:3000/order/get-all/quan').then(res => {
             if(res.data.length > 0){
-                const all = res.data;
+
+                let all = res.data;
+                for(let i = 0; i < all.length; i++)
+                {
+                    const temp = new Date(all[i].date);
+                    var dd = String(temp.getDate()).padStart(2, '0');
+                    var mm = String(temp.getMonth() + 1).padStart(2, '0'); //January is 0!
+                    var yyyy = temp.getFullYear();
+                    all[i].date = "Ngày " + dd + " Tháng " + mm + " Năm " + yyyy;
+                }
                 const cxn = all.filter(order => order.status === "Chờ Xác Nhận");
                 const dggiao = all.filter(order => order.status === "Đang Giao");
                 const dgiao = all.filter(order => order.status === "Đã Giao");
