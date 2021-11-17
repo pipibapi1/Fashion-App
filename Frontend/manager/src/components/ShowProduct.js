@@ -13,7 +13,7 @@ export default function ShowProduct(props) {
     // }, []);
     React.useEffect(() => {     
             const getData = async () => {  
-            await axios.post("http://localhost:4000/revenue/searchProduct", {searchProduct: props.item.productID}).then((response) => {
+            await axios.post("http://localhost:3000/revenue/searchProduct", {searchProduct: props.item.productID}).then((response) => {
                 setproduct(response.data)
                 console.log(response.data);
             });

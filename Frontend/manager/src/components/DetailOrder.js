@@ -8,7 +8,7 @@ export default function DetailOrder(props) {
     React.useEffect(() => {
         // console.log("hihi", props.order.listItemID)
         if(items.length < props.order.listItemID.length) props.order.listItemID.map(item => {
-            axios.post("http://localhost:4000/revenue/searchItem", {searchItem: item}).then((response) => {
+            axios.post("http://localhost:3000/revenue/searchItem", {searchItem: item}).then((response) => {
                 setitems([...items, response.data])
                 // console.log(response.data);
             });

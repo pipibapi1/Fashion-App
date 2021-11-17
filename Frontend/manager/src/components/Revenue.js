@@ -15,7 +15,7 @@ export default function Revenue() {
         // setStaff(response.data);
         // });
 
-        axios.get("http://localhost:4000/revenue/order").then((response) => {
+        axios.get("http://localhost:3000/revenue/order").then((response) => {
             setOrder(response.data);
             // console.log(response.data);
         });

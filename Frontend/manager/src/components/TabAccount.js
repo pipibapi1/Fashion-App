@@ -14,10 +14,10 @@ export default function TabAccount() {
     const [Customers, setCustomer] = React.useState(null);
 
     React.useEffect(() => {
-        axios.get("http://localhost:4000/detail/Clerk").then((response) => {
+        axios.get("http://localhost:3000/detail/Clerk").then((response) => {
         setStaff(response.data);
         });
-        axios.get("http://localhost:4000/detail/Customer").then((response) => {
+        axios.get("http://localhost:3000/detail/Customer").then((response) => {
         setCustomer(response.data);
         });
     }, []);
