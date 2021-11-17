@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import swal from "sweetalert";
 import ProductDetail from "../../ProductDetail";
 import {
   BrowserRouter as Router,
@@ -10,30 +10,80 @@ import {
   useHistory,
 } from "react-router-dom";
 import LinkButton from "../../LinkButton";
+import { productContext } from "../../ProductContext/ProductContext";
 const Product = ({ index, product }) => {
-  const { name, brand, sold, remaining, price } = product;
+  const { deleteProduct } = useContext(productContext);
+  const { id, name, brand, sold, remaining, price } = product;
   let history = useHistory();
   const handleClickProduct = () => {
-    history.push(`/products/${index - 1}`);
+    history.push(`/products/${id}`);
     console.log(":");
   };
-  // const ulr="./product/id"
+  const handleRemoveProduct = () => {
+    swal({
+      title: "Bạn có chắc chắn?",
+      text: "Bạn sẽ không thể khôi phục nếu thực hiện hành động này?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        deleteProduct(id);
+        swal("Xóa thành công", {
+          icon: "success",
+        });
+      }
+    });
+  };
   return (
     <>
-      <tr onClick={handleClickProduct} className="listProducts-content-row">
+      <tr className="listProducts-content-row">
         <td className="listProducts-content-row-item">
           <input
             type="checkbox"
             className="listProducts-content-row-checkbox"
           />
         </td>
-        <td className="listProducts-content-row-item">{index}</td>
-        <td className="listProducts-content-row-item">{name}</td>
-        <td className="listProducts-content-row-item">{brand}</td>
-        <td className="listProducts-content-row-item">{remaining}</td>
-        <td className="listProducts-content-row-item">{sold}</td>
-        <td className="listProducts-content-row-item">{price}</td>
-        <td className="listProducts-content-row-item"></td>
+        <td
+          onClick={handleClickProduct}
+          className="listProducts-content-row-item"
+        >
+          {index}
+        </td>
+        <td
+          onClick={handleClickProduct}
+          className="listProducts-content-row-item"
+        >
+          {name}
+        </td>
+        <td
+          onClick={handleClickProduct}
+          className="listProducts-content-row-item"
+        >
+          {brand}
+        </td>
+        <td
+          onClick={handleClickProduct}
+          className="listProducts-content-row-item"
+        >
+          {remaining}
+        </td>
+        <td
+          onClick={handleClickProduct}
+          className="listProducts-content-row-item"
+        >
+          {sold}
+        </td>
+        <td
+          onClick={handleClickProduct}
+          className="listProducts-content-row-item"
+        >
+          {price}
+        </td>
+        <td
+          onClick={handleClickProduct}
+          className="listProducts-content-row-item"
+        ></td>
         <td className="listProducts-content-row-item">
           <LinkButton
             to={`/products/edit/${index - 1}`}
@@ -41,8 +91,10 @@ const Product = ({ index, product }) => {
           >
             <i className="far fa-edit"></i>
           </LinkButton>
-          <button className="listProducts-content-row-remove">
-            {" "}
+          <button
+            onClick={handleRemoveProduct}
+            className="listProducts-content-row-remove"
+          >
             <i className="fas fa-trash"></i>
           </button>
         </td>

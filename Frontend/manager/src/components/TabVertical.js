@@ -24,12 +24,8 @@ import LoginAdmin from "./LoginAdmin";
 import { productContext } from "./ProductContext/ProductContext";
 
 export default function TabVertical() {
-  const { getProducts, products, getProductitems, getSoldAndRemain } =
+  const { getProducts, products, getProductitems, getSoldAndRemain, loading } =
     useContext(productContext);
-  useEffect(() => {
-    getProducts();
-    getProductitems();
-  }, []);
   console.log(products);
   const history = useHistory();
   const handleTab = (id) => {

@@ -95,4 +95,21 @@ ProductItemRoute.delete("/:idProduct/:id", async (req, res) => {
     res.status(500).json({ success: false, message: "Internal server error" });
   }
 });
+
+// DELETE http://localhost/3000/PR000001/PI1515151
+// @desc update size product
+ProductItemRoute.delete("/:idProduct", async (req, res) => {
+  try {
+    const conditionUpdated = {
+      productID: req.params.idProduct,
+    };
+    const ProductItemDeleted = await ProductItem.deleteMany(conditionUpdated);
+    if (!ProductItemDeleted)
+      res.status(401).json({ success: true, msg: "ProductItem not found" });
+    res.send({ success: true, productItem: ProductItemDeleted });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
+});
 module.exports = ProductItemRoute;

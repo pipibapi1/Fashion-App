@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import SizeProduct from "./SizeProduct";
 import Products from "../../Products";
 import LinkButton from "../LinkButton";
@@ -12,16 +12,35 @@ import {
 import Avartar from "../Avatar";
 import SizeHeader from "./SizeHeader";
 import TotalSize from "./TotalSize";
+import { productContext } from "../ProductContext/ProductContext";
 
 const ProductDetail = () => {
+  const { getProductById, loading } = useContext(productContext);
+  console.log(loading);
   const [sizeSelected, setSizeSelected] = useState(0);
   let { id } = useParams();
-  console.log(id);
+  console.log(getProductById(id));
+  const {
+    name,
+    brand,
+    description,
+    feature,
+    img,
+    items,
+    madeIn,
+    price,
+    remaining,
+    sold,
+  } = getProductById(id);
   // const {name,brand,remain,sale,price,where,}
-  const [img, setImg] = useState(Products[id].sizes[0].img);
+  const [imgProductItem, setImgProductItem] = useState(() => {
+    if (!items) return "";
+    if (items.length > 0) return items[0].img;
+    return "";
+  });
   const handleClickSizeProduct = (index) => {
     console.log(index);
-    setImg(Products[id].sizes[index].img);
+    setImgProductItem(items[index].img);
     setSizeSelected(index);
   };
   return (
@@ -50,7 +69,7 @@ const ProductDetail = () => {
               <input
                 type="text"
                 className="addProduct-content-text-name-input"
-                value={Products[id].where}
+                value={name}
                 disabled
                 id="nameProduct"
               />
@@ -63,7 +82,7 @@ const ProductDetail = () => {
               <input
                 type="text"
                 className="addProduct-content-text-name-input"
-                value={Products[id].brand}
+                value={id}
                 disabled
                 id="brandProduct"
               />
@@ -79,7 +98,7 @@ const ProductDetail = () => {
               <input
                 type="text"
                 className="addProduct-content-text-name-input"
-                value={Products[id].where}
+                value={madeIn}
                 disabled
                 id="nameProduct"
               />
@@ -94,7 +113,7 @@ const ProductDetail = () => {
               <input
                 type="text"
                 className="addProduct-content-text-name-input"
-                value={Products[id].brand}
+                value={brand}
                 disabled
                 id="brandProduct"
               />
@@ -110,7 +129,7 @@ const ProductDetail = () => {
               <input
                 type="text"
                 className="addProduct-content-text-name-input"
-                value={Products[id].price}
+                value={price}
                 disabled
                 id="nameProduct"
               />
@@ -123,7 +142,7 @@ const ProductDetail = () => {
               <input
                 type="text"
                 className="addProduct-content-text-name-input"
-                value={Products[id].brand}
+                value={feature}
                 disabled
                 id="brandProduct"
               />
@@ -136,7 +155,7 @@ const ProductDetail = () => {
             >
               <p className="addProduct-content-text-name-title">Mô tả</p>
               <textarea
-                value={Products[id].description}
+                value={description}
                 disabled
                 className="addProduct-content-text-name-input addProduct-content-text-des-input"
                 id="desProduct"
@@ -150,7 +169,7 @@ const ProductDetail = () => {
           <div className="wrraper-table">
             <table className="addProduct-content-size-table">
               <tbody>
-                {Products[id].sizes.map((size, index) => {
+                {items.map((item, index) => {
                   return (
                     <SizeProduct
                       style={
@@ -161,21 +180,33 @@ const ProductDetail = () => {
                       onClickSizeProduct={handleClickSizeProduct}
                       key={index}
                       index={index}
-                      size={size}
+                      item={item}
                     />
                   );
                 })}
               </tbody>
             </table>
           </div>
-          <TotalSize sale={Products[id].sale} remain={Products[id].remain} />
-          <div className="addProduct-content-size-display">
-            <p className="addProduct-content-size-display-text">Hình ảnh:</p>
-            <img
-              src={img}
-              alt="Chưa thêm size"
-              className="addProduct-content-size-display-img-size"
-            />
+          <TotalSize sale={sold} remain={remaining} />
+          <div className="addProduct-content-size-display-wrapper">
+            <div className="addProduct-content-size-display addProduct-img-preview-div">
+              <p className="addProduct-content-size-display-text addProduct-content-size-display-text-view">
+                Ảnh đại diện
+              </p>
+              <img
+                src={img}
+                alt="imgpreview"
+                className="addProduct-img-preview addProduct-img-preview-view"
+              />
+            </div>
+            <div className="addProduct-content-size-display">
+              <p className="addProduct-content-size-display-text">Hình ảnh:</p>
+              <img
+                src={imgProductItem}
+                alt=""
+                className="addProduct-content-size-display-img-size"
+              />
+            </div>
           </div>
         </div>
       </div>

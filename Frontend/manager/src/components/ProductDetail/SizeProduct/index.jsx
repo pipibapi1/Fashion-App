@@ -1,6 +1,6 @@
 import React from "react";
 // import "./index.css"
-const SizeProduct = ({ index, size, onClickSizeProduct, style }) => {
+const SizeProduct = ({ index, item, onClickSizeProduct, style }) => {
   console.log(style);
   return (
     <>
@@ -10,10 +10,9 @@ const SizeProduct = ({ index, size, onClickSizeProduct, style }) => {
         className="listProducts-content-row-size"
       >
         <td style={{ width: "8%" }}>{index + 1}</td>
-        <td style={{ width: "8%" }}>{size.size}</td>
-        {/* <td style={{width:"15%"}}>{size.color}</td> */}
-        <td style={{ width: "45%" }}>{size.sale}</td>
-        <td>{size.remain}</td>
+        <td style={{ width: "28%" }}>{item.size}</td>
+        <td style={{ width: "23%" }}>{item.sold}</td>
+        <td style={{ width: "40%" }}>{item.remaining}</td>
       </tr>
     </>
   );
