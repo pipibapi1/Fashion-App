@@ -41,7 +41,6 @@ code {
 }
 
 .react-tabs {
-<<<<<<< HEAD
 display: flex;
 /* width: 99.8%; */
 width: 100%;
@@ -49,14 +48,7 @@ width: 100%;
 height: 100%; 
 border: 1px solid #3c3e43;
 color: black;
-=======
-  display: flex;
-  width: 99.8%;
-  /* hoangkui sua height */
-  height: 100%;
-  border: 1px solid #3c3e43;
-  color: black;
->>>>>>> 630d3f088c7cdf658c6afb40190d0c44253acf98
+
 }
 
 .react-tabs__tab-list {
@@ -103,18 +95,12 @@ color: black;
 }
 
 .panel-content {
-<<<<<<< HEAD
+
 text-align: left;
 /* background-color:; */
 /* display: inline-block; */
 /* padding-left: 20px; */
-=======
-  text-align: left;
-  /* background-color:; */
-  /* display: inline-block; */
-  /* padding-left: 20px; */
-  /* background: red; */
->>>>>>> 630d3f088c7cdf658c6afb40190d0c44253acf98
+
 }
 .tabIcon {
   color: white;
@@ -206,7 +192,7 @@ text-align: left;
 /* **************************************ShowList********************************************************************** */
 
 .oderprice {
-<<<<<<< HEAD
+
 /* background-color:#AAAAAA; */
 border-radius: 5px;
 text-align: center;
@@ -214,14 +200,7 @@ width: 90px;
 vertical-align: middle;
 height: 80%;
 padding-top: 0;
-=======
-  background-color: #aaaaaa;
-  border-radius: 5px;
-  text-align: center;
-  width: 70px;
-  vertical-align: middle;
-  height: 60%;
->>>>>>> 630d3f088c7cdf658c6afb40190d0c44253acf98
+
 }
 .contentlist_Revenue {
   max-height: 68vh;
