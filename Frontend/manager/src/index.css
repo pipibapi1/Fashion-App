@@ -44,7 +44,8 @@ height: 100%;
 
 .react-tabs {
 display: flex;
-width: 99.8%;
+/* width: 99.8%; */
+width: 100%;
 /* hoangkui sua height */
 height: 100%; 
 border: 1px solid #3c3e43;
@@ -99,7 +100,6 @@ text-align: left;
 /* background-color:; */
 /* display: inline-block; */
 /* padding-left: 20px; */
-
 }
 .tabIcon {
 color: white;
@@ -194,12 +194,13 @@ border: outset;
 /* **************************************ShowList********************************************************************** */
 
 .oderprice {
-background-color:#AAAAAA;
+/* background-color:#AAAAAA; */
 border-radius: 5px;
 text-align: center;
-width: 70px;
+width: 90px;
 vertical-align: middle;
-height: 60%;
+height: 80%;
+padding-top: 0;
 }
 .contentlist_Revenue {
 max-height: 68vh;

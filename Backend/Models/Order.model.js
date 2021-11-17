@@ -27,6 +27,9 @@ let Order = new Schema({
     },
     customerAccountId : {
         type: String
+    },
+    totalPrice : {
+        type: Number
     }
 }
 );

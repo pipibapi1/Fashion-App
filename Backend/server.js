@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const PORT = 3000;
+const PORT = 4000;
 const cors = require('cors');
 const session = require('express-session');
 const fileupload = require('express-fileupload');
@@ -29,8 +29,10 @@ mongoose
 
   const ClerkRoute    = require('./Route/Clerk.router');
   const testRoute = require('./Route/test.router');
+  const deatailRoute = require('./Route/detailRouter');
+  const revenueRoute = require('./Route/revenueRouter')
 
-  app.use(cors());
+app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(fileupload({
@@ -40,6 +42,9 @@ app.use(fileupload({
 
 app.use('/clerk', ClerkRoute);
 app.use('/test', testRoute);
+app.use('/detail', deatailRoute);
+app.use('/revenue', revenueRoute);
+
 
 
 
