@@ -178,7 +178,7 @@ textarea {
   translate: (50%);
 }
 .addProduct-img-preview-view {
-  top: 10px;
+  top: 30px;
   right: -93px;
 }
 .addProduct-submit .fas {
@@ -647,6 +647,7 @@ textarea {
   margin-left: 248px;
   display: inline-block;
 }
+
 .total-detail-remain {
   font-size: 20px;
   display: inline-block;
@@ -682,11 +683,20 @@ textarea {
   margin-left: 80px;
 }
 .table-heading-remain-edit {
-  margin-left: 100px;
+  margin-left: 68px;
 }
 .table-heading-button {
   margin-left: -40px;
 }
 .table-heading-color-edit {
-  margin-left: 22px;
+  margin-left: 66px;
+}
+.table-heading-size-id {
+  margin-left: 28px;
+}
+.total-detail-remain-edit {
+  margin-left: 212px;
+}
+.total-detail-sale-edit {
+  margin-left: 114px;
 }

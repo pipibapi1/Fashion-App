@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import SizeProduct from "./SizeProduct";
 import Products from "../../Products";
+import swal from "sweetalert";
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,14 +11,41 @@ import {
 } from "react-router-dom";
 import TotalSize from "../ProductDetail/TotalSize";
 import Avartar from "../Avatar";
+import { productContext } from "../ProductContext/ProductContext";
+import ModalSize from "./ModalSize";
 // import "./index.css";
 // import "..//AddProduct/index.css"
 const ProductEdit = () => {
-  const [sizeSelected, setSizeSelected] = useState(0);
-
   let { id } = useParams();
-  console.log(id);
-  const [img, setImg] = useState("");
+  const { getProductById, updateProduct } = useContext(productContext);
+  const [sizeSelected, setSizeSelected] = useState(0);
+  const [upDateProduct, setUpdateProduct] = useState(() => {
+    return getProductById(id);
+  });
+
+  const {
+    name,
+    brand,
+    description,
+    feature,
+    img,
+    items,
+    madeIn,
+    price,
+    remaining,
+    sold,
+  } = upDateProduct;
+  const onChangeProduct = (e) => {
+    setUpdateProduct({
+      ...upDateProduct,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const [imgPreview, setImgPreview] = useState(() => {
+    return {
+      preview: img,
+    };
+  });
   const closeModal = () => {
     document.querySelector(".modal-hoangkui-add").style.display = "none";
   };
@@ -32,29 +60,54 @@ const ProductEdit = () => {
   };
   useEffect(() => {
     return () => {
-      URL.revokeObjectURL(img);
+      URL.revokeObjectURL(imgPreview);
     };
-  }, [img]);
+  }, [imgPreview]);
   const handlePreview = (e) => {
     const file = e.target.files[0];
     file.preview = URL.createObjectURL(file);
-    setImg(file.preview);
+    setImgPreview(file.preview);
   };
 
   //
-  const [imgSize, setImgSize] = useState(Products[id].sizes[0].img);
+  const [imgSize, setImgSize] = useState(() => {
+    if (items.length > 0) return items[0].img;
+    return null;
+  });
 
   const handleClickSizeProduct = (index) => {
     console.log(index);
-    setImgSize(Products[id].sizes[index].img);
+    setImgSize(items[index].img);
     setSizeSelected(index);
   };
+  const handleChangImg = (e) => {
+    setUpdateProduct({
+      ...upDateProduct,
+      img: e.target.files[0],
+    });
+    const file = e.target.files[0];
+    file.preview = URL.createObjectURL(file);
+    setImgPreview(file);
+  };
 
+  const handleUpdateProduct = () => {
+    const data = new FormData();
+    data.append("name", name);
+    data.append("brand", brand);
+    data.append("madeIn", madeIn);
+    data.append("price", price);
+    data.append("description", description);
+    data.append("img", img);
+    data.append("feature", feature);
+    updateProduct(id, data);
+
+    swal("Product is created", "", "success");
+  };
   return (
     <>
       {/* Heading  */}
       <div className="listProducts-heading">
-        <h3 className="listProducts-heading-title">Sửa sản phẩm</h3>
+        <h3 className="listProducts-heading-title">Sửa sản phẩm ID : {id}</h3>
         <Avartar />
       </div>
 
@@ -72,7 +125,9 @@ const ProductEdit = () => {
               <input
                 type="text"
                 className="addProduct-content-text-name-input"
-                value={Products[id].where}
+                value={name}
+                name="name"
+                onChange={onChangeProduct}
                 id="nameProduct"
               />
             </label>
@@ -84,7 +139,8 @@ const ProductEdit = () => {
               <input
                 type="text"
                 className="addProduct-content-text-name-input"
-                value={Products[id].brand}
+                value={id}
+                disabled
                 id="brandProduct"
               />
             </label>
@@ -99,7 +155,9 @@ const ProductEdit = () => {
               <input
                 type="text"
                 className="addProduct-content-text-name-input"
-                value={Products[id].where}
+                value={madeIn}
+                name="madeIn"
+                onChange={onChangeProduct}
                 id="nameProduct"
               />
             </label>
@@ -113,7 +171,9 @@ const ProductEdit = () => {
               <input
                 type="text"
                 className="addProduct-content-text-name-input"
-                value={Products[id].brand}
+                value={brand}
+                onChange={onChangeProduct}
+                name="brand"
                 id="brandProduct"
               />
             </label>
@@ -128,7 +188,9 @@ const ProductEdit = () => {
               <input
                 type="text"
                 className="addProduct-content-text-name-input"
-                value={Products[id].price}
+                value={price}
+                onChange={onChangeProduct}
+                name="price"
                 id="nameProduct"
               />
             </label>
@@ -140,7 +202,9 @@ const ProductEdit = () => {
               <input
                 type="text"
                 className="addProduct-content-text-name-input"
-                value={Products[id].brand}
+                value={feature}
+                onChange={onChangeProduct}
+                name="feature"
                 id="brandProduct"
               />
             </label>
@@ -152,7 +216,9 @@ const ProductEdit = () => {
             >
               <p className="addProduct-content-text-name-title">Mô tả</p>
               <textarea
-                value={Products[id].description}
+                value={description}
+                name="description"
+                onChange={onChangeProduct}
                 className="addProduct-content-text-name-input addProduct-content-text-des-input"
                 id="desProduct"
               />
@@ -164,28 +230,21 @@ const ProductEdit = () => {
         <div className="addProduct-content-size">
           <div className="table-heading">
             <p className="table-heading-stt">STT</p>
-            <p className="table-heading-size">Size</p>
-            <p className="table-heading-color table-heading-color-edit">
-              Màu sắc
-            </p>
-            <p className="table-heading-sale">Đã bán</p>
+            <p className="table-heading-size table-heading-size-id">ID</p>
+            <p className="table-heading-color table-heading-color-edit">Size</p>
             <p className="table-heading-remain table-heading-remain-edit">
               Còn
             </p>
-            <button
-              onClick={openModal}
-              className="button-hoangkui add-button-edit"
-            >
-              <i className="fas fa-plus"></i>
-              Thêm
-            </button>
+            <p className="table-heading-sale">Đã bán</p>
+            <ModalSize idProduct={id} />
           </div>
           <div className="wrraper-table">
             <table className="addProduct-content-size-table">
               <tbody>
-                {Products[id].sizes.map((size, index) => {
+                {items.map((item, index) => {
                   return (
                     <SizeProduct
+                      idProduct={id}
                       style={
                         sizeSelected === index
                           ? { backgroundColor: "#a3c8f2", color: "#302e31" }
@@ -194,93 +253,59 @@ const ProductEdit = () => {
                       onClickSizeProduct={handleClickSizeProduct}
                       key={index}
                       index={index}
-                      size={size}
+                      item={item}
                     />
                   );
                 })}
               </tbody>
             </table>
           </div>
-          <TotalSize sale={Products[id].sale} remain={Products[id].remain} />
-          <div className="addProduct-content-size-display">
-            <p className="addProduct-content-size-display-text">Hình ảnh:</p>
-            <img
-              src={imgSize}
-              alt="Lỗi ảnh"
-              className="addProduct-content-size-display-img-size"
-            />
+          <div className="total-detail">
+            <h4 className="total-detail-name">Tổng</h4>
+            <p className="total-detail-remain total-detail-remain-edit">
+              {remaining}
+            </p>
+            <p className="total-detail-sale total-detail-sale-edit">{sold}</p>
+          </div>
+          <div className="addProduct-content-size-display-wrapper">
+            <div className="addProduct-content-size-display addProduct-img-preview-div">
+              <button
+                style={{ display: "block", width: 140, height: 30 }}
+                onClick={() => document.getElementById("getFile").click()}
+              >
+                Chọn ảnh đại diện
+              </button>
+              <input
+                type="file"
+                id="getFile"
+                name="img"
+                onChange={handleChangImg}
+                style={{ display: "none" }}
+              ></input>
+
+              {true && (
+                <img
+                  src={imgPreview.preview}
+                  alt=""
+                  className="addProduct-img-preview"
+                />
+              )}
+            </div>
+            <div className="addProduct-content-size-display">
+              <p className="addProduct-content-size-display-text">Hình ảnh:</p>
+              <img
+                src={imgSize}
+                alt=""
+                className="addProduct-content-size-display-img-size"
+              />
+            </div>
           </div>
         </div>
-        <button className="addProduct-submit">Lưu</button>
+        <button onClick={handleUpdateProduct} className="addProduct-submit">
+          Lưu
+        </button>
       </div>
       {/* modal */}
-
-      <div className="modal-hoangkui-add modal-hoangkui">
-        <div className="modal-content-hoangkui">
-          <h3 className="modal-heading">Chế độ thêm size và màu sắc</h3>
-          <div className="modal-input">
-            <div className="modal-input-container">
-              <label className="modal-input-label" htmlFor="size">
-                Size
-              </label>
-              <select
-                className="modal-input-label-select"
-                name="size"
-                id="size"
-              >
-                <option value="XXS">XXS</option>
-                <option value="XS">XS </option>
-                <option value="S">S</option>
-                <option selected value="M">
-                  M
-                </option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="XXL">XXL</option>
-              </select>
-            </div>
-            <div className="modal-input-container">
-              <label className="modal-input-label" htmlFor="size">
-                Màu sắc
-              </label>
-              <select
-                className="modal-input-label-select"
-                name="size"
-                id="size"
-              >
-                <option value="green">Xanh</option>
-                <option value="red">Đỏ </option>
-                <option value="blue">Lam</option>
-                <option selected value="pink">
-                  Hồng
-                </option>
-                <option value="orange">Cam</option>
-                <option value="indigo">Chàm</option>
-                <option value="violet">Tím</option>
-                <option value="black">Đen</option>
-              </select>
-            </div>
-            <div className="modal-input-container">
-              <label className="modal-input-label" htmlFor="size">
-                Số lượng còn
-              </label>
-              <input type="number" className="modal-input-label-select" />
-            </div>
-            <div className="modal-input-container center-hoangkui center-center-hoangkui">
-              <label className="modal-input-label" htmlFor="size">
-                Hình ảnh
-              </label>
-              <img src={img} alt="" className="modal-input-display-img" />
-              <input type="file" onChange={handlePreview} />
-            </div>
-          </div>
-          <button className="modal-button-save">Thêm</button>
-          {/* close button */}
-          <button onClick={closeModal} className="modal-button-close">
-            <i className="fas fa-times"></i>Tắt
-          </button>
-        </div>
-      </div>
     </>
   );
 };

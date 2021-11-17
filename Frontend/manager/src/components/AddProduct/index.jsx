@@ -251,7 +251,7 @@ const AddProduct = () => {
               {imgPreview && (
                 <img
                   src={imgPreview.preview}
-                  alt="imgpreview"
+                  alt=""
                   className="addProduct-img-preview"
                 />
               )}

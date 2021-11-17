@@ -57,6 +57,41 @@ const ProductProvider = ({ children }) => {
       }
     } catch (error) {}
   };
+  const deleteProductItem = async (idProduct, idItem) => {
+    try {
+      const res = await axios.delete(
+        `http://localhost:3000/productitem/${idProduct}/${idItem}`
+      );
+      if (res.data.success) {
+        getItemForProduct(idProduct);
+        getSoldAndRemain(idProduct);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const updateProduct = async (id, data) => {
+    try {
+      const res = axios.put(`http://localhost:3000/product/${id}`, data);
+      if (res.data.suceess) {
+        getProducts();
+      }
+    } catch (error) {}
+  };
+  const updateProductItem = async (idProduct, idItem, data) => {
+    try {
+      const res = axios.put(
+        `http://localhost:3000/productitem/${idProduct}/${idItem}`,
+        data
+      );
+      if (res.data.success) {
+        getItemForProduct(idProduct);
+        getSoldAndRemain(idProduct);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const getIdProductCurrent = () => {
     if (products.length > 0) return products[products.length - 1].id;
     return -1;
@@ -104,11 +139,14 @@ const ProductProvider = ({ children }) => {
         `http://localhost:3000/productitem/${idProduct}`,
         data
       );
-      if (res.data.success)
+      if (res.data.success) {
         dispatch({
           type: CREATE_PRODUCT_ITEM,
           payload: res.data.productItem,
         });
+        getItemForProduct(idProduct);
+        getSoldAndRemain(idProduct);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -175,6 +213,9 @@ const ProductProvider = ({ children }) => {
     deleteProduct,
     getProductById,
     Loaded,
+    deleteProductItem,
+    updateProduct,
+    updateProductItem,
   };
   return (
     <productContext.Provider value={productValue}>

@@ -83,8 +83,8 @@ ProductRoute.delete("/:id", async (req, res) => {
 // PUT "http://3000/localhost/prouct/:id"
 // @desc: update product by id
 
-ProductRoute.put("/:id", async (req, res) => {
-  const { name, brand, madeIn, price, description, img, feature } = req.body;
+ProductRoute.put("/:id", upload.single("img"), async (req, res) => {
+  const { name, brand, madeIn, price, description, feature } = req.body;
   try {
     let productUpdated = {
       name,
@@ -92,7 +92,7 @@ ProductRoute.put("/:id", async (req, res) => {
       madeIn,
       price,
       description,
-      img,
+      img: req.file ? `http://localhost:3000/${req.file.path}` : req.body.img,
       feature,
     };
     console.log(productUpdated);
