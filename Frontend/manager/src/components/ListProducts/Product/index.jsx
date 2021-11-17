@@ -7,22 +7,20 @@ import {
   Route,
   Link,
   useParams,
-  useHistory 
+  useHistory,
 } from "react-router-dom";
 import LinkButton from "../../LinkButton";
 const Product = ({ index, product }) => {
-  const { name, brand, remain, sale, price } = product;
+  const { name, brand, sold, remaining, price } = product;
   let history = useHistory();
-  const handleClickProduct=()=>{
-    history.push(`/products/${index-1}`);
+  const handleClickProduct = () => {
+    history.push(`/products/${index - 1}`);
     console.log(":");
-  }
+  };
   // const ulr="./product/id"
   return (
     <>
-      <tr 
-      onClick={handleClickProduct}
-      className="listProducts-content-row">
+      <tr onClick={handleClickProduct} className="listProducts-content-row">
         <td className="listProducts-content-row-item">
           <input
             type="checkbox"
@@ -32,12 +30,10 @@ const Product = ({ index, product }) => {
         <td className="listProducts-content-row-item">{index}</td>
         <td className="listProducts-content-row-item">{name}</td>
         <td className="listProducts-content-row-item">{brand}</td>
-        <td className="listProducts-content-row-item">{remain}</td>
-        <td className="listProducts-content-row-item">{sale}</td>
+        <td className="listProducts-content-row-item">{remaining}</td>
+        <td className="listProducts-content-row-item">{sold}</td>
         <td className="listProducts-content-row-item">{price}</td>
-        <td className="listProducts-content-row-item">
-
-        </td>
+        <td className="listProducts-content-row-item"></td>
         <td className="listProducts-content-row-item">
           <LinkButton
             to={`/products/edit/${index - 1}`}

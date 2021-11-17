@@ -36,6 +36,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use("/product/", ProductRoute);
+app.use("/productitem/", ProductItemRoute);
 app.use(
   fileupload({
     useTempFiles: true,
@@ -45,7 +46,6 @@ app.use(
 app.use("/clerk", ClerkRoute);
 app.use("/test", testRoute);
 app.use("/order", OrderRoute);
-app.use("/productitem/", ProductItemRoute);
 
 app.use(
   session({

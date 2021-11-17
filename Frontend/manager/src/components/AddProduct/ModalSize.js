@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const ModalSize = ({ productItems, setProductItems }) => {
   const [productItem, setProductItem] = useState({
+    productID: "",
     size: null,
     img: "",
     sold: 0,
@@ -12,8 +13,10 @@ const ModalSize = ({ productItems, setProductItems }) => {
   const handleAddProductItem = () => {
     // console.log(productItem);
     setProductItems([...productItems, productItem]);
-    setProductItem({ size: "", img: "", sold: 0, remaining: 0 });
+    setProductItem({ productID: "", size: "", img: "", sold: 0, remaining: 0 });
+    setImgPreview("");
     console.log(productItems);
+    closeModal();
   };
   const [imgPreview, setImgPreview] = useState("");
   const onChangeProductItem = (e) => {
@@ -36,7 +39,7 @@ const ModalSize = ({ productItems, setProductItems }) => {
   };
   useEffect(() => {
     return () => {
-      URL.revokeObjectURL(imgPreview.preview);
+      // URL.revokeObjectURL(imgPreview.preview);
     };
   }, [imgPreview]);
   const openModal = () => {
@@ -87,6 +90,7 @@ const ModalSize = ({ productItems, setProductItems }) => {
                 type="number"
                 name="remaining"
                 value={remaining}
+                required
                 onChange={onChangeProductItem}
                 className="modal-input-label-select"
               />

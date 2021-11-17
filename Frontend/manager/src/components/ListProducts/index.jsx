@@ -1,28 +1,41 @@
-import React, { useCallback, useState, useEffect } from "react";
+import React, { useCallback, useState, useEffect, useContext } from "react";
 import Product from "./Product";
-import Products from "../../Products"
+// import Products from "../../Products";
 import "../index-hoangkui.css";
-import { BrowserRouter as Router, Switch, Route, Link,useParams,useHistory } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams,
+  useHistory,
+} from "react-router-dom";
 import Avartar from "../Avatar";
 import LinkButton from "../LinkButton";
+import { productContext } from "../ProductContext/ProductContext";
 // import { useHistory } from "react-router-dom";
 const ListProducts = () => {
-  const maxItem=15;
-  const [products,setProducts]=useState(Products)
-  const maxPage = Math.ceil(Products.length/maxItem);
+  const { products, getSoldAndRemain } = useContext(productContext);
+  useEffect(() => {
+    for (let product of products) {
+      getSoldAndRemain(product.id);
+    }
+  }, []);
+  const maxItem = 15;
+  const [productsView, setProductsView] = useState(products);
+  const maxPage = Math.ceil(products.length / maxItem);
   const [page, setPage] = useState(1);
-  const history=useHistory()
-  const LinkAddProduct=()=>{
-    history.push("/addproduct")
-  }
+  const history = useHistory();
+  const LinkAddProduct = () => {
+    history.push("/addproduct");
+  };
   // handle tang giam page
 
-
   useEffect(() => {
-    const newProducts=Products.filter((product,index)=>{
-      return index>=(page-1)*maxItem && index<(page)*maxItem
-    })
-    setProducts(newProducts)
+    const newProducts = products.filter((product, index) => {
+      return index >= (page - 1) * maxItem && index < page * maxItem;
+    });
+    setProductsView(newProducts);
 
     if (page === 1) {
       document.querySelector("#backPage").classList.add("button-disable");
@@ -33,10 +46,16 @@ const ListProducts = () => {
     return () => {
       if (page === 1) {
         // console.log(document.querySelector("#backPage"));
-        document.querySelector("#backPage") && document.querySelector("#backPage").classList.remove("button-disable");
+        document.querySelector("#backPage") &&
+          document
+            .querySelector("#backPage")
+            .classList.remove("button-disable");
       }
       if (page === maxPage) {
-        document.querySelector("#nextPage") && document.querySelector("#nextPage").classList.remove("button-disable");
+        document.querySelector("#nextPage") &&
+          document
+            .querySelector("#nextPage")
+            .classList.remove("button-disable");
       }
     };
   }, [page]);
@@ -66,11 +85,14 @@ const ListProducts = () => {
           />
           <i className="fas fa-search"></i>
         </div>
-        <button onClick={LinkAddProduct} className="listProducts-heading-add-product">
+        <button
+          onClick={LinkAddProduct}
+          className="listProducts-heading-add-product"
+        >
           <i className="fas fa-plus"></i>
           Thêm sản phẩm
         </button>
-       <Avartar/>
+        <Avartar />
       </div>
       <div className="listProducts-content">
         <table className="listProducts-content-table">
@@ -99,9 +121,15 @@ const ListProducts = () => {
                 </button>
               </th>
             </tr>
-          {products.map((product,index)=>{
-            return <Product key={index} index={maxItem*(page-1)+index+1} product={product}/>
-})}
+            {productsView.map((product, index) => {
+              return (
+                <Product
+                  key={index}
+                  index={maxItem * (page - 1) + index + 1}
+                  product={product}
+                />
+              );
+            })}
           </tbody>
         </table>
         <div className="listProducts-page">

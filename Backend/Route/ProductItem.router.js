@@ -5,17 +5,17 @@ const upload = require("../middleware/handleimg");
 
 // POST http://localhost/3000/PR000001
 // @desc insert size product into product
-ProductItemRoute.post("/:idProduct", async (req, res) => {
-  const { id, size, img, sold, remaining } = req.body;
-  const newProductItem = new ProductItem({
-    id,
-    size,
-    img,
-    sold,
-    remaining,
-    productID: req.params.idProduct,
-  });
+ProductItemRoute.post("/:idProduct", upload.single("img"), async (req, res) => {
   try {
+    const { id, size, sold, remaining } = req.body;
+    const newProductItem = new ProductItem({
+      id,
+      size,
+      img: `http://localhost:3000/${req.file.path}`,
+      sold,
+      remaining,
+      productID: req.params.idProduct,
+    });
     await newProductItem.save();
     res.send({ success: true, productItem: newProductItem });
   } catch (error) {
@@ -23,6 +23,18 @@ ProductItemRoute.post("/:idProduct", async (req, res) => {
     res.status(500).json({ success: false, message: "Internal server error" });
   }
 });
+// GET http://localhost/3000/PR000001
+// @desc get all size product into product
+ProductItemRoute.get("/", async (req, res) => {
+  try {
+    const productItems = await ProductItem.find({});
+    res.send({ success: true, productItems: productItems });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
+});
+
 // GET http://localhost/3000/PR000001
 // @desc get all size product into product
 ProductItemRoute.get("/:idProduct", async (req, res) => {

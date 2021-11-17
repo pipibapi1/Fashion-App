@@ -19,12 +19,9 @@ const handleIndex = (index) => {
 
 ProductRoute.post("/", upload.single("img"), async (req, res) => {
   try {
-    const lastProduct = await ProductModel.findOne({}).sort({ id: -1 });
-    const idHandled = handleIndex(Number(lastProduct.id.slice(2)) + 1);
-
-    const { name, brand, madeIn, price, description, feature } = req.body;
+    const { id, name, brand, madeIn, price, description, feature } = req.body;
     const newProduct = new ProductModel({
-      id: idHandled,
+      id,
       name,
       brand,
       madeIn,

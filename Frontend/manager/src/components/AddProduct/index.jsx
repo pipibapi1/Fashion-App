@@ -4,15 +4,29 @@ import swal from "sweetalert";
 import { productContext } from "../ProductContext/ProductContext";
 import Catelory from "./Catelory";
 import ModalSize from "./ModalSize";
+import SizeProduct from "./SizeProduct";
+import { handleIndex, handleIndexItem } from "./help";
 // import "./index.css"
 const AddProduct = () => {
-  // const [submit,setSubmit]=useState(false)
-
+  const [sizeSelected, setSizeSelected] = useState(0);
+  const [imgSize, setImgSize] = useState();
   const [productItems, setProductItems] = useState([]);
-  const { createdProduct, getProducts, products, getIdProductCurrent } =
-    useContext(productContext);
+  const handleClickSizeProduct = (index) => {
+    setImgSize(productItems[index].img.preview);
+    setSizeSelected(index);
+  };
+  const {
+    createdProduct,
+    getProducts,
+    createdProductItem,
+    products,
+    productItemsGlobal,
+    getIdProductCurrent,
+    getProductitems,
+    getIdProductItemCurrent,
+  } = useContext(productContext);
   const [imgPreview, setImgPreview] = useState();
-  useEffect(() => getProducts(), []);
+
   useEffect(() => {
     return () => {
       imgPreview && URL.revokeObjectURL(imgPreview.preview);
@@ -41,16 +55,17 @@ const AddProduct = () => {
     });
   };
   const handleSubmit = () => {
+    const idProductItem = Number(getIdProductItemCurrent().slice(2)) + 1;
+    const idProduct = handleIndex(Number(getIdProductCurrent().slice(2)) + 1);
     const formData = new FormData();
     formData.append("name", newProduct.name);
+    formData.append("id", idProduct);
     formData.append("brand", newProduct.brand);
     formData.append("madeIn", newProduct.madeIn);
     formData.append("price", newProduct.price);
     formData.append("description", newProduct.description);
     formData.append("img", newProduct.img);
     formData.append("feature", newProduct.feature);
-
-    console.log(formData);
     createdProduct(formData);
     setNewproduct({
       name: "",
@@ -61,6 +76,20 @@ const AddProduct = () => {
       img: "",
       feature: "",
     });
+    for (let index in productItems) {
+      let { size, img, sold, remaining } = productItems[Number(index)];
+      let dataProductItem = new FormData();
+      dataProductItem.append("size", size);
+      dataProductItem.append(
+        "id",
+        handleIndexItem(idProductItem + Number(index))
+      );
+      dataProductItem.append("img", img);
+      dataProductItem.append("sold", sold);
+      dataProductItem.append("remaining", remaining);
+      dataProductItem.append("productID", idProduct);
+      createdProductItem(dataProductItem, idProduct);
+    }
     setImgPreview(null);
     swal("Product is created", "", "success");
   };
@@ -167,39 +196,42 @@ const AddProduct = () => {
         </div>
 
         {/* Input size */}
+
         <div className="addProduct-content-size">
-          <table className="addProduct-content-size-table">
-            <tr className="addProduct-content-size-row-heading-table">
-              <th className="addProduct-content-size-row-heading-stt">STT</th>
-              <th className="addProduct-content-size-row-heading-add">Size</th>
-              <th className="addProduct-content-size-row-heading-add">
-                Số lượng đã bán
-              </th>
-              <th className="addProduct-content-size-row-heading-add">
-                Số lượng còn
-              </th>
-              <th className="addProduct-content-size-row-heading-add"> </th>
-              <th className="addProduct-content-size-row-heading-add">
-                {/* <button className="addProduct-content-size-row-add"> */}
-                <ModalSize
-                  productItems={productItems}
-                  setProductItems={setProductItems}
-                />
-                {/* Thêm */}
-                {/* </button> */}
-              </th>
-            </tr>
-
-            {productItems.map((productItem, index) => (
-              <tr key={index}>
-                <th>{index}</th>
-                <th>{productItem.size}</th>
-                <th>{productItem.remaining}</th>
-                <th>{productItem.size}</th>
-              </tr>
-            ))}
-          </table>
-
+          <div className="table-heading">
+            <p className="table-heading-stt">STT</p>
+            <p className="table-heading-size">Size</p>
+            {/* <p className="table-heading-color">Màu sắc</p> */}
+            <p className="table-heading-sale">Số lượng đã bán</p>
+            <p className="table-heading-remain">Số lượng còn</p>
+            <p className="table-heading-button">
+              <ModalSize
+                productItems={productItems}
+                setProductItems={setProductItems}
+              />
+            </p>
+          </div>
+          <div className="wrraper-table">
+            <table className="addProduct-content-size-table">
+              <tbody>
+                {productItems.map((size, index) => {
+                  return (
+                    <SizeProduct
+                      style={
+                        sizeSelected === index
+                          ? { backgroundColor: "#a3c8f2", color: "#302e31" }
+                          : {}
+                      }
+                      onClickSizeProduct={handleClickSizeProduct}
+                      key={index}
+                      index={index}
+                      size={size}
+                    />
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
           <div className="addProduct-content-size-display-wrapper">
             <div className="addProduct-content-size-display addProduct-img-preview-div">
               <button
@@ -227,13 +259,12 @@ const AddProduct = () => {
             <div className="addProduct-content-size-display">
               <p className="addProduct-content-size-display-text">Hình ảnh:</p>
               <img
-                src=""
-                alt="Chưa thêm size"
-                className="addProduct-content-size-display-img"
+                src={imgSize}
+                alt="Chưa thêm ảnh"
+                className="addProduct-content-size-display-img-size"
               />
             </div>
           </div>
-
           <button onClick={handleSubmit} className="addProduct-submit">
             <i className="fas fa-plus-circle"></i>
             Thêm

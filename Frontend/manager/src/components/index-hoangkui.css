@@ -90,7 +90,7 @@ textarea {
 }
 .wrraper-table {
   overflow: auto;
-  max-height: 400px;
+  max-height: 300px;
   /* width: 100%; */
 }
 .addProduct-content-size-heading {
@@ -671,6 +671,9 @@ textarea {
 }
 .table-heading-remain-edit {
   margin-left: 100px;
+}
+.table-heading-button {
+  margin-left: -40px;
 }
 .table-heading-color-edit {
   margin-left: 22px;
