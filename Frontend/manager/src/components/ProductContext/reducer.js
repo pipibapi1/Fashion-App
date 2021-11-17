@@ -4,6 +4,8 @@ import {
   CREATE_PRODUCT_ITEM,
   INIT_PRODUCT_ITEM,
   ADD_SOLD_REMAINING,
+  ADD_ITEM_PRODUCT,
+  LOADED,
 } from "./constant";
 const reducer = (state, action) => {
   const { type, payload } = action;
@@ -21,7 +23,7 @@ const reducer = (state, action) => {
     case CREATE_PRODUCT_ITEM:
       return {
         ...state,
-        productItemsGlobal: [...state.productItems, payload],
+        productItemsGlobal: [...state.productItemsGlobal, payload],
       };
     case INIT_PRODUCT_ITEM:
       return {
@@ -30,9 +32,6 @@ const reducer = (state, action) => {
       };
     case ADD_SOLD_REMAINING:
       const { sold, remaining, idProduct } = payload;
-      // const product = state.products.find(
-      //   (product) => product.id === idProduct
-      // );
       const products = [...state.products];
       const index = products.findIndex((product) => product.id === idProduct);
       if (index > -1) {
@@ -42,7 +41,6 @@ const reducer = (state, action) => {
           remaining,
         };
       }
-      console.log(index);
       // product = {
       //   ...product,
       //   sold,
@@ -55,6 +53,26 @@ const reducer = (state, action) => {
       return {
         ...state,
         products: products,
+      };
+    case ADD_ITEM_PRODUCT:
+      const productsAddItem = [...state.products];
+      const indexAddItem = productsAddItem.findIndex(
+        (product) => product.id === payload.id
+      );
+      if (indexAddItem > -1) {
+        productsAddItem[indexAddItem] = {
+          ...productsAddItem[indexAddItem],
+          items: payload.data,
+        };
+      }
+      return {
+        ...state,
+        products: productsAddItem,
+      };
+    case LOADED:
+      return {
+        ...state,
+        loading: false,
       };
     default:
       return state;

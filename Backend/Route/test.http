@@ -40,7 +40,7 @@ Content-Type: application/json
 
 #########################################################################
 
-POST http://localhost:3000/productitem/PR0000001
+POST http://localhost:3000/productitem/PR000000
 Content-Type: application/json
 
 {
@@ -54,7 +54,7 @@ Content-Type: application/json
 
 
 ###
-GET http://localhost:3000/productitem/PR0000001
+GET http://localhost:3000/productitem/PR000007
 
 
 

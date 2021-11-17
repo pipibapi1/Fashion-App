@@ -260,7 +260,7 @@ const AddProduct = () => {
               <p className="addProduct-content-size-display-text">Hình ảnh:</p>
               <img
                 src={imgSize}
-                alt="Chưa thêm ảnh"
+                alt=""
                 className="addProduct-content-size-display-img-size"
               />
             </div>

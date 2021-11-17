@@ -90,7 +90,7 @@ textarea {
 }
 .wrraper-table {
   overflow: auto;
-  max-height: 300px;
+  max-height: 340px;
   /* width: 100%; */
 }
 .addProduct-content-size-heading {
@@ -149,7 +149,7 @@ textarea {
   text-align: center;
   height: 80%; */
   display: flex;
-  align-items: center;
+  /* align-items: center; */
 }
 .addProduct-content-size-display-text {
   line-height: 0;
@@ -158,9 +158,9 @@ textarea {
   margin: 0;
 }
 .addProduct-content-size-display-img-size {
-  width: auto;
-  height: 180px;
-  object-fit: cover;
+  width: 230px;
+  height: 230px;
+  object-fit: contain;
 }
 
 .addProduct-img-preview-div {
@@ -173,6 +173,13 @@ textarea {
   width: 230px;
   height: 230px;
   object-fit: contain;
+}
+.addProduct-content-size-display-text-view {
+  translate: (50%);
+}
+.addProduct-img-preview-view {
+  top: 10px;
+  right: -93px;
 }
 .addProduct-submit .fas {
   margin-right: 4px;
@@ -295,6 +302,7 @@ textarea {
   border: 1px solid #ccc;
   cursor: pointer;
   padding: 4px 8px;
+  z-index: 1;
 }
 .listProducts-content-row-remove:hover {
   /* color:#ff0808; */
@@ -312,6 +320,7 @@ textarea {
   border: 1px solid #ccc;
   cursor: pointer;
   padding: 4px 8px;
+  z-index: 1;
 }
 .listProducts-content-row-edit:hover {
   background-color: #f6d7a7;
@@ -635,7 +644,7 @@ textarea {
 }
 .total-detail-sale {
   font-size: 20px;
-  margin-left: 271px;
+  margin-left: 248px;
   display: inline-block;
 }
 .total-detail-remain {
@@ -659,6 +668,9 @@ textarea {
 }
 .table-heading-size {
   margin-left: 18px;
+}
+.table-heading-size-view {
+  margin-left: 80px;
 }
 .table-heading-color {
   margin-left: 18px;

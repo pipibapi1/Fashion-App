@@ -121,7 +121,7 @@ const ListProducts = () => {
                 </button>
               </th>
             </tr>
-            {productsView.map((product, index) => {
+            {products.map((product, index) => {
               return (
                 <Product
                   key={index}
