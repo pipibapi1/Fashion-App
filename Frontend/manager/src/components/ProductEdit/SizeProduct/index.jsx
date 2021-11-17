@@ -1,14 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import swal from "sweetalert";
+import { productContext } from "../../ProductContext/ProductContext";
 // import "./index.css"
-const SizeProduct = ({ index, size, onClickSizeProduct,style }) => {
-  const [img, setImg] = useState(
-    "https://product.hstatic.net/1000035031/product/vay-dam-cong-so-thoi-trang-eden-dang-chu-a-co-tim-tay-phong-d405__6__9a4811529e834206b25da08ec496995f_master.jpg"
-  );
+const SizeProduct = ({ idProduct, index, item, onClickSizeProduct, style }) => {
+  const { deleteProductItem, updateProductItem } = useContext(productContext);
+  const [updateItem, setUpdateItem] = useState({
+    size: item.size,
+    remaining: item.remaining,
+    img: item.img,
+  });
+  const { size, remaining, img } = updateItem;
+  const [imgPreview, setImgPreview] = useState(item.img);
   const closeModal = () => {
-    document.querySelector(".modal-hoangkui-edit").style.display = "none";
+    document.querySelector(`.modal-hoangkui-edit-${item.id}`).style.display =
+      "none";
   };
   const openModal = () => {
-    var modal = document.querySelector(".modal-hoangkui-edit");
+    var modal = document.querySelector(`.modal-hoangkui-edit-${item.id}`);
     modal.style.display = "block";
     window.onclick = function (e) {
       if (e.target === modal) {
@@ -18,26 +26,69 @@ const SizeProduct = ({ index, size, onClickSizeProduct,style }) => {
   };
   useEffect(() => {
     return () => {
-      URL.revokeObjectURL(img);
+      URL.revokeObjectURL(imgPreview);
     };
-  }, [img]);
+  }, [imgPreview]);
   const handlePreview = (e) => {
     const file = e.target.files[0];
     file.preview = URL.createObjectURL(file);
-    setImg(file.preview);
+    setUpdateItem({
+      ...updateItem,
+      img: file,
+    });
+    setImgPreview(file.preview);
+  };
+  const handleChangeItem = (e) => {
+    setUpdateItem({
+      ...updateItem,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const handleRemoveItem = () => {
+    swal({
+      title: "Bạn có chắc chắn muốn xóa?",
+      text: "Bạn sẽ không thể khôi phục nếu thực hiện hành động này?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        // deleteProduct(id);
+        deleteProductItem(idProduct, item.id);
+        // console.log(idProduct, item.id);
+        swal("Xóa thành công", {
+          icon: "success",
+        });
+      }
+    });
+  };
+  const handleUpdate = () => {
+    const data = new FormData();
+    data.append("size", size);
+    data.append("remaining", remaining);
+    data.append("img", img);
+    updateProductItem(idProduct, item.id, data);
+    closeModal();
+    swal("Đã được cập nhập", "", "success");
   };
   return (
     <>
-      <tr
-      style={style}
-        onClick={() => onClickSizeProduct(index)}
-        className="listProducts-content-row-size"
-      >
-        <td style={{ width: "8%" }}>{index + 1}</td>
-        <td style={{ width: "8%" }}>{size.size}</td>
-        <td style={{ width: "19%" }}>{size.color}</td>
-        <td style={{ width: "24%" }}>{size.sale}</td>
-        <td style={{ width: "24%" }}>{size.remain}</td>
+      <tr style={style} className="listProducts-content-row-size">
+        <td onClick={() => onClickSizeProduct(index)} style={{ width: "8%" }}>
+          {index + 1}
+        </td>
+        <td onClick={() => onClickSizeProduct(index)} style={{ width: "8%" }}>
+          {item.id}
+        </td>
+        <td onClick={() => onClickSizeProduct(index)} style={{ width: "15%" }}>
+          {item.size}
+        </td>
+        <td onClick={() => onClickSizeProduct(index)} style={{ width: "20%" }}>
+          {item.remaining}
+        </td>
+        <td onClick={() => onClickSizeProduct(index)} style={{ width: "20%" }}>
+          {item.sold}
+        </td>
         <td>
           <button
             onClick={openModal}
@@ -45,16 +96,19 @@ const SizeProduct = ({ index, size, onClickSizeProduct,style }) => {
           >
             <i className="far fa-edit"></i>
           </button>{" "}
-          <button className="button-hoangkui button-hoangkui-s size-delete">
+          <button
+            onClick={handleRemoveItem}
+            className="button-hoangkui button-hoangkui-s size-delete"
+          >
             <i className="fas fa-trash"></i>
           </button>
         </td>
         {/* <td><button className=" button-hoangkui button-hoangkui-s"><i class="fas fa-trash"></i>Xóa</button></td> */}
 
         {/* modal edit */}
-        <div className="modal-hoangkui-edit modal-hoangkui">
+        <div className={`modal-hoangkui-edit-${item.id} modal-hoangkui`}>
           <div className="modal-content-hoangkui">
-            <h3 className="modal-heading">Chế độ chỉnh sửa và màu sắc</h3>
+            <h3 className="modal-heading">Chế độ chỉnh sửa</h3>
             <div className="modal-input">
               <div className="modal-input-container">
                 <label className="modal-input-label" htmlFor="size">
@@ -63,38 +117,17 @@ const SizeProduct = ({ index, size, onClickSizeProduct,style }) => {
                 <select
                   className="modal-input-label-select"
                   name="size"
+                  value={size}
+                  onChange={handleChangeItem}
                   id="size"
                 >
                   <option value="XXS">XXS</option>
                   <option value="XS">XS </option>
                   <option value="S">S</option>
-                  <option selected value="M">
-                    M
-                  </option>
+                  <option value="M">M</option>
                   <option value="L">L</option>
                   <option value="XL">XL</option>
                   <option value="XXL">XXL</option>
-                </select>
-              </div>
-              <div className="modal-input-container">
-                <label className="modal-input-label" htmlFor="size">
-                  Màu sắc
-                </label>
-                <select
-                  className="modal-input-label-select"
-                  name="size"
-                  id="size"
-                >
-                  <option value="green">Xanh</option>
-                  <option value="red">Đỏ </option>
-                  <option value="blue">Lam</option>
-                  <option selected value="pink">
-                    Hồng
-                  </option>
-                  <option value="orange">Cam</option>
-                  <option value="indigo">Chàm</option>
-                  <option value="violet">Tím</option>
-                  <option value="black">Đen</option>
                 </select>
               </div>
               <div className="modal-input-container">
@@ -103,19 +136,27 @@ const SizeProduct = ({ index, size, onClickSizeProduct,style }) => {
                 </label>
                 <input
                   type="number"
+                  name="remaining"
+                  value={remaining}
+                  onChange={handleChangeItem}
                   className="modal-input-label-select"
-                  value="10"
                 />
               </div>
               <div className="modal-input-container center-hoangkui center-center-hoangkui">
                 <label className="modal-input-label" htmlFor="size">
                   Hình ảnh
                 </label>
-                <img src={img} alt="" className="modal-input-display-img" />
+                <img
+                  src={imgPreview}
+                  alt=""
+                  className="modal-input-display-img"
+                />
                 <input type="file" onChange={handlePreview} />
               </div>
             </div>
-            <button className="modal-button-save">Lưu</button>
+            <button onClick={handleUpdate} className="modal-button-save">
+              Lưu
+            </button>
             {/* close button */}
             <button onClick={closeModal} className="modal-button-close">
               <i className="fas fa-times"></i>Tắt

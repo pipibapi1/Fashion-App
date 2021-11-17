@@ -51,32 +51,38 @@ ProductItemRoute.get("/:idProduct", async (req, res) => {
 
 // PUT http://localhost/3000/PR000001/PI1515151
 // @desc update size product
-ProductItemRoute.put("/:idProduct/:id", async (req, res) => {
-  const { size, img, sold, remaining } = req.body;
-  try {
-    let ProductItemUpdated = {
-      size,
-      img,
-      sold,
-      remaining,
-    };
-    const conditionUpdated = {
-      id: req.params.id,
-      productID: req.params.idProduct,
-    };
-    ProductItemUpdated = await ProductItem.findOneAndUpdate(
-      conditionUpdated,
-      ProductItemUpdated,
-      { new: true }
-    );
-    if (!ProductItemUpdated)
-      res.status(401).json({ success: true, msg: "ProductItem not found" });
-    res.send({ success: true, productItem: ProductItemUpdated });
-  } catch (error) {
-    console.log(error);
-    res.status(500).json({ success: false, message: "Internal server error" });
+ProductItemRoute.put(
+  "/:idProduct/:id",
+  upload.single("img"),
+  async (req, res) => {
+    const { size, sold, remaining } = req.body;
+    try {
+      let ProductItemUpdated = {
+        size,
+        img: req.file ? `http://localhost:3000/${req.file.path}` : req.body.img,
+        sold,
+        remaining,
+      };
+      const conditionUpdated = {
+        id: req.params.id,
+        productID: req.params.idProduct,
+      };
+      ProductItemUpdated = await ProductItem.findOneAndUpdate(
+        conditionUpdated,
+        ProductItemUpdated,
+        { new: true }
+      );
+      if (!ProductItemUpdated)
+        res.status(401).json({ success: true, msg: "ProductItem not found" });
+      res.send({ success: true, productItem: ProductItemUpdated });
+    } catch (error) {
+      console.log(error);
+      res
+        .status(500)
+        .json({ success: false, message: "Internal server error" });
+    }
   }
-});
+);
 
 // DELETE http://localhost/3000/PR000001/PI1515151
 // @desc update size product

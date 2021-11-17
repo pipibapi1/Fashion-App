@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
-const bodyParser = require("body-parser");
+const bodyParser = require('body-parser');
 const PORT = 3000;
-const cors = require("cors");
-const session = require("express-session");
-const fileupload = require("express-fileupload");
+const cors = require('cors');
+const session = require('express-session');
+const fileupload = require('express-fileupload');
 
 const mongoose = require("mongoose");
 
@@ -31,6 +31,8 @@ const ProductRoute = require("./Route/Product.router");
 const ProductItemRoute = require("./Route/ProductItem.router");
 const CustomerRoute = require("./Route/Customer.router");
 const OrderRoute = require("./Route/Order.router");
+const deatailRoute = require('./Route/detailRouter');
+const revenueRoute = require('./Route/revenueRouter')
 app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -46,6 +48,8 @@ app.use(
 app.use("/clerk", ClerkRoute);
 app.use("/test", testRoute);
 app.use("/order", OrderRoute);
+app.use('/detail', deatailRoute);
+app.use('/revenue', revenueRoute);
 
 app.use(
   session({

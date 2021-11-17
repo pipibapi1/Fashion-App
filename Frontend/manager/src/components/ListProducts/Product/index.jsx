@@ -17,7 +17,6 @@ const Product = ({ index, product }) => {
   let history = useHistory();
   const handleClickProduct = () => {
     history.push(`/products/${id}`);
-    console.log(":");
   };
   const handleRemoveProduct = () => {
     swal({
@@ -86,7 +85,7 @@ const Product = ({ index, product }) => {
         ></td>
         <td className="listProducts-content-row-item">
           <LinkButton
-            to={`/products/edit/${index - 1}`}
+            to={`/products/edit/${id}`}
             className="listProducts-content-row-edit"
           >
             <i className="far fa-edit"></i>

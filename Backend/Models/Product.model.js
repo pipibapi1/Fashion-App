@@ -27,7 +27,7 @@ let Product = new Schema({
     },
     feature:{
         type: String
-    }
+    },
 }
 );
 

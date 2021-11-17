@@ -195,7 +195,7 @@ const ProductDetail = () => {
               </p>
               <img
                 src={img}
-                alt="imgpreview"
+                alt=""
                 className="addProduct-img-preview addProduct-img-preview-view"
               />
             </div>

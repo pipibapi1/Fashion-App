@@ -2,12 +2,27 @@ import React from "react";
 import './tab.css';
 import Tabs from "./Tabs";
 import { Container, Row, Col } from 'react-grid-system';
-import Staffs from "./Staffs";
-import Customers from "./Customers";
+// import Staffs from "./Staffs";
+// import Customers from "./Customers";
 import DetailAcount from "./DetailAcount";
+import axios from "axios";
+
 
 export default function TabAccount() {
-  
+
+    const [Staffs, setStaff] = React.useState(null);
+    const [Customers, setCustomer] = React.useState(null);
+
+    React.useEffect(() => {
+        axios.get("http://localhost:3000/detail/Clerk").then((response) => {
+        setStaff(response.data);
+        });
+        axios.get("http://localhost:3000/detail/Customer").then((response) => {
+        setCustomer(response.data);
+        });
+    }, []);
+    if (!Staffs) return null;
+    
     return (
         <div className="tabaccount">
             <Tabs>
