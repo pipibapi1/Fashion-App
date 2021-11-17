@@ -12,6 +12,14 @@ document.querySelector('#cart-btn').onclick = () =>{
   loginForm.classList.remove('active');
   header__menu.classList.remove('active');
 }
+
+
+document.querySelector('.fa-shopping-cart').onclick = () =>{
+  cart.classList.remove('active');
+  searchForm.classList.remove('active');
+  loginForm.classList.remove('active');
+  header__menu.classList.remove('active');
+}
 let navbar = document.querySelector('.navbar');
 
 let loginForm = document.querySelector('.login-form');

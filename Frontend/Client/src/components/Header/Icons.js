@@ -1,38 +1,66 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect } from 'react'
 import {Data} from './Data'
 
 function Icons() {
     const styleObj = {
         marginLeft:0
     }
-    let X = [
-      JSON.stringify({1: "Unbranded Jacket",2: '38(EU)', 3: "image/product_img1.jpg", 4:"19.99", 5:"0:59:33", 6:"1"}),
-      JSON.stringify({1: "Tory ugly Jacket",2: 'XS', 3: "image/product_img2.jpg", 4:"74.99", 5:"0:59:33", 6:"1"})
-    ];
-    localStorage.setItem("color",JSON.stringify(X));
+    const [count, setCount] = useState(JSON.parse(localStorage.getItem("Order")));
+    const [total, setTotal] = useState(0);
+    function calcTotal(){
+      var x = JSON.parse(localStorage.getItem('Order'))
+      var y = 0;
+      for(const a in x){
+          let com = JSON.parse(x[a])
+        y += com[3];
+      }
+      setTotal(y);
+    }
+    useEffect(() => {
+      setTimeout(() => {
+        setCount(JSON.parse(localStorage.getItem("Order")));
+      }, 1000);
+    });
+    useEffect(() => {
+      setTimeout(() => {
+        calcTotal();
+      }, 1000);
+    });
+    function removeItem(props){
+      var x = JSON.parse(localStorage.getItem('Order'))
+      for(const a in x){
+          let com = JSON.parse(x[a])
+        if (com[0] === props[0]){
+          x.splice(a,1);
+          localStorage.setItem('Order',JSON.stringify(x));
+          return;
+        }
+      }
+      return;
+    }
     return (
     <div>
-    <div className="icons">
+    <div className="icons" id="here">
         <div id="menu-btn" className="fas fa-bars"></div>
         <div id="search-btn" className="fas fa-search"></div>
         <div id="cart-btn" className="fas fa-shopping-cart"></div>
         <a id="login-btn" href="/login" className="fas fa-user"></a>
         <div className="shopping-card">
-            {JSON.parse(localStorage.getItem("myOrder")).map((item)=>{
+            {count.map((item)=>{
               let props=JSON.parse(item);
                 return (
           <div className="box">
-            <i className="fa fa-times"></i>
+            <i className="fa fa-times" onClick={()=>removeItem(props)}></i>
             <div className="content">
               <h3>{props[1]}</h3>
-              <img src={props[3]} className="Payimage" alt=""/>
-              <span className="quantity">{props[6]}</span>
+              <img src={props[2]} className="Payimage" alt=""/>
+              <span className="quantity">{props[4]}</span>
               <span className="multiply">X</span>
-              <span className="price">${props[4]}</span>
+              <span className="price">${props[3]}</span>
             </div>
           </div>
             )})}
-          <h3 className="total" onClick={()=>alert(JSON.parse(localStorage.getItem("color")))}> TOTAL : <span>180.000VNĐ</span></h3>
+          <h3 className="total" onClick={()=>alert(JSON.parse(localStorage.getItem("color")))}> TOTAL : <span>{total}VNĐ</span></h3>
           <a href="/payment" style={styleObj} className="header__menu-link btn btn--border btn--rounded buttom"> Checkout Card</a>
         </div>
     </div>

@@ -10,8 +10,9 @@ const App = () =>{
         const response = axios.get("http://localhost:3000/product").then(
             (res) => {
                 for(const x in res.data.products)
-                    localData.push(JSON.stringify({"1":res.data.products[x]['name'],"2":res.data.products[x]['img'],"3":res.data.products[x]['price'],"5":"(50)","6":res.data.products[x]['feature']}));
+                    localData.push(JSON.stringify({"0":res.data.products[x]['id'],"1":res.data.products[x]['name'],"2":res.data.products[x]['img'],"3":res.data.products[x]['price'],"5":"(50)","6":res.data.products[x]['feature'],"7":res.data.products[x]['description']}));
                 localStorage.setItem('Data',JSON.stringify(localData));
+                localStorage.setItem('Order',JSON.stringify([]));
             });
       } catch (error) {
         console.log(error);

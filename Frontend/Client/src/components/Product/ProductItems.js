@@ -12,16 +12,29 @@ function toggleFlag(index){
     )
 }
 function ProductItems() {
+    function buyItem(props){
+        var x = JSON.parse(localStorage.getItem('Order'))
+        for(const a in x){
+            let com = JSON.parse(x[a])
+          if (com[0] === props[0]){
+            com[4]++;
+            x[a] = JSON.stringify(com)
+            localStorage.setItem('Order',JSON.stringify(x));
+            return;
+          }
+        }
+        x.push(JSON.stringify({0:props[0],1:props[1],2:props[2],3:props[3],4:1}));
+        localStorage.setItem('Order',JSON.stringify(x));  
+    }
     const [Popple,setPopple] = useState(-1);
-    const data = JSON.parse(localStorage.getItem('Data'));
     return (
         <div className="box-container">
-            {data.map(function(ex,index){
+            {JSON.parse(localStorage.getItem('Data')).map(function(ex,index){
                 let props = JSON.parse(ex);
                 return(
                     <div className="box" data-item={props[6]}>
                         <div className="icons">
-                            <a className="fas fa-shopping-cart"></a>
+                            <a className="fas fa-shopping-cart" onClick={()=>buyItem(props)}></a>
                             <a className = {`flag-${index} fas fa-heart heart`} onClick={ ()=> toggleFlag(index) }></a>
                             <a className="fas fa-eye" onClick={()=>setPopple(index)}></a>
                         </div>
@@ -35,7 +48,7 @@ function ProductItems() {
                                 {/* <div className="cut">{props[4]}</div>
                                 <div className="offer">{props[5]}</div> */}
                             </div>
-                            <div className="stars" onClick={()=>alert(data)}>
+                            <div className="stars">
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
                                 <i className="fas fa-star"></i>
