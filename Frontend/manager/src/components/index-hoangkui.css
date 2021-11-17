@@ -90,7 +90,7 @@ textarea {
 }
 .wrraper-table {
   overflow: auto;
-  max-height: 400px;
+  max-height: 300px;
   /* width: 100%; */
 }
 .addProduct-content-size-heading {
@@ -122,6 +122,10 @@ textarea {
 } */
 
 /*  */
+.addProduct-content-size-row-heading-stt {
+  margin-left: 10px;
+}
+
 .addProduct-content-size-row-add {
   border-radius: 4px;
   border: solid #ccc 1px;
@@ -135,16 +139,40 @@ textarea {
 }
 
 /* IMG */
-
+.addProduct-content-size-display-wrapper {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
 .addProduct-content-size-display {
-  margin-top: 14px;
+  /* margin-top: 14px;
   text-align: center;
-  height: 80%;
+  height: 80%; */
+  display: flex;
+  align-items: center;
+}
+.addProduct-content-size-display-text {
+  line-height: 0;
 }
 .addProduct-content-size-display-img {
+  margin: 0;
+}
+.addProduct-content-size-display-img-size {
   width: auto;
-  height: auto;
+  height: 180px;
   object-fit: cover;
+}
+
+.addProduct-img-preview-div {
+  position: relative;
+}
+.addProduct-img-preview {
+  position: absolute;
+  top: 32px;
+  right: -50px;
+  width: 230px;
+  height: 230px;
+  object-fit: contain;
 }
 .addProduct-submit .fas {
   margin-right: 4px;
@@ -349,11 +377,7 @@ textarea {
 .addProduct-content-text-bot-where-label-view {
   margin-right: 22px;
 }
-.addProduct-content-size-display-img-size {
-  width: auto;
-  height: 180px;
-  object-fit: cover;
-}
+
 /* button gan avatar */
 .button-hoangkui {
   padding: 8px 16px;
@@ -444,6 +468,7 @@ textarea {
   margin-right: 10px;
   /* margin:auto; */
   vertical-align: middle;
+  color: #5eb1b1;
 }
 .modal-input input {
   color: #0e8b8b;
@@ -646,6 +671,9 @@ textarea {
 }
 .table-heading-remain-edit {
   margin-left: 100px;
+}
+.table-heading-button {
+  margin-left: -40px;
 }
 .table-heading-color-edit {
   margin-left: 22px;

@@ -214,6 +214,7 @@ const ProductEdit = () => {
         <button className="addProduct-submit">Lưu</button>
       </div>
       {/* modal */}
+
       <div className="modal-hoangkui-add modal-hoangkui">
         <div className="modal-content-hoangkui">
           <h3 className="modal-heading">Chế độ thêm size và màu sắc</h3>

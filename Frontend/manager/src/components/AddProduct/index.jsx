@@ -1,39 +1,106 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Avartar from "../Avatar";
 import swal from "sweetalert";
 import { productContext } from "../ProductContext/ProductContext";
+import Catelory from "./Catelory";
+import ModalSize from "./ModalSize";
+import SizeProduct from "./SizeProduct";
+import { handleIndex, handleIndexItem } from "./help";
 // import "./index.css"
 const AddProduct = () => {
-  const { createdProduct } = useContext(productContext);
+  const [sizeSelected, setSizeSelected] = useState(0);
+  const [imgSize, setImgSize] = useState();
+  const [productItems, setProductItems] = useState([]);
+  const handleClickSizeProduct = (index) => {
+    setImgSize(productItems[index].img.preview);
+    setSizeSelected(index);
+  };
+  const {
+    createdProduct,
+    getProducts,
+    createdProductItem,
+    products,
+    productItemsGlobal,
+    getIdProductCurrent,
+    getProductitems,
+    getIdProductItemCurrent,
+  } = useContext(productContext);
+  const [imgPreview, setImgPreview] = useState();
+
+  useEffect(() => {
+    return () => {
+      imgPreview && URL.revokeObjectURL(imgPreview.preview);
+    };
+  }, [imgPreview]);
   const [newProduct, setNewproduct] = useState({
     name: "",
     brand: "",
     madeIn: "",
-    price: null,
+    price: 0,
     description: "",
     img: "",
     feature: "",
   });
-  const { name, brand, madeIn, price, description, img, feature } = newProduct;
+  const { name, brand, madeIn, price, description } = newProduct;
   const onChangeField = (e) => {
     setNewproduct({
       ...newProduct,
       [e.target.name]: e.target.value,
     });
   };
+  const getValueCatelory = (data) => {
+    setNewproduct({
+      ...newProduct,
+      feature: data,
+    });
+  };
   const handleSubmit = () => {
-    console.log(newProduct);
-    const data = new FormData();
-    data.append("name", name);
-    data.append("brand", brand);
-    data.append("madeIn", madeIn);
-    data.append("price", price);
-    data.append("description", description);
-    data.append("img", img);
-    data.append("feature", feature);
-
-    createdProduct(data);
+    const idProductItem = Number(getIdProductItemCurrent().slice(2)) + 1;
+    const idProduct = handleIndex(Number(getIdProductCurrent().slice(2)) + 1);
+    const formData = new FormData();
+    formData.append("name", newProduct.name);
+    formData.append("id", idProduct);
+    formData.append("brand", newProduct.brand);
+    formData.append("madeIn", newProduct.madeIn);
+    formData.append("price", newProduct.price);
+    formData.append("description", newProduct.description);
+    formData.append("img", newProduct.img);
+    formData.append("feature", newProduct.feature);
+    createdProduct(formData);
+    setNewproduct({
+      name: "",
+      brand: "",
+      madeIn: "",
+      price: 0,
+      description: "",
+      img: "",
+      feature: "",
+    });
+    for (let index in productItems) {
+      let { size, img, sold, remaining } = productItems[Number(index)];
+      let dataProductItem = new FormData();
+      dataProductItem.append("size", size);
+      dataProductItem.append(
+        "id",
+        handleIndexItem(idProductItem + Number(index))
+      );
+      dataProductItem.append("img", img);
+      dataProductItem.append("sold", sold);
+      dataProductItem.append("remaining", remaining);
+      dataProductItem.append("productID", idProduct);
+      createdProductItem(dataProductItem, idProduct);
+    }
+    setImgPreview(null);
     swal("Product is created", "", "success");
+  };
+  const handleChangImg = (e) => {
+    setNewproduct({
+      ...newProduct,
+      img: e.target.files[0],
+    });
+    const file = e.target.files[0];
+    file.preview = URL.createObjectURL(file);
+    setImgPreview(file);
   };
   return (
     <>
@@ -110,43 +177,7 @@ const AddProduct = () => {
               />
             </label>
           </div>
-
-          <div className="addProduct-content-text-name">
-            <label
-              htmlFor="brandProduct"
-              className="addProduct-content-text-name-label"
-            >
-              <p className="addProduct-content-text-name-title">Catelory</p>{" "}
-              <div className="addProduct-content-catelory">
-                <input type="checkbox" name="female" />
-                female
-              </div>
-              <div className="addProduct-content-catelory">
-                <input type="checkbox" name="featured" />
-                featured
-              </div>
-              <div className="addProduct-content-catelory">
-                <input type="checkbox" name="seller" />
-                seller
-              </div>
-              <div className="addProduct-content-catelory">
-                <input type="checkbox" name="seller" />
-                arrivals
-              </div>
-              <div className="addProduct-content-catelory">
-                <input type="checkbox" name="seller" />
-                Men
-              </div>
-              <div className="addProduct-content-catelory">
-                <input type="checkbox" name="seller" />
-                special
-              </div>
-              <div className="addProduct-content-catelory">
-                <input type="checkbox" name="seller" />
-                mens
-              </div>
-            </label>
-          </div>
+          <Catelory getValueCatelory={getValueCatelory} />
           <div className="addProduct-content-text-name">
             <label
               htmlFor="desProduct"
@@ -165,35 +196,75 @@ const AddProduct = () => {
         </div>
 
         {/* Input size */}
-        <div className="addProduct-content-size">
-          <table className="addProduct-content-size-table">
-            <tr className="addProduct-content-size-row-heading-table">
-              <th className="addProduct-content-size-row-heading">STT</th>
-              <th className="addProduct-content-size-row-heading">Size</th>
-              <th className="addProduct-content-size-row-heading">Màu sắc</th>
-              <th className="addProduct-content-size-row-heading">
-                Số lượng đã bán
-              </th>
-              <th className="addProduct-content-size-row-heading">
-                Số lượng còn
-              </th>
-              <th className="addProduct-content-size-row-heading"> </th>
-              <th className="addProduct-content-size-row-heading">
-                <button className="addProduct-content-size-row-add">
-                  Thêm
-                </button>
-              </th>
-            </tr>
-          </table>
-          <div className="addProduct-content-size-display">
-            <p className="addProduct-content-size-display-text">Hình ảnh:</p>
-            <img
-              src=""
-              alt="Chưa thêm size"
-              className="addProduct-content-size-display-img"
-            />
-          </div>
 
+        <div className="addProduct-content-size">
+          <div className="table-heading">
+            <p className="table-heading-stt">STT</p>
+            <p className="table-heading-size">Size</p>
+            {/* <p className="table-heading-color">Màu sắc</p> */}
+            <p className="table-heading-sale">Số lượng đã bán</p>
+            <p className="table-heading-remain">Số lượng còn</p>
+            <p className="table-heading-button">
+              <ModalSize
+                productItems={productItems}
+                setProductItems={setProductItems}
+              />
+            </p>
+          </div>
+          <div className="wrraper-table">
+            <table className="addProduct-content-size-table">
+              <tbody>
+                {productItems.map((size, index) => {
+                  return (
+                    <SizeProduct
+                      style={
+                        sizeSelected === index
+                          ? { backgroundColor: "#a3c8f2", color: "#302e31" }
+                          : {}
+                      }
+                      onClickSizeProduct={handleClickSizeProduct}
+                      key={index}
+                      index={index}
+                      size={size}
+                    />
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+          <div className="addProduct-content-size-display-wrapper">
+            <div className="addProduct-content-size-display addProduct-img-preview-div">
+              <button
+                style={{ display: "block", width: 140, height: 30 }}
+                onClick={() => document.getElementById("getFile").click()}
+              >
+                Chọn ảnh đại diện
+              </button>
+              <input
+                type="file"
+                id="getFile"
+                name="img"
+                onChange={handleChangImg}
+                style={{ display: "none" }}
+              ></input>
+
+              {imgPreview && (
+                <img
+                  src={imgPreview.preview}
+                  alt="imgpreview"
+                  className="addProduct-img-preview"
+                />
+              )}
+            </div>
+            <div className="addProduct-content-size-display">
+              <p className="addProduct-content-size-display-text">Hình ảnh:</p>
+              <img
+                src={imgSize}
+                alt="Chưa thêm ảnh"
+                className="addProduct-content-size-display-img-size"
+              />
+            </div>
+          </div>
           <button onClick={handleSubmit} className="addProduct-submit">
             <i className="fas fa-plus-circle"></i>
             Thêm

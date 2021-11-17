@@ -28,33 +28,41 @@ mongoose
 const ClerkRoute = require("./Route/Clerk.router");
 const testRoute = require("./Route/test.router");
 const ProductRoute = require("./Route/Product.router");
-const ProductItem = require("./Route/ProductItem.router");
-const CustomerRoute = require('./Route/Customer.router')
+const ProductItemRoute = require("./Route/ProductItem.router");
+const CustomerRoute = require("./Route/Customer.router");
+const OrderRoute = require("./Route/Order.router");
 app.use(cors());
-app.use(bodyParser.urlencoded({extended: true}));
+
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(fileupload({
-   useTempFiles:true
-}));
-
-
-
-app.use(session({
-  secret: 'kjcxlchiy48236',
-  resave: false,
-  saveUninitialized: false
-}));
+app.use("/product/", ProductRoute);
+app.use("/productitem/", ProductItemRoute);
 app.use(
   fileupload({
     useTempFiles: true,
   })
 );
-app.use(express.static("public"));
+
 app.use("/clerk", ClerkRoute);
 app.use("/test", testRoute);
-app.use("/product/", ProductRoute);
-app.use("/productitem/", ProductItem);
-app.use('/Customer', CustomerRoute);
+app.use("/order", OrderRoute);
+
+app.use(
+  session({
+    secret: "kjcxlchiy48236",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+app.use(
+  fileupload({
+    useTempFiles: true,
+  })
+);
+app.use("/public/", express.static("public"));
+app.use("/clerk", ClerkRoute);
+app.use("/test", testRoute);
+app.use("/Customer", CustomerRoute);
 app.use(
   session({
     secret: "kjcxlchiy48236",
