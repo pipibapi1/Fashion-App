@@ -37,7 +37,7 @@ ProductRoute.post("/", upload.single("img"), async (req, res) => {
     res.status(500).json({ success: false, message: "Internal server error" });
   }
 });
-// GET "http://3000/localhost/prouct"
+// GET "http://3000/localhost/product"
 // @desc: get all product
 
 ProductRoute.get("/", async (req, res) => {

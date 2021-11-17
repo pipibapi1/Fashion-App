@@ -11,10 +11,11 @@ function toggleFlag(index){
 const ImageSlider = ({props}) => {
     return(
         <div className="swiper-wrapper">
-            {props.map((data,index)=>{
+            {props.map((x,index)=>{
+                let data= JSON.parse(x);
             return(
             <div className="swiper-slide slide">
-            <div >
+            <div>
                 <div className="icons">
                     <a className="fas fa-shopping-cart"></a>
                     <a className = {`flag-${index} fas fa-heart heart`} onClick={ ()=> toggleFlag(index) }></a>
