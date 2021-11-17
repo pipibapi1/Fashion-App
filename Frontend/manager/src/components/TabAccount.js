@@ -26,8 +26,8 @@ export default function TabAccount() {
     return (
         <div className="tabaccount">
             <Tabs>
-                <div label="Tất cả nhân viên">
-                    <Container className="showlist">
+                <div label="Tất cả nhân viên"> 
+                <Container className="showlist">
                         <Row>
                             <Col sm={6}> <h2 className="columlist">Tên tài khoản</h2></Col>
                             <Col sm={2.8}> <h2 className="columlist">Họ và tên</h2></Col>
@@ -36,7 +36,7 @@ export default function TabAccount() {
                         </Row>
                     </Container>
                     <DetailAcount lists={Staffs}/>
-                    <div className="Total">Tổng nhân viên: {Staffs.length}</div> 
+                    <div className="Total">Tổng nhân viên: {Staffs.length}</div>
                 </div>
                 <div label="Tất cả khách hàng">
                     <Container className="showlist">

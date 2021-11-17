@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { MdOutlineAttachMoney } from "react-icons/md";
 import { BiAddToQueue } from "react-icons/bi";
@@ -21,8 +21,12 @@ import {
   useHistory,
 } from "react-router-dom";
 import LoginAdmin from "./LoginAdmin";
+import { productContext } from "./ProductContext/ProductContext";
 
 export default function TabVertical() {
+  const { getProducts, products, getProductitems, getSoldAndRemain, loading } =
+    useContext(productContext);
+  console.log(products);
   const history = useHistory();
   const handleTab = (id) => {
     if (id === 0) history.push("/products");
@@ -127,28 +131,25 @@ export default function TabVertical() {
 
         <TabPanel>
           <div className="panel-content">
-          
-          
-          <Switch>
-          <Route path="/admin" component={LoginAdmin}>
-          </Route>
-          <Route path="/products/edit/:id">
-                  <ProductEdit />
-                </Route>
-                <Route path="/products/:id">
-                  <ProductDetail />
-                </Route>
-                <Route path="/">
-                  <ListProducts />
-                </Route>
-              </Switch>
+            <Switch>
+              <Route path="/admin" component={LoginAdmin}></Route>
+              <Route path="/products/edit/:id">
+                <ProductEdit />
+              </Route>
+              <Route path="/products/:id">
+                <ProductDetail />
+              </Route>
+              <Route path="/">
+                <ListProducts />
+              </Route>
+            </Switch>
           </div>
         </TabPanel>
         <TabPanel>
-            <div className="panel-content">
-              <AddProduct />
-            </div>
-          </TabPanel>
+          <div className="panel-content">
+            <AddProduct />
+          </div>
+        </TabPanel>
         {/* <Route path="/products">
           <TabPanel>
             <div className="panel-content">
@@ -236,8 +237,6 @@ export default function TabVertical() {
             <Revenue />
           </div>
         </TabPanel>
-
-
       </Tabs>
     </div>
   );

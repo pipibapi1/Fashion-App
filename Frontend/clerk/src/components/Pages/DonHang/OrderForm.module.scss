@@ -1,0 +1,201 @@
+.orderDetail{
+    height: 62vh;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    
+    .customerInfo{
+        width : 30%;
+        left: 0px;
+        border-radius: 10px;
+        background-color: rgb(226, 207, 207);
+        
+        .cAvatar{
+            display: block;
+            margin: 0 auto;
+            height: 120px;
+            width: 120px;
+            margin-top: 40px;
+        }
+        .name{
+            margin-top: 10px;
+            text-align: center;
+            font-size: 20px;
+        }
+        .role{
+            margin-top: 5px;
+            text-align: center;
+            color: rgb(98, 124, 180);
+        }
+       
+        .customerPhone{
+            margin-top: 30px;
+            display: flex;
+            .phone{
+                margin-left: 5px;
+                height: 40px;
+                width: 40px;
+            }
+            .phoneNumber{
+                margin-left: 10px;
+                margin-top: 10px;
+                font-size: 18px;
+            }
+        }
+        .customerAddress{
+            margin-top: 20px;
+            display: flex;
+            .address{
+                margin-left: 5px;
+                height: 40px;
+                width: 40px;
+            }
+            .addressText{
+                margin-left: 10px;
+                margin-top: 10px;
+                font-size: 18px;
+            }
+        }
+        .note{
+            .label{
+                font-size: 20px;
+                font-weight: 600;
+            }
+            margin-top: 20px;
+        }
+        
+    }
+    .vl{
+        border-left: 10px solid white;
+         height: 100%;
+    }
+    .orderInfo{
+        width: 70%;
+        background-color: rgb(238, 230, 230);
+        border-radius: 10px;
+        .status{
+            margin-top: 5px;
+            margin-left: 5px;
+            font-size: 25px;
+            font-family: Mulish;
+            font-style: normal;
+            font-weight: 800;
+        }
+        .listItem{
+            margin-top: 25px;
+            height : 200px;
+            width : 90%;
+            margin-left: 5%;
+            border-radius: 5px;
+            background-color: rgb(226, 207, 207);
+            overflow-y: scroll;
+           .table{
+                width: 100%;
+                .head{
+                    height : 30px;
+                    
+                    font-weight: 600;
+                }
+                
+                .itemImg{
+                    margin-left: 20px;
+                    margin-top: 5px;
+                    height: 25px;
+                    width: 25px;
+                    border-radius: 15px;
+                }
+                .du{
+                    color: blue;
+                }
+                .kodu{
+                    color: red;
+                }
+           }
+            
+        }
+        .total{
+            margin-top: 10px;
+            margin-left: 5%;
+            display: flex;
+            justify-content: space-between;
+            width: 570px;
+            
+            .label{
+                font-size: 20px;
+                font-weight: 600;
+            }
+            .text{
+                font-size: 20px;
+            }
+        }
+        .orderAddress{
+            margin-top: 20px;
+            margin-left: 5%;
+            width: 570px;
+            display: flex;
+            justify-content: space-between;
+            .label{
+                font-size: 15px;
+                font-weight: 600;
+                
+                height: 40px;
+                width:80px;
+            }
+            .text{
+                font-size: 15px;
+                
+            }
+        }
+        .notification{
+            margin-top: 10px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 600;
+            .enough{
+                color: black;
+            }
+            .notEnough{
+                color:red;
+            }
+        }
+        .buttons{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 250px;
+            margin-top: 30px;
+            margin-left: 55%;
+            justify-content: space-between;
+            .decline{
+                border-radius: 5px;
+                background-color: white;
+                color: rgb(175, 164, 164);
+                border : none;
+                
+                height: 50px;
+                width: 100px;
+                
+            }
+            .confirm{
+                border-radius: 5px;
+                height: 50px;
+                width: 100px;
+                border : none;
+                background-color: rgb(226, 207, 207);
+                color: black;
+                
+            }
+            .doneDelivery{
+                border-radius: 5px;
+                height: 50px;
+                width: 100px;
+                border : none;
+                background-color: rgb(226, 207, 207);
+                color: black;
+                
+            }
+        }
+            
+        
+        
+    }
+}

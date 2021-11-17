@@ -1,5 +1,5 @@
 const express = require('express');
-const ClerkRoutes = express.Router();
+const ClerkRoutes = express.Router(); 
 const config = require('../configure.js');
 const jwt = require('jsonwebtoken');
 
@@ -7,7 +7,7 @@ let Clerk = require('../Models/Clerk.model');
 
 // clerk user validation
 
-ClerkRoutes.post("/", async (req, res) => {
+ClerkRoutes.post("/quan", async (req, res) => {
 
     try {
 
@@ -62,7 +62,7 @@ ClerkRoutes.post("/", async (req, res) => {
 });
 
 
-ClerkRoutes.post("/update-router", async(req, res) => {
+ClerkRoutes.post("/update-router/quan", async(req, res) => {
     try {
         const {email, address, phoneNumber, cccd, birthday, id, avatar} = req.body;
         
