@@ -5,20 +5,20 @@ function Icons() {
     const styleObj = {
         marginLeft:0
     }
-    const [count, setCount] = useState(JSON.parse(localStorage.getItem("Order")));
+    const [count, setCount] = useState(JSON.parse(sessionStorage.getItem("Order")));
     const [total, setTotal] = useState(0);
     function calcTotal(){
-      var x = JSON.parse(localStorage.getItem('Order'))
+      var x = JSON.parse(sessionStorage.getItem('Order'))
       var y = 0;
       for(const a in x){
           let com = JSON.parse(x[a])
-        y += com[3];
+        y += com[3]*com[4];
       }
       setTotal(y);
     }
     useEffect(() => {
       setTimeout(() => {
-        setCount(JSON.parse(localStorage.getItem("Order")));
+        setCount(JSON.parse(sessionStorage.getItem("Order")));
       }, 1000);
     });
     useEffect(() => {
@@ -27,12 +27,12 @@ function Icons() {
       }, 1000);
     });
     function removeItem(props){
-      var x = JSON.parse(localStorage.getItem('Order'))
+      var x = JSON.parse(sessionStorage.getItem('Order'))
       for(const a in x){
           let com = JSON.parse(x[a])
         if (com[0] === props[0]){
           x.splice(a,1);
-          localStorage.setItem('Order',JSON.stringify(x));
+          sessionStorage.setItem('Order',JSON.stringify(x));
           return;
         }
       }
@@ -60,7 +60,7 @@ function Icons() {
             </div>
           </div>
             )})}
-          <h3 className="total" onClick={()=>alert(JSON.parse(localStorage.getItem("color")))}> TOTAL : <span>{total}VNĐ</span></h3>
+          <h3 className="total" onClick={()=>alert(count)}> TOTAL : <span>{total}VNĐ</span></h3>
           <a href="/payment" style={styleObj} className="header__menu-link btn btn--border btn--rounded buttom"> Checkout Card</a>
         </div>
     </div>
