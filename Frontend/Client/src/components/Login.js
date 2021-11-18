@@ -1,6 +1,5 @@
 import React,{useState} from 'react'
 import axios from 'axios';
-import {Redirect} from "react-router-dom";
 export default function Login(){
     const [loginState,setLogin]=useState(0)
     const [loginEmail, setEmail] = useState("");
@@ -27,10 +26,10 @@ export default function Login(){
                 const password = res.data.Customer.password;
                 
                 //set user details in local storage
-                localStorage.setItem('id', id);
-                localStorage.setItem('name', name);
-                localStorage.setItem('username', username);
-                localStorage.setItem('password', password);
+                sessionStorage.setItem('id', id);
+                sessionStorage.setItem('name', name);
+                sessionStorage.setItem('username', username);
+                sessionStorage.setItem('password', password);
                 window.location = "/";
             }
         }

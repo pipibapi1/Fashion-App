@@ -1,18 +1,18 @@
 import { useState } from "react"
 export default function Popup(props,num,trigger,setTrigger){
   function buyItem(props){
-    var x = JSON.parse(localStorage.getItem('Order'))
+    var x = JSON.parse(sessionStorage.getItem('Order'))
     for(const a in x){
         let com = JSON.parse(x[a])
       if (com[0] === props[0]){
         com[4]++;
         x[a] = JSON.stringify(com)
-        localStorage.setItem('Order',JSON.stringify(x));
+        sessionStorage.setItem('Order',JSON.stringify(x));
         return;
       }
     }
     x.push(JSON.stringify({0:props[0],1:props[1],2:props[2],3:props[3],4:1}));
-    localStorage.setItem('Order',JSON.stringify(x));  
+    sessionStorage.setItem('Order',JSON.stringify(x));  
   }
   const [a,setA] = useState(1);
     return( (trigger === num )?
