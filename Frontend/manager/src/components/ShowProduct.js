@@ -4,7 +4,7 @@ import axios from "axios";
 
 export default function ShowProduct(props) {
     const [product, setproduct] = React.useState([]);
-    console.log("hihi", props.item.productID)
+    // console.log("hihi", props.item.productID)
     // React.useEffect(() => {
     //         axios.post("http://localhost:4000/revenue/searchProduct", {searchProduct: props.item.productID}).then((response) => {
     //             setproduct(response.data)
@@ -15,7 +15,7 @@ export default function ShowProduct(props) {
             const getData = async () => {  
             await axios.post("http://localhost:3000/revenue/searchProduct", {searchProduct: props.item.productID}).then((response) => {
                 setproduct(response.data)
-                console.log(response.data);
+                // console.log(response.data);
             });
             }  
             getData();
@@ -32,7 +32,7 @@ export default function ShowProduct(props) {
                         <div>{product.description}</div>
                         <div>SIZE {props.item.size}</div>
                         <div className="quantityOrder">Số lượng: { props.order.listQuantity[props.indexx]}</div>
-                        <div className="textRight">GIÁ: {product.price} Đ</div>
+                        {product.price && <div className="textRight">GIÁ: {product.price.toLocaleString()} Đ</div>}
                     </Col>
                 </Row>
             </Container>

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import './tab.css';
 import Tabs from "./Tabs";
 import { Container, Row, Col } from 'react-grid-system';
@@ -6,12 +6,17 @@ import { Container, Row, Col } from 'react-grid-system';
 // import Customers from "./Customers";
 import DetailAcount from "./DetailAcount";
 import axios from "axios";
+// import SearchAccount from "./SearchAccount";
+// import { FaSearch } from "react-icons/fa";
 
 
 export default function TabAccount() {
 
     const [Staffs, setStaff] = React.useState(null);
     const [Customers, setCustomer] = React.useState(null);
+
+    // const [show, setshow] = useState(false);
+    // const [current, setCurrent] = React.useState("");
 
     React.useEffect(() => {
         axios.get("http://localhost:3000/detail/Clerk").then((response) => {
@@ -22,8 +27,21 @@ export default function TabAccount() {
         });
     }, []);
     if (!Staffs) return null;
-    
+
     return (
+        <>
+        {/* <form className="searchAccount" action="/" method="get">
+            {show && <input
+                className="formSearch"
+                type="text"
+                id="header-search"
+                // placeholder="Search accounts"
+                name="seachAccount" 
+            />}
+            {<div className="searchButton" onClick={() => setshow(!show)}><FaSearch size={25} className="searchIcon" /></div>} */}
+            {/* {show && <button className="searchButton" onClick={() => setshow(true)}><FaSearch size={25} className="searchIcon" /></button>} */}
+        {/* </form> */}
+        {/* <SearchAccount /> */}
         <div className="tabaccount">
             <Tabs>
                 <div label="Tất cả nhân viên"> 
@@ -36,7 +54,7 @@ export default function TabAccount() {
                         </Row>
                     </Container>
                     <DetailAcount lists={Staffs}/>
-                    <div className="Total">Tổng nhân viên: {Staffs.length}</div>
+                    {Staffs && <div className="Total">Tổng nhân viên: {Staffs.length}</div>}
                 </div>
                 <div label="Tất cả khách hàng">
                     <Container className="showlist">
@@ -48,10 +66,10 @@ export default function TabAccount() {
                         </Row>
                     </Container>
                     <DetailAcount lists={Customers}/>
-                    <div className="Total">Tổng khách hàng: {Customers.length}</div> 
+                    { Customers && <div className="Total">Tổng khách hàng: {Customers.length}</div>} 
                 </div>
             </Tabs>
         </div>
-    
+    </>
     )
 }

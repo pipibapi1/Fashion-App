@@ -213,7 +213,7 @@ export default function TabVertical() {
                 </Col>
                 <Col lg={3}>
                   {" "}
-                  <SearchAccount />
+                  {/* <SearchAccount /> */}
                 </Col>
               </Row>
             </Container>
@@ -230,7 +230,7 @@ export default function TabVertical() {
                 </Col>
                 <Col lg={3}>
                   {" "}
-                  <SearchAccount />
+                  {/* <SearchAccount /> */}
                 </Col>
               </Row>
             </Container>
