@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import SizeProduct from "./SizeProduct";
-import Products from "../../Products";
 import swal from "sweetalert";
 import {
   BrowserRouter as Router,
@@ -9,21 +8,28 @@ import {
   Link,
   useParams,
 } from "react-router-dom";
-import TotalSize from "../ProductDetail/TotalSize";
 import Avartar from "../Avatar";
 import { productContext } from "../ProductContext/ProductContext";
 import ModalSize from "./ModalSize";
-// import "./index.css";
-// import "..//AddProduct/index.css"
+
 const ProductEdit = () => {
-  let { id } = useParams();
-  const { getProductById, updateProduct } = useContext(productContext);
+  const { id } = useParams();
+  let { getProductById, updateProduct, loading } = useContext(productContext);
   const [sizeSelected, setSizeSelected] = useState(0);
-  const [upDateProduct, setUpdateProduct] = useState(() => {
-    return getProductById(id);
+  const [upDateProduct, setUpdateProduct] = useState({
+    name: "",
+    brand: "",
+    description: "",
+    feature: "",
+    img: "",
+    items: "",
+    madeIn: "",
+    price: "",
+    remaining: "",
+    sold: "",
   });
 
-  const {
+  let {
     name,
     brand,
     description,
@@ -35,6 +41,9 @@ const ProductEdit = () => {
     remaining,
     sold,
   } = upDateProduct;
+  items = items ? items : [];
+
+  // OnChange value
   const onChangeProduct = (e) => {
     setUpdateProduct({
       ...upDateProduct,
@@ -42,39 +51,38 @@ const ProductEdit = () => {
     });
   };
   const [imgPreview, setImgPreview] = useState(() => {
+    console.log(":D", getProductById(id).img);
     return {
-      preview: img,
+      preview: getProductById(id).img,
     };
   });
-  const closeModal = () => {
-    document.querySelector(".modal-hoangkui-add").style.display = "none";
-  };
-  const openModal = () => {
-    var modal = document.querySelector(".modal-hoangkui-add");
-    modal.style.display = "block";
-    window.onclick = function (e) {
-      if (e.target === modal) {
-        modal.style.display = "none";
-      }
-    };
-  };
+
   useEffect(() => {
     return () => {
-      URL.revokeObjectURL(imgPreview);
+      URL.revokeObjectURL(imgPreview.preview);
     };
   }, [imgPreview]);
-  const handlePreview = (e) => {
-    const file = e.target.files[0];
-    file.preview = URL.createObjectURL(file);
-    setImgPreview(file.preview);
-  };
 
   //
   const [imgSize, setImgSize] = useState(() => {
-    if (items.length > 0) return items[0].img;
-    return null;
+    if (
+      getProductById(id).items &&
+      getProductById(id).items.length >= 0 &&
+      getProductById(id).items[0]
+    )
+      return getProductById(id).items[0].img;
+    return "";
   });
-
+  useEffect(() => {
+    if (items.length > 0) {
+      setImgSize(getProductById(id).items[0].img);
+    }
+    console.log(":D", getProductById(id).img);
+    setImgPreview({
+      preview: getProductById(id).img,
+    });
+    setUpdateProduct(getProductById(id));
+  }, [loading, getProductById(id)]);
   const handleClickSizeProduct = (index) => {
     console.log(index);
     setImgSize(items[index].img);

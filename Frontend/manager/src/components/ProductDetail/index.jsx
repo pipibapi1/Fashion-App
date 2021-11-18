@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import SizeProduct from "./SizeProduct";
 import Products from "../../Products";
 import LinkButton from "../LinkButton";
@@ -20,7 +20,7 @@ const ProductDetail = () => {
   const [sizeSelected, setSizeSelected] = useState(0);
   let { id } = useParams();
   console.log(getProductById(id));
-  const {
+  let {
     name,
     brand,
     description,
@@ -32,12 +32,17 @@ const ProductDetail = () => {
     remaining,
     sold,
   } = getProductById(id);
+  items = items ? items : [];
   // const {name,brand,remain,sale,price,where,}
   const [imgProductItem, setImgProductItem] = useState(() => {
-    if (!items) return "";
-    if (items.length > 0) return items[0].img;
+    // if (!loading) return "";
+    if (getProductById(id).items.length > 0)
+      return getProductById(id).items[0].img;
     return "";
   });
+  useEffect(() => {
+    setImgProductItem(items[0].img);
+  }, [items]);
   const handleClickSizeProduct = (index) => {
     console.log(index);
     setImgProductItem(items[index].img);

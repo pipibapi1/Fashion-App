@@ -97,9 +97,20 @@ const ProductProvider = ({ children }) => {
     return -1;
   };
   const getIdProductItemCurrent = () => {
-    if (productItemsGlobal.length > 0)
-      return productItemsGlobal[productItemsGlobal.length - 1].id;
-    return -1;
+    // if (productItemsGlobal.length > 0)
+    //   return productItemsGlobal[productItemsGlobal.length - 1].id;
+
+    let res = Number(-1);
+    let idItem;
+    for (let x of productItemsGlobal) {
+      idItem = Number(x.id.slice(2));
+      // console.log(idItem, "---", res);
+      if (res < idItem) {
+        res = idItem;
+      }
+    }
+    return res + 1;
+    // return -1;
   };
   const Loaded = () => {
     dispatch({
@@ -117,6 +128,7 @@ const ProductProvider = ({ children }) => {
           payload: res.data.productItems,
         });
         // console.log(products);
+        // Loaded();
       }
     } catch (error) {
       console.log(error);
@@ -153,7 +165,11 @@ const ProductProvider = ({ children }) => {
   };
   const getProductById = (id) => {
     // getProducts();
-    const index = products.findIndex((product) => product.id === id);
+
+    let index = products.findIndex((product) => product.id === id);
+    while (index < 0) {
+      index = products.findIndex((product) => product.id === id);
+    }
     return products[index];
   };
   const getSoldAndRemain = async (idProduct) => {
@@ -177,6 +193,7 @@ const ProductProvider = ({ children }) => {
           payload: result,
         });
       }
+      Loaded();
     } catch (error) {
       console.log(error);
     }
@@ -194,6 +211,7 @@ const ProductProvider = ({ children }) => {
           getItemForProduct(x.id);
           getSoldAndRemain(x.id);
         }
+        // Loaded();
       }
     } catch (error) {
       console.log(error);

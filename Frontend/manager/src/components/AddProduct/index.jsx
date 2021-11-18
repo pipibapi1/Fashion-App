@@ -55,7 +55,7 @@ const AddProduct = () => {
     });
   };
   const handleSubmit = () => {
-    const idProductItem = Number(getIdProductItemCurrent().slice(2)) + 1;
+    const idProductItem = Number(getIdProductItemCurrent());
     const idProduct = handleIndex(Number(getIdProductCurrent().slice(2)) + 1);
     const formData = new FormData();
     formData.append("name", newProduct.name);

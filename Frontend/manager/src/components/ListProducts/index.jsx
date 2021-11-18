@@ -105,6 +105,7 @@ const ListProducts = () => {
                 />
               </th>
               <th className="listProducts-content-row-heading">STT</th>
+              <th className="listProducts-content-row-heading">ID</th>
               <th className="listProducts-content-row-heading">Tên sản phẩm</th>
               <th className="listProducts-content-row-heading">
                 Tên thương hiệu

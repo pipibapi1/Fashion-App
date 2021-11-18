@@ -103,9 +103,6 @@ const SizeProduct = ({ idProduct, index, item, onClickSizeProduct, style }) => {
             <i className="fas fa-trash"></i>
           </button>
         </td>
-        {/* <td><button className=" button-hoangkui button-hoangkui-s"><i class="fas fa-trash"></i>Xóa</button></td> */}
-
-        {/* modal edit */}
         <div className={`modal-hoangkui-edit-${item.id} modal-hoangkui`}>
           <div className="modal-content-hoangkui">
             <h3 className="modal-heading">Chế độ chỉnh sửa</h3>

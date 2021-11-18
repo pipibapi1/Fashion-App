@@ -53,6 +53,12 @@ const Product = ({ index, product }) => {
           onClick={handleClickProduct}
           className="listProducts-content-row-item"
         >
+          {id}
+        </td>
+        <td
+          onClick={handleClickProduct}
+          className="listProducts-content-row-item"
+        >
           {name}
         </td>
         <td

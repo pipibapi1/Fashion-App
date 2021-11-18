@@ -16,9 +16,7 @@ const ModalSize = ({ idProduct }) => {
   const handleAddProductItem = () => {
     console.log(productItem);
     // setProductItems([...productItems, productItem]);
-    const idItem = handleIndexItem(
-      Number(getIdProductItemCurrent().slice(2)) + 1
-    );
+    const idItem = handleIndexItem(Number(getIdProductItemCurrent()));
     const data = new FormData();
     data.append("productID", idProduct);
     data.append("img", productItem.img);
@@ -28,10 +26,9 @@ const ModalSize = ({ idProduct }) => {
     data.append("sold", productItem.sold);
 
     createdProductItem(data, idProduct);
-    setProductItem({ productID: "", size: "", img: "", sold: 0, remaining: 0 });
     setImgPreview("");
-    // console.log(productItems);
     closeModal();
+    setProductItem({ productID: "", size: "", img: "", sold: 0, remaining: 0 });
   };
   const [imgPreview, setImgPreview] = useState("");
   const onChangeProductItem = (e) => {
