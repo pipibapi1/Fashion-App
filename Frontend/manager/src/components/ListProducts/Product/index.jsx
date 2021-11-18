@@ -47,7 +47,7 @@ const Product = ({ index, product }) => {
           onClick={handleClickProduct}
           className="listProducts-content-row-item"
         >
-          {index}
+          {index + 1}
         </td>
         <td
           onClick={handleClickProduct}

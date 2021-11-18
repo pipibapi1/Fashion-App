@@ -15,11 +15,15 @@ import TotalSize from "./TotalSize";
 import { productContext } from "../ProductContext/ProductContext";
 
 const ProductDetail = () => {
-  const { getProductById, loading } = useContext(productContext);
+  const { getProductById, loading, products } = useContext(productContext);
   console.log(loading);
   const [sizeSelected, setSizeSelected] = useState(0);
   let { id } = useParams();
   console.log(getProductById(id));
+  useEffect(() => {
+    setSizeSelected(0);
+    console.log(";;");
+  }, [products]);
   let {
     name,
     brand,
@@ -36,12 +40,13 @@ const ProductDetail = () => {
   // const {name,brand,remain,sale,price,where,}
   const [imgProductItem, setImgProductItem] = useState(() => {
     // if (!loading) return "";
-    if (getProductById(id).items.length > 0)
+    if (getProductById(id).items && getProductById(id).items.length > 0)
       return getProductById(id).items[0].img;
     return "";
   });
   useEffect(() => {
-    setImgProductItem(items[0].img);
+    if (getProductById(id).items && getProductById(id).items.length > 0)
+      setImgProductItem(getProductById(id).items[0].img);
   }, [items]);
   const handleClickSizeProduct = (index) => {
     console.log(index);

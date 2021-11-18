@@ -28,6 +28,8 @@ const ProductProvider = ({ children }) => {
         type: CREATE_PRODUCT,
         payload: data,
       });
+
+      getProducts();
     } catch (error) {
       console.log(error);
     }
@@ -70,17 +72,22 @@ const ProductProvider = ({ children }) => {
       console.log(error);
     }
   };
-  const updateProduct = async (id, data) => {
+  const updateProduct = async (id, dataForm) => {
     try {
-      const res = axios.put(`http://localhost:3000/product/${id}`, data);
-      if (res.data.suceess) {
+      const res = await axios.put(
+        `http://localhost:3000/product/${id}`,
+        dataForm
+      );
+      if (res.data.success) {
         getProducts();
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
   const updateProductItem = async (idProduct, idItem, data) => {
     try {
-      const res = axios.put(
+      const res = await axios.put(
         `http://localhost:3000/productitem/${idProduct}/${idItem}`,
         data
       );

@@ -74,7 +74,7 @@ const ProductEdit = () => {
     return "";
   });
   useEffect(() => {
-    if (items.length > 0) {
+    if (getProductById(id).items && getProductById(id).items.length > 0) {
       setImgSize(getProductById(id).items[0].img);
     }
     console.log(":D", getProductById(id).img);

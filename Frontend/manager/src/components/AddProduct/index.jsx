@@ -91,6 +91,7 @@ const AddProduct = () => {
       createdProductItem(dataProductItem, idProduct);
     }
     setImgPreview(null);
+    setProductItems([]);
     swal("Product is created", "", "success");
   };
   const handleChangImg = (e) => {

@@ -7,6 +7,9 @@ const SizeProduct = ({ index, size, onClickSizeProduct, style }) => {
   const closeModal = () => {
     document.querySelector(".modal-hoangkui-edit").style.display = "none";
   };
+  useEffect(() => {
+    setImg("");
+  }, [size]);
   const openModal = () => {
     var modal = document.querySelector(".modal-hoangkui-edit");
     modal.style.display = "block";

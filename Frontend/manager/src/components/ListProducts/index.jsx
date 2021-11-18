@@ -123,13 +123,8 @@ const ListProducts = () => {
               </th>
             </tr>
             {products.map((product, index) => {
-              return (
-                <Product
-                  key={index}
-                  index={maxItem * (page - 1) + index + 1}
-                  product={product}
-                />
-              );
+              if (index >= (page - 1) * maxItem && index < page * maxItem)
+                return <Product key={index} index={index} product={product} />;
             })}
           </tbody>
         </table>
