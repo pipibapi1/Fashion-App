@@ -6,6 +6,7 @@ import {
   ADD_SOLD_REMAINING,
   ADD_ITEM_PRODUCT,
   LOADED,
+  DELETE_PRODUCT,
 } from "./constant";
 const reducer = (state, action) => {
   const { type, payload } = action;
@@ -73,6 +74,18 @@ const reducer = (state, action) => {
       return {
         ...state,
         loading: false,
+      };
+    case DELETE_PRODUCT:
+      const productsAfterDelete = [...state.products];
+      const indexDeleted = productsAfterDelete.findIndex(
+        (product) => product.id === payload
+      );
+      if (indexDeleted >= 0) {
+        productsAfterDelete.splice(indexDeleted, 1);
+      }
+      return {
+        ...state,
+        products: productsAfterDelete,
       };
     default:
       return state;

@@ -24,8 +24,14 @@ import LoginAdmin from "./LoginAdmin";
 import { productContext } from "./ProductContext/ProductContext";
 
 export default function TabVertical() {
-  const { getProducts, products, getProductitems, getSoldAndRemain, loading } =
-    useContext(productContext);
+  const {
+    getProducts,
+    products,
+    getProductitems,
+    getSoldAndRemain,
+    loading,
+    Loaded,
+  } = useContext(productContext);
   console.log(products);
   const history = useHistory();
   const handleTab = (id) => {
@@ -34,6 +40,13 @@ export default function TabVertical() {
     else if (id === 2) history.push("/account");
     else if (id === 3) history.push("/sales");
   };
+  // if (products) {
+  //   if (products[0]) {
+  //     if (products[0].items) {
+  //       Loaded();
+  //     }
+  //   }
+  // }
   return (
     <div className="TabMain">
       {/* luc day dieu huong o day */}

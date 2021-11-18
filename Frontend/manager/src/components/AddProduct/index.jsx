@@ -2,18 +2,36 @@ import React, { useState, useContext, useEffect } from "react";
 import Avartar from "../Avatar";
 import swal from "sweetalert";
 import { productContext } from "../ProductContext/ProductContext";
-import Catelory from "./Catelory";
 import ModalSize from "./ModalSize";
 import SizeProduct from "./SizeProduct";
 import { handleIndex, handleIndexItem } from "./help";
+import Select from "react-select";
+import {
+  changeSelectToText,
+  changeTextToSelect,
+  options,
+} from "../ProductEdit/help";
 // import "./index.css"
 const AddProduct = () => {
+  // option select
+  const [selectedOption, setSelectedOption] = useState(null);
+  const handleChangeSelect = (selectedOption) => {
+    setSelectedOption(selectedOption);
+    console.log(selectedOption);
+  };
+  const [checkBox, setCheckBox] = useState(true);
   const [sizeSelected, setSizeSelected] = useState(0);
   const [imgSize, setImgSize] = useState();
   const [productItems, setProductItems] = useState([]);
+  useEffect(() => setImgSize(""), [productItems]);
   const handleClickSizeProduct = (index) => {
     setImgSize(productItems[index].img.preview);
     setSizeSelected(index);
+  };
+  const removeProductItem = (index) => {
+    const productItemsRemoved = [...productItems];
+    productItemsRemoved.splice(index, 1);
+    setProductItems(productItemsRemoved);
   };
   const {
     createdProduct,
@@ -43,19 +61,27 @@ const AddProduct = () => {
   });
   const { name, brand, madeIn, price, description } = newProduct;
   const onChangeField = (e) => {
+    setCheckBox(true);
     setNewproduct({
       ...newProduct,
       [e.target.name]: e.target.value,
     });
   };
-  const getValueCatelory = (data) => {
-    setNewproduct({
-      ...newProduct,
-      feature: data,
-    });
-  };
+
   const handleSubmit = () => {
-    const idProductItem = Number(getIdProductItemCurrent().slice(2)) + 1;
+    if (
+      newProduct.name === "" ||
+      newProduct.brand === "" ||
+      newProduct.madeIn === "" ||
+      newProduct.price === "" ||
+      newProduct.img === "" ||
+      newProduct.description === ""
+    ) {
+      swal("Không thể thêm", "Bạn cần điền đủ thông tin", "error");
+      return;
+    }
+
+    const idProductItem = Number(getIdProductItemCurrent());
     const idProduct = handleIndex(Number(getIdProductCurrent().slice(2)) + 1);
     const formData = new FormData();
     formData.append("name", newProduct.name);
@@ -65,34 +91,49 @@ const AddProduct = () => {
     formData.append("price", newProduct.price);
     formData.append("description", newProduct.description);
     formData.append("img", newProduct.img);
-    formData.append("feature", newProduct.feature);
-    createdProduct(formData);
-    setNewproduct({
-      name: "",
-      brand: "",
-      madeIn: "",
-      price: 0,
-      description: "",
-      img: "",
-      feature: "",
-    });
-    for (let index in productItems) {
-      let { size, img, sold, remaining } = productItems[Number(index)];
-      let dataProductItem = new FormData();
-      dataProductItem.append("size", size);
-      dataProductItem.append(
-        "id",
-        handleIndexItem(idProductItem + Number(index))
+    formData.append("feature", changeSelectToText(selectedOption));
+
+    if (productItems.length > 0) {
+      createdProduct(formData);
+      setNewproduct({
+        name: "",
+        brand: "",
+        madeIn: "",
+        price: 0,
+        description: "",
+        img: "",
+        feature: "",
+      });
+      for (let index in productItems) {
+        let { size, img, sold, remaining } = productItems[Number(index)];
+        let dataProductItem = new FormData();
+        dataProductItem.append("size", size);
+        dataProductItem.append(
+          "id",
+          handleIndexItem(idProductItem + Number(index))
+        );
+        dataProductItem.append("img", img);
+        dataProductItem.append("sold", sold);
+        dataProductItem.append("remaining", remaining);
+        dataProductItem.append("productID", idProduct);
+        createdProductItem(dataProductItem, idProduct);
+      }
+      setImgPreview("");
+      setImgSize("");
+      setProductItems([]);
+      setSizeSelected(0);
+      swal("Product is created", "", "success");
+      setSelectedOption(null);
+      setCheckBox(false);
+    } else {
+      swal(
+        "Không thể thêm",
+        "Bạn cần ít nhất 1 loại sản phẩm để thêm thành công",
+        "error"
       );
-      dataProductItem.append("img", img);
-      dataProductItem.append("sold", sold);
-      dataProductItem.append("remaining", remaining);
-      dataProductItem.append("productID", idProduct);
-      createdProductItem(dataProductItem, idProduct);
     }
-    setImgPreview(null);
-    swal("Product is created", "", "success");
   };
+
   const handleChangImg = (e) => {
     setNewproduct({
       ...newProduct,
@@ -102,6 +143,7 @@ const AddProduct = () => {
     file.preview = URL.createObjectURL(file);
     setImgPreview(file);
   };
+  console.log("Render");
   return (
     <>
       {/* Heading  */}
@@ -177,7 +219,30 @@ const AddProduct = () => {
               />
             </label>
           </div>
-          <Catelory getValueCatelory={getValueCatelory} />
+          <div className="addProduct-content-text-name">
+            <label
+              htmlFor="brandProduct"
+              className="addProduct-content-text-name-label"
+            >
+              <p className="addProduct-content-text-name-title">Loại</p>
+              {/* <input
+                type="text"
+                className="addProduct-content-text-name-input"
+                value={feature}
+                onChange={onChangeProduct}
+                name="feature"
+                id="brandProduct"
+              /> */}
+            </label>
+            <Select
+              className="addProduct-content-text-name-input addProduct-content-text-name-input-option"
+              isMulti
+              value={selectedOption}
+              onChange={handleChangeSelect}
+              autoFocus
+              options={options}
+            />
+          </div>
           <div className="addProduct-content-text-name">
             <label
               htmlFor="desProduct"
@@ -226,6 +291,7 @@ const AddProduct = () => {
                       key={index}
                       index={index}
                       size={size}
+                      removeProductItem={removeProductItem}
                     />
                   );
                 })}

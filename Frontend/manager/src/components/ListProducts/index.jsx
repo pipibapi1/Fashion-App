@@ -105,6 +105,7 @@ const ListProducts = () => {
                 />
               </th>
               <th className="listProducts-content-row-heading">STT</th>
+              <th className="listProducts-content-row-heading">ID</th>
               <th className="listProducts-content-row-heading">Tên sản phẩm</th>
               <th className="listProducts-content-row-heading">
                 Tên thương hiệu
@@ -122,13 +123,8 @@ const ListProducts = () => {
               </th>
             </tr>
             {products.map((product, index) => {
-              return (
-                <Product
-                  key={index}
-                  index={maxItem * (page - 1) + index + 1}
-                  product={product}
-                />
-              );
+              if (index >= (page - 1) * maxItem && index < page * maxItem)
+                return <Product key={index} index={index} product={product} />;
             })}
           </tbody>
         </table>

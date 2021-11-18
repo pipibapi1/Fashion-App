@@ -1,12 +1,22 @@
 import React, { useState, useEffect } from "react";
+import swal from "sweetalert";
 // import "./index.css"
-const SizeProduct = ({ index, size, onClickSizeProduct, style }) => {
+const SizeProduct = ({
+  removeProductItem,
+  index,
+  size,
+  onClickSizeProduct,
+  style,
+}) => {
   const [img, setImg] = useState(
     "https://product.hstatic.net/1000035031/product/vay-dam-cong-so-thoi-trang-eden-dang-chu-a-co-tim-tay-phong-d405__6__9a4811529e834206b25da08ec496995f_master.jpg"
   );
   const closeModal = () => {
     document.querySelector(".modal-hoangkui-edit").style.display = "none";
   };
+  useEffect(() => {
+    setImg("");
+  }, [size]);
   const openModal = () => {
     var modal = document.querySelector(".modal-hoangkui-edit");
     modal.style.display = "block";
@@ -26,6 +36,22 @@ const SizeProduct = ({ index, size, onClickSizeProduct, style }) => {
     file.preview = URL.createObjectURL(file);
     setImg(file.preview);
   };
+  const handleRemove = () => {
+    swal({
+      title: "Bạn có chắc chắn muốn xóa?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        // deleteProduct(id);
+        removeProductItem(index);
+        swal("Xóa thành công", {
+          icon: "success",
+        });
+      }
+    });
+  };
   return (
     <>
       <tr
@@ -39,12 +65,9 @@ const SizeProduct = ({ index, size, onClickSizeProduct, style }) => {
         <td style={{ width: "26%" }}>{size.remaining}</td>
         <td>
           <button
-            onClick={openModal}
-            className="button-hoangkui button-hoangkui-s size-edit"
+            onClick={handleRemove}
+            className="button-hoangkui button-hoangkui-s size-delete"
           >
-            <i className="far fa-edit"></i>
-          </button>{" "}
-          <button className="button-hoangkui button-hoangkui-s size-delete">
             <i className="fas fa-trash"></i>
           </button>
         </td>

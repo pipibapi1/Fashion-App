@@ -29,12 +29,12 @@ function App() {
   useEffect(() => {
     getProducts();
     getProductitems();
-    let loadTimeout = setTimeout(() => {
-      Loaded();
-    }, 4000);
-    return () => {
-      clearTimeout(loadTimeout);
-    };
+    // let loadTimeout = setTimeout(() => {
+    //   Loaded();
+    // }, 4000);
+    // return () => {
+    //   clearTimeout(loadTimeout);
+    // };
   }, []);
   return (
     <Router>

@@ -1,7 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import SizeProduct from "./SizeProduct";
 import Products from "../../Products";
 import LinkButton from "../LinkButton";
+import Select from "react-select";
+import { changeSelectToText, changeTextToSelect } from "../ProductEdit/help";
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,12 +17,16 @@ import TotalSize from "./TotalSize";
 import { productContext } from "../ProductContext/ProductContext";
 
 const ProductDetail = () => {
-  const { getProductById, loading } = useContext(productContext);
+  const { getProductById, loading, products } = useContext(productContext);
   console.log(loading);
   const [sizeSelected, setSizeSelected] = useState(0);
   let { id } = useParams();
   console.log(getProductById(id));
-  const {
+  useEffect(() => {
+    setSizeSelected(0);
+    console.log(";;");
+  }, [products]);
+  let {
     name,
     brand,
     description,
@@ -32,12 +38,18 @@ const ProductDetail = () => {
     remaining,
     sold,
   } = getProductById(id);
+  items = items ? items : [];
   // const {name,brand,remain,sale,price,where,}
   const [imgProductItem, setImgProductItem] = useState(() => {
-    if (!items) return "";
-    if (items.length > 0) return items[0].img;
+    // if (!loading) return "";
+    if (getProductById(id).items && getProductById(id).items.length > 0)
+      return getProductById(id).items[0].img;
     return "";
   });
+  useEffect(() => {
+    if (getProductById(id).items && getProductById(id).items.length > 0)
+      setImgProductItem(getProductById(id).items[0].img);
+  }, [items]);
   const handleClickSizeProduct = (index) => {
     console.log(index);
     setImgProductItem(items[index].img);
@@ -46,7 +58,9 @@ const ProductDetail = () => {
   return (
     <>
       <div className="listProducts-heading">
-        <h3 className="listProducts-heading-title">Chi tiết sản phẩm</h3>
+        <h3 className="listProducts-heading-title">
+          Chi tiết sản phẩm ID {id}
+        </h3>
         <div className="listProducts-heading-info">
           <LinkButton to={`/products/edit/${id}`} className="button-hoangkui">
             <i className="fas fa-edit"></i>Sửa sản phẩm này
@@ -75,16 +89,16 @@ const ProductDetail = () => {
               />
             </label>
             <label
-              htmlFor="brandProduct"
+              htmlFor="nameProduct"
               className="addProduct-content-text-name-label"
             >
-              <p className="addProduct-content-text-name-title">ID sản phẩm</p>
+              <p className="addProduct-content-text-name-title">Giá</p>
               <input
                 type="text"
                 className="addProduct-content-text-name-input"
-                value={id}
+                value={price}
                 disabled
-                id="brandProduct"
+                id="nameProduct"
               />
             </label>
           </div>
@@ -122,31 +136,17 @@ const ProductDetail = () => {
 
           <div className="addProduct-content-text-name">
             <label
-              htmlFor="nameProduct"
-              className="addProduct-content-text-name-label"
-            >
-              <p className="addProduct-content-text-name-title">Giá</p>
-              <input
-                type="text"
-                className="addProduct-content-text-name-input"
-                value={price}
-                disabled
-                id="nameProduct"
-              />
-            </label>
-            <label
               htmlFor="brandProduct"
               className="addProduct-content-text-name-label"
             >
-              <p className="addProduct-content-text-name-title">Catelory</p>
-              <input
-                type="text"
-                className="addProduct-content-text-name-input"
-                value={feature}
-                disabled
-                id="brandProduct"
-              />
+              <p className="addProduct-content-text-name-title">Loại</p>
             </label>
+            <Select
+              className="addProduct-content-text-name-input addProduct-content-text-name-input-option"
+              isMulti
+              value={changeTextToSelect(feature)}
+              isDisabled
+            />
           </div>
           <div className="addProduct-content-text-name">
             <label
