@@ -169,7 +169,7 @@ text-align: left;
   border-top-left-radius: 5px;
 }
 .code {
-  background-color: red;
+  background-color: 	#FF0033;
   text-align: center;
   border-radius: 5px;
   height: 60%;
@@ -212,6 +212,28 @@ text-align: left;
   padding: 2px 5px;
   border: outset;
 }
+.titleAcount {
+  display: inline-block;
+  white-space: nowrap;
+  color: rgba(110, 184, 0.9);
+  border-bottom: 3px solid rgba(110, 184, 0.9);
+}
+.valueAcount {
+  display: inline-block;
+  white-space: nowrap;
+  max-width: 100%;
+}
+.valueAcountad {
+  display: inline-block;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: auto;
+  /* text-overflow: ellipsis;  */
+}
+/* .valueAcountad:hover {
+  overflow: visible;
+} */
+
 /* **************************************ShowList********************************************************************** */
 
 .oderprice {
@@ -251,7 +273,7 @@ padding-top: 0;
 }
 .modal > .header {
   font-size: 25px;
-  color: red;
+  color: rgba(110, 184, 0.9);
   padding: 10px;
   background-color: #dddddd;
   border-top-left-radius: 20px;
@@ -297,15 +319,17 @@ padding-top: 0;
   /* background-color: red; */
   border-radius: 20px;
   margin-top: 50px;
-  line-height: 45px;
+  line-height: 45px; 
 }
 .textRight {
   text-align: right;
   padding-right: 10px;
-  color: red;
+  color: 	#FF0033;
 }
 .field {
   font-weight: 200px;
+  /* border-left: 3px solid; */
+  
 }
 /* *******************************POP-UP**************************************************** */
 

@@ -39,39 +39,91 @@ export default function DetailAcount(props) {
                         <div className="content">
                             <Container>
                                 <Row>
-                                    <Col lg={5}><img  alt="avatar" className="imagePopup" src={account.avatar}></img></Col>
-                                    <Col lg={7}>
+                                    <Col lg={4.5}><img  alt="avatar" className="imagePopup" src={account.avatar}></img></Col>
+                                    <Col lg={7.5}>
                                         <ul className="inform"> 
                                             <Row>
-                                                <Col sm={10} className="field"> Họ và tên: {account.name}.</Col>    
+                                                <Col sm={10} className="field"> 
+                                                    <div className="titleAcount">
+                                                        Họ và tên: 
+                                                    </div>
+                                                    <i> </i>
+                                                    <div className="valueAcount">
+                                                        {account.name}
+                                                    </div>
+                                                </Col>    
                                                 <Col sm={2}  className="textRight"> <AiOutlineEdit/></Col>    
                                             </Row>
                                             <Row>
-                                                <Col sm={10}> Ngày sinh: {new Date(account.dateOfBirth).toLocaleDateString('en-EN', options)}.</Col>    
+                                                <Col sm={10} className="field">
+                                                    <div className="titleAcount">
+                                                        Ngày sinh: 
+                                                    </div>
+                                                    <i> </i>
+                                                    <div className="valueAcount">
+                                                        {new Date(account.dateOfBirth).toLocaleDateString('en-EN', options)}
+                                                    </div>
+                                                </Col>    
                                                 <Col sm={2}  className="textRight"> <AiOutlineEdit/></Col>    
                                             </Row>
-                                            {/* <Row>
-                                                <Col sm={10}> Tuổi: {account.age}.</Col>    
-                                                <Col sm={2}  className="textRight"> <AiOutlineEdit/></Col>    
-                                            </Row> */}
                                             <Row>
-                                                <Col sm={10}> Số điện thoại: {account.phoneNumber}.</Col>    
+                                                <Col sm={10 } className="field"> 
+                                                    <div className="titleAcount">
+                                                        Số điện thoại:
+                                                    </div>
+                                                    <i> </i>
+                                                    <div className="valueAcount">
+                                                        {account.phoneNumber}
+                                                    </div>
+                                                </Col>    
                                                 <Col sm={2}  className="textRight"> <AiOutlineEdit/></Col>    
                                             </Row>
                                             <Row>
-                                                <Col sm={10}> Email: {account.email}.</Col>    
+                                                <Col sm={10} className="field">
+                                                    <div className="titleAcount">
+                                                        Email:
+                                                    </div>
+                                                    <i> </i>
+                                                    <div className="valueAcount">
+                                                        {account.email}
+                                                    </div>
+                                                </Col>    
                                                 <Col sm={2}  className="textRight"> <AiOutlineEdit/></Col>    
                                             </Row>
                                             {account.dateWork && <Row>
-                                                <Col sm={10}> Ngày vào làm: {new Date(account.dateWork).toLocaleDateString('en-EN', options)}.</Col>    
+                                                <Col sm={10} className="field">
+                                                    <div className="titleAcount">
+                                                        Ngày vào làm:
+                                                    </div>
+                                                    <i> </i>
+                                                    <div className="valueAcount">
+                                                        {new Date(account.dateWork).toLocaleDateString('en-EN', options)}
+                                                    </div>
+                                                </Col>    
                                                 <Col sm={2}  className="textRight"> <AiOutlineEdit/></Col>    
                                             </Row>}
                                             {account.dateCreate && <Row>
-                                                <Col sm={10}> Ngày đăng kí tài khoản: {new Date(account.dateCreate).toLocaleDateString('en-EN', options)}.</Col>    
+                                                <Col sm={10} className="field">
+                                                    <div className="titleAcount">
+                                                        Ngày đăng kí tài khoản:
+                                                    </div>
+                                                    <i> </i>
+                                                    <div className="valueAcount">
+                                                        {new Date(account.dateCreate).toLocaleDateString('en-EN', options)}
+                                                    </div>
+                                                </Col>    
                                                 <Col sm={2}  className="textRight"> <AiOutlineEdit/></Col>    
                                             </Row>}
                                             <Row>
-                                                <Col sm={10}> Địa chỉ: {account.address}.</Col>    
+                                                <Col sm={10} className="field">
+                                                    <div className="titleAcount">
+                                                        Địa chỉ:
+                                                    </div>
+                                                    <i> </i>
+                                                    <div className="valueAcountad">
+                                                        {account.address}
+                                                    </div>
+                                                </Col>    
                                                 <Col sm={2}  className="textRight"> <AiOutlineEdit/></Col>    
                                             </Row>
                                         </ul>
