@@ -10,7 +10,8 @@ const SizeProduct = ({ index, item, onClickSizeProduct, style }) => {
         className="listProducts-content-row-size"
       >
         <td style={{ width: "8%" }}>{index + 1}</td>
-        <td style={{ width: "28%" }}>{item.size}</td>
+        <td style={{ width: "10%" }}>{item.id}</td>
+        <td style={{ width: "18%" }}>{item.size}</td>
         <td style={{ width: "23%" }}>{item.sold}</td>
         <td style={{ width: "40%" }}>{item.remaining}</td>
       </tr>

@@ -1,9 +1,19 @@
 import React, { useState, useEffect, useContext } from "react";
+import { useHistory } from "react-router";
 import swal from "sweetalert";
 import { productContext } from "../../ProductContext/ProductContext";
 // import "./index.css"
-const SizeProduct = ({ idProduct, index, item, onClickSizeProduct, style }) => {
-  const { deleteProductItem, updateProductItem } = useContext(productContext);
+const SizeProduct = ({
+  idProduct,
+  index,
+  item,
+  items,
+  onClickSizeProduct,
+  style,
+}) => {
+  const history = useHistory();
+  const { deleteProductItem, updateProductItem, deleteProduct } =
+    useContext(productContext);
   const [updateItem, setUpdateItem] = useState({
     size: item.size,
     remaining: item.remaining,
@@ -45,6 +55,27 @@ const SizeProduct = ({ idProduct, index, item, onClickSizeProduct, style }) => {
     });
   };
   const handleRemoveItem = () => {
+    console.log();
+    if (items.length < 2) {
+      swal({
+        title: "Bạn có chắc chắn muốn xóa?",
+        text: "Hành động này sẽ xóa luôn sản phẩm hiện tại vì sản phẩm có cần có số lượng để duy trì?",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((willDelete) => {
+        if (willDelete) {
+          // deleteProduct(id);
+          deleteProductItem(idProduct, item.id);
+          deleteProduct(idProduct);
+          swal("Xóa thành công", {
+            icon: "success",
+          });
+          history.push("/products");
+        }
+      });
+      return;
+    }
     swal({
       title: "Bạn có chắc chắn muốn xóa?",
       text: "Bạn sẽ không thể khôi phục nếu thực hiện hành động này?",

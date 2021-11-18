@@ -39,11 +39,11 @@ const ProductProvider = ({ children }) => {
       const res = await axios.delete(`http://localhost:3000/product/${id}`);
       if (res.data.success) {
         deleteProductItemAll(id);
-        // dispatch({
-        //   type: DELETE_PRODUCT,
-        //   payload: id,
-        // });
-        getProducts();
+        dispatch({
+          type: DELETE_PRODUCT,
+          payload: id,
+        });
+        // getProducts();
       }
     } catch (error) {}
   };

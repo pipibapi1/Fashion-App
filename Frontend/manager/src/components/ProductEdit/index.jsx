@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import SizeProduct from "./SizeProduct";
 import swal from "sweetalert";
+import Select from "react-select";
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,6 +12,7 @@ import {
 import Avartar from "../Avatar";
 import { productContext } from "../ProductContext/ProductContext";
 import ModalSize from "./ModalSize";
+import { changeSelectToText, changeTextToSelect, options } from "./help";
 
 const ProductEdit = () => {
   const { id } = useParams();
@@ -42,6 +44,11 @@ const ProductEdit = () => {
     sold,
   } = upDateProduct;
   items = items ? items : [];
+  const [selectedOption, setSelectedOption] = useState(() => {
+    // console.log("?", changeTextToSelect(getProductById(id).feature));
+    return changeTextToSelect(getProductById(id).feature);
+  });
+  console.log("?", selectedOption);
 
   // OnChange value
   const onChangeProduct = (e) => {
@@ -106,10 +113,15 @@ const ProductEdit = () => {
     data.append("price", price);
     data.append("description", description);
     data.append("img", img);
-    data.append("feature", feature);
+    data.append("feature", changeSelectToText(selectedOption));
     updateProduct(id, data);
 
     swal("Product is created", "", "success");
+  };
+
+  const handleChangeSelect = (selectedOption) => {
+    setSelectedOption(selectedOption);
+    console.log(selectedOption);
   };
   return (
     <>
@@ -140,16 +152,17 @@ const ProductEdit = () => {
               />
             </label>
             <label
-              htmlFor="brandProduct"
+              htmlFor="nameProduct"
               className="addProduct-content-text-name-label"
             >
-              <p className="addProduct-content-text-name-title">ID sản phẩm</p>
+              <p className="addProduct-content-text-name-title">Giá</p>
               <input
                 type="text"
                 className="addProduct-content-text-name-input"
-                value={id}
-                disabled
-                id="brandProduct"
+                value={price}
+                onChange={onChangeProduct}
+                name="price"
+                id="nameProduct"
               />
             </label>
           </div>
@@ -189,33 +202,27 @@ const ProductEdit = () => {
 
           <div className="addProduct-content-text-name">
             <label
-              htmlFor="nameProduct"
-              className="addProduct-content-text-name-label"
-            >
-              <p className="addProduct-content-text-name-title">Giá</p>
-              <input
-                type="text"
-                className="addProduct-content-text-name-input"
-                value={price}
-                onChange={onChangeProduct}
-                name="price"
-                id="nameProduct"
-              />
-            </label>
-            <label
               htmlFor="brandProduct"
               className="addProduct-content-text-name-label"
             >
-              <p className="addProduct-content-text-name-title">Catelory</p>
-              <input
+              <p className="addProduct-content-text-name-title">Loại</p>
+              {/* <input
                 type="text"
                 className="addProduct-content-text-name-input"
                 value={feature}
                 onChange={onChangeProduct}
                 name="feature"
                 id="brandProduct"
-              />
+              /> */}
             </label>
+            <Select
+              className="addProduct-content-text-name-input addProduct-content-text-name-input-option"
+              isMulti
+              value={selectedOption}
+              onChange={handleChangeSelect}
+              autoFocus
+              options={options}
+            />
           </div>
           <div className="addProduct-content-text-name">
             <label
@@ -262,6 +269,7 @@ const ProductEdit = () => {
                       key={index}
                       index={index}
                       item={item}
+                      items={items}
                     />
                   );
                 })}
