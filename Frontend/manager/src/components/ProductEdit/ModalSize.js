@@ -2,7 +2,39 @@ import React, { useState, useEffect, useContext } from "react";
 import { productContext } from "../ProductContext/ProductContext";
 import { handleIndexItem } from "../AddProduct/help";
 import swal from "sweetalert";
-const ModalSize = ({ idProduct }) => {
+
+const optionValue = [
+  {
+    selected: false,
+    value: "XXS",
+  },
+  {
+    selected: false,
+    value: "XS",
+  },
+  {
+    selected: false,
+    value: "S",
+  },
+  {
+    selected: false,
+    value: "M",
+  },
+  {
+    selected: false,
+    value: "L",
+  },
+  {
+    selected: false,
+    value: "XL",
+  },
+  {
+    selected: false,
+    value: "XXL",
+  },
+];
+const ModalSize = ({ idProduct, optionValues }) => {
+  console.log("rrrrrr");
   const { createdProductItem, getSoldAndRemain, getIdProductItemCurrent } =
     useContext(productContext);
   const [productItem, setProductItem] = useState({
@@ -15,6 +47,14 @@ const ModalSize = ({ idProduct }) => {
   const { size, remaining } = productItem;
 
   const handleAddProductItem = () => {
+    if (
+      productItem.img === "" ||
+      productItem.remaining === 0 ||
+      productItem.size === null
+    ) {
+      swal("Bạn cần điền đầy đủ thông tin", "", "warning");
+      return;
+    }
     console.log(productItem);
     // setProductItems([...productItems, productItem]);
     const idItem = handleIndexItem(Number(getIdProductItemCurrent()));
@@ -87,13 +127,15 @@ const ModalSize = ({ idProduct }) => {
                 onChange={onChangeProductItem}
                 id="size"
               >
-                <option value="XXS">XXS</option>
-                <option value="XS">XS </option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="XXL">XXL</option>
+                {optionValues.map((optionValue) => {
+                  if (!optionValue.selected) {
+                    return (
+                      <option value={optionValue.value}>
+                        {optionValue.value}
+                      </option>
+                    );
+                  }
+                })}
               </select>
             </div>
             <div className="modal-input-container">
