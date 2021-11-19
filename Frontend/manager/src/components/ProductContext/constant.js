@@ -7,3 +7,4 @@ export const DELETE_PRODUCT = "delete_product";
 export const DELETE_PRODUCT_ITEM_ALL = "delete_product_item_all";
 export const ADD_ITEM_PRODUCT = "add_item_product";
 export const LOADED = "loaded";
+export const UPDATE_PRODUCT = "update_product";

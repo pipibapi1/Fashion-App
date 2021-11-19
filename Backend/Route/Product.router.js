@@ -114,5 +114,14 @@ ProductRoute.put("/:id", upload.single("img"), async (req, res) => {
     res.status(500).json({ success: false, message: "Internal server error" });
   }
 });
-
+ProductRoute.get("/test", async (req, res) => {
+  try {
+    await ProductModel.createIndexes({ name: "text", brand: "text" });
+    const products = await ProductModel.find({ $text: { $search: "a" } });
+    res.send({ success: true, products: products });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
+});
 module.exports = ProductRoute;
