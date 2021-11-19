@@ -133,6 +133,9 @@ text-align: left;
   height: 30px;
   width: 200px;
   /* color: red; */
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 .grid {
   background-color: #cccccc;
@@ -142,14 +145,40 @@ text-align: left;
 .tableChoice{
   position: absolute;
   right: 10px;
-  top: 0;
+  top: 5px;
+  /*  */
+  /* background: linear-gradient(
+    90deg,
+    hsla(29, 92%, 70%, 1) 0%,
+    hsla(0, 87%, 73%, 1) 100%
+  ); */
+  /* border-top-left-radius: 10px;
+  border-top-right-radius: 10px; */
 }
 .choice {
   display: inline-block;
   margin-right: 60px;
-  margin-top: 10px;
+  margin-top: 5px;
   cursor: pointer;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 1s ease, transform 1s ease;
   /* border: 1px #1c1d1f solid; */
+}
+.choice.in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.formSearch.in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.animation {
+  background: linear-gradient(
+    90deg,
+    hsla(29, 92%, 70%, 1) 0%,
+    hsla(0, 87%, 73%, 1) 100%
+  );
 }
 /* **************************************Search********************************************************************** */
 
@@ -209,7 +238,7 @@ text-align: left;
   background-color: rgba(80, 166, 37, 0.5);
   border-radius: 10px;
   letter-spacing: 0.15em;
-  padding: 2px 5px;
+  padding: 2px 30px;
   border: outset;
 }
 .titleAcount {
@@ -301,6 +330,7 @@ padding-top: 0;
   top: 0px;
   font-size: 24px;
   border: none;
+  color: #FF0033;
 }
 
 .imagePopup {
