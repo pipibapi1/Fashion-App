@@ -238,7 +238,7 @@ text-align: left;
   background-color: rgba(80, 166, 37, 0.5);
   border-radius: 10px;
   letter-spacing: 0.15em;
-  padding: 2px 5px;
+  padding: 2px 30px;
   border: outset;
 }
 .titleAcount {
@@ -330,6 +330,7 @@ padding-top: 0;
   top: 0px;
   font-size: 24px;
   border: none;
+  color: #FF0033;
 }
 
 .imagePopup {
