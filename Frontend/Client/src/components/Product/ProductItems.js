@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import {products} from './Data.js'
 import axios from 'axios';
 import Popup from './Popup.js'
@@ -13,6 +13,10 @@ function toggleFlag(index){
 }
 function ProductItems() {
     function buyItem(props,size){
+        if (!sessionStorage.getItem('id')){
+            window.location = "/login";
+            return;
+        }
         var x = JSON.parse(sessionStorage.getItem('Order'))
         for(const a in x){
             let com = JSON.parse(x[a])
@@ -27,14 +31,26 @@ function ProductItems() {
         sessionStorage.setItem('Order',JSON.stringify(x));  
     }
     const [Popple,setPopple] = useState(-1);
+    const [a,setA] = useState(1);
+    const [data,setData] = useState([]); 
+    function checkData(){
+        if (JSON.parse(sessionStorage.getItem('Data')))
+            setData(JSON.parse(sessionStorage.getItem('Data')));
+        else setData([]);
+    }
+    useEffect(() => {
+        setTimeout(() => {
+            checkData();
+        }, 1000);
+      });
     return (
         <div className="box-container">
-            {JSON.parse(sessionStorage.getItem('Data')).map(function(ex,index){
+            {data.map(function(ex,index){
                 let props = JSON.parse(ex);
                 return(
                     <div className="box" data-item={props[6]}>
                         <div className="icons">
-                            <a className="fas fa-shopping-cart" onClick={()=>buyItem(props,"M")}></a>
+                            <a className="fas fa-shopping-cart" onClick={()=>buyItem(props,JSON.parse(props[8])[0])}></a>
                             <a className = {`flag-${index} fas fa-heart heart`} onClick={ ()=> toggleFlag(index) }></a>
                             <a className="fas fa-eye" onClick={()=>setPopple(index)}></a>
                         </div>
@@ -57,7 +73,7 @@ function ProductItems() {
                                 <span>{props[5]}</span>
                             </div>
                         </div>
-                        {Popup(props,Popple,index,setPopple)}
+                        {Popup(props,Popple,index,setPopple,a,setA)}
                     </div>
                 )
             })}

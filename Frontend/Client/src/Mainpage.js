@@ -11,19 +11,27 @@ import Blog from './components/Blog';
 import Footer from './components/Footer';
 import axios from 'axios';
 const Mainpage = () =>{
-    if(!sessionStorage.getItem('Data')){  
     try {
+        console.log(1)
         const localData = [];
+        let size = [];
         const response = axios.get("http://localhost:3000/product").then(
             (res) => {
-                for(const x in res.data.products)
-                    localData.push(JSON.stringify({"0":res.data.products[x]['id'],"1":res.data.products[x]['name'],"2":res.data.products[x]['img'],"3":res.data.products[x]['price'],"5":"(50)","6":res.data.products[x]['feature'],"7":res.data.products[x]['description']}));
-                sessionStorage.setItem('Data',JSON.stringify(localData));
-            });
+                for(const x in res.data.products){
+                    const res2 = axios.get("http://localhost:3000/productitem/"+res.data.products[x]['id']).then( (ans)=>{
+                        size = []
+                        for(const y in ans.data.productItems){
+                            size.push(ans.data.productItems[y]['size'])
+                        }
+                        localData.push(JSON.stringify({"0":res.data.products[x]['id'],"1":res.data.products[x]['name'],"2":res.data.products[x]['img'],"3":res.data.products[x]['price'],"5":"(50)","6":res.data.products[x]['feature'],"7":res.data.products[x]['description'],"8":JSON.stringify(size)}));
+                    });  
+                }
+            })
+            setTimeout(()=>sessionStorage.setItem('Data',JSON.stringify(localData)),4000)
       } catch (error) {
         console.log(error);
     }
-    }
+    sessionStorage.setItem('Busy',0);
     sessionStorage.setItem('Order',JSON.stringify([]));
     return (    
     <div className = "App">
