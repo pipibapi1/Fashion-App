@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import SizeProduct from "./SizeProduct";
 import swal from "sweetalert";
 import Select from "react-select";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,11 +15,57 @@ import Avartar from "../Avatar";
 import { productContext } from "../ProductContext/ProductContext";
 import ModalSize from "./ModalSize";
 import { changeSelectToText, changeTextToSelect, options } from "./help";
+const optionValue = [
+  {
+    selected: false,
+    value: "XXS",
+  },
+  {
+    selected: false,
+    value: "XS",
+  },
+  {
+    selected: false,
+    value: "S",
+  },
+  {
+    selected: false,
+    value: "M",
+  },
+  {
+    selected: false,
+    value: "L",
+  },
+  {
+    selected: false,
+    value: "XL",
+  },
+  {
+    selected: false,
+    value: "XXL",
+  },
+];
 
 const ProductEdit = () => {
+  console.log("Render");
+  const [optionValues, setOptionValues] = useState(optionValue);
+  const changeValue = (data) => {
+    setOptionValues(data);
+  };
   const history = useHistory();
   const { id } = useParams();
   let { getProductById, updateProduct, loading } = useContext(productContext);
+  // useEffect(() => {
+  //   const newOptionValues = [...optionValues];
+  //   for (let x of newOptionValues) {
+  //     for (let y of getProductById(id).items) {
+  //       if (y.size === x.value) {
+  //         x.selected = false;
+  //       }
+  //     }
+  //   }
+  //   console.log(newOptionValues);
+  // }, []);
   const [sizeSelected, setSizeSelected] = useState(0);
   const [upDateProduct, setUpdateProduct] = useState({
     name: "",
@@ -26,7 +73,7 @@ const ProductEdit = () => {
     description: "",
     feature: "",
     img: "",
-    items: "",
+    items: [],
     madeIn: "",
     price: "",
     remaining: "",
@@ -67,6 +114,20 @@ const ProductEdit = () => {
   });
 
   useEffect(() => {
+    const newOptionValues = optionValue;
+    for (const x of newOptionValues) {
+      for (const y of items) {
+        if (y.size == x.value) {
+          console.log(y.size, x.value);
+          x.selected = true;
+        }
+      }
+    }
+    // getProductById(id);
+    // setOptionValues(newOptionValues);
+    setUpdateProduct(getProductById(id));
+  }, [items.length]);
+  useEffect(() => {
     return () => {
       URL.revokeObjectURL(imgPreview.preview);
     };
@@ -91,6 +152,20 @@ const ProductEdit = () => {
       preview: getProductById(id).img,
     });
     setUpdateProduct(getProductById(id));
+    const newOptionValues = [...optionValue];
+    for (const x of newOptionValues) {
+      for (const y of items) {
+        console.log(y);
+        if (y.size == x.value) {
+          console.log(y.size, x.value);
+          x.selected = true;
+        }
+      }
+    }
+    console.log("ddddddddddddd", newOptionValues);
+    setOptionValues(newOptionValues);
+    console.log(":D???????");
+    // console.log("??", newOptionValues);
   }, [loading, getProductById(id)]);
   const handleClickSizeProduct = (index) => {
     console.log(index);
@@ -161,6 +236,7 @@ const ProductEdit = () => {
               <p className="addProduct-content-text-name-title">Giá</p>
               <input
                 type="text"
+                disabled
                 className="addProduct-content-text-name-input"
                 value={price}
                 onChange={onChangeProduct}
@@ -254,7 +330,7 @@ const ProductEdit = () => {
               Còn
             </p>
             <p className="table-heading-sale">Đã bán</p>
-            <ModalSize idProduct={id} />
+            <ModalSize optionValues={optionValues} idProduct={id} />
           </div>
           <div className="wrraper-table">
             <table className="addProduct-content-size-table">
@@ -262,6 +338,9 @@ const ProductEdit = () => {
                 {items.map((item, index) => {
                   return (
                     <SizeProduct
+                      changeValue={changeValue}
+                      optionValues={optionValues}
+                      setOptionValues={setOptionValues}
                       idProduct={id}
                       style={
                         sizeSelected === index

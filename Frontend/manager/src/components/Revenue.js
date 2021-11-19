@@ -6,6 +6,7 @@ import { Container, Row, Col } from 'react-grid-system';
 import DetailRevenue from "./DetailRevenue";
 import axios from "axios";
 import { FaSearch } from "react-icons/fa";
+import useMountTransition from "./useMountTransition";
 
 export default function Revenue() {
     // const [Staffs, setStaff] = React.useState(null);
@@ -45,6 +46,7 @@ export default function Revenue() {
     const [show, setshow] = useState(false);
     const [current, setCurrent] = React.useState("");
     const [checked, setChecked] = React.useState(-1);
+    const hasTransitionedIn = useMountTransition(show, 1000);
     React.useEffect(() => {
         axios.get("http://localhost:3000/revenue/order").then((response) => {
             setOrder(response.data);
@@ -56,9 +58,10 @@ export default function Revenue() {
     if(result[1]) console.log("arayy",result[1].id);
     return (
         <>
-        {show && <div className="tableChoice">
+        {(hasTransitionedIn || show) && <div className="tableChoice">
             {choices.map(choice => (
-                <i className="choice" key={choice.id}>
+                <i className={`choice ${hasTransitionedIn && "in"} ${
+                    show && "visible"}`} key={choice.id}>
                     <input 
                         type="radio" 
                         onChange={() => setChecked(choice.id)}
@@ -70,8 +73,8 @@ export default function Revenue() {
             ))}
         </div>}
         <form className="searchAccount" action="/" method="get">
-            {show && <input
-                className="formSearch"
+            {(hasTransitionedIn || show) && <input
+                className={`formSearch ${hasTransitionedIn && "in"} ${show && "visible"}`}
                 value={current}
                 type="text"
                 id="header-search"
