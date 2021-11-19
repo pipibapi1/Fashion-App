@@ -7,6 +7,27 @@ let Customer = require('../Models/Customer.model');
 let Product = require('../Models/Product.model');
 let ProductItem = require('../Models/ProductItem.model');
 
+OrderRoutes.post("/", async (req, res) => {
+  try{
+    const { id, date, address, status, note, listItemID, listQuantity, customerAccountId, totalPrice} = req.body;
+    const newProduct = new Order({
+      id,
+      date,
+      address,
+      status,
+      note,
+      listItemID,
+      listQuantity,
+      customerAccountId,
+      totalPrice
+    });
+    await newProduct.save(); 
+    res.send({ success: true, message: req.body });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
+});
 
 OrderRoutes.post("/get-all/quan", async (req, res) => {
     Order.find(function (err, orders) {

@@ -8,6 +8,7 @@ import {
   Route,
   Link,
   useParams,
+  useHistory,
 } from "react-router-dom";
 import Avartar from "../Avatar";
 import { productContext } from "../ProductContext/ProductContext";
@@ -15,6 +16,7 @@ import ModalSize from "./ModalSize";
 import { changeSelectToText, changeTextToSelect, options } from "./help";
 
 const ProductEdit = () => {
+  const history = useHistory();
   const { id } = useParams();
   let { getProductById, updateProduct, loading } = useContext(productContext);
   const [sizeSelected, setSizeSelected] = useState(0);
@@ -115,8 +117,9 @@ const ProductEdit = () => {
     data.append("img", img);
     data.append("feature", changeSelectToText(selectedOption));
     updateProduct(id, data);
+    history.push(`/products/${id}`);
 
-    swal("Product is created", "", "success");
+    swal("Sản phẩm đã được cập nhập", "", "success");
   };
 
   const handleChangeSelect = (selectedOption) => {

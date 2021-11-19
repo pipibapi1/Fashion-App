@@ -21,9 +21,9 @@ export const changeSelectToText = (selectOptions) => {
 export const options = [
   { value: "female", label: "female" },
   { value: "featured", label: "featured" },
-  { value: "Men", label: "Men" },
+  { value: "men", label: "men" },
   { value: "seller", label: "seller" },
   { value: "arrivals", label: "arrivals" },
-  { value: "Men", label: "Men" },
+  // { value: "Men", label: "Men" },
   { value: "special", label: "special" },
 ];

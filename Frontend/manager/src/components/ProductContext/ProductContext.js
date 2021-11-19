@@ -11,6 +11,7 @@ import {
   DELETE_PRODUCT_ITEM_ALL,
   ADD_ITEM_PRODUCT,
   LOADED,
+  UPDATE_PRODUCT,
 } from "./constant";
 export const productContext = createContext();
 
@@ -79,7 +80,14 @@ const ProductProvider = ({ children }) => {
         dataForm
       );
       if (res.data.success) {
-        getProducts();
+        // getProducts();
+        dispatch({
+          type: UPDATE_PRODUCT,
+          payload: {
+            id,
+            product: res.data.product,
+          },
+        });
       }
     } catch (error) {
       console.log(error);

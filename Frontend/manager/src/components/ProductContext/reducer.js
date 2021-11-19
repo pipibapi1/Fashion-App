@@ -7,6 +7,7 @@ import {
   ADD_ITEM_PRODUCT,
   LOADED,
   DELETE_PRODUCT,
+  UPDATE_PRODUCT,
 } from "./constant";
 const reducer = (state, action) => {
   const { type, payload } = action;
@@ -86,6 +87,19 @@ const reducer = (state, action) => {
       return {
         ...state,
         products: productsAfterDelete,
+      };
+    case UPDATE_PRODUCT:
+      const productsAfterUpdated = [...state.products];
+      const indexUpdate = state.products.findIndex(
+        (product) => product.id === payload.id
+      );
+      productsAfterUpdated[indexUpdate] = {
+        ...productsAfterUpdated[indexUpdate],
+        ...payload.product,
+      };
+      return {
+        ...state,
+        products: productsAfterUpdated,
       };
     default:
       return state;

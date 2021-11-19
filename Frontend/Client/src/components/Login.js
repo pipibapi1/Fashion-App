@@ -54,7 +54,7 @@ export default function Login(){
 
         <div className="signup">
             <span className="or">Or</span>
-            <div className="left">
+            <div className="left1">
                 {loginState===0?
                 <form onSubmit={handleSubmit}> 
                     <div className="form-inner">

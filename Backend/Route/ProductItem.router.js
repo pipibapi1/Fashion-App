@@ -49,6 +49,20 @@ ProductItemRoute.get("/:idProduct", async (req, res) => {
   }
 });
 
+ProductItemRoute.post("/", async (req, res) => {
+  try {
+    const { idX, sizeX } = req.body;
+    const productItems = await ProductItem.find({
+      productID: idX,
+      size: sizeX
+    });
+    res.send({ success: true, ID: "PI000015"});
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
+});
+
 // PUT http://localhost/3000/PR000001/PI1515151
 // @desc update size product
 ProductItemRoute.put(

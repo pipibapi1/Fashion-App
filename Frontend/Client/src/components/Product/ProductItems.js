@@ -12,18 +12,18 @@ function toggleFlag(index){
     )
 }
 function ProductItems() {
-    function buyItem(props){
+    function buyItem(props,size){
         var x = JSON.parse(sessionStorage.getItem('Order'))
         for(const a in x){
             let com = JSON.parse(x[a])
-          if (com[0] === props[0]){
+          if (com[0] === props[0] && com[5]===size){
             com[4]++;
             x[a] = JSON.stringify(com)
             sessionStorage.setItem('Order',JSON.stringify(x));
             return;
           }
         }
-        x.push(JSON.stringify({0:props[0],1:props[1],2:props[2],3:props[3],4:1}));
+        x.push(JSON.stringify({0:props[0],1:props[1],2:props[2],3:props[3],4:1,5:size}));
         sessionStorage.setItem('Order',JSON.stringify(x));  
     }
     const [Popple,setPopple] = useState(-1);
@@ -34,7 +34,7 @@ function ProductItems() {
                 return(
                     <div className="box" data-item={props[6]}>
                         <div className="icons">
-                            <a className="fas fa-shopping-cart" onClick={()=>buyItem(props)}></a>
+                            <a className="fas fa-shopping-cart" onClick={()=>buyItem(props,"M")}></a>
                             <a className = {`flag-${index} fas fa-heart heart`} onClick={ ()=> toggleFlag(index) }></a>
                             <a className="fas fa-eye" onClick={()=>setPopple(index)}></a>
                         </div>

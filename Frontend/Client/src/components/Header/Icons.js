@@ -52,7 +52,7 @@ function Icons() {
           <div className="box">
             <i className="fa fa-times" onClick={()=>removeItem(props)}></i>
             <div className="content">
-              <h3>{props[1]}</h3>
+              <h3>{props[1]+"("+props[5]+")"}</h3>
               <img src={props[2]} className="Payimage" alt=""/>
               <span className="quantity">{props[4]}</span>
               <span className="multiply">X</span>
