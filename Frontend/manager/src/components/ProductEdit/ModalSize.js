@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { productContext } from "../ProductContext/ProductContext";
 import { handleIndexItem } from "../AddProduct/help";
+import swal from "sweetalert";
 const ModalSize = ({ idProduct }) => {
   const { createdProductItem, getSoldAndRemain, getIdProductItemCurrent } =
     useContext(productContext);
@@ -29,6 +30,7 @@ const ModalSize = ({ idProduct }) => {
     setImgPreview("");
     closeModal();
     setProductItem({ productID: "", size: "", img: "", sold: 0, remaining: 0 });
+    swal("Đã thêm thành công", "", "success");
   };
   const [imgPreview, setImgPreview] = useState("");
   const onChangeProductItem = (e) => {
