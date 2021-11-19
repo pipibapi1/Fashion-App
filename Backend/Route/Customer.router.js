@@ -42,6 +42,59 @@ CustomerRoutes.post("/", async (req, res) => {
 
 });
 
+CustomerRoutes.post("/create", async (req, res) => {
+
+    try {
+        const { name, password,email,phone,Euser,Address,Bday } = req.body;
+        const customer = await Customer.findOne({ username: Euser });
+
+        if (name == "" || password == "" || email == "" || phone=="" || Euser == ""|| Address=="")
+            return res.json({ status:403,msg: "You must fill all the boxes" });
+
+        if (customer)
+            return res.json({ status:403,msg: "Username has been used"});
+
+        var id = "OR000"+Math.floor((Math.random() * 1000) + 1)
+        var dateOfBirth = Bday;
+        var avatar = ""
+        var listOrderID = []
+        var username = Euser
+        var dateCreate = new Date();
+        var address = Address
+        var phoneNumber = phone
+        const newCus = new Customer({
+                id,
+                name,
+                username,
+                password,
+                dateOfBirth,
+                email,
+                address,
+                phoneNumber,
+                avatar,
+                dateCreate,
+                listOrderID
+              });
+        //jwt secret
+        await newCus.save(); 
+        const token = jwt.sign({ id: newCus._id }, config.JWT_SECRET, { expiresIn: '1h' });
+        res.status(200).json({
+            token,
+            Customer: {
+                id: newCus.id,
+                name: name,
+                username: Euser,
+                password: password,
+            },
+        });
+
+
+    } catch (err) {
+        res.status(400).json({ msg: "Validation Error" });
+        console.log("Error is ", err);
+    }
+
+});
 
 module.exports = CustomerRoutes;
 

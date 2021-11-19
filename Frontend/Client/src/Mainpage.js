@@ -11,6 +11,7 @@ import Blog from './components/Blog';
 import Footer from './components/Footer';
 import axios from 'axios';
 const Mainpage = () =>{
+    if(!sessionStorage.getItem('Data')){  
     try {
         const localData = [];
         const response = axios.get("http://localhost:3000/product").then(
@@ -18,11 +19,12 @@ const Mainpage = () =>{
                 for(const x in res.data.products)
                     localData.push(JSON.stringify({"0":res.data.products[x]['id'],"1":res.data.products[x]['name'],"2":res.data.products[x]['img'],"3":res.data.products[x]['price'],"5":"(50)","6":res.data.products[x]['feature'],"7":res.data.products[x]['description']}));
                 sessionStorage.setItem('Data',JSON.stringify(localData));
-                sessionStorage.setItem('Order',JSON.stringify([]));
             });
       } catch (error) {
         console.log(error);
     }
+    }
+    sessionStorage.setItem('Order',JSON.stringify([]));
     return (    
     <div className = "App">
         <Header/>

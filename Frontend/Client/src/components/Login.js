@@ -4,9 +4,14 @@ export default function Login(){
     const [loginState,setLogin]=useState(0)
     const [loginEmail, setEmail] = useState("");
     const [loginPW, setPw] = useState("");
-
-    function handleSubmit(event) {
-      event.preventDefault();
+    const [loginName, set1] = useState("");
+    const [loginPhone, set2] = useState("");
+    const [loginEmail2, set3] = useState("");
+    const [loginPW2, set4] = useState("");
+    const [loginEuser, set5] = useState("");
+    const [loginAddress,set6] = useState("");
+    const [loginBirthday,set7] = useState("");
+    function handleSubmit() {
       const client = {
         username: loginEmail,
         password: loginPW,
@@ -37,11 +42,68 @@ export default function Login(){
       alert("Error");
       })
     }
+    function handleSubmit2(event) {
+      const client = {
+        name: loginName,
+        password: loginPW2,
+        email: loginEmail2,
+        phone: loginPhone,
+        Euser: loginEuser,
+        Address: loginAddress,
+        Bday: loginBirthday 
+      }
+      console.log(client)
+      const response = axios.post('http://localhost:3000/Customer/create', client).then(
+        (res) => {
+            console.log(res)
+            const token = res.data.token;
+            const warning = res.data.msg;
+            if (warning !== null && warning !== undefined) {
+                alert(warning);
+            } else if (token) {
+            
+                const id = res.data.Customer.id;
+                const name = res.data.Customer.name;
+                const username = res.data.Customer.username;
+                const password = res.data.Customer.password;
+                //set user details in local storage
+                sessionStorage.setItem('id', id);
+                sessionStorage.setItem('name', name);
+                sessionStorage.setItem('username', username);
+                sessionStorage.setItem('password', password);
+                window.location = "/";
+            }
+        }
+    ).catch((err) => {
+      console.log(err)
+      })
+    }
     function onChangeUsername(event){
       setEmail(event.target.value);
     }
     function onChangePW(event){
       setPw(event.target.value);
+    }
+    function onChange1(event){
+      set1(event.target.value);
+    }
+    function onChange7(event){
+      set7(event.target.value);
+    }
+    function onChange6(event){
+      set6(event.target.value);
+    }
+    function onChange2(event){
+      set2(event.target.value);
+    }
+    function onChange3(event){
+      set3(event.target.value);
+    }
+    function onChange4(event){
+      set4(event.target.value);
+    }
+    function onChange5(event){
+      set5(event.target.value);
     }
     return(
         <div className="Page">
@@ -56,11 +118,12 @@ export default function Login(){
             <span className="or">Or</span>
             <div className="left1">
                 {loginState===0?
-                <form onSubmit={handleSubmit}> 
+                <div>
+                <form> 
                     <div className="form-inner">
                         <div className="form-group">
                             {/* <label for="">Email address</label> */}
-                            <input type="text" placeholder="Enter your email address" onChange={onChangeUsername} name="email" />
+                            <input type="text" placeholder="Enter your Username" onChange={onChangeUsername} name="email" />
                         </div>
                         <div className="form-group">
                             {/* <label for="">Password</label> */}
@@ -69,35 +132,45 @@ export default function Login(){
                     </div>
                     <p className="remember"><input type="checkbox" /> <span>Remember me</span></p>
                     <p className="member"> New user? <a onClick={()=>setLogin(1)}>Create an account</a></p>
-                    <button className="submit-btn1" type="submit">Log in</button>
-                </form>:""
+                </form> <button className="submit-btn1" onClick={()=>handleSubmit()}>Log in</button> </div>:""
                 }
-                {loginState===1?
+                {loginState===1?<div>
                 <form>
                 <div class="form-inner">
                 <div class="form-group">
                     <label for="">Name</label>
-                    <input type="text" placeholder="Enter your name" autocomplete="off" id="name" />
+                    <input type="text" placeholder="Enter your name" autocomplete="off" name="name" onChange={onChange1}/>
                 </div>
                 <div class="form-group">
                     <label for="">Phone</label>
-                    <input type="text" placeholder="Enter your phone" autocomplete="off" id="number" />
+                    <input type="text" placeholder="Enter your phone" autocomplete="off" name="number" onChange={onChange2}/>
                 </div>
                 <div class="form-group">
                     <label for="">Email address</label>
-                    <input type="email" placeholder="Enter your email" autocomplete="off" id="email" />
+                    <input type="email" placeholder="Enter your email" autocomplete="off" name="email"  onChange={onChange3}/>
                 </div>
                 <div class="form-group">
                     <label for="">Password</label>
-                    <input type="password" placeholder="Create your password" autocomplete="off" id="password" />
+                    <input type="password" placeholder="Create your password" autocomplete="off" name="password"  onChange={onChange4}/>
                 </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Username</label>
+                    <input type="username" placeholder="Create your username" autocomplete="off" name="username"  onChange={onChange5}/>
+                </div>
+                <div class="form-group">
+                    <label for="">Address</label>
+                    <input type="Address" placeholder="Write your Address" autocomplete="off" name="Address"  onChange={onChange6}/>
+                </div>
+                <div class="form-group">
+                    <label for="">Birthday</label>
+                    <input type="Birthdat" placeholder="Write your Birthdat" autocomplete="off" name="Birthday"  onChange={onChange7}/>
                 </div>
                 <p class="remember">
                     <input type="checkbox" /> <span>Remember me</span>
                 </p>
                 <p class="member"> Are you a member ? <a onClick={()=>setLogin(0)}>Login now</a></p>
-                    <button class="submit-btn">Create an account</button>
-                </form>:""
+                </form><button class="submit-btn" onClick={()=>handleSubmit2()}>Create an account</button></div>:""
                 }
             </div>
             <div className="right">
