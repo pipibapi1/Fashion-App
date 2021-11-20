@@ -4,6 +4,7 @@ import swal from "sweetalert";
 import { productContext } from "../../ProductContext/ProductContext";
 // import "./index.css"
 const SizeProduct = ({
+  removeOption,
   optionValues,
   setOptionValues,
   idProduct,
@@ -96,6 +97,7 @@ const SizeProduct = ({
           value: item.size,
           selected: false,
         };
+        removeOption(item.size);
         console.log("index", optionValues);
         // const x = {
         //   ...newOptionValues[index],
@@ -164,6 +166,7 @@ const SizeProduct = ({
                 <select
                   className="modal-input-label-select"
                   name="size"
+                  disabled
                   value={size}
                   onChange={handleChangeItem}
                   id="size"

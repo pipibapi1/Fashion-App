@@ -7,7 +7,9 @@ const SizeProduct = ({
   size,
   onClickSizeProduct,
   style,
+  removeOption,
 }) => {
+  console.log("size render");
   const [img, setImg] = useState(
     "https://product.hstatic.net/1000035031/product/vay-dam-cong-so-thoi-trang-eden-dang-chu-a-co-tim-tay-phong-d405__6__9a4811529e834206b25da08ec496995f_master.jpg"
   );
@@ -46,6 +48,7 @@ const SizeProduct = ({
       if (willDelete) {
         // deleteProduct(id);
         removeProductItem(index);
+        removeOption(size.size);
         swal("Xóa thành công", {
           icon: "success",
         });

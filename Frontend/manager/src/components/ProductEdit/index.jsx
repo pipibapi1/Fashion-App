@@ -15,40 +15,11 @@ import Avartar from "../Avatar";
 import { productContext } from "../ProductContext/ProductContext";
 import ModalSize from "./ModalSize";
 import { changeSelectToText, changeTextToSelect, options } from "./help";
-const optionValue = [
-  {
-    selected: false,
-    value: "XXS",
-  },
-  {
-    selected: false,
-    value: "XS",
-  },
-  {
-    selected: false,
-    value: "S",
-  },
-  {
-    selected: false,
-    value: "M",
-  },
-  {
-    selected: false,
-    value: "L",
-  },
-  {
-    selected: false,
-    value: "XL",
-  },
-  {
-    selected: false,
-    value: "XXL",
-  },
-];
+import { optionValue } from "./help";
 
 const ProductEdit = () => {
   console.log("Render");
-  const [optionValues, setOptionValues] = useState(optionValue);
+  const [optionValues, setOptionValues] = useState([...optionValue]);
   const changeValue = (data) => {
     setOptionValues(data);
   };
@@ -113,20 +84,30 @@ const ProductEdit = () => {
     };
   });
 
-  useEffect(() => {
-    const newOptionValues = optionValue;
-    for (const x of newOptionValues) {
-      for (const y of items) {
-        if (y.size == x.value) {
-          console.log(y.size, x.value);
-          x.selected = true;
-        }
+  // useEffect(() => {
+  //   const newOptions = [...optionValue];
+  //   for (let x of items) {
+  //     for (var y in newOptions) {
+  //       if (x.size === newOptions[y].value) {
+  //         newOptions[y].selected = true;
+  //       }
+  //     }
+  //   }
+  //   console.log(":D ????????????????????", newOptions);
+  //   setOptionValues(newOptions);
+  //   // setUpdateProduct(getProductById(id));
+  // }, [items]);
+  const removeOption = (value) => {
+    console.log("remoooooove", optionValues, value);
+    const newOptions = [...optionValues];
+    for (var x in newOptions) {
+      if (newOptions[x].value === value) {
+        newOptions[x] = { ...newOptions[x], selected: false };
       }
     }
-    // getProductById(id);
-    // setOptionValues(newOptionValues);
-    setUpdateProduct(getProductById(id));
-  }, [items.length]);
+    console.log(newOptions);
+    setOptionValues([...newOptions]);
+  };
   useEffect(() => {
     return () => {
       URL.revokeObjectURL(imgPreview.preview);
@@ -152,20 +133,16 @@ const ProductEdit = () => {
       preview: getProductById(id).img,
     });
     setUpdateProduct(getProductById(id));
-    const newOptionValues = [...optionValue];
-    for (const x of newOptionValues) {
-      for (const y of items) {
-        console.log(y);
-        if (y.size == x.value) {
-          console.log(y.size, x.value);
-          x.selected = true;
+    const newOptions = [...optionValues];
+    for (let x of items) {
+      for (var y in newOptions) {
+        if (x.size === newOptions[y].value) {
+          newOptions[y].selected = true;
         }
       }
     }
-    console.log("ddddddddddddd", newOptionValues);
-    setOptionValues(newOptionValues);
-    console.log(":D???????");
-    // console.log("??", newOptionValues);
+    console.log(":D ????????????????????", newOptions);
+    setOptionValues(newOptions);
   }, [loading, getProductById(id)]);
   const handleClickSizeProduct = (index) => {
     console.log(index);
@@ -300,7 +277,7 @@ const ProductEdit = () => {
               value={selectedOption}
               onChange={handleChangeSelect}
               autoFocus
-              options={options}
+              // options={options}
             />
           </div>
           <div className="addProduct-content-text-name">
@@ -338,6 +315,7 @@ const ProductEdit = () => {
                 {items.map((item, index) => {
                   return (
                     <SizeProduct
+                      removeOption={removeOption}
                       changeValue={changeValue}
                       optionValues={optionValues}
                       setOptionValues={setOptionValues}

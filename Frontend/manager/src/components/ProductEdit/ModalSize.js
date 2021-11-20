@@ -135,6 +135,7 @@ const ModalSize = ({ idProduct, optionValues }) => {
                       </option>
                     );
                   }
+                  return "";
                 })}
               </select>
             </div>
