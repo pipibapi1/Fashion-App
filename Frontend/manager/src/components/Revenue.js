@@ -40,9 +40,7 @@ export default function Revenue() {
             name: "Địa chỉ"
         }
     ]
-
     const [Orders, setOrder] = React.useState([]);
-
     const [show, setshow] = useState(false);
     const [current, setCurrent] = React.useState("");
     const [checked, setChecked] = React.useState(-1);
@@ -56,6 +54,7 @@ export default function Revenue() {
     if (!Orders) return null;
     let result = [...Orders];
     if(result[1]) console.log("arayy",result[1].id);
+
     return (
         <>
         {(hasTransitionedIn || show) && <div className="tableChoice">
@@ -96,7 +95,9 @@ export default function Revenue() {
                             <Col sm={1.2}> <h2 className="columlist">Đơn giá</h2></Col>
                         </Row>
                     </Container>
-                    {renderSwitch(checked, current)}
+                    <div className="contentlist_Revenue">
+                        {renderSwitch(checked, current)}
+                    </div>
                     <div className="Total">Tổng doanh thu: {
                         Orders.reduce((sum, i) => (
                             sum += i.status === 'Đã Giao' ? i.totalPrice : 0
