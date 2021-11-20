@@ -218,7 +218,7 @@ export default function TabVertical() {
 
         <TabPanel>
           <div className="panel-content">
-            <Container className="grid">
+            <Container className="grid" fluid>
               <Row>
                 <Col lg={9}>
                   {" "}
@@ -235,7 +235,7 @@ export default function TabVertical() {
         </TabPanel>
         <TabPanel>
           <div className="panel-content">
-            <Container className="grid">
+            <Container className="grid" fluid>
               <Row>
                 <Col lg={9}>
                   {" "}

@@ -27,7 +27,7 @@ export default function DetailRevenue(props) {
         <div className="contentlist_Revenue">
             <Popup
                 trigger={
-                    <Container >
+                    <Container fluid>
                     <Row className="elementlist">
                         <Col sm={2}> <h2 className="element">{props.order.id}</h2></Col>
                         <Col sm={3}> <h2 className="element">{props.order.status}</h2></Col>

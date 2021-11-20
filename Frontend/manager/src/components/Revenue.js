@@ -88,7 +88,7 @@ export default function Revenue() {
         </form>
         <div className="tabaccount">
                 <div label="Tất cả nhân viên">
-                    <Container className="showlist">
+                    <Container className="showlist" fluid>
                         <Row>
                             <Col sm={2}> <h2 className="columlist">Mã đơn hàng</h2></Col>
                             <Col sm={4}> <h2 className="columlist">Trạng thái</h2></Col>

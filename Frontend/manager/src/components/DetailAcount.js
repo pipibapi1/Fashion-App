@@ -18,7 +18,7 @@ export default function DetailAcount(props) {
             {props.lists.map(account => (
             <Popup
                 trigger={
-                    <Container >
+                    <Container fluid>
                     <Row className="elementlist">
                         <Col sm={1}> <img  alt="avatar" className="image" src={account.avatar}></img></Col>
                         {/* <a href="https://www.facebook.com/?ref=tn_tnmn" target="_parent">nội dung đại diện cho cái liên kết</a> */}
@@ -37,7 +37,7 @@ export default function DetailAcount(props) {
                         <div className="header">Tài khoản: {account.username}</div>
                         <a className="close" onClick={close} href><FiXCircle size={20}/></a>
                         <div className="content">
-                            <Container>
+                            <Container fluid>
                                 <Row>
                                     <Col lg={4.5}><img  alt="avatar" className="imagePopup" src={account.avatar}></img></Col>
                                     <Col lg={7.5}>

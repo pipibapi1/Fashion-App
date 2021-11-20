@@ -23,7 +23,7 @@ export default function ShowProduct(props) {
     if (!product) return null;
 
     return (
-            <Container>
+            <Container fluid>
                 <Row>
                     <Col lg={4.5}><img className="imageOrder" src={product.img} alt="ProductImage"></img></Col>
                     <Col lg={7.5} className="contentOrder">

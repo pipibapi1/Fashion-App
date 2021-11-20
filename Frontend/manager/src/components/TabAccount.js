@@ -45,19 +45,19 @@ export default function TabAccount() {
         <div className="tabaccount">
             <Tabs>
                 <div label="Tất cả nhân viên"> 
-                <Container className="showlist">
+                <Container className="showlist" fluid>
                         <Row>
                             <Col sm={6}> <h2 className="columlist">Tên tài khoản</h2></Col>
                             <Col sm={2.8}> <h2 className="columlist">Họ và tên</h2></Col>
                             <Col sm={2.2}> <h2 className="columlist">Số điện thoại</h2></Col>
                             <Col sm={1}> <h2 className="columlist">ID</h2></Col>
                         </Row>
-                    </Container>
+                </Container>
                     <DetailAcount lists={Staffs}/>
                     {Staffs && <div className="Total">Tổng nhân viên: {Staffs.length}</div>}
                 </div>
                 <div label="Tất cả khách hàng">
-                    <Container className="showlist">
+                    <Container className="showlist" fluid>
                         <Row>
                             <Col sm={6}> <h2 className="columlist">Tên tài khoản</h2></Col>
                             <Col sm={2.8}> <h2 className="columlist">Họ và tên</h2></Col>
