@@ -7,6 +7,9 @@ function Payment() {
     const [note, setNote] = useState("");
     const [address, setAddress] = useState("");
     const [POP,setPOP]=useState(0);
+    const [ad1, set1] = useState("");
+    const [ad2, set2] = useState("");
+    const [ad3, set3] = useState("");
     let listItem = []
     let listnumber = []
     function changeRoot(event){
@@ -15,6 +18,15 @@ function Payment() {
     function changeAdd(event){
         setAddress(event.target.value);
     }
+    function change1(event){
+      set1(event.target.value);
+  }
+  function change2(event){
+    set2(event.target.value);
+}
+function change3(event){
+  set3(event.target.value);
+}
     function calcTotal(){
         var x = JSON.parse(sessionStorage.getItem('Order'))
         var y = 0;
@@ -77,6 +89,10 @@ function Payment() {
         sessionStorage.setItem('Order',JSON.stringify(x));  
       }
     function submit(){
+      if(address ==="" || ad1 === "" || ad2 === "" || ad3 === ""){
+        alert("You must fill all");
+        return;
+      }
       let x= JSON.parse(sessionStorage.getItem('Order'))
       for(const a in x){
           let props = JSON.parse(x[a]);
@@ -84,6 +100,7 @@ function Payment() {
           const response = axios.post('http://localhost:3000/productitem', findProduct).then(
               (res) => {
                 listItem.push(res.data.ID)
+                console.log(res)
           })
       }
         for(const a in x){
@@ -108,7 +125,7 @@ function Payment() {
                     alert("Success");
                     setNote("");
                     setAddress("");
-                    setTimeout(()=>window.location = "/",1000);
+                    // setTimeout(()=>window.location = "/",1000);
             })
           },1000);
     }
@@ -175,15 +192,15 @@ function Payment() {
           <div class="form-inner">
             <div class="form-group">
               <label for="">SỐ THẺ</label>
-              <input type="text" placeholder="9404 3202 5794 3749" id="" />
+              <input type="text" placeholder="9404 3202 5794 3749" id="" onChange={change1}/>
             </div>
             <div class="form-group">
                 <label for="">TÊN IN TRÊN THẺ</label>
-                <input type="text" placeholder="NGUYEN VAN A" id="" />
+                <input type="text" placeholder="NGUYEN VAN A" id="" onChange={change2}/>
             </div>
             <div class="form-group">
                 <label for="">NGÀY PHÁT HÀNH</label>
-                <input type="text" placeholder="05/14" id="" />
+                <input type="text" placeholder="05/14" id="" onChange={change3}/>
               </div>
             <div class="form-group">
               <label for="">ĐỊA CHỈ NHẬN HÀNG</label>

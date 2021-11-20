@@ -54,7 +54,11 @@ CustomerRoutes.post("/create", async (req, res) => {
         if (customer)
             return res.json({ status:403,msg: "Username has been used"});
 
-        var id = "OR000"+Math.floor((Math.random() * 1000) + 1)
+        var id = "KH000"+Math.floor((Math.random() * 1000) + 1)
+        var check = await Customer.findOne({ id: id });
+        while(check)
+            id = "KH000"+Math.floor((Math.random() * 1000) + 1)
+            var check = await Customer.findOne({ id: id });
         var dateOfBirth = Bday;
         var avatar = ""
         var listOrderID = []

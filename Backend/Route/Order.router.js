@@ -10,6 +10,10 @@ let ProductItem = require('../Models/ProductItem.model');
 OrderRoutes.post("/", async (req, res) => {
   try{
     const { id, date, address, status, note, listItemID, listQuantity, customerAccountId, totalPrice} = req.body;
+    var check = await Order.findOne({ id: id });
+    while(check)
+        id = "OR000"+Math.floor((Math.random() * 1000) + 1)
+        var check = await Order.findOne({ id: id });
     const newProduct = new Order({
       id,
       date,

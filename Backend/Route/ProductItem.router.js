@@ -52,11 +52,11 @@ ProductItemRoute.get("/:idProduct", async (req, res) => {
 ProductItemRoute.post("/", async (req, res) => {
   try {
     const { idX, sizeX } = req.body;
-    const productItems = await ProductItem.find({
+    const productItems = await ProductItem.findOne({
       productID: idX,
       size: sizeX
     });
-    res.send({ success: true, ID: "PI000015"});
+    res.send({ success: true, ID: productItems.id});
   } catch (error) {
     console.log(error);
     res.status(500).json({ success: false, message: "Internal server error" });
