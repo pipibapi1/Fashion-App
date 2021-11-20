@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
+import swal from "sweetalert";
 
-const ModalSize = ({ productItems, setProductItems }) => {
+const ModalSize = ({
+  productItems,
+  setProductItems,
+  optionSizes,
+  setOptionSizes,
+}) => {
   const [productItem, setProductItem] = useState({
     productID: "",
     size: null,
@@ -12,6 +18,11 @@ const ModalSize = ({ productItems, setProductItems }) => {
 
   const handleAddProductItem = () => {
     // console.log(productItem);
+
+    if (size === null || productItem.img === "" || remaining <= 0) {
+      swal("Bạn cần điền đầy đủ thông tin", "", "warning");
+      return;
+    }
     setProductItems([...productItems, productItem]);
     setProductItem({ productID: "", size: "", img: "", sold: 0, remaining: 0 });
     setImgPreview("");
@@ -73,13 +84,22 @@ const ModalSize = ({ productItems, setProductItems }) => {
                 onChange={onChangeProductItem}
                 id="size"
               >
-                <option value="XXS">XXS</option>
+                {optionSizes.map((optionSize) => {
+                  if (!optionSize.selected) {
+                    return (
+                      <option value={optionSize.value}>
+                        {optionSize.value}
+                      </option>
+                    );
+                  }
+                })}
+                {/* <option value="XXS">XXS</option>
                 <option value="XS">XS </option>
                 <option value="S">S</option>
                 <option value="M">M</option>
                 <option value="L">L</option>
                 <option value="XL">XL</option>
-                <option value="XXL">XXL</option>
+                <option value="XXL">XXL</option> */}
               </select>
             </div>
             <div className="modal-input-container">
