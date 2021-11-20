@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import SizeProduct from "./SizeProduct";
 import swal from "sweetalert";
 import Select from "react-select";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,11 +15,28 @@ import Avartar from "../Avatar";
 import { productContext } from "../ProductContext/ProductContext";
 import ModalSize from "./ModalSize";
 import { changeSelectToText, changeTextToSelect, options } from "./help";
+import { optionValue } from "./help";
 
 const ProductEdit = () => {
+  console.log("Render");
+  const [optionValues, setOptionValues] = useState([...optionValue]);
+  const changeValue = (data) => {
+    setOptionValues(data);
+  };
   const history = useHistory();
   const { id } = useParams();
   let { getProductById, updateProduct, loading } = useContext(productContext);
+  // useEffect(() => {
+  //   const newOptionValues = [...optionValues];
+  //   for (let x of newOptionValues) {
+  //     for (let y of getProductById(id).items) {
+  //       if (y.size === x.value) {
+  //         x.selected = false;
+  //       }
+  //     }
+  //   }
+  //   console.log(newOptionValues);
+  // }, []);
   const [sizeSelected, setSizeSelected] = useState(0);
   const [upDateProduct, setUpdateProduct] = useState({
     name: "",
@@ -26,7 +44,7 @@ const ProductEdit = () => {
     description: "",
     feature: "",
     img: "",
-    items: "",
+    items: [],
     madeIn: "",
     price: "",
     remaining: "",
@@ -66,6 +84,30 @@ const ProductEdit = () => {
     };
   });
 
+  // useEffect(() => {
+  //   const newOptions = [...optionValue];
+  //   for (let x of items) {
+  //     for (var y in newOptions) {
+  //       if (x.size === newOptions[y].value) {
+  //         newOptions[y].selected = true;
+  //       }
+  //     }
+  //   }
+  //   console.log(":D ????????????????????", newOptions);
+  //   setOptionValues(newOptions);
+  //   // setUpdateProduct(getProductById(id));
+  // }, [items]);
+  const removeOption = (value) => {
+    console.log("remoooooove", optionValues, value);
+    const newOptions = [...optionValues];
+    for (var x in newOptions) {
+      if (newOptions[x].value === value) {
+        newOptions[x] = { ...newOptions[x], selected: false };
+      }
+    }
+    console.log(newOptions);
+    setOptionValues([...newOptions]);
+  };
   useEffect(() => {
     return () => {
       URL.revokeObjectURL(imgPreview.preview);
@@ -91,6 +133,16 @@ const ProductEdit = () => {
       preview: getProductById(id).img,
     });
     setUpdateProduct(getProductById(id));
+    const newOptions = [...optionValues];
+    for (let x of items) {
+      for (var y in newOptions) {
+        if (x.size === newOptions[y].value) {
+          newOptions[y].selected = true;
+        }
+      }
+    }
+    console.log(":D ????????????????????", newOptions);
+    setOptionValues(newOptions);
   }, [loading, getProductById(id)]);
   const handleClickSizeProduct = (index) => {
     console.log(index);
@@ -161,6 +213,7 @@ const ProductEdit = () => {
               <p className="addProduct-content-text-name-title">Giá</p>
               <input
                 type="text"
+                disabled
                 className="addProduct-content-text-name-input"
                 value={price}
                 onChange={onChangeProduct}
@@ -224,7 +277,7 @@ const ProductEdit = () => {
               value={selectedOption}
               onChange={handleChangeSelect}
               autoFocus
-              options={options}
+              // options={options}
             />
           </div>
           <div className="addProduct-content-text-name">
@@ -254,7 +307,7 @@ const ProductEdit = () => {
               Còn
             </p>
             <p className="table-heading-sale">Đã bán</p>
-            <ModalSize idProduct={id} />
+            <ModalSize optionValues={optionValues} idProduct={id} />
           </div>
           <div className="wrraper-table">
             <table className="addProduct-content-size-table">
@@ -262,6 +315,10 @@ const ProductEdit = () => {
                 {items.map((item, index) => {
                   return (
                     <SizeProduct
+                      removeOption={removeOption}
+                      changeValue={changeValue}
+                      optionValues={optionValues}
+                      setOptionValues={setOptionValues}
                       idProduct={id}
                       style={
                         sizeSelected === index

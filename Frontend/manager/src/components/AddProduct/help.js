@@ -17,3 +17,34 @@ export const handleIndexItem = (index) => {
   res += index.toString();
   return `PI${res}`;
 };
+
+export const optionValues = [
+  {
+    selected: false,
+    value: "XXS",
+  },
+  {
+    selected: false,
+    value: "XS",
+  },
+  {
+    selected: false,
+    value: "S",
+  },
+  {
+    selected: false,
+    value: "M",
+  },
+  {
+    selected: false,
+    value: "L",
+  },
+  {
+    selected: false,
+    value: "XL",
+  },
+  {
+    selected: false,
+    value: "XXL",
+  },
+];

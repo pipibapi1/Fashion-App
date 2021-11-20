@@ -11,9 +11,11 @@ import {
   changeTextToSelect,
   options,
 } from "../ProductEdit/help";
+import { optionValues } from "./help";
 // import "./index.css"
 const AddProduct = () => {
   // option select
+  const [optionSizes, setOptionSizes] = useState([...optionValues]);
   const [selectedOption, setSelectedOption] = useState(null);
   const handleChangeSelect = (selectedOption) => {
     setSelectedOption(selectedOption);
@@ -67,7 +69,28 @@ const AddProduct = () => {
       [e.target.name]: e.target.value,
     });
   };
-
+  useEffect(() => {
+    console.log(":D ????????????????????");
+    const newOptions = [...optionValues];
+    for (let x of productItems) {
+      for (var y in newOptions) {
+        if (x.size === newOptions[y].value) {
+          newOptions[y].selected = true;
+        }
+      }
+    }
+    console.log(":D ????????????????????", newOptions);
+    setOptionSizes(newOptions);
+  }, [productItems]);
+  const removeOption = (value) => {
+    const newOptions = [...optionSizes];
+    for (var x in newOptions) {
+      if (newOptions[x].value === value) {
+        newOptions[x].selected = false;
+      }
+    }
+    setOptionSizes(newOptions);
+  };
   const handleSubmit = () => {
     if (
       newProduct.name === "" ||
@@ -271,6 +294,8 @@ const AddProduct = () => {
             <p className="table-heading-remain">Số lượng còn</p>
             <p className="table-heading-button">
               <ModalSize
+                optionSizes={optionSizes}
+                setOptionSizes={setOptionSizes}
                 productItems={productItems}
                 setProductItems={setProductItems}
               />
@@ -288,6 +313,7 @@ const AddProduct = () => {
                           : {}
                       }
                       onClickSizeProduct={handleClickSizeProduct}
+                      removeOption={removeOption}
                       key={index}
                       index={index}
                       size={size}

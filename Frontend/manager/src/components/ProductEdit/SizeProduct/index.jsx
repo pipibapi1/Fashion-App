@@ -4,11 +4,15 @@ import swal from "sweetalert";
 import { productContext } from "../../ProductContext/ProductContext";
 // import "./index.css"
 const SizeProduct = ({
+  removeOption,
+  optionValues,
+  setOptionValues,
   idProduct,
   index,
   item,
   items,
   onClickSizeProduct,
+  changeValue,
   style,
 }) => {
   const history = useHistory();
@@ -85,6 +89,23 @@ const SizeProduct = ({
     }).then((willDelete) => {
       if (willDelete) {
         // deleteProduct(id);
+        const newOptionValues = [...optionValues];
+        const index = newOptionValues.findIndex(
+          (option) => option.value === item.size
+        );
+        optionValues[index] = {
+          value: item.size,
+          selected: false,
+        };
+        removeOption(item.size);
+        console.log("index", optionValues);
+        // const x = {
+        //   ...newOptionValues[index],
+        //   selected: false,
+        // };
+        // newOptionValues[index] = x;
+        // console.log("vcc", newOptionValues);
+        // changeValue(newOptionValues);
         deleteProductItem(idProduct, item.id);
         // console.log(idProduct, item.id);
         swal("Xóa thành công", {
@@ -145,6 +166,7 @@ const SizeProduct = ({
                 <select
                   className="modal-input-label-select"
                   name="size"
+                  disabled
                   value={size}
                   onChange={handleChangeItem}
                   id="size"
