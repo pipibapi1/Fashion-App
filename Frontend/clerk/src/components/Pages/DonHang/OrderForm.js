@@ -10,7 +10,7 @@ import swal from 'sweetalert';
 
 function OrderForm(props) {
     
-    const{recordForEdit} = props;
+    const{recordForEdit, setOpenPopup} = props;
     const orderStatus = recordForEdit.orderStatus;
     const orderNote = recordForEdit.note;
     const orderAddress = recordForEdit.orderAddress
@@ -101,6 +101,7 @@ function OrderForm(props) {
                 button: "Continue",
                 timer: 2000,
             });
+            setOpenPopup(false);
     }
     const huyDangGiao = () => {
         const x = {
@@ -119,6 +120,7 @@ function OrderForm(props) {
             button: "Continue",
             timer: 2000,
         });
+        setOpenPopup(false)
     }
     const xacNhan = () => {
         if(!isEnough)
@@ -149,6 +151,7 @@ function OrderForm(props) {
                 button: "Continue",
                 timer: 2000,
             });
+            setOpenPopup(false);
         }
     }
     const giaoXong = () => {
@@ -166,6 +169,7 @@ function OrderForm(props) {
             button: "Continue",
             timer: 2000,
         });
+        setOpenPopup(false);
     }
     let button1;
     let button2;

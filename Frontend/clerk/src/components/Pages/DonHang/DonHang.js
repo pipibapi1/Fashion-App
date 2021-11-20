@@ -11,7 +11,7 @@ import { Table, TableHead, TablePagination, TableSortLabel } from '@material-ui/
 import Tabs from "./Tabs";
 import './tab.css';
 
-
+ 
 
 const headCells = [
     { id: 'id', label: 'Mã Đơn Hàng' },
@@ -393,6 +393,7 @@ export default class DonHang extends Component {
                     >
                             <OrderForm
                             recordForEdit={this.state.recordForEdit}
+                            setOpenPopup={setOpenPopup}
                              />
                     </Popup>
             </div>

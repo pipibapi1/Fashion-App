@@ -1,10 +1,11 @@
 .orderDetail{
     height: 62vh;
+    width: 60vw;
     display: flex;
     background-color: rgb(255, 255, 255);
     
     .customerInfo{
-        width : 30%;
+        width : 20vw;
         left: 0px;
         border-radius: 10px;
         background-color: rgb(226, 207, 207);
@@ -69,7 +70,7 @@
          height: 100%;
     }
     .orderInfo{
-        width: 70%;
+        width : 50vw;
         background-color: rgb(238, 230, 230);
         border-radius: 10px;
         .status{
@@ -117,7 +118,7 @@
             margin-left: 5%;
             display: flex;
             justify-content: space-between;
-            width: 570px;
+            width: 38vw;
             
             .label{
                 font-size: 20px;
@@ -130,7 +131,7 @@
         .orderAddress{
             margin-top: 20px;
             margin-left: 5%;
-            width: 570px;
+            width: 38vw;
             display: flex;
             justify-content: space-between;
             .label{
@@ -161,7 +162,7 @@
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            width: 250px;
+            width: 16vw;
             margin-top: 30px;
             margin-left: 55%;
             justify-content: space-between;
@@ -173,6 +174,7 @@
                 
                 height: 50px;
                 width: 100px;
+                cursor: pointer;
                 
             }
             .confirm{
@@ -182,6 +184,7 @@
                 border : none;
                 background-color: rgb(226, 207, 207);
                 color: black;
+                cursor: pointer;
                 
             }
             .doneDelivery{
@@ -191,11 +194,9 @@
                 border : none;
                 background-color: rgb(226, 207, 207);
                 color: black;
-                
+                cursor: pointer;
             }
         }
             
-        
-        
     }
 }
