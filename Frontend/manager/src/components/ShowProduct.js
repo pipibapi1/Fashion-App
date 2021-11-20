@@ -32,7 +32,7 @@ export default function ShowProduct(props) {
                         <div>{product.description}</div>
                         <div>SIZE {props.item.size}</div>
                         <div className="quantityOrder">Số lượng: { props.order.listQuantity[props.indexx]}</div>
-                        {product.price && <div className="textRight">GIÁ: {product.price.toLocaleString()} Đ</div>}
+                        {product.price && <div className="textRight">GIÁ: {product.price.toLocaleString()} VNĐ</div>}
                     </Col>
                 </Row>
             </Container>

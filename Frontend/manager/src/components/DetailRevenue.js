@@ -32,7 +32,7 @@ export default function DetailRevenue(props) {
                         <Col sm={2}> <h2 className="element">{props.order.id}</h2></Col>
                         <Col sm={3}> <h2 className="element">{props.order.status}</h2></Col>
                         <Col sm={5.6}> <h2 className="element">{props.order.address}</h2></Col>
-                        <Col sm={1.4}> <h2 className="oderprice">{props.order.totalPrice.toLocaleString()} Đ</h2></Col>
+                        <Col sm={1.4}> <h2 className="oderprice">{props.order.totalPrice.toLocaleString()} VNĐ</h2></Col>
                     </Row>
                     </Container>
                 }

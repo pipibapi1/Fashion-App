@@ -101,7 +101,7 @@ export default function Revenue() {
                         Orders.reduce((sum, i) => (
                             sum += i.status === 'Đã Giao' ? i.totalPrice : 0
                         ), 0).toLocaleString()
-                    } Đ</div> 
+                    } VNĐ</div> 
                 </div>
         </div>
         </>
