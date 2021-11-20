@@ -24,7 +24,6 @@ export default function DetailRevenue(props) {
     if (!account) return null;
     // console.log(account)
     return (
-        <div className="contentlist_Revenue">
             <Popup
                 trigger={
                     <Container fluid>
@@ -51,7 +50,6 @@ export default function DetailRevenue(props) {
                     </div>
                 )}
             </Popup>
-        </div> 
     )
 }
 
