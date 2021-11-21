@@ -33,9 +33,14 @@ function ProductItems() {
     const [Popple,setPopple] = useState(-1);
     const [a,setA] = useState(1);
     const [data,setData] = useState([]); 
+    const [stop,setStop] = useState(0);
     function checkData(){
-        if (JSON.parse(sessionStorage.getItem('Data')))
+        if (stop===1)
+            return;
+        if (JSON.parse(sessionStorage.getItem('Data'))){
+            setStop(1)
             setData(JSON.parse(sessionStorage.getItem('Data')));
+        }
         else setData([]);
     }
     useEffect(() => {
@@ -47,6 +52,7 @@ function ProductItems() {
         <div className="box-container">
             {data.map(function(ex,index){
                 let props = JSON.parse(ex);
+                console.log(stop)
                 return(
                     <div className="box" data-item={props[6]}>
                         <div className="icons">
@@ -60,7 +66,7 @@ function ProductItems() {
                         <div className="content">
                             <h3>{props[1]}</h3>
                             <div className="price">
-                                <div className="amount">{props[3]}</div>
+                                <div className="amount">{props[3].toLocaleString()} VND</div>
                                 {/* <div className="cut">{props[4]}</div>
                                 <div className="offer">{props[5]}</div> */}
                             </div>

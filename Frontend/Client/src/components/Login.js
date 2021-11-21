@@ -52,10 +52,9 @@ export default function Login(){
         Address: loginAddress,
         Bday: loginBirthday 
       }
-      console.log(client)
+
       const response = axios.post('http://localhost:3000/Customer/create', client).then(
         (res) => {
-            console.log(res)
             const token = res.data.token;
             const warning = res.data.msg;
             if (warning !== null && warning !== undefined) {
@@ -123,7 +122,7 @@ export default function Login(){
                     <div className="form-inner">
                         <div className="form-group">
                             {/* <label for="">Email address</label> */}
-                            <input type="text" placeholder="Enter your Username" onChange={onChangeUsername} name="email" />
+                            <input type="text" className="INPUS" placeholder="Enter your Username" onChange={onChangeUsername} name="email" />
                         </div>
                         <div className="form-group">
                             {/* <label for="">Password</label> */}
