@@ -26,6 +26,7 @@ const Mainpage = () =>{
                         localData.push(JSON.stringify({"0":res.data.products[x]['id'],"1":res.data.products[x]['name'],"2":res.data.products[x]['img'],"3":res.data.products[x]['price'],"5":"(50)","6":res.data.products[x]['feature'],"7":res.data.products[x]['description'],"8":JSON.stringify(size)}));
                     });  
                 }
+                // sessionStorage.setItem('Data',JSON.stringify(localData))
             })
             setTimeout(()=>sessionStorage.setItem('Data',JSON.stringify(localData)),4000)
       } catch (error) {

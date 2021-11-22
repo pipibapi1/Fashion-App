@@ -45,9 +45,9 @@ const ImageSlider = ({props}) => {
                 <div className="content">
                     <h3>{data[1]}</h3>
                         <div className="price">
-                            <div className="amount">{data[3]}</div>
-                            <div className="cut">{data[4]}</div>
-                            <div className="offer">{data[5]}</div>
+                            <div className="amount">{data[3].toLocaleString()} VND</div>
+                            {/* <div className="cut">{data[4]}</div>
+                            <div className="offer">{data[5]}</div> */}
                         </div>
                         <div className="stars">
                             <i className="fas fa-star"></i>
@@ -55,7 +55,7 @@ const ImageSlider = ({props}) => {
                             <i className="fas fa-star"></i>
                             <i className="fas fa-star"></i>
                             <i className="far fa-star"></i>
-                            <span>{data[6]}</span>
+                            <span>{data[5]}</span>
                         </div>
                 </div>
             </div>

@@ -2,6 +2,11 @@ import React,{useState,useEffect } from 'react'
 import {Data} from './Data'
 
 function Icons() {
+    function switchPay(){
+      if (JSON.parse(sessionStorage.getItem('Order'))===[])
+        window.location = "/payment" 
+      else alert("Please choose at least 1 item")
+    }
     const styleObj = {
         marginLeft:0
     }
@@ -63,7 +68,7 @@ function Icons() {
             )})}
                                     </div>
           <h3 className="total" onClick={()=>alert(count)}> TOTAL : <span>{total.toLocaleString()} VND</span></h3>
-          <a href="/payment" style={styleObj} className="header__menu-link btn btn--border btn--rounded buttom"> Checkout Card</a>
+          <a onClick={()=>switchPay()} style={styleObj} className="header__menu-link btn btn--border btn--rounded buttom"> Checkout Card</a>
         </div>
     </div>
 
