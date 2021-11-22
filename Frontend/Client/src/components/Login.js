@@ -138,32 +138,32 @@ export default function Login(){
                 <div class="form-inner">
                 <div class="form-group">
                     <label for="">Name</label>
-                    <input type="text" placeholder="Enter your name" autocomplete="off" name="name" onChange={onChange1}/>
+                    <input type="text" className="INPUS" placeholder="Enter your name" autocomplete="off" name="name" onChange={onChange1}/>
                 </div>
                 <div class="form-group">
                     <label for="">Phone</label>
-                    <input type="text" placeholder="Enter your phone" autocomplete="off" name="number" onChange={onChange2}/>
+                    <input type="text" className="INPUS" placeholder="Enter your phone" autocomplete="off" name="number" onChange={onChange2}/>
                 </div>
                 <div class="form-group">
                     <label for="">Email address</label>
-                    <input type="email" placeholder="Enter your email" autocomplete="off" name="email"  onChange={onChange3}/>
+                    <input type="email" className="INPUS" placeholder="Enter your email" autocomplete="off" name="email"  onChange={onChange3}/>
                 </div>
                 <div class="form-group">
                     <label for="">Password</label>
-                    <input type="password" placeholder="Create your password" autocomplete="off" name="password"  onChange={onChange4}/>
+                    <input type="password" className="INPUS" placeholder="Create your password" autocomplete="off" name="password"  onChange={onChange4}/>
                 </div>
                 </div>
                 <div class="form-group">
                     <label for="">Username</label>
-                    <input type="username" placeholder="Create your username" autocomplete="off" name="username"  onChange={onChange5}/>
+                    <input type="username" className="INPUS" placeholder="Create your username" autocomplete="off" name="username"  onChange={onChange5}/>
                 </div>
                 <div class="form-group">
                     <label for="">Address</label>
-                    <input type="Address" placeholder="Write your Address" autocomplete="off" name="Address"  onChange={onChange6}/>
+                    <input type="Address" className="INPUS" placeholder="Write your Address" autocomplete="off" name="Address"  onChange={onChange6}/>
                 </div>
                 <div class="form-group">
                     <label for="">Birthday</label>
-                    <input type="Birthdat" placeholder="Write your Birthdat" autocomplete="off" name="Birthday"  onChange={onChange7}/>
+                    <input type="date" className="INPUS" placeholder="Write your Birthday" autocomplete="off" name="Birthday"  onChange={onChange7}/>
                 </div>
                 <p class="remember">
                     <input type="checkbox" /> <span>Remember me</span>

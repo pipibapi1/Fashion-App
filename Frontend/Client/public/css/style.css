@@ -1340,7 +1340,6 @@ section {
   margin: 5% 20%;
   max-width: 1600px;
   width: 60%;
-  height: 80%;
   padding: 6rem 6vw;
   display: flex;
   justify-content: space-between;
@@ -1365,6 +1364,7 @@ section {
   height: auto;
   margin: 10px 0 20px;
   color: #4a4a4a;
+  word-wrap: break-word;
 }
 .product-details .details .product-price {
   height:30px;
