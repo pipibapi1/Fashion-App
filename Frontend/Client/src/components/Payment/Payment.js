@@ -100,7 +100,6 @@ function change3(event){
           const response = axios.post('http://localhost:3000/productitem', findProduct).then(
               (res) => {
                 listItem.push(res.data.ID)
-                console.log(res)
           })
       }
         for(const a in x){
@@ -149,7 +148,7 @@ function change3(event){
                 </div>
                 <span class="cart_items_details-size">Size: {props[5]}</span>
                 <div class="cart_items_details-bottom">
-                    <span class="cart_items_details-price">{props[3]} VND</span>
+                    <span class="cart_items_details-price">{props[3].toLocaleString()} VND</span>
                     <div class="controls">
                         <button class="minusIcon" type="button" onClick={()=>lowerItem(props,props[5])}>-</button>
                         <span class="count" id="count">{props[4]}</span>
@@ -170,15 +169,15 @@ function change3(event){
         </div>
         <div class="row">
             <span class="rowTitle">Sub total</span>
-            <span class="rowAmount">{total} VND</span>
+            <span class="rowAmount">{total.toLocaleString()} VND</span>
         </div>
         <div class="row">
             <span class="rowTitle">Shipping</span>
-            <span class="rowAmount">{20} VND</span>
+            <span class="rowAmount">{(20000).toLocaleString()} VND</span>
         </div>
         <div class="row2">
             <span class="rowTitle">Total</span>
-            <span class="rowAmount">{total+20} VND</span>
+            <span class="rowAmount">{(total+20000).toLocaleString()} VND</span>
         </div>
         <div class="btn">
             <button type="button" onClick={()=>setPOP(1)}>Checkout</button>

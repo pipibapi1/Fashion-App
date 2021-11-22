@@ -31,7 +31,6 @@ const Mainpage = () =>{
       } catch (error) {
         console.log(error);
     }
-    sessionStorage.setItem('Busy',0);
     sessionStorage.setItem('Order',JSON.stringify([]));
     return (    
     <div className = "App">

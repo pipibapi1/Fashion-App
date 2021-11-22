@@ -42,16 +42,13 @@ window.onscroll = () =>{
 }
 
 let filterBtn = document.querySelectorAll('.filter-buttons .buttons');
-let filterItem = document.querySelectorAll('.products .box-container .box');
 
 filterBtn.forEach(button =>{
-
   button.onclick = () =>{
+    let filterItem = document.querySelectorAll('.products .box-container .box');
     filterBtn.forEach(btn => btn.classList.remove('active'));
     button.classList.add('active');
-
     let dataFilter = button.getAttribute('data-filter');
-    
     filterItem.forEach(item =>{
 
       item.classList.remove('active');

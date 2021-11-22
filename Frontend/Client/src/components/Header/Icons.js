@@ -46,6 +46,7 @@ function Icons() {
         <div id="cart-btn" className="fas fa-shopping-cart"></div>
         <a id="login-btn" href="/login" className="fas fa-user"></a>
         <div className="shopping-card">
+                  <div class="scroll-object-cart">
             {count.map((item)=>{
               let props=JSON.parse(item);
                 return (
@@ -56,11 +57,12 @@ function Icons() {
               <img src={props[2]} className="Payimage" alt=""/>
               <span className="quantity">{props[4]}</span>
               <span className="multiply">X</span>
-              <span className="price">${props[3]}</span>
+              <span className="price">{props[3].toLocaleString()} VND</span>
             </div>
           </div>
             )})}
-          <h3 className="total" onClick={()=>alert(count)}> TOTAL : <span>{total}VNĐ</span></h3>
+                                    </div>
+          <h3 className="total" onClick={()=>alert(count)}> TOTAL : <span>{total.toLocaleString()} VNĐ</span></h3>
           <a href="/payment" style={styleObj} className="header__menu-link btn btn--border btn--rounded buttom"> Checkout Card</a>
         </div>
     </div>

@@ -15,7 +15,6 @@ export default function Popup(props,num,trigger,setTrigger,trigger1, settrigge12
     sessionStorage.setItem('Order',JSON.stringify(x));
     setTrigger(-1);
   }
-  console.log(props)
     return( (trigger === num )?
         <section class="product-details">
         <span class="closeIcon" id="closeIcon" onClick={()=>setTrigger(-1)}>
@@ -25,7 +24,7 @@ export default function Popup(props,num,trigger,setTrigger,trigger1, settrigge12
         <div class="details">
           <h2 class="product-brand">{props[1]}</h2>
           <p class="product-short-des">{props[7]}</p>
-          <span class="product-price">{props[3]}</span>
+          <span class="product-price">PRICE: {props[3].toLocaleString()}</span>
           {/* <span class="product-actual-price">{props[4]}</span>
           <span class="product-discount"> {props[5]}</span> */}
 

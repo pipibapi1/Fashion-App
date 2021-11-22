@@ -1807,6 +1807,9 @@ button {
   background-color: #f87253;
   cursor: pointer;
 }
+.INPUS{
+  text-transform:none;
+}
 
 .left {
   background-color: white;
@@ -1820,6 +1823,14 @@ button {
   padding: 15px;
 }
 
+.scroll-object-cart{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin:0px;
+  max-height: 400px;
+}
 .form-group:not(:last-of-type) {
   border-bottom: 1px solid #eee;
 }
