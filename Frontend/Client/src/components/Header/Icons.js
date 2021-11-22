@@ -62,7 +62,7 @@ function Icons() {
           </div>
             )})}
                                     </div>
-          <h3 className="total" onClick={()=>alert(count)}> TOTAL : <span>{total.toLocaleString()} VNĐ</span></h3>
+          <h3 className="total" onClick={()=>alert(count)}> TOTAL : <span>{total.toLocaleString()} VND</span></h3>
           <a href="/payment" style={styleObj} className="header__menu-link btn btn--border btn--rounded buttom"> Checkout Card</a>
         </div>
     </div>
