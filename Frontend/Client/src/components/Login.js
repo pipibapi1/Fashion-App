@@ -29,12 +29,13 @@ export default function Login(){
                 const name = res.data.Customer.name;
                 const username = res.data.Customer.username;
                 const password = res.data.Customer.password;
-                
+                const address = res.data.Customer.address;
                 //set user details in local storage
                 sessionStorage.setItem('id', id);
                 sessionStorage.setItem('name', name);
                 sessionStorage.setItem('username', username);
                 sessionStorage.setItem('password', password);
+                sessionStorage.setItem('address', address);
                 window.location = "/";
             }
         }

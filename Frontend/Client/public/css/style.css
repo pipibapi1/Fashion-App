@@ -575,8 +575,22 @@ section {
 
 .featured .featured-slider .slide .content {
   padding: 1rem 1.5rem;
+  height: 18vh;
 }
-
+.submit-btn1:hover{
+  background-color:black;
+  color:white;
+}
+.smallbutt:hover{
+  background-color:black;
+  color:white;
+}
+.smallbutt{
+  padding: 1rem;
+  margin-left:5px;
+  color: white;
+  background-color: #eb4d4b;
+}
 .featured .featured-slider .slide .content h3 {
   font-size: 2rem;
   color: #130f40;

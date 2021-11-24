@@ -3,9 +3,8 @@ import {Data} from './Data'
 
 function Icons() {
     function switchPay(){
-      if (JSON.parse(sessionStorage.getItem('Order'))===[])
-        window.location = "/payment" 
-      else alert("Please choose at least 1 item")
+      if (Object.keys(JSON.parse(sessionStorage.getItem('Order'))).length===0) alert("Please choose at least 1 item")
+      else  window.location = "/payment";
     }
     const styleObj = {
         marginLeft:0

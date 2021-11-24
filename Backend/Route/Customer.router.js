@@ -31,6 +31,7 @@ CustomerRoutes.post("/", async (req, res) => {
                 name: customer.name,
                 username: customer.username,
                 password: customer.password,
+                address: customer.address
             },
         });
 
@@ -60,7 +61,7 @@ CustomerRoutes.post("/create", async (req, res) => {
             id = "KH000"+Math.floor((Math.random() * 1000) + 1)
             var check = await Customer.findOne({ id: id });
         var dateOfBirth = Bday;
-        var avatar = ""
+        var avatar = "https://i.imgur.com/9QvyleK.jpg";
         var listOrderID = []
         var username = Euser
         var dateCreate = new Date();
