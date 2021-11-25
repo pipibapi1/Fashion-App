@@ -23,7 +23,9 @@ export default function Popup(props,num,trigger,setTrigger,trigger1, settrigge12
         <img class="image-slider" src={props[2]}></img>
         <div class="details">
           <h2 class="product-brand">{props[1]}</h2>
+          <div class="scroll-object">
           <p class="product-short-des">{props[7]}</p>
+          </div>
           <span class="product-price">PRICE: {props[3].toLocaleString()}</span>
           {/* <span class="product-actual-price">{props[4]}</span>
           <span class="product-discount"> {props[5]}</span> */}

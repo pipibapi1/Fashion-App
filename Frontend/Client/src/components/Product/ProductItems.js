@@ -58,7 +58,7 @@ function ProductItems() {
                         <div className="icons">
                             <a className="fas fa-shopping-cart" onClick={()=>buyItem(props,JSON.parse(props[8])[0])}></a>
                             <a className = {`flag-${index} fas fa-heart heart`} onClick={ ()=> toggleFlag(index) }></a>
-                            <a className="fas fa-eye" onClick={()=>setPopple(index)}></a>
+                            <a className="fas fa-eye" onClick={()=>{setPopple(index); setA(JSON.parse(props[8])[0]);}}></a>
                         </div>
                         <div className="image">
                             <img src={props[2]} alt=""/>

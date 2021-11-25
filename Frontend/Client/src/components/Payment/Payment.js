@@ -128,7 +128,7 @@ function change3(event){
                     alert("Success");
                     setNote("");
                     setAddress("");
-                    // setTimeout(()=>window.location = "/",1000);
+                    window.location = "/";
             })
           },1000);
     }

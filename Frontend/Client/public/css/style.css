@@ -1343,7 +1343,7 @@ section {
 
 .product-details {
   font-size: 1.2rem;
-  z-index: 100;
+  z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
@@ -1353,7 +1353,8 @@ section {
   display: block;
   margin: 5% 20%;
   max-width: 1600px;
-  width: 60%;
+  width: 65%;
+  height:85%;
   padding: 6rem 6vw;
   display: flex;
   justify-content: space-between;
@@ -1844,6 +1845,14 @@ button {
   overflow-y: scroll;
   margin:0px;
   max-height: 400px;
+}
+.scroll-object{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin:0px;
+  max-height: 150px;
 }
 .form-group:not(:last-of-type) {
   border-bottom: 1px solid #eee;
