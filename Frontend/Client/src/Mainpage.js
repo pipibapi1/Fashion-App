@@ -27,6 +27,7 @@ const Mainpage = () =>{
                     });  
                 }
                 // sessionStorage.setItem('Data',JSON.stringify(localData))
+                setTimeout(()=>sessionStorage.setItem('Data',JSON.stringify(localData)),4000)
             })
             setTimeout(()=>sessionStorage.setItem('Data',JSON.stringify(localData)),4000)
       } catch (error) {
