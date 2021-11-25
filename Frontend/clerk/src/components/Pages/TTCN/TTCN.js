@@ -215,6 +215,7 @@ import DatePicker from  'react-datepicker';
                 <div className={styles.birthdayBar}>Ngày Sinh</div>
                     <div className={styles.birthdayPicker}>
                        <DatePicker 
+                            className = {styles.context}
                             dateFormat = "dd/MM/yyyy"
                             showYearDropdown
                             Id='birthday'
