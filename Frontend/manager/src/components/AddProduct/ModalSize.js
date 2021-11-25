@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import swal from "sweetalert";
 
 const ModalSize = ({
+  handleClickSizeProduct,
   productItems,
   setProductItems,
   optionSizes,
@@ -27,6 +28,7 @@ const ModalSize = ({
     setProductItem({ productID: "", size: "", img: "", sold: 0, remaining: 0 });
     setImgPreview("");
     console.log(productItems);
+    handleClickSizeProduct(0);
     closeModal();
   };
   const [imgPreview, setImgPreview] = useState("");
