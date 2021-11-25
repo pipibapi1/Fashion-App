@@ -1,5 +1,5 @@
 import { useState } from "react"
-export default function Popup(props,num,trigger,setTrigger,trigger1, settrigge12){
+export default function Popup(props,num,trigger,setTrigger,trigger1, settrigge12, lol, setLoL){
   function buyItem(props,size){
     var x = JSON.parse(sessionStorage.getItem('Order'))
     for(const a in x){
@@ -20,7 +20,7 @@ export default function Popup(props,num,trigger,setTrigger,trigger1, settrigge12
         <span class="closeIcon" id="closeIcon" onClick={()=>setTrigger(-1)}>
             <i class="fas fa-times"></i>
         </span>
-        <img class="image-slider" src={props[2]}></img>
+        <img class="image-slider" src={lol}></img>
         <div class="details">
           <h2 class="product-brand">{props[1]}</h2>
           <div class="scroll-object">
@@ -36,7 +36,7 @@ export default function Popup(props,num,trigger,setTrigger,trigger1, settrigge12
               return(
                 <span>
                   <input type="radio" name="size" value="XL" hidden id="xl_size"/>
-                  <label for="size" class={trigger1===size?"size_radio_btn active":"size_radio_btn"} onClick={()=>settrigge12(size)}>{size}</label>
+                  <label for="size" class={trigger1===size?"size_radio_btn active":"size_radio_btn"} onClick={()=>{settrigge12(size); setLoL(JSON.parse(props[9])[index]) }}>{size}</label>
                 </span>
               )
             })}

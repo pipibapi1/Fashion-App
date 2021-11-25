@@ -34,6 +34,7 @@ function ProductItems() {
     const [a,setA] = useState(1);
     const [data,setData] = useState([]); 
     const [stop,setStop] = useState(0);
+    const [b,setB] = useState(1);
     function checkData(){
         if (stop===1)
             return;
@@ -58,7 +59,7 @@ function ProductItems() {
                         <div className="icons">
                             <a className="fas fa-shopping-cart" onClick={()=>buyItem(props,JSON.parse(props[8])[0])}></a>
                             <a className = {`flag-${index} fas fa-heart heart`} onClick={ ()=> toggleFlag(index) }></a>
-                            <a className="fas fa-eye" onClick={()=>{setPopple(index); setA(JSON.parse(props[8])[0]);}}></a>
+                            <a className="fas fa-eye" onClick={()=>{setPopple(index); setA(JSON.parse(props[8])[0]); setB(JSON.parse(props[9])[0])}}></a>
                         </div>
                         <div className="image">
                             <img src={props[2]} alt=""/>
@@ -79,7 +80,7 @@ function ProductItems() {
                                 <span>{props[5]}</span>
                             </div>
                         </div>
-                        {Popup(props,Popple,index,setPopple,a,setA)}
+                        {Popup(props,Popple,index,setPopple,a,setA,b,setB)}
                     </div>
                 )
             })}
