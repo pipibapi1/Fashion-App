@@ -4,6 +4,7 @@ import swal from "sweetalert";
 import { productContext } from "../../ProductContext/ProductContext";
 // import "./index.css"
 const SizeProduct = ({
+  // setSizeSelected,
   removeOption,
   optionValues,
   setOptionValues,
@@ -107,6 +108,8 @@ const SizeProduct = ({
         // console.log("vcc", newOptionValues);
         // changeValue(newOptionValues);
         deleteProductItem(idProduct, item.id);
+        onClickSizeProduct(0);
+
         // console.log(idProduct, item.id);
         swal("Xóa thành công", {
           icon: "success",
@@ -121,6 +124,7 @@ const SizeProduct = ({
     data.append("img", img);
     updateProductItem(idProduct, item.id, data);
     closeModal();
+    onClickSizeProduct(0);
     swal("Đã được cập nhập", "", "success");
   };
   return (

@@ -25,10 +25,16 @@ const AddProduct = () => {
   const [sizeSelected, setSizeSelected] = useState(0);
   const [imgSize, setImgSize] = useState();
   const [productItems, setProductItems] = useState([]);
-  useEffect(() => setImgSize(""), [productItems]);
+  useEffect(() => {
+    // setImgSize("")
+    handleClickSizeProduct(0);
+  }, [productItems]);
   const handleClickSizeProduct = (index) => {
-    setImgSize(productItems[index].img.preview);
-    setSizeSelected(index);
+    // console.log("vcc", productItems, productItems[index].img);
+    if (productItems && productItems[index]) {
+      setImgSize(productItems[index].img.preview);
+      setSizeSelected(index);
+    }
   };
   const removeProductItem = (index) => {
     const productItemsRemoved = [...productItems];
@@ -294,6 +300,7 @@ const AddProduct = () => {
             <p className="table-heading-remain">Số lượng còn</p>
             <p className="table-heading-button">
               <ModalSize
+                handleClickSizeProduct={handleClickSizeProduct}
                 optionSizes={optionSizes}
                 setOptionSizes={setOptionSizes}
                 productItems={productItems}

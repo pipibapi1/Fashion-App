@@ -315,6 +315,7 @@ const ProductEdit = () => {
                 {items.map((item, index) => {
                   return (
                     <SizeProduct
+                      // handleClickSizeProduct={handleClickSizeProduct}
                       removeOption={removeOption}
                       changeValue={changeValue}
                       optionValues={optionValues}

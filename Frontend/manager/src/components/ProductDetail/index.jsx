@@ -22,10 +22,10 @@ const ProductDetail = () => {
   const [sizeSelected, setSizeSelected] = useState(0);
   let { id } = useParams();
   console.log(getProductById(id));
-  useEffect(() => {
-    setSizeSelected(0);
-    console.log(";;");
-  }, [products]);
+  // useEffect(() => {
+  //   setSizeSelected(0);
+  //   console.log(";;");
+  // }, [products]);
   let {
     name,
     brand,
