@@ -150,7 +150,17 @@
     
     color: #8083A3;
     }
-    
+    .birthdayPicker{
+        position: absolute;
+        left: 375px;
+        top: 250px;
+        .context{
+            background: #FCFDFE;
+            /* grayscale / gray lightest */
+            border-radius: 8px;
+            font-size: 15px;
+        }
+    }
     .emailBar{
         position: absolute;
     height: 21px;
@@ -168,66 +178,6 @@
     text-align: right;
     
     color: #8083A3;
-    }
-    .addressBar{
-        position: absolute;
-    height: 21px;
-    left: 100px;
-        top: 350px;
-    
-    
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 21px;
-    /* identical to box height, or 87% */
-    
-    text-align: right;
-    
-    color: #8083A3;
-    }
-    .phoneNumberBar{
-        position: absolute;
-    height: 21px;
-    left: 100px;
-        top: 400px;
-    
-    
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 21px;
-    /* identical to box height, or 87% */
-    
-    text-align: right;
-    
-    color: #8083A3;
-    }
-    .cccdBar{
-        position: absolute;
-    height: 21px;
-    left: 100px;
-        top: 450px;
-    
-    
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 21px;
-    /* identical to box height, or 87% */
-    
-    text-align: right;
-    
-    color: #8083A3;
-    }
-    .birthdayPicker{
-        position: absolute;
-    height: 21px;
-    left: 375px;
-        top: 250px;
     }
     .emailText{
         position: absolute;
@@ -252,7 +202,24 @@
     
     color: #1A1C1D;
     }
+    .addressBar{
+        position: absolute;
+    height: 21px;
+    left: 100px;
+        top: 350px;
     
+    
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 21px;
+    /* identical to box height, or 87% */
+    
+    text-align: right;
+    
+    color: #8083A3;
+    }
     .addressText{
         position: absolute;
     
@@ -276,7 +243,24 @@
     
     color: #1A1C1D;
     }
+    .phoneNumberBar{
+        position: absolute;
+    height: 21px;
+    left: 100px;
+        top: 400px;
     
+    
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 21px;
+    /* identical to box height, or 87% */
+    
+    text-align: right;
+    
+    color: #8083A3;
+    }
     .phoneNumberText{
         position: absolute;
     
@@ -300,6 +284,26 @@
     
     color: #1A1C1D;
     }
+
+    .cccdBar{
+        position: absolute;
+    height: 21px;
+    left: 100px;
+        top: 450px;
+    
+    
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 21px;
+    /* identical to box height, or 87% */
+    
+    text-align: right;
+    
+    color: #8083A3;
+    }
+    
     
     .cccdText{
         position: absolute;
