@@ -23,7 +23,7 @@ const LoginAdmin = () => {
         <>
             <div className="modal-hoangkui modal-admin-login">
                 <div className="modal-content-hoangkui modal-content-admin">
-                    <h1 className="content-admin-name">LA FASHTION</h1>
+                    <h1 className="content-admin-name">La Fashionale</h1>
                     <i className="fas fa-shopping-cart"></i>
                     <h3 className="content-admin-heading">Đăng nhập</h3>
                     <h5 className="content-admin-des">Nhập user và mật khẩu vào bên dưới</h5>

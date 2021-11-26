@@ -45,7 +45,7 @@ export default class DonHang extends Component {
         },
       },
       openPopup: false,
-      pages: [5, 10, 25],
+      pages: [5, 7],
       page: 0,
       rowsPerPage: 5,
       order: null,
@@ -254,7 +254,8 @@ export default class DonHang extends Component {
               <Paper>
                 <TblContainer>
                   <TblHead />
-                  <TableBody>
+                  
+                  <TableBody >
                     {recordsAfterPagingAndSorting(this.state.records).map(
                       (item) => (
                         <TableRow key={item.id}>
@@ -276,6 +277,8 @@ export default class DonHang extends Component {
                       )
                     )}
                   </TableBody>
+                 
+             
                 </TblContainer>
                 <TblPagination />
               </Paper>
