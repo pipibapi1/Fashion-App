@@ -1,6 +1,6 @@
 import { useState } from "react"
-export default function Popup(props,num,trigger,setTrigger,trigger1, settrigge12, lol, setLoL){
-  function buyItem(props,size){
+export default function Popup(props,num,trigger,setTrigger,trigger1, settrigge12, lol, setLoL, c, setC){
+  function buyItem(props,size,index){
     var x = JSON.parse(sessionStorage.getItem('Order'))
     for(const a in x){
         let com = JSON.parse(x[a])
@@ -11,13 +11,13 @@ export default function Popup(props,num,trigger,setTrigger,trigger1, settrigge12
         return;
       }
     }
-    x.push(JSON.stringify({0:props[0],1:props[1],2:props[2],3:props[3],4:1,5:size}));
+    x.push(JSON.stringify({0:props[0],1:props[1],2:JSON.parse(props[9])[index],3:props[3],4:1,5:size}));
     sessionStorage.setItem('Order',JSON.stringify(x));
     setTrigger(-1);
   }
     return( (trigger === num )?
         <section class="product-details">
-        <span class="closeIcon" id="closeIcon" onClick={()=>setTrigger(-1)}>
+        <span class="closeIcon" id="closeIcon" onClick={()=>{setTrigger(-1); setC(0);}}>
             <i class="fas fa-times"></i>
         </span>
         <img class="image-slider" src={lol}></img>
@@ -36,12 +36,12 @@ export default function Popup(props,num,trigger,setTrigger,trigger1, settrigge12
               return(
                 <span>
                   <input type="radio" name="size" value="XL" hidden id="xl_size"/>
-                  <label for="size" class={trigger1===size?"size_radio_btn active":"size_radio_btn"} onClick={()=>{settrigge12(size); setLoL(JSON.parse(props[9])[index]) }}>{size}</label>
+                  <label for="size" class={trigger1===size?"size_radio_btn active":"size_radio_btn"} onClick={()=>{settrigge12(size); setLoL(JSON.parse(props[9])[index]); setC(index) }}>{size}</label>
                 </span>
               )
             })}
           </div>
-          <button class="btn cart-btn" onClick={()=>buyItem(props,trigger1)}>add to cart</button>
+          <button class="btn cart-btn" onClick={()=>buyItem(props,trigger1,c)}>add to cart</button>
         </div>
     </section>:""
     )
