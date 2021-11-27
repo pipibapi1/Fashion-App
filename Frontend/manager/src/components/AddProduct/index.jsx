@@ -11,11 +11,15 @@ import {
   changeTextToSelect,
   options,
 } from "../ProductEdit/help";
-import { optionValues } from "./help";
+import { optionValues, optionValuesInit } from "./help";
 // import "./index.css"
 const AddProduct = () => {
   // option select
-  const [optionSizes, setOptionSizes] = useState([...optionValues]);
+  // console.log("Vcc",);
+  const [optionSizes, setOptionSizes] = useState(() => {
+    const newOptionSize = [...optionValuesInit];
+    return newOptionSize;
+  });
   const [selectedOption, setSelectedOption] = useState(null);
   const handleChangeSelect = (selectedOption) => {
     setSelectedOption(selectedOption);
@@ -86,7 +90,7 @@ const AddProduct = () => {
       }
     }
     console.log(":D ????????????????????", newOptions);
-    setOptionSizes(newOptions);
+    if (productItems.length !== 0) setOptionSizes(newOptions);
   }, [productItems]);
   const removeOption = (value) => {
     const newOptions = [...optionSizes];
@@ -153,6 +157,8 @@ const AddProduct = () => {
       setSizeSelected(0);
       swal("Product is created", "", "success");
       setSelectedOption(null);
+      setOptionSizes([...optionValuesInit]);
+      // console.log("Vcc", optionValues);
       setCheckBox(false);
     } else {
       swal(
@@ -357,11 +363,13 @@ const AddProduct = () => {
             </div>
             <div className="addProduct-content-size-display">
               <p className="addProduct-content-size-display-text">Hình ảnh:</p>
-              <img
-                src={imgSize}
-                alt=""
-                className="addProduct-content-size-display-img-size"
-              />
+              {imgSize && (
+                <img
+                  src={imgSize}
+                  alt=""
+                  className="addProduct-content-size-display-img-size"
+                />
+              )}
             </div>
           </div>
           <button onClick={handleSubmit} className="addProduct-submit">

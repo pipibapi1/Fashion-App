@@ -86,6 +86,9 @@ const ModalSize = ({
                 onChange={onChangeProductItem}
                 id="size"
               >
+                <option value="" selected disabled hidden>
+                  Chọn
+                </option>
                 {optionSizes.map((optionSize) => {
                   if (!optionSize.selected) {
                     return (

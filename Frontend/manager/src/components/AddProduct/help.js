@@ -48,3 +48,33 @@ export const optionValues = [
     value: "XXL",
   },
 ];
+export const optionValuesInit = [
+  {
+    selected: false,
+    value: "XXS",
+  },
+  {
+    selected: false,
+    value: "XS",
+  },
+  {
+    selected: false,
+    value: "S",
+  },
+  {
+    selected: false,
+    value: "M",
+  },
+  {
+    selected: false,
+    value: "L",
+  },
+  {
+    selected: false,
+    value: "XL",
+  },
+  {
+    selected: false,
+    value: "XXL",
+  },
+];
