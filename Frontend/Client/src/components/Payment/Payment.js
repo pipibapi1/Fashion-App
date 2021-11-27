@@ -121,7 +121,7 @@ function change3(event){
             listItemID: listItem,
             listQuantity:listnumber,
             customerAccountId: sessionStorage.getItem('id'),
-            totalPrice: total
+            totalPrice: total + 20000
           }
             const response = axios.post('http://localhost:3000/order', Order).then(
                 (res) => {
