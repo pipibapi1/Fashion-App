@@ -268,8 +268,8 @@ function OrderForm(props) {
                 
                 
                 <div className={styles.total}>
-                    <div className={styles.label}>Tổng Tiền : </div>
-                    <div className={styles.text}>{total.toLocaleString()} VND</div>
+                    <div className={styles.label}>Tổng Tiền (+ 20,000 VND tiền ship) : </div>
+                    <div className={styles.text}>{(total+20000).toLocaleString()} VND</div>
                 </div>
                 <div className={styles.orderAddress}>
                     <div className={styles.label}>Địa chỉ: </div>
