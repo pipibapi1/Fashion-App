@@ -12,7 +12,7 @@ function toggleFlag(index){
     )
 }
 function ProductItems() {
-    function buyItem(props,size){
+    function buyItem(props,size,index){
         if (!sessionStorage.getItem('id')){
             window.location = "/login";
             return;
@@ -27,7 +27,7 @@ function ProductItems() {
             return;
           }
         }
-        x.push(JSON.stringify({0:props[0],1:props[1],2:props[2],3:props[3],4:1,5:size}));
+        x.push(JSON.stringify({0:props[0],1:props[1],2:JSON.parse(props[9])[index],3:props[3],4:1,5:size}));
         sessionStorage.setItem('Order',JSON.stringify(x));  
     }
     const [Popple,setPopple] = useState(-1);
@@ -35,6 +35,7 @@ function ProductItems() {
     const [data,setData] = useState([]); 
     const [stop,setStop] = useState(0);
     const [b,setB] = useState(1);
+    const [c,setC] = useState(0);
     function checkData(){
         if (stop===1)
             return;
@@ -57,7 +58,7 @@ function ProductItems() {
                 return(
                     <div className="box" data-item={props[6]}>
                         <div className="icons">
-                            <a className="fas fa-shopping-cart" onClick={()=>buyItem(props,JSON.parse(props[8])[0])}></a>
+                            <a className="fas fa-shopping-cart" onClick={()=>buyItem(props,JSON.parse(props[8])[0],0)}></a>
                             <a className = {`flag-${index} fas fa-heart heart`} onClick={ ()=> toggleFlag(index) }></a>
                             <a className="fas fa-eye" onClick={()=>{setPopple(index); setA(JSON.parse(props[8])[0]); setB(JSON.parse(props[9])[0])}}></a>
                         </div>
@@ -80,7 +81,7 @@ function ProductItems() {
                                 <span>{props[5]}</span>
                             </div>
                         </div>
-                        {Popup(props,Popple,index,setPopple,a,setA,b,setB)}
+                        {Popup(props,Popple,index,setPopple,a,setA,b,setB,c,setC)}
                     </div>
                 )
             })}

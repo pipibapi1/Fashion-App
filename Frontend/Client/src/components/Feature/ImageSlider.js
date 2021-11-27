@@ -9,7 +9,7 @@ function toggleFlag(index){
     )
 }
 const ImageSlider = ({props}) => {
-    function buyItem(props,size){
+    function buyItem(props,size,index){
         if (!sessionStorage.getItem('id')){
             window.location = "/login";
             return;
@@ -24,7 +24,7 @@ const ImageSlider = ({props}) => {
             return;
           }
         }
-        x.push(JSON.stringify({0:props[0],1:props[1],2:props[2],3:props[3],4:1,5:size}));
+        x.push(JSON.stringify({0:props[0],1:props[1],2:JSON.parse(props[9])[index],3:props[3],4:1,5:size}));
         sessionStorage.setItem('Order',JSON.stringify(x));  
     }
     return(
@@ -35,7 +35,7 @@ const ImageSlider = ({props}) => {
             <div className="swiper-slide slide">
             <div>
                 <div className="icons">
-                    <a className="fas fa-shopping-cart" onClick={()=>buyItem(data,JSON.parse(data[8])[0])}></a>
+                    <a className="fas fa-shopping-cart" onClick={()=>buyItem(data,JSON.parse(data[8])[0],0)}></a>
                     <a className = {`flag-${index} fas fa-heart heart`} onClick={ ()=> toggleFlag(index) }></a>
                     <a href="#products" className="fas fa-eye"></a>
                 </div>
