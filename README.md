@@ -24,10 +24,10 @@ Hãy dowload hoặc clone project về máy sau đó việc đầu tiên cần l
 4. Lúc này giao diện bên phía khách hàng sẽ hiện lên
 
 *Note :
-(1) Khi muốn thanh toán đơn hàng thì sẽ yêu cầu đăng nhập, người dùng có thể tạo tài khoản mới hoặc dùng tài khoản mà nhóm đã tạo sẵn trong DB  :
+1. Khi muốn thanh toán đơn hàng thì sẽ yêu cầu đăng nhập, người dùng có thể tạo tài khoản mới hoặc dùng tài khoản mà nhóm đã tạo sẵn trong DB  :
 username: "customer123"
 password: "123"
-(2) Có thể sẽ xảy ra một số lỗi khi chạy giao diện ở dev mode do mâu thuẫn phiên bản, ... Trong trường hợp đó, nhóm đã deploy giao diện phía khách hàng lên netlify. Người dùng có thể check giao diện khách hàng qua link sau : (lưu ý vẫn phải chạy backend trên terminal ở localhost 3000 do nhóm chưa deploy backend)
+2. Có thể sẽ xảy ra một số lỗi khi chạy giao diện ở dev mode do mâu thuẫn phiên bản, ... Trong trường hợp đó, nhóm đã deploy giao diện phía khách hàng lên netlify. Người dùng có thể check giao diện khách hàng qua link sau : (lưu ý vẫn phải chạy backend trên terminal ở localhost 3000 do nhóm chưa deploy backend)
 https://la-fashionale-main.netlify.app/
 
 #### Clerk Front End
@@ -39,10 +39,10 @@ https://la-fashionale-main.netlify.app/
 4. Lúc này giao diện bên phía nhân viên sẽ hiện lên
 
 *Note :
-(1) Khi muốn đăng nhập vào dashboard của nhân viên thì người dùng có thể sử dụng tài khoản sau  :
+1. Khi muốn đăng nhập vào dashboard của nhân viên thì người dùng có thể sử dụng tài khoản sau  :
 username: "clerk123"
 password: "clerk123"
-(2) Có thể sẽ xảy ra một số lỗi khi chạy giao diện ở dev mode do mâu thuẫn phiên bản, ... Trong trường hợp đó, nhóm đã deploy giao diện phía nhân viên lên netlify. Người dùng có thể check giao diện nhân viên qua link sau : (lưu ý vẫn phải chạy backend trên terminal ở localhost 3000 do nhóm chưa deploy backend)
+2. Có thể sẽ xảy ra một số lỗi khi chạy giao diện ở dev mode do mâu thuẫn phiên bản, ... Trong trường hợp đó, nhóm đã deploy giao diện phía nhân viên lên netlify. Người dùng có thể check giao diện nhân viên qua link sau : (lưu ý vẫn phải chạy backend trên terminal ở localhost 3000 do nhóm chưa deploy backend)
 https://la-fashionale-clerk-workspace.netlify.app/
 
 #### Manager Front End
@@ -54,8 +54,8 @@ https://la-fashionale-clerk-workspace.netlify.app/
 4. Lúc này giao diện bên phía quản lý sẽ hiện lên
 
 *Note :
-(1) Khi muốn đăng nhập vào dashboard của quản lý thì người dùng có thể sử dụng tài khoản sau  :
+1. Khi muốn đăng nhập vào dashboard của quản lý thì người dùng có thể sử dụng tài khoản sau  :
 username: "admin"
 password: "1234"
-(2) Có thể sẽ xảy ra một số lỗi khi chạy giao diện ở dev mode do mâu thuẫn phiên bản, ... Trong trường hợp đó, nhóm đã deploy giao diện phía quản lý lên netlify. Người dùng có thể check giao diện quản lý qua link sau : (lưu ý vẫn phải chạy backend trên terminal ở localhost 3000 do nhóm chưa deploy backend)
+2. Có thể sẽ xảy ra một số lỗi khi chạy giao diện ở dev mode do mâu thuẫn phiên bản, ... Trong trường hợp đó, nhóm đã deploy giao diện phía quản lý lên netlify. Người dùng có thể check giao diện quản lý qua link sau : (lưu ý vẫn phải chạy backend trên terminal ở localhost 3000 do nhóm chưa deploy backend)
 https://la-fashionale-manager-workspace.netlify.app/
