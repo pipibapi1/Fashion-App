@@ -16,10 +16,10 @@ const Mainpage = () =>{
         const localData = [];
         let size = [];
         let loz = [];
-        const response = axios.get("http://localhost:3000/product").then(
+        const response = axios.get("https://fashion-app-no-name.herokuapp.com/product").then(
             (res) => {
                 for(const x in res.data.products){
-                    const res2 = axios.get("http://localhost:3000/productitem/"+res.data.products[x]['id']).then( (ans)=>{
+                    const res2 = axios.get("https://fashion-app-no-name.herokuapp.com/productitem/"+res.data.products[x]['id']).then( (ans)=>{
                         size = []
                         loz = []
                         for(const y in ans.data.productItems){

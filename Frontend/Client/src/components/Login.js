@@ -16,7 +16,7 @@ export default function Login(){
         username: loginEmail,
         password: loginPW,
       }
-      const response = axios.post('http://localhost:3000/Customer', client).then(
+      const response = axios.post('https://fashion-app-no-name.herokuapp.com/Customer', client).then(
         (res) => {
             const token = res.data.token;
             const warning = res.data.msg;
@@ -54,7 +54,7 @@ export default function Login(){
         Bday: loginBirthday 
       }
 
-      const response = axios.post('http://localhost:3000/Customer/create', client).then(
+      const response = axios.post('https://fashion-app-no-name.herokuapp.com/Customer/create', client).then(
         (res) => {
             const token = res.data.token;
             const warning = res.data.msg;

@@ -16,7 +16,7 @@ export default function DetailRevenue(props) {
     const [account, setaccount] = React.useState([]);
 
     React.useEffect(() => {
-        axios.post("http://localhost:3000/revenue/searchAccount", {searchAcount: props.order.customerAccountId}).then((response) => {
+        axios.post("https://fashion-app-no-name.herokuapp.com/revenue/searchAccount", {searchAcount: props.order.customerAccountId}).then((response) => {
             setaccount(response.data);
             // console.log(response.data);
         });

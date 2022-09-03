@@ -24,7 +24,7 @@ const ProductProvider = ({ children }) => {
   const { products, productItemsGlobal, loading } = stateProduct;
   const createdProduct = async (data) => {
     try {
-      await axios.post("http://localhost:3000/product", data);
+      await axios.post("https://fashion-app-no-name.herokuapp.com/product", data);
       dispatch({
         type: CREATE_PRODUCT,
         payload: data,
@@ -37,7 +37,7 @@ const ProductProvider = ({ children }) => {
   };
   const deleteProduct = async (id) => {
     try {
-      const res = await axios.delete(`http://localhost:3000/product/${id}`);
+      const res = await axios.delete(`https://fashion-app-no-name.herokuapp.com/product/${id}`);
       if (res.data.success) {
         deleteProductItemAll(id);
         dispatch({
@@ -50,7 +50,7 @@ const ProductProvider = ({ children }) => {
   };
   const deleteProductItemAll = async (id) => {
     try {
-      const res = await axios.delete(`http://localhost:3000/productitem/${id}`);
+      const res = await axios.delete(`https://fashion-app-no-name.herokuapp.com/productitem/${id}`);
       if (res.data.success) {
         // dispatch({
         //   type: DELETE_PRODUCT_ITEM_ALL,
@@ -63,7 +63,7 @@ const ProductProvider = ({ children }) => {
   const deleteProductItem = async (idProduct, idItem) => {
     try {
       const res = await axios.delete(
-        `http://localhost:3000/productitem/${idProduct}/${idItem}`
+        `https://fashion-app-no-name.herokuapp.com/productitem/${idProduct}/${idItem}`
       );
       if (res.data.success) {
         getItemForProduct(idProduct);
@@ -76,7 +76,7 @@ const ProductProvider = ({ children }) => {
   const updateProduct = async (id, dataForm) => {
     try {
       const res = await axios.put(
-        `http://localhost:3000/product/${id}`,
+        `https://fashion-app-no-name.herokuapp.com/product/${id}`,
         dataForm
       );
       if (res.data.success) {
@@ -96,7 +96,7 @@ const ProductProvider = ({ children }) => {
   const updateProductItem = async (idProduct, idItem, data) => {
     try {
       const res = await axios.put(
-        `http://localhost:3000/productitem/${idProduct}/${idItem}`,
+        `https://fashion-app-no-name.herokuapp.com/productitem/${idProduct}/${idItem}`,
         data
       );
       if (res.data.success) {
@@ -135,7 +135,7 @@ const ProductProvider = ({ children }) => {
   };
   const getProductitems = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/productitem");
+      const res = await axios.get("https://fashion-app-no-name.herokuapp.com/productitem");
       console.log(res);
       if (res.data.success) {
         dispatch({
@@ -151,7 +151,7 @@ const ProductProvider = ({ children }) => {
   };
   const getItemForProduct = async (id) => {
     try {
-      const res = await axios.get(`http://localhost:3000/productitem/${id}`);
+      const res = await axios.get(`https://fashion-app-no-name.herokuapp.com/productitem/${id}`);
       if (res.data.success) {
         dispatch({
           type: ADD_ITEM_PRODUCT,
@@ -163,7 +163,7 @@ const ProductProvider = ({ children }) => {
   const createdProductItem = async (data, idProduct) => {
     try {
       const res = await axios.post(
-        `http://localhost:3000/productitem/${idProduct}`,
+        `https://fashion-app-no-name.herokuapp.com/productitem/${idProduct}`,
         data
       );
       if (res.data.success) {
@@ -192,7 +192,7 @@ const ProductProvider = ({ children }) => {
     let result = {};
     try {
       const res = await axios.get(
-        `http://localhost:3000/productitem/${idProduct}`
+        `https://fashion-app-no-name.herokuapp.com/productitem/${idProduct}`
       );
       if (res.data.success) {
         let sold = 0;
@@ -215,7 +215,7 @@ const ProductProvider = ({ children }) => {
   };
   const getProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/product");
+      const res = await axios.get("https://fashion-app-no-name.herokuapp.com/product");
       console.log(res);
       if (res.data.success) {
         dispatch({

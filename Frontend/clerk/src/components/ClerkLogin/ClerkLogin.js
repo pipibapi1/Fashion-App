@@ -51,7 +51,7 @@ export default class ClerkLogin extends Component {
             password: this.state.password,
         }
     
-        const response = axios.post('http://localhost:3000/clerk/quan', clerk).then(
+        const response = axios.post('https://fashion-app-no-name.herokuapp.com/clerk/quan', clerk).then(
             (res) => {
                 const token = res.data.token;
                 const warning = res.data.msg;

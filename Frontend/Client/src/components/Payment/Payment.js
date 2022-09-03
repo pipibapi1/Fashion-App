@@ -101,7 +101,7 @@ function change3(event){
       for(const a in x){
           let props = JSON.parse(x[a]);
           const findProduct = {idX: props[0],sizeX: props[5]}
-          const response = axios.post('http://localhost:3000/productitem', findProduct).then(
+          const response = axios.post('https://fashion-app-no-name.herokuapp.com/productitem', findProduct).then(
               (res) => {
                 listItem.push(res.data.ID)
           })
@@ -123,7 +123,7 @@ function change3(event){
             customerAccountId: sessionStorage.getItem('id'),
             totalPrice: total + 20000
           }
-            const response = axios.post('http://localhost:3000/order', Order).then(
+            const response = axios.post('https://fashion-app-no-name.herokuapp.com/order', Order).then(
                 (res) => {
                     alert("Success");
                     setNote("");

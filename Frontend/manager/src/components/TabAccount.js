@@ -19,10 +19,10 @@ export default function TabAccount() {
     // const [current, setCurrent] = React.useState("");
 
     React.useEffect(() => {
-        axios.get("http://localhost:3000/detail/Clerk").then((response) => {
+        axios.get("https://fashion-app-no-name.herokuapp.com/detail/Clerk").then((response) => {
         setStaff(response.data);
         });
-        axios.get("http://localhost:3000/detail/Customer").then((response) => {
+        axios.get("https://fashion-app-no-name.herokuapp.com/detail/Customer").then((response) => {
         setCustomer(response.data);
         });
     }, []);

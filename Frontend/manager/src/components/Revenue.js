@@ -46,7 +46,7 @@ export default function Revenue() {
     const [checked, setChecked] = React.useState(-1);
     const hasTransitionedIn = useMountTransition(show, 1000);
     React.useEffect(() => {
-        axios.get("http://localhost:3000/revenue/order").then((response) => {
+        axios.get("https://fashion-app-no-name.herokuapp.com/revenue/order").then((response) => {
             setOrder(response.data);
             // console.log(response.data);
         });

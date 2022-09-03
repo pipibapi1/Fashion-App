@@ -107,7 +107,7 @@ import DatePicker from  'react-datepicker';
             update.append('file', this.state.file);
             update.append('avatar', this.state.avatar);
             
-            const response = axios.post('http://localhost:3000/clerk/update-router/quan', update).then(
+            const response = axios.post('https://fashion-app-no-name.herokuapp.com/clerk/update-router/quan', update).then(
                 (res) => {
                     const token = res.data.token;
                     const warning = res.data.msg;

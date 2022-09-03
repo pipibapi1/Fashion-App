@@ -51,7 +51,7 @@ export default class DonHang extends Component {
       order: null,
       orderBy: null,
     };
-    axios.post("http://localhost:3000/order/get-all/quan").then((res) => {
+    axios.post("https://fashion-app-no-name.herokuapp.com/order/get-all/quan").then((res) => {
       if (res.data.length > 0) {
         let all = res.data;
         for (let i = 0; i < all.length; i++) {
@@ -211,7 +211,7 @@ export default class DonHang extends Component {
         note: "",
         orderAddress: "",
       };
-      axios.post("http://localhost:3000/order/get-info/quan", x).then((res) => {
+      axios.post("https://fashion-app-no-name.herokuapp.com/order/get-info/quan", x).then((res) => {
         detail.customerName = res.data.customer.name;
         detail.customerAvatar = res.data.customer.avatar;
         detail.customerPhoneNumber = res.data.customer.phoneNumber;

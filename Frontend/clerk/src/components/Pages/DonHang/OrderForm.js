@@ -31,7 +31,7 @@ function OrderForm(props) {
         listItemID : recordForEdit.listItemID,
     }
     
-    axios.post('http://localhost:3000/order/get-info', x).then(res => {
+    axios.post('https://fashion-app-no-name.herokuapp.com/order/get-info', x).then(res => {
             setCustomerName(res.data.customer.name);
             setCustomerAvatar(res.data.customer.avatar);
             setCustomerPhoneNumber(res.data.customer.phoneNumber);
@@ -90,7 +90,7 @@ function OrderForm(props) {
         const x = {
             orderID : orderID
         }
-        axios.post('http://localhost:3000/order/huyChoXacNhan/quan', x).then(
+        axios.post('https://fashion-app-no-name.herokuapp.com/order/huyChoXacNhan/quan', x).then(
             (res) => {
             }
             )
@@ -109,7 +109,7 @@ function OrderForm(props) {
             listItem : listItem,
             listQuantity : listQuantity
         }
-        axios.post('http://localhost:3000/order/huyDangGiao/quan', x).then(
+        axios.post('https://fashion-app-no-name.herokuapp.com/order/huyDangGiao/quan', x).then(
             (res) => {
             }
             )
@@ -140,7 +140,7 @@ function OrderForm(props) {
                 listItem : listItem,
                 listQuantity : listQuantity
             }
-            axios.post('http://localhost:3000/order/xacNhan/quan', x).then(
+            axios.post('https://fashion-app-no-name.herokuapp.com/order/xacNhan/quan', x).then(
             (res) => {
             }
             )
@@ -158,7 +158,7 @@ function OrderForm(props) {
         const x = {
             orderID : orderID
         }
-        axios.post('http://localhost:3000/order/giaoXong/quan', x).then(
+        axios.post('https://fashion-app-no-name.herokuapp.com/order/giaoXong/quan', x).then(
             (res) => {
             }
             )
