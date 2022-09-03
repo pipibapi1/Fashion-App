@@ -46,7 +46,7 @@ app.use(
 );
 
 app.use("/", function(req, res, next){
-  res.send("La Fashionale Server")
+  res.send("La Fashionale Server Here")
 })
 
 app.use("/clerk", ClerkRoute);
@@ -79,6 +79,6 @@ app.use(
   })
 );
 
-app.listen(PORT, function () {
-  console.log("Server is running on Port:", PORT);
+app.listen(process.env.PORT || 5000, function () {
+  console.log("Server is running !!!");
 });
