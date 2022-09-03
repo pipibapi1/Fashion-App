@@ -44,9 +44,7 @@ function App() {
             <Textfield name='add-todo' placeholder="Them viec can lam... " elemAfterInput={
                 <Button>Them</Button>
             }></Textfield> */}
-      {localStorage.getItem("modal-login") !== "none" && <LoginAdmin />}
-      <ClipLoader loading={loading} css={override} size={150} />
-      {loading ? "" : <TabVertical />}
+      {<TabVertical/>}
       {/* <TabAccount /> */}
       {/* </ProductProvider> */}
     </Router>

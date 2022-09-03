@@ -37,6 +37,11 @@ app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+app.get("/", (req, res, next) => {
+  res.send("La Fashionale Server Here")
+});
+
 app.use("/product/", ProductRoute);
 app.use("/productitem/", ProductItemRoute);
 app.use(
@@ -45,9 +50,6 @@ app.use(
   })
 );
 
-app.use("/", function(req, res, next){
-  res.send("La Fashionale Server Here")
-})
 
 app.use("/clerk", ClerkRoute);
 app.use("/test", testRoute);
