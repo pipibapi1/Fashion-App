@@ -45,6 +45,10 @@ app.use(
   })
 );
 
+app.use("/", function(req, res, next){
+  res.send("La Fashionale Server")
+})
+
 app.use("/clerk", ClerkRoute);
 app.use("/test", testRoute);
 app.use("/order", OrderRoute);
